@@ -1,0 +1,38 @@
+<a data-toggle="modal" data-target="#myModal" class="share" href="">
+	SHARE <img alt="share icon" src='/wp-content/themes/insites/img/share.png' />
+</a>
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+	aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog email-modal blueish">
+		<div class="modal-content inside-modal">
+			<div ng-show="successfull === undefined">
+				<button type="button" class="close-x" data-dismiss="modal"
+					aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<h3 class="modal-title" id="myModalLabel">Share This Page!</h3>
+				<br>
+				<div class="form-group form-override">
+					<label style="color: #ffffff;" for="">Email To: </label>
+					<input
+						type="email" class="form-control" id="to"
+						ng-model="to" placeholder="Email Here" required="">
+				</div>
+				<div type="button" class="large-btn pull-left btn-modal"
+					ng-click="shareThis();">
+					SUBMIT
+				</div>
+			</div>
+
+			<div id="" ng-show="successfull == true" style="padding: 0px 0px 15px 15px;">
+				<h2>The email was sent successfully</h2>
+			</div>
+
+			<div id="" ng-show="successfull == false" style="padding: 0px 0px 15px 15px;">
+				<h2>Something went wrong, please try later :(</h2>
+			</div>
+
+		</div>
+	</div>
+</div>

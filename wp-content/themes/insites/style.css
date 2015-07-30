@@ -1,0 +1,32 @@
+
+/*
+Theme Name: Insites
+Theme URI: http://insites.org;
+Description: A one page theme based on the twitter bootsrap for Insites
+Author: INND dev team
+Author URI: http://insites.org
+Version: 1.0
+Tags: responsive, bootstrap, science
+
+License:
+License URI:
+
+/*start CSS code here*/
+
+@import url('css/main.css');
+
+img.alignright { float: right; margin: 0 0 1em 1em; }
+img.alignleft { float: left; margin: 0 1em 1em 0; }
+img.aligncenter { display: block; margin-left: auto; margin-right: auto; }
+.alignright { float: right; }
+.alignleft { float: left; }
+.aligncenter { display: block; margin-left: auto; margin-right: auto; }
+p img { padding: 0; max-width: 100%; }
+img.alignright { padding: 4px; margin: 0 0 2px 7px; display: inline; }
+img.alignleft { padding: 4px; margin: 0 7px 2px 0; display: inline; }
+.alignright { float: right; }
+.alignleft { float: left; }
+.wp-caption { margin: 5px; padding: 5px; border: solid 1px #E5E5FF; background: #E5F2FF; font-size:90%; color: black }
+
+html{ margin: 0!important;}
+
