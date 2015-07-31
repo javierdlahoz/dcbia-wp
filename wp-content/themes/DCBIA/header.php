@@ -1,18 +1,15 @@
-<?php
-require_once __DIR__.'/helpers/front-page-helper.php';
-$url = getUrl();
-?>
+<?php?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Insites">
-    <meta name="Insites">
+    <meta name="description" content="DCBIA">
+    <meta name="DCBIA">
     <link rel="icon" href="favicon.ico">
-    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700' rel='stylesheet' type='text/css'>
-    <title>Insites</title>
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,400italic' rel='stylesheet' type='text/css'>
+    <title>DCBIA</title>
     <link href="<?php bloginfo('stylesheet_url');?>" rel="stylesheet">
 
     <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/angular/angular.js"></script>
