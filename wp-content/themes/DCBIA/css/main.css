@@ -37,7 +37,6 @@ a {
   cursor: pointer;
 }
 header {
-  background-color: #4f8cac;
   height: auto;
 }
 .new-pull-right {
@@ -780,9 +779,7 @@ body .wrap #conference-series-all #conference-serieschecklist label {
   margin-left: 0!important;
   margin-right: 0!important;
   text-align: center!important;
-  width: auto !important;
-  display: inline-block !important;
-  padding: 8px 15px !important;
+  width: 165px!important;
 }
 .resource-info-blocks {
   padding-bottom: 18px;

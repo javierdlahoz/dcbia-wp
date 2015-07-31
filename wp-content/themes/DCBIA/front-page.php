@@ -3,10 +3,9 @@
   Template Name: front-page
 */
 get_header(); ?>
-
-    <!--?php echo do_shortcode('[slideshow group="home"]'); ?>
-
-
+<div class="container all-pad-gone">
+    <?php echo do_shortcode('[slideshow group="home"]'); ?>
+</div>
 <!--start main content here-->
 
 <p>&nbsp;</p>

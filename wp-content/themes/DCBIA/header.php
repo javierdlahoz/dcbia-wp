@@ -30,7 +30,7 @@
   <div class="wrapper">
       <div ng-app="angular-wp">
         <header>  
-        <div class="container blueish"> 
+        <div class="container"> 
           <nav class="navbar navbar-default" role="navigation">
             <div class="navbar-header">
               <a title="link to home page" id="logo" href="/"><span id="top"></span><img class="img-responsive" alt="Science Festival logo" src="<?php echo get_template_directory_uri() ;?>/img/logo.png" /></a>
@@ -43,7 +43,7 @@
             </div>
 
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-              <ul id="main-nav" class="nav navbar-nav custom-nav center-nav">
+              <ul id="main-nav" class="nav navbar-nav custom-nav">
                   <li id="home" <?php if($url == "" || $url == "") echo "class='active'"; ?>><a href="/">Home</a></li>
                   <li id="about" <?php if($url == "about" || $url == "clients" || $url == "staff" || $url == "director")
                       echo "class='active'"; ?>><a href="/about">About Us</a></li>
