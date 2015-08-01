@@ -688,29 +688,6 @@ a.button-widget:hover {
   text-decoration: none;
   font-weight: 600;
 }
-.about-logo-box {
-  background-color: #ffffff;
-  padding: 50px 0px;
-}
-.about-logo-box .col-md-3 {
-  padding: 0!important;
-  min-height: 200px!important;
-}
-.about-logo-box a {
-  margin: auto;
-  width: 100%;
-  display: flex;
-  padding: 0;
-}
-.about-logo-box a img {
-  margin: auto;
-  max-width: 100%;
-  max-height: 180px;
-  padding: 10px 0;
-}
-#authors {
-  margin-botton: 15px;
-}
 #contact-form .form-control,
 #contact-form textarea {
   padding: 15px 12px;

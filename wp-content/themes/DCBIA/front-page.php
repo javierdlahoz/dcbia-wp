@@ -5,7 +5,37 @@
 get_header(); ?>
 <div class="container all-pad-gone">
     <?php echo do_shortcode('[slideshow group="home"]'); ?>
-</div>
+            
+          <nav class="navbar navbar-default" role="navigation">
+              <ul id="main-nav" class="nav navbar-nav custom-nav">
+                  <li id="home" <?php if($url == "" || $url == "") echo "class='active'"; ?>><a href="/">Home</a></li>
+                  <li id="about" <?php if($url == "about" || $url == "clients" || $url == "staff" || $url == "director")
+                      echo "class='active'"; ?>><a href="/about">About Us</a></li>
+                  <li id="resources"><a href="/resources">Resources</a></li>
+                <li id="blog" <?php if($url == "blog" || $url == "blog") echo "class='active'"; ?>><a href="/blog">Blog</a></li>
+                  <li id="donate" <?php if($url == "donate" || $url == "donate") echo "class='active'"; ?>><a href="/donate">Donate</a></li>
+
+                  <li id="contact" <?php if($url == "contact" || $url == "contact") echo "class='active'"; ?>><a href="/contact">Contact</a></li>
+             </ul>
+              <ul id="main-nav" class="nav navbar-nav custom-nav navbar-right">
+                <li class="dropdown new-search-dropdown">
+                  <a href="#" title="search button" class="dropdown-toggle search-button" data-toggle="dropdown">&nbsp;</a>
+                  <ul class="dropdown-menu" role="">
+                    <li>
+                      <form title="Search Insites" class="homeFormSearch" action="/resources" method="post" class="navbar-form" role="search">
+                        <div class="form-group">
+                            <label class="hidden" for="search-resources">Search Resources</label>
+                            <input name="query" id="query" type="text" class="form-control" placeholder="Search Resources">
+                        </div>
+                        <button type="submit" class="search-form-btn1" title="submit seach results">Submit</button>
+                      </form>
+                    </li>
+                  </ul>
+                </li>
+               </ul>
+            </nav>      
+         </div> 
+
 <!--start main content here-->
 
 <p>&nbsp;</p>
