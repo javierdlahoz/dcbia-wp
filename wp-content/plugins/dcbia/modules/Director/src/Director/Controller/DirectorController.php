@@ -12,13 +12,6 @@ class DirectorController extends AbstractController
         $directorEntity = new DirectorEntity($postId);
         if($directorEntity->getType() == DirectorHelper::DIRECTOR_POST_TYPE){
             $directorEntity->setJobTitle($this->getPost(DirectorEntity::JOB_TITLE));
-            //$directorEntity->setEmail($this->getPost(DirectorEntity::EMAIL));
-
-            $directorEntity->setFacebook($this->getPost(DirectorEntity::FACEBOOK));
-            $directorEntity->setTwitter($this->getPost(DirectorEntity::TWITTER));
-            $directorEntity->setGoogle($this->getPost(DirectorEntity::GOOGLE));
-            $directorEntity->setPinterest($this->getPost(DirectorEntity::PINTEREST));
-            $directorEntity->setLinkedin($this->getPost(DirectorEntity::LINKEDIN));
         }
     }
     
