@@ -17,23 +17,16 @@
     <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/angular/app.js"></script>
     <script src="<?php wp_enqueue_script("jquery"); ?>"></script>
     <?php wp_head(); ?>
-  </head>
-    <!--[if gte IE 9]>
-      <style type="text/css">
-        .gradient {
-           filter: none;
-        }
-      </style>
-    <![endif]-->    
+  </head> 
   <body>
 
   <div class="wrapper">
       <div ng-app="angular-wp">
         <header>  
-        <div class="container"> 
+        <div class="container all-pad-gone"> 
           <nav class="navbar navbar-default" role="navigation">
             <div class="navbar-header">
-              <a title="link to home page" id="logo" href="/"><span id="top"></span><img class="img-responsive" alt="Science Festival logo" src="<?php echo get_template_directory_uri() ;?>/img/logo.png" /></a>
+              <a title="link to home page" id="logo" href="/"><span id="top"></span><img class="img-responsive" alt="DCBIA logo" src="<?php echo get_template_directory_uri() ;?>/img/dcbia-logo.png" /></a>
               <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
