@@ -35,8 +35,8 @@
               </button>
             </div>
 
-            <div class="collapse navbar-collapse hide-desktop" id="bs-example-navbar-collapse-1">
-              <ul id="main-nav" class="nav navbar-nav custom-nav">
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul id="main-nav" class="nav navbar-nav hide-desktop">
                   <li id="about" <?php if($url == "about" || $url == "about")
                       echo "class='active'"; ?>><a href="/about">ABOUT</a>
                   </li>

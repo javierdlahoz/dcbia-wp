@@ -610,8 +610,8 @@ a.share:focus, a.share:visited { text-decoration:none; outline: 0; }
     border: none !important;
     #logo{ 
         display:inline-block;
-        padding:0px 0 0px 0;
-      & img { width: 100%; max-height:100px;}
+        padding:0;
+      & img { width: 100%; max-width:250px;}
     }
     li > a{
         padding-left: 10px!important;
@@ -782,17 +782,12 @@ textarea.wp-editor-area {
  }
 
 // start media queries here
-@media (min-width: 992px){
+@media (min-width: 768px){
     .hide-desktop{
-        display: none;
+        display: none!important;
     }
 }
 
-@media (min-width: 1200px){
-}
-
-@media (max-width: 992px){
-}
 
 @media (max-width: 1120px) {
     .row{
@@ -801,8 +796,6 @@ textarea.wp-editor-area {
     }
 }
 
-@media (max-width: 960px){
-}
 @media (max-width: 992px){
     footer{
        & .col-md-4 { border-right: 0 !important; padding: 15px !important; min-height:5px!important; }
@@ -815,6 +808,7 @@ textarea.wp-editor-area {
           }   
             & p { 
                 margin-top: 10px !important;
+                font-size: 16px !important;
                 & a { color: #3e3e3d; &:hover{ color: #3e3e3d; text-decoration: none; } }
                 & a.slide-bt { 
                         margin-top: 15px!important;
@@ -822,13 +816,11 @@ textarea.wp-editor-area {
                     }
                 }         
         }
-        .hide-desktop{
-            display:block;
-        }
+    
     }
 
 @media (max-width: @screen-sm-min) {
-    .secondary-nav{ display: none; }
+
     .custom-nav{
     a { 
         &:hover{
@@ -838,12 +830,13 @@ textarea.wp-editor-area {
         & li a.search-button { margin-top: 16px; }
   }
     .navbar {
+        padding: 20px!important;
         a#logo{  margin: 0; }
             li > a{
             margin: 0 ;   
         }
     }
-    .custom-nav{    
+    .nav{    
     .active > a {
        border-bottom: none !important;
        color: #ffffff;    
@@ -876,10 +869,14 @@ textarea.wp-editor-area {
         float: left!important;
     }
     .navbar li > a {
-        padding-bottom: 5px !important;
         font-weight: 700;
      }
+}
 
+@media (max-width: @screen-sm-min) {
+          .hide-desktop{
+            display:block;
+        }
 }
 
 // wp-admin wizzy container styles
