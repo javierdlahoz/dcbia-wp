@@ -938,15 +938,6 @@ textarea.wp-editor-area {
   padding: 10px 12px;
   -webkit-border-radius: 0 !important;
 }
-.new-showcase-selector {
-  padding-left: 10px!important;
-}
-#conference-series .selectit {
-  font-weight: 500 !important;
-}
-#conference-series-adder h4 a#conference-series-add-toggle {
-  font-size: 14px!important;
-}
 .next-controls {
   margin-top: 25px;
 }
@@ -954,17 +945,9 @@ textarea.wp-editor-area {
   text-decoration: none;
   color: #2491bb;
 }
-.carousel-caption p {
-  font-size: 21px!important;
-}
 @media (min-width: 992px) {
   .hide-desktop {
     display: none;
-  }
-}
-@media (min-width: 1200px) {
-  .carousel-caption p {
-    width: 50%;
   }
 }
 @media (max-width: 1120px) {
@@ -988,7 +971,6 @@ textarea.wp-editor-area {
   }
   .carousel-caption p {
     margin-top: 10px !important;
-    font-size: 14px!important;
   }
   .carousel-caption p a {
     color: #3e3e3d;
@@ -1055,9 +1037,6 @@ textarea.wp-editor-area {
     width: 25%!important;
     border-radius: 0 !important;
   }
-  .col-md-8 {
-    margin-top: 25px;
-  }
   .hide-on-phone {
     display: none;
   }
@@ -1067,9 +1046,6 @@ textarea.wp-editor-area {
   .navbar li > a {
     padding-bottom: 5px !important;
     font-weight: 700;
-  }
-  .resources-form .col-sm-5 {
-    margin-bottom: 15px;
   }
 }
 .wp-editor-wrap {
@@ -7037,11 +7013,11 @@ button.close {
 }
 .carousel-caption {
   position: absolute;
-  width: 50%;
+  width: 45%;
   top: 5%;
   left: 2%;
   z-index: 10;
-  padding: 20px;
+  padding: 30px;
   background-color: rgba(0, 0, 0, 0.4);
   background: rgba(0, 0, 0, 0.4);
   margin: 0 auto;
@@ -7049,12 +7025,15 @@ button.close {
   text-align: left;
 }
 .carousel-caption h1 {
-  font-size: 48px;
+  font-size: 42px;
   font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 15px;
 }
 .carousel-caption p {
-  font-size: 16px;
-  margin-top: 12px;
+  font-size: 28px;
+  margin-top: 15px;
+  font-weight: 500;
 }
 .carousel-caption p a {
   color: ;
@@ -7065,7 +7044,7 @@ button.close {
   margin-bottom: 20px;
 }
 .carousel-caption p a.slide-bt {
-  background-color: #734f7b;
+  background-color: #000000;
   color: #ffffff !important;
   font-size: 14px;
   margin-top: 15px;
@@ -7078,7 +7057,7 @@ button.close {
 }
 .carousel-caption p a.slide-bt:hover {
   text-decoration: none;
-  background-color: #4f8cab;
+  background-color: #ffffff;
 }
 .carousel-caption a {
   color: #ffffff!important;
