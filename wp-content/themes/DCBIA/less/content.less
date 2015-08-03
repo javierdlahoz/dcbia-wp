@@ -617,8 +617,7 @@ a.share:focus, a.share:visited { text-decoration:none; outline: 0; }
         padding-left: 10px!important;
         padding-right: 10px!important;
         margin: 0px 8px;
-        padding-bottom: 22px !important;
-        padding-top: 16px !important;
+        padding:0;
     }
 }
 
@@ -797,11 +796,10 @@ textarea.wp-editor-area {
     }
 
 // start media queries here
-@media (min-width: 992px) and (max-width: 1200px) {
-
-}
-@media (min-width: 768px){
-
+@media (min-width: 992px){
+    .hide-desktop{
+        display: none;
+    }
 }
 
 @media (min-width: 1200px){
@@ -845,7 +843,11 @@ textarea.wp-editor-area {
                     }
                 }         
         }
-}
+        .hide-desktop{
+            display:block;
+        }
+    }
+
 @media (max-width: @screen-sm-min) {
     .secondary-nav{ display: none; }
     .custom-nav{

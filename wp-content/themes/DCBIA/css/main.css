@@ -779,8 +779,7 @@ a.share:visited {
   padding-left: 10px!important;
   padding-right: 10px!important;
   margin: 0px 8px;
-  padding-bottom: 22px !important;
-  padding-top: 16px !important;
+  padding: 0;
 }
 .custom-nav {
   margin-top: 8px!important;
@@ -958,6 +957,11 @@ textarea.wp-editor-area {
 .carousel-caption p {
   font-size: 21px!important;
 }
+@media (min-width: 992px) {
+  .hide-desktop {
+    display: none;
+  }
+}
 @media (min-width: 1200px) {
   .carousel-caption {
     top: 32%!important;
@@ -1000,6 +1004,9 @@ textarea.wp-editor-area {
   .carousel-caption p a.slide-bt {
     margin-top: 15px!important;
     display: inline-block;
+  }
+  .hide-desktop {
+    display: block;
   }
 }
 @media (max-width: 768px) {
@@ -4982,7 +4989,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   min-height: 50px;
   margin-bottom: 0;
   z-index: 10;
-  padding: 0;
+  padding: 20px 0!important;
   border: 1px solid transparent;
 }
 @media (min-width: 768px) {
