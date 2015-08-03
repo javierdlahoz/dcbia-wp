@@ -2,7 +2,7 @@
 use Committee\Entity\CommitteeEntity;
 use INUtils\Helper\PostHelper;
 
-$committeeEntity = new CommitteeEntity(get_the_ID());
+$committeeEntity = dcbia::getEntity("committee");
 ?>
 <div class="panel-body">
 	<div class="form-group">

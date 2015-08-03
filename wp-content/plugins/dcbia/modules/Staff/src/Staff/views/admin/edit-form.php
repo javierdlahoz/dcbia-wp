@@ -2,7 +2,7 @@
 use Staff\Entity\StaffEntity;
 use INUtils\Helper\PostHelper;
 
-$staffEntity = new StaffEntity(get_the_ID());
+$staffEntity = dcbia::getEntity("staff");
 ?>
 <div class="panel-body">
 	<div class="form-group">

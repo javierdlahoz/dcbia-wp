@@ -2,7 +2,7 @@
 use Director\Entity\DirectorEntity;
 use INUtils\Helper\PostHelper;
 
-$directorEntity = new DirectorEntity(get_the_ID());
+$directorEntity = dcbia::getEntity("director");
 ?>
 <div class="panel-body">
 	<div class="form-group">

@@ -3,7 +3,7 @@
 use Home\Entity\HomeEntity;
 use INUtils\Helper\PostHelper;
 
-$home = new HomeEntity(get_the_ID());
+$home = dcbia::getEntity("home");
 ?>
 <div class="form-group">
    <label>What We Do</label>

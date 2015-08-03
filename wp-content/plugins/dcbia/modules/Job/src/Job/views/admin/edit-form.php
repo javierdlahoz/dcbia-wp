@@ -2,7 +2,7 @@
 use Job\Entity\JobEntity;
 use INUtils\Helper\PostHelper;
 
-$jobEntity = new JobEntity(get_the_ID());
+$jobEntity = dcbia::getEntity("job");
 ?>
 <div class="panel-body">
 	<div class="form-group">

@@ -16,10 +16,11 @@ use Staff\Helper\StaffHelper;
 use Director\Helper\DirectorHelper;
 use Committee\Helper\CommitteeHelper;
 use Job\Helper\JobHelper;
+use INUtils\Helper\PluginHelper;
 
 if (!class_exists("dcbia")) {
 
-    class dcbia{
+    class dcbia extends PluginHelper{
 
         const ADDRESS = "admin_address";
         const PHONE = "admin_phone";
