@@ -42,11 +42,11 @@
                   </li>
                   <li id="join"><a href="/join">JOIN</a></li>
                 <li id="advocacy" <?php if($url == "advocacy" || $url == "advocacy") echo "class='active'"; ?>><a href="/advocacy">ADVOCACY</a></li>
-                  <li id="donate" <?php if($url == "donate" || $url == "donate") echo "class='active'"; ?>><a href="/donate">Donate</a></li>
+                  <li id="sponsors" <?php if($url == "sponsors" || $url == "sponsors") echo "class='active'"; ?>><a href="/sponsors">SPONSORS</a></li>
 
-                  <li id="contact" <?php if($url == "contact" || $url == "contact") echo "class='active'"; ?>><a href="/contact">Contact</a></li>
-             </ul>
-           	 		   			 SPONSORS             	EVENTS	     	        NEWS   	         
+                  <li id="events" <?php if($url == "events" || $url == "events") echo "class='active'"; ?>><a href="/events">EVENTS</a></li>
+                  <li id="news" <?php if($url == "news" || $url == "news") echo "class='active'"; ?>><a href="/news">NEWS</a></li>
+             </ul>   	         
                 
               <ul id="main-nav" class="nav navbar-nav navbar-right">
                 <li class="dropdown new-search-dropdown">
