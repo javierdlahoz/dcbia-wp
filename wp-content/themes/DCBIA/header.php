@@ -49,9 +49,7 @@
              </ul>   	         
                 
               <ul id="main-nav" class="nav navbar-nav navbar-right">
-                <li class="dropdown new-search-dropdown">
-                  <a href="#" title="search button" class="dropdown-toggle search-button" data-toggle="dropdown">&nbsp;</a>
-                  <ul class="dropdown-menu" role="">
+
                     <li>
                       <form title="Search Insites" class="homeFormSearch" action="/resources" method="post" class="navbar-form" role="search">
                         <div class="form-group">
@@ -61,8 +59,7 @@
                         <button type="submit" class="search-form-btn1" title="submit seach results">Submit</button>
                       </form>
                     </li>
-                  </ul>
-                </li>
+        
                </ul>
               <br>
             </div> 
