@@ -963,9 +963,6 @@ textarea.wp-editor-area {
   }
 }
 @media (min-width: 1200px) {
-  .carousel-caption {
-    top: 32%!important;
-  }
   .carousel-caption p {
     width: 50%;
   }
@@ -984,7 +981,6 @@ textarea.wp-editor-area {
   }
   .carousel-caption {
     max-width: 90% !important;
-    top: 1%!important;
   }
   .carousel-caption h1 {
     font-size: 28px !important;
@@ -7041,11 +7037,13 @@ button.close {
 }
 .carousel-caption {
   position: absolute;
-  width: 55%;
-  top: 30%;
-  left: 10%;
+  width: 50%;
+  top: 5%;
+  left: 2%;
   z-index: 10;
-  padding: 0;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.4);
   margin: 0 auto;
   color: #ffffff;
   text-align: left;
