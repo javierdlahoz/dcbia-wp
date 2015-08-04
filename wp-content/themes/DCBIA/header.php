@@ -11,10 +11,7 @@
     <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,400italic' rel='stylesheet' type='text/css'>
     <title>DCBIA</title>
     <link href="<?php bloginfo('stylesheet_url');?>" rel="stylesheet">
-
-    <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/angular/angular.js"></script>
-    <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/angular/angular-cookies.js"></script>
-    <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/angular/app.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">  
     <script src="<?php wp_enqueue_script("jquery"); ?>"></script>
     <?php wp_head(); ?>
   </head> 
@@ -54,7 +51,7 @@
                     <div class="form-group">
                         <label class="hidden" for="search-resources">SEARCH</label>
                         <input name="query" id="top-searcher" type="text" placeholder="SEARCH">
-                        <button type="submit" class="search-btn" title="submit seach results"></button>
+                        <button type="submit" class="search-btn" title="submit seach results"><i class="fa fa-camera-retro"></i></button>
                     </div>
                   </form>
                 </li>
