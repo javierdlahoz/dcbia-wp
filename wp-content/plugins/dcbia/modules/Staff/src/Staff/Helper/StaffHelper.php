@@ -7,8 +7,8 @@ use Staff\Controller\StaffController;
 
 class StaffHelper
 {
-    const STAFF_SINGULAR = "Staff";
-    const STAFF_PLURAL = "Staff";
+    const STAFF_SINGULAR = "Staff Member";
+    const STAFF_PLURAL = "Staff Members";
     const STAFF_POST_TYPE = "staff";
 
     function __construct(){
