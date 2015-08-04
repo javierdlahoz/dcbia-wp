@@ -514,41 +514,6 @@ body .wrap #conference-series-all #conference-serieschecklist label {
 .audiences-widget p {
   cursor: pointer;
 }
-.heart-quote-box {
-  color: #ffffff;
-  padding: 35px 25px;
-}
-.heart-quote-box h3 {
-  border-bottom: 2px solid #ffffff;
-  padding-bottom: 6px;
-  font-size: 18px !important;
-}
-.heart-quote-box ul {
-  padding-left: 0px;
-}
-.heart-quote-box ul li {
-  list-style-type: none;
-  font-weight: bold;
-}
-.heart-quote-box ul li span {
-  display: inline-block;
-  font-style: normal;
-  margin-top: 0px;
-}
-.heart-quote-box p {
-  font-size: 16px;
-  text-align: center;
-  line-height: 1.5;
-}
-.heart-quote-box span {
-  display: block;
-  font-style: italic;
-  margin-top: 25px;
-}
-.heart-quote-box .hearts-icon {
-  margin: 0 auto 20px auto;
-  display: block;
-}
 .resource-main h3 {
   margin-top: 0;
   color: #62605f;
@@ -782,31 +747,25 @@ a.share:visited {
   margin: 0px 8px;
   padding: 0;
 }
-.custom-nav {
-  margin-top: 8px!important;
-  padding-bottom: 0px;
+#top-searcher {
+  padding: 12px 15px;
+  background-color: #6d6e70;
+  border: 0;
+  color: #ffffff!important;
+  width: 300px;
 }
-.custom-nav a {
-  color: #000000 !important;
-  font-size: 15px !important;
-  box-sizing: border-box;
+#top-searcher placeholder {
+  color: #ffffff!important;
 }
-.custom-nav a:hover {
-  background-color: #ffffff;
-}
-.custom-nav .active > a {
-  border-bottom: 5px inset #ffffff;
-  color: #ffffff !important;
-}
-.custom-nav a.search-button {
+.search-button {
   margin-top: 3px;
   background: transparent url('../img/search-icon.png') no-repeat center center;
   width: 45px;
   height: 45px;
 }
-.custom-nav a.search-button:hover,
-.custom-nav a.search-button:active,
-.custom-nav a.search-button:focus {
+.search-button:hover,
+.search-button:active,
+.search-button:focus {
   border: none !important;
   background-color: #4f8cac !important;
 }
@@ -5094,8 +5053,6 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   position: relative;
   float: right;
   padding: 12px 10px;
-  margin-top: 19.5px;
-  margin-bottom: 19.5px;
   background-color: #2a2d2f;
   background-image: none;
   border: 1px solid #2a2d2f;

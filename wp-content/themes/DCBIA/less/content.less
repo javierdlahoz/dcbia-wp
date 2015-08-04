@@ -431,18 +431,7 @@ body .wrap #conference-series-all #conference-serieschecklist label {
     & p.large-text { text-align: center; font-size: 21px; font-weight: 300; }
     & p { cursor: pointer; }
 }
-.heart-quote-box {
-    color: #ffffff;
-    padding: 35px 25px;
-    & h3{ border-bottom: 2px solid #ffffff; padding-bottom: 6px; font-size: 18px!important }
-        & ul{
-         padding-left: 0px;
-        & li { list-style-type: none; font-weight: bold; & span { display: inline-block; font-style: normal; margin-top: 0px; }}
-    }
-    & p { font-size: 16px; text-align: center; line-height: 1.5; }
-    & span { display: block; font-style: italic; margin-top: 25px; }
-    & .hearts-icon{ margin:0 auto 20px auto; display: block; }
-}
+
 .resource-main{
     & h3{ margin-top: 0; color: #62605f; display: inline-block; }
     & a.share { float: right; font-size: 12px; font-weight: 700; color: #444444; margin-top: 3px; 
@@ -620,34 +609,23 @@ a.share:focus, a.share:visited { text-decoration:none; outline: 0; }
         padding:0;
     }
 }
-
-.custom-nav{
-    margin-top: 8px!important;
-    padding-bottom: 0px;
-    a { 
-        color: #000000 !important;
-        font-size: 15px !important;
-        box-sizing: border-box;
-        //font-weight: 700; 
-        &:hover{
-            background-color: #ffffff;
-        }  
-    }
-    //& #about li a{ & .active{ border-bottom: 5px inset #ffffff !important; } }
+#top-searcher{
+    padding: 12px 15px;
+    background-color: #6d6e70;
+    border: 0;
+    color: #ffffff!important;
+    width: 300px;
+    & placeholder { color: #ffffff!important; }
 }
-.custom-nav{
-    .active > a {
-       border-bottom: 5px inset #ffffff;
-       color: #ffffff !important;   
-    }
- a.search-button{
+
+ .search-button{
     margin-top: 3px; 
     background: transparent url('../img/search-icon.png') no-repeat center center;
     width: 45px;
     height: 45px;
     &:hover, &:active, &:focus { border: none !important; background-color: #4f8cac !important; }
   }
-}
+
 .dropdown-menu li.last-one, .dropdown-menu li.last-one:hover, .dropdown-menu li.last-one:focus{
     border-bottom: none!important;
 }

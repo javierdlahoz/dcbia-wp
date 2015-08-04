@@ -48,18 +48,16 @@
                   <li id="news" <?php if($url == "news" || $url == "news") echo "class='active'"; ?>><a href="/news">NEWS</a></li>
              </ul>   	         
                 
-              <ul id="main-nav" class="nav navbar-nav navbar-right">
-
-                    <li>
-                      <form title="Search Insites" class="homeFormSearch" action="/resources" method="post" class="navbar-form" role="search">
-                        <div class="form-group">
-                            <label class="hidden" for="search-resources">Search Resources</label>
-                            <input name="query" id="query" type="text" class="form-control" placeholder="Search Resources">
-                        </div>
-                        <button type="submit" class="search-form-btn1" title="submit seach results">Submit</button>
-                      </form>
-                    </li>
-        
+              <ul id="" class="nav navbar-right">
+                <li>
+                  <form title="Search Insites" class="Searching" action="" method="post" class="top-search" role="search">
+                    <div class="form-group">
+                        <label style="color: #ffffff" class="hidden" for="search-resources">SEARCH</label>
+                        <input name="query" id="top-searcher" type="text" placeholder="SEARCH">
+                        <button type="submit" class="search-btn" title="submit seach results"></button>
+                    </div>
+                  </form>
+                </li>
                </ul>
               <br>
             </div> 
