@@ -52,7 +52,7 @@
                 <li>
                   <form title="Search Insites" class="Searching" action="" method="post" class="top-search" role="search">
                     <div class="form-group">
-                        <label style="color: #ffffff" class="hidden" for="search-resources">SEARCH</label>
+                        <label class="hidden" for="search-resources">SEARCH</label>
                         <input name="query" id="top-searcher" type="text" placeholder="SEARCH">
                         <button type="submit" class="search-btn" title="submit seach results"></button>
                     </div>

@@ -747,6 +747,20 @@ a.share:visited {
   margin: 0px 8px;
   padding: 0;
 }
+input#top-searcher::-webkit-input-placeholder {
+  color: #ffffff;
+}
+input#top-searcher:-moz-placeholder {
+  /* Firefox 18- */
+  color: #ffffff;
+}
+input#top-searcher::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #ffffff;
+}
+input#top-searcher:-ms-input-placeholder {
+  color: #ffffff;
+}
 #top-searcher {
   padding: 12px 15px;
   background-color: #6d6e70;
