@@ -48,7 +48,7 @@
                   <li id="news" <?php if($url == "news" || $url == "news") echo "class='active'"; ?>><a href="/news">NEWS</a></li>
              </ul>   	         
                 
-              <ul id="" class="nav navbar-right">
+              <ul id="" class="nav pull-right">
                 <li>
                   <form title="Search Insites" class="Searching" action="" method="post" class="top-search" role="search">
                     <div class="form-group">

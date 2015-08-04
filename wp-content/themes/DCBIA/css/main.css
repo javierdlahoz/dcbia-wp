@@ -767,9 +767,18 @@ input#top-searcher:-ms-input-placeholder {
   border: 0;
   color: #ffffff!important;
   width: 300px;
+  height: 45px;
 }
 #top-searcher placeholder {
   color: #ffffff!important;
+}
+button.search-btn {
+  background-color: #27a9e1;
+  border: 0;
+  height: 45px;
+  width: 45px;
+  margin-left: 5px;
+  vertical-align: top;
 }
 .search-button {
   margin-top: 3px;
@@ -4955,7 +4964,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .navbar-collapse {
   overflow-x: visible;
-  padding: 5px;
+  padding: 0;
   margin: 0 auto;
   border-top: 1px solid transparent;
   -webkit-overflow-scrolling: touch;
