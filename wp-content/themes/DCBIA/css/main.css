@@ -778,6 +778,18 @@ button.search-btn {
   color: #ffffff;
   font-size: 18px;
 }
+#btn-top-nav li {
+  display: inline-block;
+  font-weight: 700;
+}
+#btn-top-nav li a {
+  color: inherit;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+#btn-top-nav li a:hover {
+  text-decoration: underline;
+}
 .dropdown-menu li.last-one,
 .dropdown-menu li.last-one:hover,
 .dropdown-menu li.last-one:focus {

@@ -45,7 +45,7 @@
                   <li id="news" <?php if($url == "news" || $url == "news") echo "class='active'"; ?>><a href="/news">NEWS</a></li>
              </ul>   	         
                 
-              <ul id="" class="nav pull-right">
+              <ul class="nav pull-right">
                 <li>
                   <form title="Search Insites" class="searching" action="" method="post" class="top-search" role="search">
                     <div class="form-group">
@@ -55,7 +55,16 @@
                     </div>
                   </form>
                 </li>
+                <li>
+                    <ul id="btn-top-nav" class="nav pull-right">
+                        <li><a href="">MEMBER DIRECTORY</a></li>
+                        <li><a href="">JOB BANK</a></li>    
+                        <li><a href="">MEDIA</a></li>    
+                        <li><a href="">CONTACT</a></li>
+                    </ul>
+                </li>  
                </ul>
+               
               <br>
             </div> 
         </nav>      

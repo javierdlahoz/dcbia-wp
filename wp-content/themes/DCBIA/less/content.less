@@ -648,6 +648,19 @@ button.search-btn{
     }
  }
 
+#btn-top-nav{
+    & li{
+        display: inline-block;
+        font-weight: 700;
+        & a { 
+            color: inherit;
+            margin: 0 !important;
+            padding: 0 !important; 
+            &:hover{ text-decoration: underline; }
+        }
+    }
+}
+
 .dropdown-menu li.last-one, .dropdown-menu li.last-one:hover, .dropdown-menu li.last-one:focus{
     border-bottom: none!important;
 }
