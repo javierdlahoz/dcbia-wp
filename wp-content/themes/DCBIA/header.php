@@ -45,11 +45,11 @@
                   <li id="news" <?php if($url == "news" || $url == "news") echo "class='active'"; ?>><a href="/news">NEWS</a></li>
              </ul>   	         
                 
-              <ul class="nav pull-right">
+              <ul class="nav new-pull-right">
                 <li>
                   <form title="Search Insites" class="searching" action="" method="post" class="top-search" role="search">
                     <div class="form-group">
-                        <label class="hidden" for="search-resources">SEARCH</label>
+                        <label class="hidden" for="search">SEARCH</label>
                         <input name="query" id="top-searcher" type="text" placeholder="SEARCH">
                         <button type="submit" class="search-btn" title="submit seach results"><i class="fa fa-search"></i></button>
                     </div>

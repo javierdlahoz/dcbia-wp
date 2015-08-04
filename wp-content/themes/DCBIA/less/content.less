@@ -794,6 +794,10 @@ textarea.wp-editor-area {
     }
  }
 
+.new-pull-right{
+        float: right;
+    }
+
 // start media queries here
 @media (min-width: 768px){
     .hide-desktop{
@@ -889,6 +893,14 @@ textarea.wp-editor-area {
 @media (max-width: @screen-sm-min) {
           .hide-desktop{
             display:block;
+        }
+        .new-pull-right{
+            float: none!important;
+            margin-top: 20px; 
+        }
+        #top-searcher{
+            width: 92%;
+            
         }
 }
 

@@ -926,6 +926,9 @@ textarea.wp-editor-area {
   text-decoration: none;
   color: #2491bb;
 }
+.new-pull-right {
+  float: right;
+}
 @media (min-width: 768px) {
   .hide-desktop {
     display: none!important;
@@ -1029,6 +1032,13 @@ textarea.wp-editor-area {
 @media (max-width: 768px) {
   .hide-desktop {
     display: block;
+  }
+  .new-pull-right {
+    float: none!important;
+    margin-top: 20px;
+  }
+  #top-searcher {
+    width: 92%;
   }
 }
 .wp-editor-wrap {
