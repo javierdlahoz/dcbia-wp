@@ -1,5 +1,5 @@
 html {
-  margin-top: 0!impotant;
+  margin: 0!impotant;
 }
 body {
   font-size: 14px;
@@ -23,9 +23,6 @@ body .container-fluid {
 * {
   box-sizing: border-box;
 }
-.pull-right-new {
-  float: right;
-}
 ul li,
 ol li {
   font-size: 14px;
@@ -35,9 +32,6 @@ a {
 }
 header {
   height: auto;
-}
-.new-pull-right {
-  float: right;
 }
 .bk {
   background-color: #000000;
@@ -7013,7 +7007,8 @@ button.close {
 .carousel-caption p {
   font-size: 28px;
   margin-top: 15px;
-  font-weight: 500;
+  font-weight: 300;
+  line-height: 35px;
 }
 .carousel-caption p a {
   color: ;
