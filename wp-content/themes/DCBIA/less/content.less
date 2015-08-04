@@ -642,13 +642,11 @@ button.search-btn{
     vertical-align: top;
 }
 
- .search-button{
-    margin-top: 3px; 
-    background: transparent url('../img/search-icon.png') no-repeat center center;
-    width: 45px;
-    height: 45px;
-    &:hover, &:active, &:focus { border: none !important; background-color: #4f8cac !important; }
-  }
+ .searching{
+    & button{
+        & i{ color: #ffffff; font-size:18px; }
+    }
+ }
 
 .dropdown-menu li.last-one, .dropdown-menu li.last-one:hover, .dropdown-menu li.last-one:focus{
     border-bottom: none!important;

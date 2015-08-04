@@ -774,17 +774,9 @@ button.search-btn {
   margin-left: 5px;
   vertical-align: top;
 }
-.search-button {
-  margin-top: 3px;
-  background: transparent url('../img/search-icon.png') no-repeat center center;
-  width: 45px;
-  height: 45px;
-}
-.search-button:hover,
-.search-button:active,
-.search-button:focus {
-  border: none !important;
-  background-color: #4f8cac !important;
+.searching button i {
+  color: #ffffff;
+  font-size: 18px;
 }
 .dropdown-menu li.last-one,
 .dropdown-menu li.last-one:hover,

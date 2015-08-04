@@ -47,11 +47,11 @@
                 
               <ul id="" class="nav pull-right">
                 <li>
-                  <form title="Search Insites" class="Searching" action="" method="post" class="top-search" role="search">
+                  <form title="Search Insites" class="searching" action="" method="post" class="top-search" role="search">
                     <div class="form-group">
                         <label class="hidden" for="search-resources">SEARCH</label>
                         <input name="query" id="top-searcher" type="text" placeholder="SEARCH">
-                        <button type="submit" class="search-btn" title="submit seach results"><i class="fa fa-camera-retro"></i></button>
+                        <button type="submit" class="search-btn" title="submit seach results"><i class="fa fa-search"></i></button>
                     </div>
                   </form>
                 </li>
