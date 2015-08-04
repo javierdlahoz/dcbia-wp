@@ -6,7 +6,7 @@ body {
   text-rendering: optimizeLegibility !important;
   -webkit-font-smoothing: antialiased !important;
   font-family: 'Source+Sans+Pro', sans-serif;
-  color: #333333;
+  color: #2a2d2f;
   -webkit-font-smoothing: antialiased;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
   padding: 0;
@@ -5096,9 +5096,9 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   padding: 12px 10px;
   margin-top: 19.5px;
   margin-bottom: 19.5px;
-  background-color: #ffffff;
+  background-color: #2a2d2f;
   background-image: none;
-  border: 1px solid #ffffff;
+  border: 1px solid #2a2d2f;
   border-radius: 4px;
 }
 .navbar-toggle:focus {
@@ -5317,15 +5317,12 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   color: #cccccc;
   background-color: transparent;
 }
-.navbar-default .navbar-toggle {
-  border-color: ;
-}
 .navbar-default .navbar-toggle:hover,
 .navbar-default .navbar-toggle:focus {
-  background-color: #ffffff;
+  background-color: #6d6e70;
 }
 .navbar-default .navbar-toggle .icon-bar {
-  background-color: #4f8cac;
+  background-color: #ffffff;
 }
 .navbar-default .navbar-collapse,
 .navbar-default .navbar-form {
