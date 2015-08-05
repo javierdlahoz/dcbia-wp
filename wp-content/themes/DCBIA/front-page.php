@@ -7,7 +7,7 @@ get_header(); ?>
     <?php echo do_shortcode('[slideshow group="home"]'); ?>
             
           <nav class="" role="navigation">
-              <ul id="main-nav" class="nav navbar-nav custom-nav hide-on-phone">
+              <ul class="nav custom-nav hide-on-phone">
                   <li id="about" <?php if($url == "about" || $url == "about")
                       echo "class='active'"; ?>><a href="/about">ABOUT</a>
                   </li>
