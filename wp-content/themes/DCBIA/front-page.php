@@ -6,10 +6,15 @@ get_header(); ?>
 <div class="container all-pad-gone">
     <?php echo do_shortcode('[slideshow group="home"]'); ?>
             
-      <nav class="" role="navigation">
+      <nav class="site-navigation" role="navigation">
           <ul class="nav custom-nav hide-on-phone">
               <li id="about" <?php if($url == "about" || $url == "about")
                   echo "class='active'"; ?>><a href="/about">ABOUT</a>
+                  <ul class="" id="" role="menu">       
+                        <li id="staff"><a href="/about/">STAFF</a></li>
+                        <li id="board"><a href="/about/">BOARD</a></li>
+                        <li id="committees"><a href="/about/">COMMITTEES</a></li>
+                  </ul>
               </li>
               <li id="join"><a href="/join">JOIN</a></li>
             <li id="advocacy" <?php if($url == "advocacy" || $url == "advocacy") echo "class='active'"; ?>><a href="/advocacy">ADVOCACY</a></li>
