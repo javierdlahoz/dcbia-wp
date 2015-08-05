@@ -72,10 +72,3 @@
   </header>
 <div class="container-fluid">
 
-    <script type="text/javascript">
-      jQuery( document ).ready(function() {
-        jQuery('#homeFormSearch').submit(function (event){
-            jQuery(this).attr('action', action = "/" + jQuery("#homeFormSearch select").val() + "/");
-        });
-      });
-    </script>
