@@ -646,14 +646,15 @@ a.share:focus, a.share:visited { text-decoration:none; outline: 0; }
 .site-navigation ul li ul {
 	background: #27a9e1;
 	visibility: hidden;
-	float: left;
+	display: inline;
     width: 100%;
 	position: absolute;
     margin: 15px 0 0 0;
+    padding: 0;
 	left: 0;
 	z-index: 999;
     text-align: center;
-    display: block;
+    
 }
 
 .site-navigation ul li:hover > ul,
@@ -663,12 +664,13 @@ a.share:focus, a.share:visited { text-decoration:none; outline: 0; }
 }
 
 .site-navigation ul li ul li {
-	clear: both;
 	padding: 18px 0;
     width: 100%;
     display: block !important;
     text-align: center;
-    background: green;
+    margin: 0 auto;
+    position: relative;
+    left:0;
 }
 
 .site-navigation ul li ul li a{
@@ -680,10 +682,12 @@ a.share:focus, a.share:visited { text-decoration:none; outline: 0; }
 
 .site-navigation ul li ul li:hover {
 	background: #2a2d2f;
+    cursor: pointer;
 }
 
 .site-navigation ul li ul li a:hover {
     text-decoration: none;
+    cursor: pointer;
 }
 
 // styles to change thw default input color
