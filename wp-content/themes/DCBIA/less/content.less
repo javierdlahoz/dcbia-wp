@@ -654,7 +654,7 @@ button.search-btn{
         font-weight: 700;
         & a { 
             color: inherit;
-            margin: 0 !important;
+            margin: 0 0 0 12px !important;
             padding: 0 !important; 
             &:hover{ text-decoration: underline; }
         }
@@ -744,48 +744,6 @@ select {
 textarea.wp-editor-area {
   width: 100%!important;
 }
-
-
-// DROPDOWN SEARCH STYLES
-
-.new-search-dropdown{ 
-    & .dropdown-menu{
-        padding: 20px 20px;
-        background-color: #e7e7e5;
-        & .homeFormSearch{
-            & input{ width: 100% !important; height: 35px!important; color:#444444; }
-            & select.new-text-color { color: #444444 !important; margin: 15px 0; }
-            & .search-form-btn1{ background-color: #4f8cab; float:right; color: #ffffff; border: 1px solid #4f8cab; height: 35px; width:100%; border-radius: 0 !important; margin-top: 10px; }
-        }
-    }    
-}
-.new-showcase-selector{
-    background: #ffffff url(../img/select-arrow.png) no-repeat right top;
-    border-radius: none !important;
-    border: none !important;
-    height: 35px;
-    width: 100%;
-    font-size: 12hpx;    
-    outline: none;
-    cursor: pointer;
-    color: #a4a4a4;
-    padding-top: 1px;
-    appearance: none;
-    text-indent: 0.01px;
-    text-overflow: "";
-    -moz-border-radius: 0;
-       -webkit-appearance: none;
-    -webkit-border-radius: 0 !important;
-    appearance: none;
- 
-    & option {
-       color: #a4a4a4;
-       border-radius: 0 !important;
-       padding: 10px 12px;
-       -webkit-border-radius: 0 !important;   
-    }
-}
-
 
 .next-controls{
     margin-top: 25px;
@@ -896,11 +854,13 @@ textarea.wp-editor-area {
         }
         .new-pull-right{
             float: none!important;
-            margin-top: 20px; 
+            margin-top: 20px;
         }
         #top-searcher{
-            width: 92%;
-            
+            width: 85%;      
+        }
+        #btn-top-nav li a {
+            margin: 0!important;
         }
 }
 

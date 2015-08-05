@@ -48,7 +48,7 @@
               <ul class="nav new-pull-right">
                 <li>
                   <form title="Search Insites" class="searching" action="" method="post" class="top-search" role="search">
-                    <div class="form-group">
+                    <div class="form-group new-pull-right">
                         <label class="hidden" for="search">SEARCH</label>
                         <input name="query" id="top-searcher" type="text" placeholder="SEARCH">
                         <button type="submit" class="search-btn" title="submit seach results"><i class="fa fa-search"></i></button>
@@ -56,7 +56,7 @@
                   </form>
                 </li>
                 <li>
-                    <ul id="btn-top-nav" class="nav pull-right">
+                    <ul id="btn-top-nav" class="nav new-pull-right">
                         <li><a href="">MEMBER DIRECTORY</a></li>
                         <li><a href="">JOB BANK</a></li>    
                         <li><a href="">MEDIA</a></li>    
