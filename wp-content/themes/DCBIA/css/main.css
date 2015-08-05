@@ -718,9 +718,8 @@ a.share:visited {
   text-align: justify;
 }
 .custom-nav li {
-  padding: 15px 0;
+  padding: 18px 0;
   display: table-cell !important;
-  width: 1005;
   min-width: 1%!important;
 }
 .custom-nav li:hover {
@@ -728,7 +727,7 @@ a.share:visited {
 }
 .custom-nav li a {
   color: #ffffff;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 500;
   width: 100%;
   text-align: center;
