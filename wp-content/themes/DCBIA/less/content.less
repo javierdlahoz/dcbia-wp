@@ -586,6 +586,26 @@ a.button-widget{
 a.share:focus, a.share:visited { text-decoration:none; outline: 0; }
 
 // navbar styles
+.custom-nav{
+    background-color: #2a2d2f;
+    width: 100%;
+    & li { 
+        padding: 10px 0;
+        margin: 0;
+        text-align: center;
+        display: table-cell;
+        width: 1%;
+        &:hover{ background-color: #27a9e1; }
+        & a{
+            color: #ffffff;
+            font-size: 18px;
+            font-weight: 500;
+            width: 100%;
+            display: inline-block;
+            text-align: center;
+        }
+    }
+}
 
 .navbar {
     position: relative;
