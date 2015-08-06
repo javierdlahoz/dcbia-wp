@@ -17,6 +17,7 @@ use Director\Helper\DirectorHelper;
 use Committee\Helper\CommitteeHelper;
 use Job\Helper\JobHelper;
 use INUtils\Helper\PluginHelper;
+use Member\Helper\MemberHelper;
 
 if (!class_exists("dcbia")) {
 
@@ -76,6 +77,7 @@ if (!class_exists("dcbia")) {
             $this->directorHelper = new DirectorHelper();
             $this->committeeHelper = new CommitteeHelper();
             $this->jobHelper = new JobHelper();
+            $this->memberHelper = new MemberHelper();
         }
 
         public function adminFeatures(){
