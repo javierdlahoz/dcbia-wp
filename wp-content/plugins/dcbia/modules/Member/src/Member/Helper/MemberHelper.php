@@ -45,14 +45,14 @@ class MemberHelper
             ),
             array(
                 "field" => "address2",
-                "label" => "",
+                "label" => " ",
                 "class" => "input",
                 "type"  => "text",
                 "profile" => false
             ),
             array(
                 "field" => "address3",
-                "label" => "",
+                "label" => " ",
                 "class" => "input",
                 "type"  => "text",
                 "profile" => false

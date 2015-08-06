@@ -1,17 +1,6 @@
 <?php
 use INUtils\Entity\PostEntity;
-
-include "taxonomy-client_type.php";
-/*
-  Template Name: history-of-ISGP
-*/
 $pageEntity = new PostEntity(get_the_ID());
-
-$resourcesResults = array();
-if(isset($insitesApp->getResultsFromPostAction()->resources)){
-    $resourcesResults = $insitesApp->getResultsFromPostAction()->resources;
-}
-
 get_header(); ?>
 <p>&nbsp;</p>
 <div class="container inside-pages">
@@ -31,14 +20,11 @@ get_header(); ?>
                 </form>
 
                 <h3><?php echo $pageEntity->getTitle(); ?></h3>
-                <p><?php echo $pageEntity->getContent(); ?></p>
-                <br>
-                <?php if(!empty($resourcesResults)){
-                            var_dump($resourcesResults["resources"]);
-                            echo "<br>";
-                            var_dump($resourcesResults["facets"]);
-                      }
+                <?php 
+                //this is for register thing
+                    echo do_shortcode('[pmpro_signup level="3" short="1" title="Sign Up for Gold Membership" intro="0" button="Signup Now"]'); 
                 ?>
+                <br>
             </div>
         </div>
     </div>
