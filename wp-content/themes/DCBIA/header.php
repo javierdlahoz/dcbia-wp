@@ -11,10 +11,7 @@
     <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,400italic' rel='stylesheet' type='text/css'>
     <title>DCBIA</title>
     <link href="<?php bloginfo('stylesheet_url');?>" rel="stylesheet">
-
-    <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/angular/angular.js"></script>
-    <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/angular/angular-cookies.js"></script>
-    <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/angular/app.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">  
     <script src="<?php wp_enqueue_script("jquery"); ?>"></script>
     <?php wp_head(); ?>
   </head> 
@@ -48,19 +45,26 @@
                   <li id="news" <?php if($url == "news" || $url == "news") echo "class='active'"; ?>><a href="/news">NEWS</a></li>
              </ul>   	         
                 
-              <ul id="main-nav" class="nav navbar-nav navbar-right">
-
-                    <li>
-                      <form title="Search Insites" class="homeFormSearch" action="/resources" method="post" class="navbar-form" role="search">
-                        <div class="form-group">
-                            <label class="hidden" for="search-resources">Search Resources</label>
-                            <input name="query" id="query" type="text" class="form-control" placeholder="Search Resources">
-                        </div>
-                        <button type="submit" class="search-form-btn1" title="submit seach results">Submit</button>
-                      </form>
-                    </li>
-        
+              <ul class="nav new-pull-right">
+                <li>
+                  <form title="Search Insites" class="searching" action="" method="post" class="top-search" role="search">
+                    <div class="form-group new-pull-right">
+                        <label class="hidden" for="search">SEARCH</label>
+                        <input name="query" id="top-searcher" type="text" placeholder="SEARCH">
+                        <button type="submit" class="search-btn" title="submit seach results"><i class="fa fa-search"></i></button>
+                    </div>
+                  </form>
+                </li>
+                <li>
+                    <ul id="btn-top-nav" class="nav new-pull-right">
+                        <li><a href="">MEMBER DIRECTORY</a></li>
+                        <li><a href="">JOB BANK</a></li>    
+                        <li><a href="">MEDIA</a></li>    
+                        <li><a href="">CONTACT</a></li>
+                    </ul>
+                </li>  
                </ul>
+               
               <br>
             </div> 
         </nav>      
@@ -68,10 +72,3 @@
   </header>
 <div class="container-fluid">
 
-    <script type="text/javascript">
-      jQuery( document ).ready(function() {
-        jQuery('#homeFormSearch').submit(function (event){
-            jQuery(this).attr('action', action = "/" + jQuery("#homeFormSearch select").val() + "/");
-        });
-      });
-    </script>

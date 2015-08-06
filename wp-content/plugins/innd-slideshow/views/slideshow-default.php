@@ -21,7 +21,7 @@
                 <?php endif; ?>
                 
                 <?php if($link != ""): ?>
-                    <p><a class="slide-bt" style="text-decoration:none;" href='<?php echo $link; ?>'>Learn More</a></p>
+                    <p><a class="slide-bt" style="text-decoration:none;" href='<?php echo $link; ?>'>LEARN MORE</a></p>
                 <?php endif; ?>
             </div> 
         </div>
