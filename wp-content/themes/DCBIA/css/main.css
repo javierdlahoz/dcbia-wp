@@ -28,6 +28,7 @@ h5,
 h6 {
   font-weight: 700 !important;
   color: #6d6e70 !important;
+  text-transform: uppercase;
 }
 * {
   box-sizing: border-box;

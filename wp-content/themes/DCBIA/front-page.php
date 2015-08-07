@@ -43,14 +43,14 @@ get_header(); ?>
            </div>   
            <div class="col-sm-4">
                 <a href="">
-                    <img class="img-responsive" src="<?php echo get_template_directory_uri() ;?>/img/featured-sailboat.jpg" alt="sail boat on water" />
+                    <img class="img-responsive" src="<?php echo get_template_directory_uri() ;?>/img/featured-icerink.jpg" alt="sail boat on water" />
                         <span class="featured-info1">1234</span>
                         <span class="featured-info2">456</span>
                 </a>
            </div> 
            <div class="col-sm-4">
                 <a href="">
-                    <img class="img-responsive" src="<?php echo get_template_directory_uri() ;?>/img/featured-sailboat.jpg" alt="sail boat on water" />
+                    <img class="img-responsive" src="<?php echo get_template_directory_uri() ;?>/img/featured-building.jpg" alt="sail boat on water" />
                         <span class="featured-info1">1234</span>
                         <span class="featured-info2">456</span>
                 </a>
@@ -61,8 +61,9 @@ get_header(); ?>
 <p>&nbsp;</p>
     <div class="container">
         <div class="row">
-            <h3 class="home-res-heading">Insites Resources</h3>
-            <br>
+            <div class="col-md-12">   
+                <h2>ISSUES<h2>
+            </div> 
                 <div class="col-md-3 all-pad-gone">
                     <div class="color-blocks purplish">
                         <div class="inside-color-blocks systems"></div>
