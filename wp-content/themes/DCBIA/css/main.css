@@ -79,6 +79,14 @@ a.back-to-top:hover {
   text-transform: uppercase;
   display: block;
 }
+.featured .featured-info1 {
+  position: absolute;
+  top: 35%;
+}
+.featured .featured-info2 {
+  position: absolute;
+  top: 45%;
+}
 .right-pad-gone {
   padding-right: 0!important;
 }
