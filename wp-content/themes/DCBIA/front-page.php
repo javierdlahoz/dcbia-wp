@@ -37,22 +37,22 @@ get_header(); ?>
            <div class="col-sm-4">
                 <a href="">
                     <img class="img-responsive" src="<?php echo get_template_directory_uri() ;?>/img/featured-sailboat.jpg" alt="sail boat on water" />
-                        <span class="featured-info1 light-blue">WE KEEP YOU UPDATED...</span>
-                        <span class="featured-info2 red">28 OCTOBER 2015</span>
+                        <span class="infoblock1 light-blue">WE KEEP YOU UPDATED...</span>
+                        <span class="infoblock2 red">28 OCTOBER 2015</span>
                 </a>
            </div>   
            <div class="col-sm-4">
                 <a href="">
                     <img class="img-responsive" src="<?php echo get_template_directory_uri() ;?>/img/featured-icerink.jpg" alt="sail boat on water" />
-                        <span class="featured-info1 light-blue">WE KEEP YOU UPDATED...</span>
-                        <span class="featured-info2 orange">28 OCTOBER 2015</span>
+                        <span class="infoblock1 light-blue">WE KEEP YOU UPDATED...</span>
+                        <span class="infoblock2 orange">28 OCTOBER 2015</span>
                 </a>
            </div> 
            <div class="col-sm-4">
                 <a href="">
                     <img class="img-responsive" src="<?php echo get_template_directory_uri() ;?>/img/featured-building.jpg" alt="sail boat on water" />
-                        <span class="featured-info1 light-blue">WE KEEP YOU UPDATED...</span>
-                        <span class="featured-info2 grey">28 OCTOBER 2015</span>
+                        <span class="infoblock1 light-blue">WE KEEP YOU UPDATED...</span>
+                        <span class="infoblock2 grey">28 OCTOBER 2015</span>
                 </a>
            </div> 
         </div>
@@ -61,20 +61,20 @@ get_header(); ?>
 <p>&nbsp;</p>
     <div class="container all-pad-gone issues">
         <div class="row">
-            <div class="col-md-12">   
+            <div class="col-md-8">   
                 <h2>ISSUES<h2>
             </div> 
                 <div class="col-md-4">
-                    <div class="">
-                        <h3>Systems-Oriented Evaluation</h3>
-                        <p>test</p>
-                    </div>
+                    <a href="">
+                        <img class="img-responsive" src="<?php echo get_template_directory_uri() ;?>/img/featured-building.jpg" alt="sail boat on water" />
+                        <span class="infoblock3 light-blue">WE KEEP YOU UPDATED...</span>
+                    </a>
                 </div>
                 <div class="col-md-4">
-                    <div class="">
-                        <h3>Systems-Oriented Evaluation</h3>
-                        <p>test</p>
-                    </div>
+                    <a href="">
+                        <img class="img-responsive" src="<?php echo get_template_directory_uri() ;?>/img/featured-building.jpg" alt="sail boat on water" />
+                        <span class="infoblock3 light-blue">WE KEEP YOU UPDATED...</span>
+                    </a>
                 </div>
                  <div class="col-md-4">
                     <div class="">

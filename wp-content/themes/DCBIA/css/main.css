@@ -80,27 +80,33 @@ a.back-to-top:hover {
   text-decoration: none;
   color: #878a8c;
 }
-.featured h2 {
+.featured h2,
+.issues h2 {
   margin: 30px 0 20px 0!important;
 }
-.featured a {
+.featured a,
+.issues a {
   color: #ffffff;
   font-size: 16px;
 }
-.featured a:hover {
+.featured a:hover,
+.issues a:hover {
   text-decoration: none;
   color: #f7f7f7;
 }
-.featured span {
+.featured span,
+.issues span {
   text-transform: uppercase;
   display: block;
   padding: 10px 20px;
 }
-.featured .featured-info1 {
+.featured .infoblock1,
+.issues .infoblock1 {
   position: absolute;
   top: 35%;
 }
-.featured .featured-info2 {
+.featured .infoblock2,
+.issues .infoblock2 {
   position: absolute;
   top: 49.99999999%;
 }
