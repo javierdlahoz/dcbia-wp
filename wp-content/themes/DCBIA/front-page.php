@@ -28,32 +28,36 @@ get_header(); ?>
 
 <!--start main content here-->
 
-    <div class="container">
+    <div class="container all-pad-gone">
         <div class="row">
-           <h2>FEATURED</h2> 
-           <div class="col-md-4 left-pad-gone">
+            <div class="col-md-12">   
+                <h2>FEATURED</h2>
+            </div>    
+        <br>
+           <div class="col-sm-4">
                 <a style="background-color: green;" href="">
                     <img class="img-responsive" src="<?php echo get_template_directory_uri() ;?>/img/featured-sailboat.jpg" alt="sail boat on water" />
                         <span class="">1234</span>
                         <span class="">456</span>
                 </a>
            </div>   
-           <div class="col-md-4">
-                <a href="">
-                    <img src="" />
+           <div class="col-sm-4">
+                <a style="background-color: green;" href="">
+                    <img class="img-responsive" src="<?php echo get_template_directory_uri() ;?>/img/featured-sailboat.jpg" alt="sail boat on water" />
                         <span class="">1234</span>
                         <span class="">456</span>
                 </a>
            </div> 
-           <div class="col-md-4 right-pad-gone">
+           <div class="col-sm-4">
                 <a style="background-color: green;" href="">
-                    <img src="" />
+                    <img class="img-responsive" src="<?php echo get_template_directory_uri() ;?>/img/featured-sailboat.jpg" alt="sail boat on water" />
                         <span class="">1234</span>
                         <span class="">456</span>
                 </a>
            </div> 
         </div>
     </div>
+
 <p>&nbsp;</p>
     <div class="container">
         <div class="row">
