@@ -50,8 +50,8 @@
                   <form title="Search Insites" class="searching" action="" method="post" class="top-search" role="search">
                     <div class="form-group new-pull-right">
                         <label class="hidden" for="search">SEARCH</label>
-                        <input name="query" id="top-searcher" type="text" placeholder="SEARCH">
-                        <button type="submit" class="search-btn" title="submit seach results"><i class="fa fa-search"></i></button>
+                        <input name="query" id="top-searcher" class="grey" type="text" placeholder="SEARCH">
+                        <button type="submit" class="search-btn light-blue" title="submit seach results"><i class="fa fa-search"></i></button>
                     </div>
                   </form>
                 </li>
