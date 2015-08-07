@@ -30,30 +30,28 @@ get_header(); ?>
 
     <div class="container">
         <div class="row">
+           <h2>FEATURED</h2> 
+           <div class="col-md-4 left-pad-gone">
+                <a style="background-color: green;" href="">
+                    <img class="img-responsive" src="<?php echo get_template_directory_uri() ;?>/img/featured-sailboat.jpg" alt="sail boat on water" />
+                        <span class="">1234</span>
+                        <span class="">456</span>
+                </a>
+           </div>   
            <div class="col-md-4">
-                <div class="what-we-boxes">
-                    <div class="what-we-do do"></div>
-                    <h2>What we do</h2>
-                    
-                    <a class="button-blu" href="/about/#what-we-do">Learn More</a>
-                </div>
-           </div>
-           <div class="col-md-4">
-                <div class="what-we-boxes">
-                    <div class="what-we-do work"></div>
-                    <h2>How we work</h2>
-                    
-                    <a class="button-blu" href="/about/#how-we-work">Learn More</a>
-                </div>
-           </div>
-           <div class="col-md-4">
-                <div class="what-we-boxes">
-                    <div class="what-we-do know"></div>
-                    <h2>What we know</h2>
-                   
-                    <a class="button-blu" href="/about/#what-we-know">Learn More</a>
-                </div>
-           </div>
+                <a href="">
+                    <img src="" />
+                        <span class="">1234</span>
+                        <span class="">456</span>
+                </a>
+           </div> 
+           <div class="col-md-4 right-pad-gone">
+                <a style="background-color: green;" href="">
+                    <img src="" />
+                        <span class="">1234</span>
+                        <span class="">456</span>
+                </a>
+           </div> 
         </div>
     </div>
 <p>&nbsp;</p>

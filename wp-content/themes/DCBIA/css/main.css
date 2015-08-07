@@ -20,6 +20,15 @@ body .container-fluid {
   min-height: 100%;
   position: relative;
 }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700 !important;
+  color: #6d6e70 !important;
+}
 * {
   box-sizing: border-box;
 }
@@ -92,28 +101,6 @@ a.back-to-top:hover {
 .what-we-boxes a.button-blu {
   font-size: 16px!important;
 }
-.color-blocks {
-  padding: 30px 35px;
-  text-align: center;
-  min-height: 340px;
-  max-height: 350px;
-}
-.color-blocks h3 {
-  font-size: 21px;
-  margin-bottom: 15px;
-  color: #ffffff;
-  max-height: 40px;
-  min-height: 40px;
-}
-.color-blocks p {
-  color: #ffffff;
-  max-height: 62px;
-}
-.color-blocks .inside-color-blocks {
-  width: 41px;
-  height: 41px;
-  margin: 0 auto 25px auto;
-}
 a.button-blu {
   display: block;
   color: #ffffff !important;
@@ -128,22 +115,6 @@ a.button-blu:hover {
   background-color: #734f7b;
   text-decoration: none;
 }
-.greyed-out-box {
-  padding: 0;
-  background-color: #ecebe8;
-}
-.greyed-out-box .button-orng {
-  display: inline-block;
-  color: #ffffff !important;
-  border: 0;
-  background-color: #ffa33b;
-  padding: 8px 20px;
-  font-size: 16px;
-}
-.greyed-out-box .button-orng:hover {
-  text-decoration: none;
-  background-color: #734f7b;
-}
 .right-pad-gone {
   padding-right: 0!important;
 }
@@ -157,10 +128,6 @@ a.button-blu:hover {
 .add-all-pad {
   padding-left: 20px !important;
   padding-right: 20px !important;
-}
-.inside-pages ul li,
-.inside-pages ol li {
-  margin-bottom: 12px;
 }
 .foot-break {
   display: block;
@@ -7036,6 +7003,15 @@ button.close {
 }
 .carousel-caption a:hover {
   color: #3e3e3d;
+}
+.slideshow-image-wrapper .item {
+  height: 450px;
+  background: -moz-radial-gradient(top center, ellipse cover, rgba(255, 255, 255, 0.2) 0%, rgba(0, 0, 0, 0.5) 90%);
+  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(255, 255, 255, 0.2)), color-stop(90%, rgba(0, 0, 0, 0.5)));
+  background: -webkit-radial-gradient(top center, ellipse cover, rgba(255, 255, 255, 0.2) 0%, rgba(0, 0, 0, 0.5) 90%);
+  background: -o-radial-gradient(top center, ellipse cover, rgba(255, 255, 255, 0.2) 0%, rgba(0, 0, 0, 0.5) 90%);
+  background: -ms-radial-gradient(top center, ellipse cover, rgba(255, 255, 255, 0.2) 0%, rgba(0, 0, 0, 0.5) 90%);
+  background: radial-gradient(ellipse at top center, rgba(255, 255, 255, 0.2) 0%, rgba(0, 0, 0, 0.5) 90%);
 }
 @media screen and (max-width: 992px) {
   .carousel-indicators {
