@@ -64,56 +64,8 @@ a.back-to-top:hover {
   text-decoration: none;
   color: #878a8c;
 }
-.orangish {
-  background-color: #ffa33b;
-}
-.purplish {
-  background-color: #734f7b;
-}
-.blueish {
-  background-color: #4f8cab;
-}
-.greyish {
-  background-color: #ecebe8;
-}
-.what-we-boxes {
-  padding: 20px 25px;
-  text-align: center;
-}
-.what-we-boxes h2 {
-  font-size: 28px;
-  margin-bottom: 18px;
-  color: #62605f;
-  font-weight: 600;
-}
-.what-we-boxes p {
-  color: #434244;
-  min-height: 145px;
-  max-height: 145px;
-  overflow: hidden;
-  font-size: 15px;
-}
-.what-we-boxes .what-we-do {
-  width: 44px;
-  height: 44px;
-  margin: 0 auto 25px auto;
-}
-.what-we-boxes a.button-blu {
-  font-size: 16px!important;
-}
-a.button-blu {
-  display: block;
-  color: #ffffff !important;
-  background-color: #4f8cab;
-  margin: 0 auto;
-  margin-top: 28px;
-  padding: 8px;
-  width: 200px;
-}
-a.button-blu:hover {
-  color: #ffffff !important;
-  background-color: #734f7b;
-  text-decoration: none;
+.featured h2 {
+  margin: 30px 0 20px 0!important;
 }
 .right-pad-gone {
   padding-right: 0!important;

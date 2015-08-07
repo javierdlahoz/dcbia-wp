@@ -28,7 +28,7 @@ get_header(); ?>
 
 <!--start main content here-->
 
-    <div class="container all-pad-gone">
+    <div class="container all-pad-gone featured">
         <div class="row">
             <div class="col-md-12">   
                 <h2>FEATURED</h2>
@@ -37,22 +37,22 @@ get_header(); ?>
            <div class="col-sm-4">
                 <a href="">
                     <img class="img-responsive" src="<?php echo get_template_directory_uri() ;?>/img/featured-sailboat.jpg" alt="sail boat on water" />
-                        <span class="">1234</span>
-                        <span class="">456</span>
+                        <span class="featured-info1">1234</span>
+                        <span class="featured-info2">456</span>
                 </a>
            </div>   
            <div class="col-sm-4">
                 <a href="">
                     <img class="img-responsive" src="<?php echo get_template_directory_uri() ;?>/img/featured-sailboat.jpg" alt="sail boat on water" />
-                        <span class="">1234</span>
-                        <span class="">456</span>
+                        <span class="featured-info1">1234</span>
+                        <span class="featured-info2">456</span>
                 </a>
            </div> 
            <div class="col-sm-4">
                 <a href="">
                     <img class="img-responsive" src="<?php echo get_template_directory_uri() ;?>/img/featured-sailboat.jpg" alt="sail boat on water" />
-                        <span class="">1234</span>
-                        <span class="">456</span>
+                        <span class="featured-info1">1234</span>
+                        <span class="featured-info2">456</span>
                 </a>
            </div> 
         </div>
