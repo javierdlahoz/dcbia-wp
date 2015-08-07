@@ -35,21 +35,21 @@ get_header(); ?>
             </div>    
         <br>
            <div class="col-sm-4">
-                <a style="background-color: green;" href="">
+                <a href="">
                     <img class="img-responsive" src="<?php echo get_template_directory_uri() ;?>/img/featured-sailboat.jpg" alt="sail boat on water" />
                         <span class="">1234</span>
                         <span class="">456</span>
                 </a>
            </div>   
            <div class="col-sm-4">
-                <a style="background-color: green;" href="">
+                <a href="">
                     <img class="img-responsive" src="<?php echo get_template_directory_uri() ;?>/img/featured-sailboat.jpg" alt="sail boat on water" />
                         <span class="">1234</span>
                         <span class="">456</span>
                 </a>
            </div> 
            <div class="col-sm-4">
-                <a style="background-color: green;" href="">
+                <a href="">
                     <img class="img-responsive" src="<?php echo get_template_directory_uri() ;?>/img/featured-sailboat.jpg" alt="sail boat on water" />
                         <span class="">1234</span>
                         <span class="">456</span>
