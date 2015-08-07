@@ -70,6 +70,7 @@ a.back-to-top:hover {
 }
 .featured a {
   color: #ffffff;
+  font-size: 16px;
 }
 .featured a:hover {
   text-decoration: none;
@@ -78,14 +79,17 @@ a.back-to-top:hover {
 .featured span {
   text-transform: uppercase;
   display: block;
+  padding: 10px 20px;
 }
 .featured .featured-info1 {
   position: absolute;
   top: 35%;
+  background-color: #27a9e1;
 }
 .featured .featured-info2 {
   position: absolute;
-  top: 45%;
+  top: 49.99999999%;
+  background-color: #000000;
 }
 .right-pad-gone {
   padding-right: 0!important;
