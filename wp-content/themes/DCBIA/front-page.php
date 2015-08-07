@@ -38,61 +38,50 @@ get_header(); ?>
                 <a href="">
                     <img class="img-responsive" src="<?php echo get_template_directory_uri() ;?>/img/featured-sailboat.jpg" alt="sail boat on water" />
                         <span class="featured-info1">WE KEEP YOU UPDATED...</span>
-                        <span class="featured-info2">456</span>
+                        <span class="featured-info2">28 OCTOBER 2015</span>
                 </a>
            </div>   
            <div class="col-sm-4">
                 <a href="">
                     <img class="img-responsive" src="<?php echo get_template_directory_uri() ;?>/img/featured-icerink.jpg" alt="sail boat on water" />
-                        <span class="featured-info1">1234</span>
-                        <span class="featured-info2">456</span>
+                        <span class="featured-info1">WE KEEP YOU UPDATED...</span>
+                        <span class="featured-info2">28 OCTOBER 2015</span>
                 </a>
            </div> 
            <div class="col-sm-4">
                 <a href="">
                     <img class="img-responsive" src="<?php echo get_template_directory_uri() ;?>/img/featured-building.jpg" alt="sail boat on water" />
-                        <span class="featured-info1">1234</span>
-                        <span class="featured-info2">456</span>
+                        <span class="featured-info1">WE KEEP YOU UPDATED...</span>
+                        <span class="featured-info2">28 OCTOBER 2015</span>
                 </a>
            </div> 
         </div>
     </div>
 
 <p>&nbsp;</p>
-    <div class="container">
+    <div class="container all-pad-gone issues">
         <div class="row">
             <div class="col-md-12">   
                 <h2>ISSUES<h2>
             </div> 
-                <div class="col-md-3 all-pad-gone">
-                    <div class="color-blocks purplish">
-                        <div class="inside-color-blocks systems"></div>
+                <div class="col-md-4">
+                    <div class="">
                         <h3>Systems-Oriented Evaluation</h3>
                         <p>test</p>
                     </div>
                 </div>
-                <div class="col-md-3 all-pad-gone">
-                    <div class="color-blocks orangish">
-                        <div class="inside-color-blocks spiral"></div>
-                        <h3>Evaluation Capacity<br>Building</h3>
+                <div class="col-md-4">
+                    <div class="">
+                        <h3>Systems-Oriented Evaluation</h3>
                         <p>test</p>
                     </div>
                 </div>
-                <div class="col-md-3 all-pad-gone">
-                   <div class="color-blocks blueish">
-                        <div class="inside-color-blocks sustainability"></div>
-                        <h3>Sustainability & Equity</h3>
+                 <div class="col-md-4">
+                    <div class="">
+                        <h3>Systems-Oriented Evaluation</h3>
                         <p>test</p>
                     </div>
                 </div>
-                <div class="col-md-3 all-pad-gone">
-                    <div class="color-blocks orangish">
-                        <div class="inside-color-blocks inclusiveness"></div>
-                        <h3>Basic Evaluation Methods</h3>
-                        <p>test</p>
-                    </div>
-                </div>
-           
         </div>
     </div>
 <p>&nbsp;</p>
