@@ -14,20 +14,113 @@ class MemberHelper
     private $memberController;
 
     function __construct(){
-        $this->memberController = MemberController::getSingleton();
+//         $this->memberController = MemberController::getSingleton();
 
-        PostHelper::createPostType(
-            self::POST_TYPE,
-            self::POST_SINGULAR,
-            self::POST_PLURAL
-        );
+//         PostHelper::createPostType(
+//             self::POST_TYPE,
+//             self::POST_SINGULAR,
+//             self::POST_PLURAL
+//         );
 
-        add_action('add_meta_boxes_member', array(&$this, 'addMetaBoxesForMembers'));
-        add_action('save_post', array(&$this->memberController, 'save'));
-        add_action('delete_post', array(&$this->memberController,'delete') );
-        add_action('restrict_manage_posts', array(&$this, 'setOrderByTypeInAdminPanel'));
-        add_action('restrict_manage_posts', array(&$this, 'setOrderByAreaOfFocusInAdminPanel'));
+//         add_action('add_meta_boxes_member', array(&$this, 'addMetaBoxesForMembers'));
+//         add_action('save_post', array(&$this->memberController, 'save'));
+//         add_action('delete_post', array(&$this->memberController,'delete') );
+//         add_action('restrict_manage_posts', array(&$this, 'setOrderByTypeInAdminPanel'));
+//         add_action('restrict_manage_posts', array(&$this, 'setOrderByAreaOfFocusInAdminPanel'));
         //add_filter('parse_query', array(&$this, 'setMemberFilter'));
+        $this->addFieldsToRegistration(); 
+    }
+    
+    /**
+     * 
+     */
+    private function addFieldsToRegistration(){
+        $moreFields = array(
+            array(
+                "field" => "address",
+                "label" => "Address",
+                "class" => "input",
+                "type"  => "text",
+                "profile" => false
+            ),
+            array(
+                "field" => "address2",
+                "label" => " ",
+                "class" => "input",
+                "type"  => "text",
+                "profile" => false
+            ),
+            array(
+                "field" => "address3",
+                "label" => " ",
+                "class" => "input",
+                "type"  => "text",
+                "profile" => false
+            ),
+            array(
+                "field" => "city",
+                "label" => "City",
+                "class" => "input",
+                "type"  => "text",
+                "profile" => false
+            ),
+            array(
+                "field" => "state",
+                "label" => "State",
+                "class" => "input",
+                "type"  => "text",
+                "profile" => false
+            ),
+            array(
+                "field" => "zip",
+                "label" => "Zip Code",
+                "class" => "input",
+                "type"  => "text",
+                "size"  => 6,
+                "profile" => false
+            ),
+            array(
+                "field" => "telephone",
+                "label" => "Telephone",
+                "class" => "input",
+                "type"  => "text",
+                "profile" => false
+            ),
+            array(
+                "field" => "referred",
+                "label" => "Referred By",
+                "class" => "input",
+                "type"  => "text",
+                "profile" => false
+            ),
+            array(
+                "field" => "company_name",
+                "label" => "Company Name",
+                "class" => "input",
+                "type"  => "text",
+                "profile" => false
+            ),
+            array(
+                "field" => "company_website",
+                "label" => "Company Website",
+                "class" => "input",
+                "type"  => "text",
+                "profile" => false
+            ),
+            array(
+                "field" => "company_description",
+                "label" => "Description of Company",
+                "class" => "input",
+                "type"  => "textarea",
+                "profile" => false
+            )
+        );
+        
+        foreach ($moreFields as $field){
+            $text = new \PMProRH_Field($field["field"], $field["type"], $field);
+            pmprorh_add_registration_field("after_email", $text);
+        }
+        
     }
     
     /**
