@@ -37,22 +37,22 @@ get_header(); ?>
            <div class="col-sm-4">
                 <a href="">
                     <img class="img-responsive" src="<?php echo get_template_directory_uri() ;?>/img/featured-sailboat.jpg" alt="sail boat on water" />
-                        <span class="featured-info1">WE KEEP YOU UPDATED...</span>
-                        <span class="featured-info2">28 OCTOBER 2015</span>
+                        <span class="featured-info1 light-blue">WE KEEP YOU UPDATED...</span>
+                        <span class="featured-info2 red">28 OCTOBER 2015</span>
                 </a>
            </div>   
            <div class="col-sm-4">
                 <a href="">
                     <img class="img-responsive" src="<?php echo get_template_directory_uri() ;?>/img/featured-icerink.jpg" alt="sail boat on water" />
-                        <span class="featured-info1">WE KEEP YOU UPDATED...</span>
-                        <span class="featured-info2">28 OCTOBER 2015</span>
+                        <span class="featured-info1 light-blue">WE KEEP YOU UPDATED...</span>
+                        <span class="featured-info2 orange">28 OCTOBER 2015</span>
                 </a>
            </div> 
            <div class="col-sm-4">
                 <a href="">
                     <img class="img-responsive" src="<?php echo get_template_directory_uri() ;?>/img/featured-building.jpg" alt="sail boat on water" />
-                        <span class="featured-info1">WE KEEP YOU UPDATED...</span>
-                        <span class="featured-info2">28 OCTOBER 2015</span>
+                        <span class="featured-info1 light-blue">WE KEEP YOU UPDATED...</span>
+                        <span class="featured-info2 grey">28 OCTOBER 2015</span>
                 </a>
            </div> 
         </div>

@@ -49,6 +49,21 @@ header {
 .wh {
   background-color: #ffffff;
 }
+.red {
+  background-color: #d42d50;
+}
+.orange {
+  background-color: #ff8d0c;
+}
+.grey {
+  background-color: #6d6e70;
+}
+.light-blue {
+  background-color: #27a9e1;
+}
+.offblack {
+  background-color: #2a2d2f;
+}
 a.back-to-top {
   display: none;
   text-transform: uppercase;
@@ -84,12 +99,10 @@ a.back-to-top:hover {
 .featured .featured-info1 {
   position: absolute;
   top: 35%;
-  background-color: #27a9e1;
 }
 .featured .featured-info2 {
   position: absolute;
   top: 49.99999999%;
-  background-color: #000000;
 }
 .right-pad-gone {
   padding-right: 0!important;
