@@ -37,7 +37,7 @@ get_header(); ?>
            <div class="col-sm-4">
                 <a href="">
                     <img class="img-responsive" src="<?php echo get_template_directory_uri() ;?>/img/featured-sailboat.jpg" alt="sail boat on water" />
-                        <span class="featured-info1">1234</span>
+                        <span class="featured-info1">WE KEEP YOU UPDATED...</span>
                         <span class="featured-info2">456</span>
                 </a>
            </div>   

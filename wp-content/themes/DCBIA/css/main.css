@@ -68,6 +68,17 @@ a.back-to-top:hover {
 .featured h2 {
   margin: 30px 0 20px 0!important;
 }
+.featured a {
+  color: #ffffff;
+}
+.featured a:hover {
+  text-decoration: none;
+  color: #f7f7f7;
+}
+.featured span {
+  text-transform: uppercase;
+  display: block;
+}
 .right-pad-gone {
   padding-right: 0!important;
 }
