@@ -61,20 +61,20 @@ get_header(); ?>
 <p>&nbsp;</p>
     <div class="container all-pad-gone issues">
         <div class="row">
-            <div class="col-md-8 all-pad-gone"> 
-                    <div class="col-md-12">
+            <div class="col-sm-8 all-pad-gone"> 
+                    <div class="col-sm-12">
                         <h2>ISSUES<h2>
                     </div>    
-                    <div class="col-md-6">
+                    <div class="col-sm-6">
                         <a href="">
                             <img class="img-responsive" src="<?php echo get_template_directory_uri() ;?>/img/featured-building.jpg" alt="sail boat on water" />
-                            <span class="infoblock3 light-blue">WE KEEP YOU UPDATED...</span>
+                            <span class="infoblock3 light-blue">JOBS &amp; THE ECONOMY</span>
                         </a>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-sm-6">
                         <a href="">
                             <img class="img-responsive" src="<?php echo get_template_directory_uri() ;?>/img/featured-building.jpg" alt="sail boat on water" />
-                            <span class="infoblock3 light-blue">WE KEEP YOU UPDATED...</span>
+                            <span class="infoblock3 light-blue">IMMIGRATION</span>
                         </a>
                     </div>
                 </div>    

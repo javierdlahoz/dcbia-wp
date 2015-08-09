@@ -110,6 +110,13 @@ a.back-to-top:hover {
   position: absolute;
   top: 49.99999999%;
 }
+.featured .infoblock3,
+.issues .infoblock3 {
+  position: relative;
+  bottom: 40px;
+  width: 100%;
+  text-align: center;
+}
 .right-pad-gone {
   padding-right: 0!important;
 }
