@@ -79,8 +79,11 @@ get_header(); ?>
                     </div>
                 </div>    
                  <div class="col-md-4">
-                    <div class="">
-                        <h3>Systems-Oriented Evaluation</h3>
+                    <div class="email-sign-up offblack">
+                        <h3>SIGN UP FOR DCBIA emails</h3>
+                        <div id="inside-email">
+                            <p>Feel free to subscribe to the DCBIA mailing list. You'll get promotional and crucial information regarding DCBIA</p>    
+                        </div>
                         <p>test</p>
                     </div>
                 </div>

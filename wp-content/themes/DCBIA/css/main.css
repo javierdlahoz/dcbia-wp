@@ -114,8 +114,31 @@ a.back-to-top:hover {
 .issues .infoblock3 {
   position: relative;
   bottom: 40px;
-  width: 100%;
+  width: auto;
   text-align: center;
+}
+.featured .email-sign-up,
+.issues .email-sign-up {
+  padding: 15px;
+}
+.featured .email-sign-up h3,
+.issues .email-sign-up h3 {
+  color: #ffffff !important;
+  text-align: center;
+  margin-top: 5px;
+}
+.featured .email-sign-up #inside-email,
+.issues .email-sign-up #inside-email {
+  background-color: #3b3447;
+  margin: 20px 10px;
+  padding: 20px;
+  color: #ffffff !important;
+}
+.featured .email-sign-up #inside-email p,
+.issues .email-sign-up #inside-email p {
+  line-height: 1.6em;
+  font-size: 16px;
+  font-weight: 500;
 }
 .right-pad-gone {
   padding-right: 0!important;
