@@ -134,6 +134,9 @@ a.back-to-top:hover {
   font-size: 16px;
   font-weight: 500;
 }
+.issues img {
+  max-height: 220px;
+}
 .right-pad-gone {
   padding-right: 0!important;
 }

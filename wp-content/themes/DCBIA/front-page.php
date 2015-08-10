@@ -67,13 +67,13 @@ get_header(); ?>
                     </div>    
                     <div class="col-sm-6">
                         <a href="">
-                            <img class="img-responsive" src="<?php echo get_template_directory_uri() ;?>/img/featured-building.jpg" alt="sail boat on water" />
+                            <img class="img-responsive" src="<?php echo get_template_directory_uri() ;?>/img/issues.jpg" alt="sail boat on water" />
                             <span class="infoblock3 light-blue">JOBS &amp; THE ECONOMY</span>
                         </a>
                     </div>
                     <div class="col-sm-6">
                         <a href="">
-                            <img class="img-responsive" src="<?php echo get_template_directory_uri() ;?>/img/featured-building.jpg" alt="sail boat on water" />
+                            <img class="img-responsive" src="<?php echo get_template_directory_uri() ;?>/img/issues1.jpg" alt="sail boat on water" />
                             <span class="infoblock3 light-blue">IMMIGRATION</span>
                         </a>
                     </div>
