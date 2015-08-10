@@ -78,7 +78,7 @@ get_header(); ?>
                         </a>
                     </div>
                 </div>    
-                 <div class="col-md-4">
+                 <div class="col-sm-4">
                     <div class="email-sign-up offblack">
                         <h3>SIGN UP FOR DCBIA emails</h3>
                         <div id="inside-email">
