@@ -148,11 +148,29 @@ a.back-to-top:hover {
 #signup-form input#email1 {
   background-color: #000000;
   margin-bottom: 15px;
+  font-weight: 700;
   color: #ffffff;
 }
 #signup-form input#submit-btn {
   color: #ffffff;
-  font-weight: 18px!important;
+  font-weight: 700;
+}
+#signup-form input#submit-btn:hover {
+  background-color: #1d8ebe;
+}
+#signup-form input#email1::-webkit-input-placeholder {
+  color: #ffffff;
+}
+#signup-form input#email1:-moz-placeholder {
+  /* Firefox 18- */
+  color: #ffffff;
+}
+#signup-form input#email1::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #ffffff;
+}
+#signup-form input#email1:-ms-input-placeholder {
+  color: #ffffff;
 }
 .right-pad-gone {
   padding-right: 0!important;

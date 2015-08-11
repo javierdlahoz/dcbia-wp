@@ -127,12 +127,31 @@ a.back-to-top{
         &#email1{
             background-color: #000000;
             margin-bottom:15px;
+            font-weight: 700;
             color: #ffffff;
         }
+ 
         &#submit-btn{
             color: #ffffff;
-            font-weight: 18px!important;
+            font-weight: 700;
+            &:hover{ background-color: #1d8ebe;}
         }
+    }
+    
+    & input#email1::-webkit-input-placeholder {
+       color: #ffffff;
+    }
+
+    & input#email1:-moz-placeholder { /* Firefox 18- */
+       color: #ffffff;  
+    }
+
+    & input#email1::-moz-placeholder {  /* Firefox 19+ */
+       color: #ffffff;  
+    }
+
+    & input#email1:-ms-input-placeholder {  
+       color: #ffffff;  
     }
 }
 
