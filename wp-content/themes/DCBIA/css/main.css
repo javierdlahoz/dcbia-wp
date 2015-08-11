@@ -142,12 +142,17 @@ a.back-to-top:hover {
 }
 #signup-form input {
   width: 100%;
-  padding: 12px 18px;
+  padding: 15px 18px;
   border: 0;
 }
 #signup-form input#email1 {
   background-color: #000000;
   margin-bottom: 15px;
+  color: #ffffff;
+}
+#signup-form input#submit-btn {
+  color: #ffffff;
+  font-weight: 18px!important;
 }
 .right-pad-gone {
   padding-right: 0!important;
