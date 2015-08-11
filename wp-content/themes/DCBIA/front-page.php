@@ -87,7 +87,7 @@ get_header(); ?>
                         <form id="signup-form" action="" method="">
                             <label class="hidden" for="email"></label>
                             <input id="email1" class="" name="email" type="text" placeholder="Email Address" />
-                            <input id="submit-btn" type="submit" value="Submit" />
+                            <input id="submit-btn" type="submit" value="SUBMIT" />
                         </form>						
                     </div>
                 </div>

@@ -137,8 +137,13 @@ a.back-to-top:hover {
 .issues img {
   max-height: 220px;
 }
+#signup-form {
+  margin: 20px 10px;
+}
 #signup-form input {
   width: 100%;
+  padding: 12px 18px;
+  border: 0;
 }
 .right-pad-gone {
   padding-right: 0!important;
