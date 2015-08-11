@@ -1,10 +1,4 @@
-angular.module('angular-wp', ['infinite-scroll', 'LocalStorageModule'])
-	.config(function (localStorageServiceProvider) {
-		localStorageServiceProvider
-			.setPrefix('insites')
-			.setStorageType('sessionStorage');
-
-	});
+angular.module('angular-wp', ['google.places']);
 
 function getUrls() {
 	return {

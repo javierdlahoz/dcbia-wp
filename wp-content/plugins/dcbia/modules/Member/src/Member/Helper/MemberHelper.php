@@ -1,10 +1,6 @@
 <?php
 namespace Member\Helper;
 
-use INUtils\Helper\PostHelper;
-use Member\Controller\MemberController;
-use Member\Entity\MemberEntity;
-
 class MemberHelper
 {
     const POST_TYPE = "member";
@@ -29,6 +25,7 @@ class MemberHelper
 //         add_action('restrict_manage_posts', array(&$this, 'setOrderByAreaOfFocusInAdminPanel'));
         //add_filter('parse_query', array(&$this, 'setMemberFilter'));
         $this->addFieldsToRegistration(); 
+        add_action("pmpro_checkout_before_submit_button", array(&$this, "getUserMembers"));
     }
     
     /**
@@ -41,6 +38,8 @@ class MemberHelper
                 "label" => "Address",
                 "class" => "input",
                 "type"  => "text",
+                "g-places-autocomplete" => null,
+                "ng-model" => "address1",
                 "profile" => false
             ),
             array(
@@ -48,6 +47,7 @@ class MemberHelper
                 "label" => " ",
                 "class" => "input",
                 "type"  => "text",
+                "ng-model" => "address2",
                 "profile" => false
             ),
             array(
@@ -62,6 +62,7 @@ class MemberHelper
                 "label" => "City",
                 "class" => "input",
                 "type"  => "text",
+                "ng-model" => "city",
                 "profile" => false
             ),
             array(
@@ -69,6 +70,7 @@ class MemberHelper
                 "label" => "State",
                 "class" => "input",
                 "type"  => "text",
+                "ng-model" => "state",
                 "profile" => false
             ),
             array(
@@ -76,6 +78,7 @@ class MemberHelper
                 "label" => "Zip Code",
                 "class" => "input",
                 "type"  => "text",
+                "ng-model" => "zip",
                 "size"  => 6,
                 "profile" => false
             ),
@@ -120,6 +123,9 @@ class MemberHelper
             $text = new \PMProRH_Field($field["field"], $field["type"], $field);
             pmprorh_add_registration_field("after_email", $text);
         }
+    }
+    
+    public function getUserMembers(){
         
     }
     
