@@ -78,13 +78,19 @@ get_header(); ?>
                         </a>
                     </div>
                 </div>    
-                 <div class="col-sm-4">
+                <div class="col-sm-4">
                     <div class="email-sign-up offblack">
                         <h3>SIGN UP FOR DCBIA emails</h3>
                         <div id="inside-email">
-                            <p>Feel free to subscribe to the DCBIA mailing list. You'll get promotional and crucial information regarding DCBIA</p>    
-                        </div>
-                        <p>test</p>
+                            <p>Feel free to subscribe to the DCBIA mailing list. You'll get promotional and crucial information regarding DCBIA</p>
+                         </div>    
+                        <form id="signup-form" action="" method="">
+                           
+                                <label class="hidden" for="email"></label>
+                                <input id="email1" class="" name="email" type="text" placeholder="Email Address" /><br />
+                         
+                            <input id="submit-btn" type="submit" value="Submit" />
+                        </form>						
                     </div>
                 </div>
         </div>
