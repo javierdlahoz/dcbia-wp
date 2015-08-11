@@ -145,6 +145,10 @@ a.back-to-top:hover {
   padding: 12px 18px;
   border: 0;
 }
+#signup-form input#email1 {
+  background-color: #000000;
+  margin-bottom: 15px;
+}
 .right-pad-gone {
   padding-right: 0!important;
 }
