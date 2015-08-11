@@ -85,10 +85,8 @@ get_header(); ?>
                             <p>Feel free to subscribe to the DCBIA mailing list. You'll get promotional and crucial information regarding DCBIA</p>
                          </div>    
                         <form id="signup-form" action="" method="">
-                           
-                                <label class="hidden" for="email"></label>
-                                <input id="email1" class="" name="email" type="text" placeholder="Email Address" /><br />
-                         
+                            <label class="hidden" for="email"></label>
+                            <input id="email1" class="" name="email" type="text" placeholder="Email Address" />
                             <input id="submit-btn" type="submit" value="Submit" />
                         </form>						
                     </div>
