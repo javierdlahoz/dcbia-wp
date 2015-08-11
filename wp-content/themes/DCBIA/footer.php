@@ -58,6 +58,11 @@
 	</div>
 </footer>
 <?php wp_footer(); ?>
+<script src="https://maps.googleapis.com/maps/api/js?libraries=places"></script>
+<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/autocomplete.min.css">
+<script src="<?php echo get_template_directory_uri(); ?>/js/angular/angular.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/js/angular/autocomplete.min.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/js/angular/app.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/global.js"></script>
 <script
 	src="<?php echo get_template_directory_uri(); ?>/js/typeahead.js"></script>
@@ -69,13 +74,6 @@
 <!-- Angular Stuffs -->
 <script type="text/javascript" 
     src="<?php echo get_template_directory_uri(); ?>/js/infinitescroll/inifinetscroll.min.js"></script>
-<script type="text/javascript"
-	src="<?php echo get_template_directory_uri(); ?>/js/angular/services/EmailService.js"></script>
-<script type="text/javascript"
-	src="<?php echo get_template_directory_uri(); ?>/js/angular/controllers/EmailController.js"></script>
-<script type="text/javascript"
-	src="<?php echo get_template_directory_uri(); ?>/js/angular/directives/shareThisDirective.js"></script>
-
 <script type="text/javascript">
 	    	jQuery(".wp-caption").css({"width": "100%", "height": "auto"});
 	   		jQuery(".size-full").css({"width": "100%", "height": "auto"});

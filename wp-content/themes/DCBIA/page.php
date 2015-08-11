@@ -20,10 +20,7 @@ get_header(); ?>
                 </form>
 
                 <h3><?php echo $pageEntity->getTitle(); ?></h3>
-                <?php 
-                //this is for register thing
-                    echo do_shortcode('[pmpro_signup level="3" short="1" title="Sign Up for Gold Membership" intro="0" button="Signup Now"]'); 
-                ?>
+                <?php the_content(); ?>
                 <br>
             </div>
         </div>
