@@ -233,7 +233,19 @@
         &:hover{ color: #3e3e3d; }
     }
 }
-// special break point for carosel slideshow
+
+.slideshow-image-wrapper{
+    & .item{
+        height: 450px;
+        background: -moz-radial-gradient( top center, ellipse cover,  rgba(255,255,255,0.2) 0%, rgba(0,0,0,0.5) 90%);
+        background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(255,255,255,0.2)), color-stop(90%,rgba(0,0,0,0.5)));
+        background: -webkit-radial-gradient( top center, ellipse cover,  rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.5) 90%);
+        background: -o-radial-gradient(top center, ellipse cover,  rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.5) 90%);
+        background: -ms-radial-gradient(top center, ellipse cover,  rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.5) 90%);
+        background: radial-gradient(ellipse at top center,  rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.5) 90%); 
+        background: radial-gradient(ellipse at top center,  rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.5) 90%); 
+    }
+}
 
 
 // Scale up controls for tablets and up
@@ -272,6 +284,6 @@
         padding: 0 !important;
     }
     .carousel-caption {
-      width: 75%;   
+      width: 95%;   
     }
 }

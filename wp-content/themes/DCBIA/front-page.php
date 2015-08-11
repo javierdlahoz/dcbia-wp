@@ -28,68 +28,65 @@ get_header(); ?>
 
 <!--start main content here-->
 
-    <div class="container">
+    <div class="container all-pad-gone featured">
         <div class="row">
-           <div class="col-md-4">
-                <div class="what-we-boxes">
-                    <div class="what-we-do do"></div>
-                    <h2>What we do</h2>
-                    
-                    <a class="button-blu" href="/about/#what-we-do">Learn More</a>
-                </div>
-           </div>
-           <div class="col-md-4">
-                <div class="what-we-boxes">
-                    <div class="what-we-do work"></div>
-                    <h2>How we work</h2>
-                    
-                    <a class="button-blu" href="/about/#how-we-work">Learn More</a>
-                </div>
-           </div>
-           <div class="col-md-4">
-                <div class="what-we-boxes">
-                    <div class="what-we-do know"></div>
-                    <h2>What we know</h2>
-                   
-                    <a class="button-blu" href="/about/#what-we-know">Learn More</a>
-                </div>
-           </div>
+            <div class="col-md-12">   
+                <h2>FEATURED</h2>
+            </div>    
+        <br>
+           <div class="col-sm-4">
+                <a href="">
+                    <img class="img-responsive" src="<?php echo get_template_directory_uri() ;?>/img/featured-sailboat.jpg" alt="sail boat on water" />
+                        <span class="infoblock1 light-blue">WE KEEP YOU UPDATED...</span>
+                        <span class="infoblock2 red">28 OCTOBER 2015</span>
+                </a>
+           </div>   
+           <div class="col-sm-4">
+                <a href="">
+                    <img class="img-responsive" src="<?php echo get_template_directory_uri() ;?>/img/featured-icerink.jpg" alt="sail boat on water" />
+                        <span class="infoblock1 light-blue">WE KEEP YOU UPDATED...</span>
+                        <span class="infoblock2 orange">28 OCTOBER 2015</span>
+                </a>
+           </div> 
+           <div class="col-sm-4">
+                <a href="">
+                    <img class="img-responsive" src="<?php echo get_template_directory_uri() ;?>/img/featured-building.jpg" alt="sail boat on water" />
+                        <span class="infoblock1 light-blue">WE KEEP YOU UPDATED...</span>
+                        <span class="infoblock2 grey">28 OCTOBER 2015</span>
+                </a>
+           </div> 
         </div>
     </div>
+
 <p>&nbsp;</p>
-    <div class="container">
+    <div class="container all-pad-gone issues">
         <div class="row">
-            <h3 class="home-res-heading">Insites Resources</h3>
-            <br>
-                <div class="col-md-3 all-pad-gone">
-                    <div class="color-blocks purplish">
-                        <div class="inside-color-blocks systems"></div>
-                        <h3>Systems-Oriented Evaluation</h3>
+            <div class="col-sm-8 all-pad-gone"> 
+                    <div class="col-sm-12">
+                        <h2>ISSUES<h2>
+                    </div>    
+                    <div class="col-sm-6">
+                        <a href="">
+                            <img class="img-responsive" src="<?php echo get_template_directory_uri() ;?>/img/issues.jpg" alt="sail boat on water" />
+                            <span class="infoblock3 light-blue">JOBS &amp; THE ECONOMY</span>
+                        </a>
+                    </div>
+                    <div class="col-sm-6">
+                        <a href="">
+                            <img class="img-responsive" src="<?php echo get_template_directory_uri() ;?>/img/issues1.jpg" alt="sail boat on water" />
+                            <span class="infoblock3 light-blue">IMMIGRATION</span>
+                        </a>
+                    </div>
+                </div>    
+                 <div class="col-sm-4">
+                    <div class="email-sign-up offblack">
+                        <h3>SIGN UP FOR DCBIA emails</h3>
+                        <div id="inside-email">
+                            <p>Feel free to subscribe to the DCBIA mailing list. You'll get promotional and crucial information regarding DCBIA</p>    
+                        </div>
                         <p>test</p>
                     </div>
                 </div>
-                <div class="col-md-3 all-pad-gone">
-                    <div class="color-blocks orangish">
-                        <div class="inside-color-blocks spiral"></div>
-                        <h3>Evaluation Capacity<br>Building</h3>
-                        <p>test</p>
-                    </div>
-                </div>
-                <div class="col-md-3 all-pad-gone">
-                   <div class="color-blocks blueish">
-                        <div class="inside-color-blocks sustainability"></div>
-                        <h3>Sustainability & Equity</h3>
-                        <p>test</p>
-                    </div>
-                </div>
-                <div class="col-md-3 all-pad-gone">
-                    <div class="color-blocks orangish">
-                        <div class="inside-color-blocks inclusiveness"></div>
-                        <h3>Basic Evaluation Methods</h3>
-                        <p>test</p>
-                    </div>
-                </div>
-           
         </div>
     </div>
 <p>&nbsp;</p>
