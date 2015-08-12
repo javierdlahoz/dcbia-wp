@@ -139,6 +139,7 @@ a.back-to-top:hover {
 }
 #signup-form {
   margin: 20px 10px;
+  margin-bottom: 5px;
 }
 #signup-form input {
   width: 100%;
