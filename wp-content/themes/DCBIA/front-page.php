@@ -103,8 +103,11 @@ get_header(); ?>
           <div class="col-sm-4">
             <p>&nbsp;</p>  
             <h2>News</h2>
-            <div class="">
-                <p>palceholder</p><p>palceholder</p>
+            <div class="light-blue">
+                <h3 class="">Recent news</h3>
+                <h5>Job Opportunity: Public Information Officer</h5>
+                <p>July 9, 2015</p>
+                <p>The incumbent serves as an expert public information and communications advisor to senior management, responsible for managing, planning, developing and administering the public information and communications program for DDOT. The incumbent provides leadership and expertise to staff and senior management in planning, designing, executing, and evaluating the Department's public affairs division....</p>
             </div>  
          </div>
     </div>
