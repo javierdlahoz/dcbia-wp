@@ -73,14 +73,8 @@
 <script src="<?php echo get_template_directory_uri(); ?>/js/jquery.circliful.js"></script>
 
 <script>
-jQuery( document ).ready(function() {
-        jQuery('#myStathalf').circliful();
-		jQuery('#myStat').circliful();
-		jQuery('#myStathalf2').circliful();
-		jQuery('#myStat2').circliful();
-    jQuery('#myStat3').circliful();
-    jQuery('#myStat4').circliful();
-    jQuery('#myStathalf3').circliful();
+    jQuery( document ).ready(function() {
+        jQuery('#myStat').circliful();
     });
 </script>
     
