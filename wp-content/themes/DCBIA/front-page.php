@@ -96,29 +96,39 @@ get_header(); ?>
 
 <div class="container">
     <div class="row">
-         
          <div class="col-sm-8 left-pad-gone">
             <h2>Events</h2>
             <p>palceholder</p>
          </div>     
           <div class="col-sm-4">
             <p>&nbsp;</p>  
-            <h2>Sponsors</h2>
-            <div class="sponsor-box">
-                <a href=""><img class="img-responsive" src="<?php echo get_template_directory_uri() ;?>/img/featured-building.jpg" alt="logo" /></a>
-                <a href=""><img class="img-responsive" src="<?php echo get_template_directory_uri() ;?>/img/featured-building.jpg" alt="logo" /></a>
+            <h2>News</h2>
+            <div class="">
+                <p>palceholder</p><p>palceholder</p>
             </div>  
          </div>
     </div>
 </div>
 
-    <div class="container all-pad-gone">
-        <div class="row">
-            <div class="col-md-12">
-                <h2>Wasssup</h2>
-            </div>
+<div class="container">
+    <div class="row">     
+        <div class="col-sm-8 left-pad-gone">
+                <h2>INDUSTRY IMPACT</h2>
+                <p>Over the years, DCBIA has achieved a prominent position in the local business community as an advocate for a vigorous, responsible real estate industry. It interprets that advocacy role broadly – to not only give voice to the specific concerns of its members, but also to speak out in support of public policies that promote the economic growth and vitality of the nation’s capital.</p>
+            
+            <p>Plugin goes here</p>
+            
+        </div>     
+        <div class="col-sm-4">
+            <p>&nbsp;</p>  
+            <h2>Sponsors</h2>
+            <div class="sponsor-box">
+                <a href=""><img class="img-responsive" src="<?php echo get_template_directory_uri() ;?>/img/featured-building.jpg" alt="logo" /></a>
+                <a href=""><img class="img-responsive" src="<?php echo get_template_directory_uri() ;?>/img/featured-building.jpg" alt="logo" /></a>
+            </div>  
         </div>
     </div>
+</div>
 
     <div class="container">
         <div class="row">
