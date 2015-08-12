@@ -118,6 +118,44 @@ a.back-to-top{
     & img{ max-height: 220px; }
 }
 
+#signup-form{
+    margin: 20px 10px;
+    margin-bottom: 5px;
+    & input {
+        width: 100%;
+        padding: 15px 18px;
+        border: 0;
+        
+        &#email1{
+            background-color: #000000;
+            margin-bottom:15px;
+            font-weight: 700;
+            color: #ffffff;
+        }
+        &#submit-btn{
+            color: #ffffff;
+            font-weight: 700;
+            &:hover{ background-color: #1d8ebe;}
+        }
+    }
+    
+    & input#email1::-webkit-input-placeholder {
+       color: #ffffff;
+    }
+
+    & input#email1:-moz-placeholder { /* Firefox 18- */
+       color: #ffffff;  
+    }
+
+    & input#email1::-moz-placeholder {  /* Firefox 19+ */
+       color: #ffffff;  
+    }
+
+    & input#email1:-ms-input-placeholder {  
+       color: #ffffff;  
+    }
+}
+
 .right-pad-gone{
     padding-right: 0!important;
 }

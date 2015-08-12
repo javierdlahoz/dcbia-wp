@@ -78,57 +78,53 @@ get_header(); ?>
                         </a>
                     </div>
                 </div>    
-                 <div class="col-sm-4">
+                <div class="col-sm-4">
                     <div class="email-sign-up offblack">
                         <h3>SIGN UP FOR DCBIA emails</h3>
                         <div id="inside-email">
-                            <p>Feel free to subscribe to the DCBIA mailing list. You'll get promotional and crucial information regarding DCBIA</p>    
-                        </div>
-                        <p>test</p>
+                            <p>Feel free to subscribe to the DCBIA mailing list. You'll get promotional and crucial information regarding DCBIA</p>
+                         </div>    
+                        <form id="signup-form" action="" method="">
+                            <label class="hidden" for="email"></label>
+                            <input id="email1" class="" name="email" type="text" placeholder="Email Address" />
+                            <input class="light-blue" id="submit-btn" type="submit" value="SUBMIT" />
+                        </form>						
                     </div>
                 </div>
         </div>
     </div>
-<p>&nbsp;</p>
-
 
 <div class="container">
     <div class="row">
-         <h3 class="home-res-heading">Insites Blog Results</h3>
-            <br>
-        <div class="reyed-out-box">
-
-        </div>
+         <h2>Events</h2>
+         <div class="col-sm-8 left-pad-gone">
+            <p>palceholder</p>
+         </div>     
+          <div class="col-sm-4">
+            <p>palceholder</p>
+         </div>
     </div>
 </div>
 
 
 <p>&nbsp;</p>
-    <div class="container-fluid call-to-action-box">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 call-to-action-box">
-                    <h2>tester</h2>
-                </div>
+    <div class="container all-pad-gone">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Wasssup</h2>
             </div>
         </div>
     </div>
 
     <div class="container">
         <div class="row">
-            <div class="get-involved">
-                <div class="col-md-7">
-                    <br>
-                    <h1>Get Connected!</h1>
-                    <br>
-                    <p>test</p>
-                <a href='/about/connections/' title="learn-more" href="" class="button-blu">Learn More</a>
-                </div>
-                <div class="col-md-5">
-                    <img class="img-responsive" src="<?php echo get_template_directory_uri() ;?>/img/globe.jpg" alt="globe image with people" />
-                </div>
+
+            <div class="col-md-7">
+
             </div>
-            <p>&nbsp;</p>
+            <div class="col-md-5">
+
+            </div>
         </div>
     </div>
    
