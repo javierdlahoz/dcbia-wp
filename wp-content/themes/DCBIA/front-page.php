@@ -97,7 +97,12 @@ get_header(); ?>
 <div class="container">
     <div class="row">
          <h2>Events</h2>
-
+         <div class="col-sm-8 left-pad-gone">
+            <p>palceholder</p>
+         </div>     
+          <div class="col-sm-4">
+            <p>palceholder</p>
+         </div>
     </div>
 </div>
 
@@ -120,7 +125,6 @@ get_header(); ?>
             <div class="col-md-5">
 
             </div>
-\
         </div>
     </div>
    
