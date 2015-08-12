@@ -119,7 +119,21 @@ get_header(); ?>
                 <h2>INDUSTRY IMPACT</h2>
                 <p>Over the years, DCBIA has achieved a prominent position in the local business community as an advocate for a vigorous, responsible real estate industry. It interprets that advocacy role broadly – to not only give voice to the specific concerns of its members, but also to speak out in support of public policies that promote the economic growth and vitality of the nation’s capital.</p>
             
-            <p>Plugin goes here</p>
+        <!--Jquery circle plugin-->
+            
+        <div id="myStathalf" data-dimension="250" data-text="35%" data-info="New Clients" data-width="30" data-fontsize="38" data-percent="35" data-fgcolor="#7ea568" data-bgcolor="#eee" data-type="half" data-fill="#ddd"></div>
+
+        <div id="myStat" data-dimension="250" data-text="35%" data-info="New Clients" data-width="30" data-fontsize="38" data-percent="35" data-fgcolor="#61a9dc" data-bgcolor="#eee" data-fill="#ddd"></div>
+
+        <div id="myStathalf2" data-dimension="250" data-text="35" data-info="New Clients" data-width="30" data-fontsize="38" data-percent="35" data-fgcolor="#7ea568" data-bgcolor="#eee" data-type="half" data-icon="fa-task"></div>
+
+        <div id="myStat2" data-dimension="250" data-text="35%" data-info="New Clients" data-width="30" data-fontsize="38" data-percent="35" data-fgcolor="#61a9dc" data-bgcolor="#eee"></div>
+
+        <div id="myStat3" data-startdegree="90" data-dimension="250" data-text="35%" data-info="New Clients" data-width="30" data-fontsize="38" data-percent="35" data-fgcolor="#61a9dc" data-bgcolor="#eee"></div>
+
+        <div id="myStat4" data-startdegree="180" data-dimension="250" data-text="35%" data-info="New Clients" data-width="30" data-fontsize="38" data-percent="35" data-fgcolor="#61a9dc" data-bgcolor="#eee"></div>
+
+        <div id="myStathalf3" data-startdegree="45" data-dimension="250" data-text="50%" data-info="New Clients" data-width="30" data-fontsize="38" data-percent="50" data-fgcolor="#7ea568" data-bgcolor="#eee" data-type="half" data-fill="#ddd"></div>
             
         </div>     
         <div class="col-sm-4">

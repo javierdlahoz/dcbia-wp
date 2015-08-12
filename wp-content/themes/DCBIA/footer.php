@@ -70,23 +70,20 @@
 	src="<?php echo get_template_directory_uri(); ?>/js/autocomplete_files.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/tabs.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/dropit.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/js/jquery.circliful.js"></script>
 
-<!-- Angular Stuffs -->
-<script type="text/javascript" 
-    src="<?php echo get_template_directory_uri(); ?>/js/infinitescroll/inifinetscroll.min.js"></script>
-<script type="text/javascript">
-	    	jQuery(".wp-caption").css({"width": "100%", "height": "auto"});
-	   		jQuery(".size-full").css({"width": "100%", "height": "auto"});
-	   		jQuery(".attachment-thumbnail").each(function(){
-    	   		 var src = jQuery(this).attr("src");
-    	   		 jQuery(this).parent().attr("href", src);
-	   		});
-		</script>
 <script>
-            jQuery(document).ready(function() {
-                jQuery('.menu').dropit();
-            });
-        </script>
+jQuery( document ).ready(function() {
+        jQuery('#myStathalf').circliful();
+		jQuery('#myStat').circliful();
+		jQuery('#myStathalf2').circliful();
+		jQuery('#myStat2').circliful();
+    jQuery('#myStat3').circliful();
+    jQuery('#myStat4').circliful();
+    jQuery('#myStathalf3').circliful();
+    });
+</script>
+    
 </div>
 <!--wrapper-->
 </body>
