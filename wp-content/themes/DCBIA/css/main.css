@@ -187,6 +187,11 @@ a.back-to-top:hover {
   padding-left: 20px !important;
   padding-right: 20px !important;
 }
+.sponsor-box {
+  background-color: #ffffff;
+  padding: 25px;
+  margin-top: 15px;
+}
 .foot-break {
   display: block;
   overflow: auto;

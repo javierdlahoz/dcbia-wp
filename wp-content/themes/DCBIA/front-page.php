@@ -96,18 +96,22 @@ get_header(); ?>
 
 <div class="container">
     <div class="row">
-         <h2>Events</h2>
+         
          <div class="col-sm-8 left-pad-gone">
+            <h2>Events</h2>
             <p>palceholder</p>
          </div>     
           <div class="col-sm-4">
-            <p>palceholder</p>
+            <p>&nbsp;</p>  
+            <h2>Sponsors</h2>
+            <div class="sponsor-box">
+                <a href=""><img class="img-responsive" src="<?php echo get_template_directory_uri() ;?>/img/featured-building.jpg" alt="logo" /></a>
+                <a href=""><img class="img-responsive" src="<?php echo get_template_directory_uri() ;?>/img/featured-building.jpg" alt="logo" /></a>
+            </div>  
          </div>
     </div>
 </div>
 
-
-<p>&nbsp;</p>
     <div class="container all-pad-gone">
         <div class="row">
             <div class="col-md-12">
