@@ -1,14 +1,5 @@
 <?php
-
 use INUtils\Entity\PostEntity;
-
-$postV = get_post();
-if($postV->post_type == "tribe_events"){
-    require_once __DIR__.'/single-tribe_events.php';
-    exit();
-}
-
-
 $pageEntity = new PostEntity(get_the_ID());
 get_header(); ?>
 <p>&nbsp;</p>
