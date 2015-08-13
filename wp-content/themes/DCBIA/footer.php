@@ -4,7 +4,7 @@
 <p>&nbsp;</p>
 <!--main-container-->
 <div class="foot-break"></div>
-<footer>
+<footer class="offblack">
 	<div class="container">
 		<div class="inside-footer">
 			<div class="row">
@@ -19,7 +19,7 @@
 		<div class="col-md-4">
             <p>&nbsp;</p>
 			<img class="img-responsive"
-				src="<?php echo get_template_directory_uri() ;?>/img/footer-logo.png" />
+				src="<?php echo get_template_directory_uri() ;?>/img/dcbia-white.png" />
 		</div>
 		<div class="col-md-4">
 			<p>&nbsp;</p>
