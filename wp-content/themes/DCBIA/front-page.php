@@ -105,11 +105,16 @@ get_header(); ?>
                 </div> <!--industry end-->
                 
                     <p>&nbsp;</p>        
+                    <p>&nbsp;</p>        
                 
-                <div class="quoter">
-                    <h2>IF WE EVER FORGET THAT WE ARE ONE NATION UNDER GOD, THEN WE WILL BE A NATION GONE UNDER.</h2>
-                    <p>— Ronald Reagan</p>
-                </div>        
+                <div class="col-sm-12">
+                    <div class="quoter">
+                        <h2>IF WE EVER FORGET THAT WE ARE ONE NATION UNDER GOD, THEN WE WILL BE A NATION GONE UNDER.</h2>
+                        <p>— Ronald Reagan</p>
+                    </div> 
+                </div> 
+                        
+                <p>&nbsp;</p>        
                         
             </div> <!--main col8 end-->       
                            

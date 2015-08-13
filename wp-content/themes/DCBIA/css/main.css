@@ -211,6 +211,20 @@ a.back-to-top:hover {
 .industry p {
   font-size: 16px;
 }
+.quoter {
+  padding: 35px;
+  background-color: #000000;
+}
+.quoter h2 {
+  color: #ffffff !important;
+  font-weight: 300!important;
+  margin: 0;
+}
+.quoter p {
+  color: #ffffff !important;
+  font-size: 16px!important;
+  margin: 20px 0;
+}
 .news h3 {
   padding: 15px;
   font-weight: 400 !important;
