@@ -81,11 +81,17 @@ get_header(); ?>
                     </div>
                 </div><!--issues end-->            
                         
-                <div class="events col-sm-12">
-                    <h2>Events</h2>
-                    <p>palceholder</p>        
+                <div class="events">
+                    <div class="events col-sm-12">
+                        <h2>Events</h2>
+                        <br>
+                        <img class="img-responsive" src="<?php echo get_template_directory_uri() ;?>/img/events-placeholder.jpg" alt="placeholder" />
+                        <br>
+                    </div>     
                 </div><!--events end-->             
                 
+                    <p>&nbsp;</p>    
+                        
                 <div class="industry col-sm-12">        
                     <h2>INDUSTRY IMPACT</h2>
                     <p>Over the years, DCBIA has achieved a prominent position in the local business community as an advocate for a vigorous, responsible real estate industry. It interprets that advocacy role broadly – to not only give voice to the specific concerns of its members, but also to speak out in support of public policies that promote the economic growth and vitality of the nation’s capital.</p><p>&nbsp;</p>

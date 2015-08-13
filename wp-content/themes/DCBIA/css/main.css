@@ -208,6 +208,9 @@ a.back-to-top:hover {
   position: relative;
   bottom: 4px;
 }
+.industry p {
+  font-size: 16px;
+}
 .news h3 {
   padding: 15px;
   font-weight: 400 !important;
