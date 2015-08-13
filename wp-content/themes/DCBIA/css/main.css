@@ -218,11 +218,18 @@ a.back-to-top:hover {
 .news-block {
   padding: 15px 25px;
 }
-.news-block h5 {
+.news-block h5 a {
   color: #ffffff !important;
+  font-size: 21px;
+  text-transform: capitalize;
 }
 .news-block p {
   color: #ffffff;
+  font-weight: 600;
+}
+.news-block p.news-date {
+  color: #000000;
+  font-style: italic;
 }
 .sponsor-box {
   background-color: #ffffff;
