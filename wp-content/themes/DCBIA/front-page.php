@@ -59,9 +59,11 @@ get_header(); ?>
     </div>
 
 <p>&nbsp;</p>
-    <div class="container all-pad-gone issues">
+    <!--main col8-->
+    <div class="container all-pad-gone">
         <div class="row">
-            <div class="col-sm-8 all-pad-gone"> 
+            <div class="col-sm-8 all-pad-gone">
+                <div class="issues">
                     <div class="col-sm-12">
                         <h2>ISSUES<h2>
                     </div>    
@@ -77,75 +79,61 @@ get_header(); ?>
                             <span class="infoblock3 light-blue">IMMIGRATION</span>
                         </a>
                     </div>
-                </div>    
-                <div class="col-sm-4">
-                    <div class="email-sign-up offblack">
-                        <h3>SIGN UP FOR DCBIA emails</h3>
-                        <div id="inside-email">
-                            <p>Feel free to subscribe to the DCBIA mailing list. You'll get promotional and crucial information regarding DCBIA</p>
-                         </div>    
-                        <form id="signup-form" action="" method="">
-                            <label class="hidden" for="email"></label>
-                            <input id="email1" class="" name="email" type="text" placeholder="Email Address" />
-                            <input class="light-blue" id="submit-btn" type="submit" value="SUBMIT" />
-                        </form>						
-                    </div>
+                </div><!--issues end-->            
+                        
+                <div class="events col-sm-12">
+                    <h2>Events</h2>
+                    <p>palceholder</p>        
+                </div><!--events end-->             
+                
+                <div class="industry col-sm-12">        
+                    <h2>INDUSTRY IMPACT</h2>
+                    <p>Over the years, DCBIA has achieved a prominent position in the local business community as an advocate for a vigorous, responsible real estate industry. It interprets that advocacy role broadly – to not only give voice to the specific concerns of its members, but also to speak out in support of public policies that promote the economic growth and vitality of the nation’s capital.</p><p>&nbsp;</p>
+
+                <!--Jquery circle plugin-->
+
+                    <div id="myStat" data-dimension="275" data-text="30%" data-info="New Clients" data-width="30" data-fontsize="35" data-percent="30" data-fgcolor="#61a9dc" data-bgcolor="#eee" data-fill="#ddd" data-total="750" data-part="350" data-icon="long-arrow-up" data-icon-size="28" data-icon-color="#fff"></div>
+
+                    <div id="myStat1" data-dimension="275" data-text="30%" data-info="New Clients" data-width="30" data-fontsize="35" data-percent="30" data-fgcolor="#61a9dc" data-bgcolor="#eee" data-fill="#ddd" data-total="750" data-part="350" data-icon="long-arrow-up" data-icon-size="28" data-icon-color="#fff"></div>
+                    
+                </div> <!--industry end-->                
+            </div> <!--main col8 end-->       
+                           
+            <div class="col-sm-4"><!--main col4--> 
+                <div class="email-sign-up offblack">
+                <h3>SIGN UP FOR DCBIA emails</h3>
+                    <div id="inside-email">
+                        <p>Feel free to subscribe to the DCBIA mailing list. You'll get promotional and crucial information regarding DCBIA</p>
+                     </div>    
+                    <form id="signup-form" action="" method="">
+                        <label class="hidden" for="email"></label>
+                        <input id="email1" class="" name="email" type="text" placeholder="Email Address" />
+                        <input class="light-blue" id="submit-btn" type="submit" value="SUBMIT" />
+                    </form>						
                 </div>
-        </div>
-    </div>
+                
+                <!--news starts-->  
+                   
+                <h2>News</h2>
+                <div class="light-blue">
+                    <h3 class="">Recent news</h3>
+                    <h5>Job Opportunity: Public Information Officer</h5>
+                    <p>July 9, 2015</p>
+                    <p>The incumbent serves as an expert public information and communications advisor to senior management, responsible for managing, planning, developing and administering the public information and communications program for DDOT. The incumbent provides leadership and expertise to staff and senior management in planning, designing, executing, and evaluating the Department's public affairs division....</p>
+                </div>  
 
-<div class="container">
-    <div class="row">
-         <div class="col-sm-8 left-pad-gone">
-            <h2>Events</h2>
-            <p>palceholder</p>
-         </div>     
-          <div class="col-sm-4">
-            <p>&nbsp;</p>  
-            <h2>News</h2>
-            <div class="light-blue">
-                <h3 class="">Recent news</h3>
-                <h5>Job Opportunity: Public Information Officer</h5>
-                <p>July 9, 2015</p>
-                <p>The incumbent serves as an expert public information and communications advisor to senior management, responsible for managing, planning, developing and administering the public information and communications program for DDOT. The incumbent provides leadership and expertise to staff and senior management in planning, designing, executing, and evaluating the Department's public affairs division....</p>
-            </div>  
-         </div>
-    </div>
-</div>
+                 <!--sponsors starts-->
 
-<div class="container">
-    <div class="row">     
-        <div class="col-sm-8 left-pad-gone">
-                <h2>INDUSTRY IMPACT</h2>
-                <p>Over the years, DCBIA has achieved a prominent position in the local business community as an advocate for a vigorous, responsible real estate industry. It interprets that advocacy role broadly – to not only give voice to the specific concerns of its members, but also to speak out in support of public policies that promote the economic growth and vitality of the nation’s capital.</p><p>&nbsp;</p>
-            
-        <!--Jquery circle plugin-->
-            
-            <div id="myStat" data-dimension="275" data-text="30%" data-info="New Clients" data-width="30" data-fontsize="35" data-percent="30" data-fgcolor="#61a9dc" data-bgcolor="#eee" data-fill="#ddd" data-total="750" data-part="350" data-icon="long-arrow-up" data-icon-size="28" data-icon-color="#fff"></div>
-            
-            <div id="myStat1" data-dimension="275" data-text="30%" data-info="New Clients" data-width="30" data-fontsize="35" data-percent="30" data-fgcolor="#61a9dc" data-bgcolor="#eee" data-fill="#ddd" data-total="750" data-part="350" data-icon="long-arrow-up" data-icon-size="28" data-icon-color="#fff"></div>
-            
-        </div>     
-        <div class="col-sm-4">
-            <p>&nbsp;</p>  
-            <h2>Sponsors</h2>
-            <div class="sponsor-box">
-                <a href=""><img class="img-responsive" src="<?php echo get_template_directory_uri() ;?>/img/featured-building.jpg" alt="logo" /></a>
-                <a href=""><img class="img-responsive" src="<?php echo get_template_directory_uri() ;?>/img/featured-building.jpg" alt="logo" /></a>
-            </div>  
-        </div>
-    </div>
-</div>
-
-    <div class="container">
-        <div class="row">
-
-            <div class="col-md-7">
-
-            </div>
-            <div class="col-md-5">
-
-            </div>
+                    <p>&nbsp;</p>  
+                <h2>Sponsors</h2>
+                <div class="sponsor-box">
+                    <a href=""><img class="img-responsive" src="<?php echo get_template_directory_uri() ;?>/img/property-team.jpg" alt="Property Group Partners logo" /></a>
+                    <p>&nbsp;</p>
+                    <a href=""><img class="img-responsive" src="<?php echo get_template_directory_uri() ;?>/img/pepco.jpg" alt="Pepco logo" /></a>
+                    <p>&nbsp;</p>
+                </div>   
+                
+            </div><!--main col4 end-->
         </div>
     </div>
    
