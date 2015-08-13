@@ -189,6 +189,7 @@ a.back-to-top:hover {
 }
 .circliful {
   position: relative;
+  display: inline-block;
 }
 .circle-text,
 .circle-info,

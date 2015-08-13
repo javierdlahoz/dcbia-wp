@@ -75,6 +75,7 @@
 <script>
     jQuery( document ).ready(function() {
         jQuery('#myStat').circliful();
+        jQuery('#myStat1').circliful();
     });
 </script>
     
