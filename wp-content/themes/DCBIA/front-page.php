@@ -113,13 +113,22 @@ get_header(); ?>
                 </div>
                 
                 <!--news starts-->  
-                   
+                <br>   
                 <h2>News</h2>
-                <div class="light-blue">
-                    <h3 class="">Recent news</h3>
-                    <h5>Job Opportunity: Public Information Officer</h5>
-                    <p>July 9, 2015</p>
-                    <p>The incumbent serves as an expert public information and communications advisor to senior management, responsible for managing, planning, developing and administering the public information and communications program for DDOT. The incumbent provides leadership and expertise to staff and senior management in planning, designing, executing, and evaluating the Department's public affairs division....</p>
+                <div class="light-blue news">
+                    <h3>Recent news</h3>
+                    <div class="news-block">
+                        <h5>Job Opportunity: Public Information Officer</h5>
+                        <p>July 9, 2015</p>
+                        <p>The incumbent serves as an expert public information and communications advisor to senior management, responsible for managing, planning, developing and administering the public information and communications program for DDOT. The incumbent provides leadership and expertise to staff and senior management in planning, designing, executing, and evaluating the Department's public affairs division....</p>
+                    </div>
+                    
+                    <div class="news-block">
+                        <h5>Job Opportunity: Transportation Planner (TDM)</h5>
+                        <p>July 17, 2015</p>
+                        <p>District Department of Transportation (DDOT) 
+Transportation Planner (Transportation Demand Management / TDM) is the senior level position within the Transportation Planning Coordinator job progression. Develops and manages the transportation demand management program for the District of Columbia, with emphasis on a multi-modal approach to reduce travel demand.</p>
+                    </div> 
                 </div>  
 
                  <!--sponsors starts-->

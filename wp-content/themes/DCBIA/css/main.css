@@ -208,6 +208,22 @@ a.back-to-top:hover {
   position: relative;
   bottom: 4px;
 }
+.news h3 {
+  padding: 15px;
+  font-weight: 400 !important;
+  font-size: 28px;
+  text-align: center;
+  background-color: #ffffff;
+}
+.news-block {
+  padding: 15px 25px;
+}
+.news-block h5 {
+  color: #ffffff !important;
+}
+.news-block p {
+  color: #ffffff;
+}
 .sponsor-box {
   background-color: #ffffff;
   padding: 25px;
