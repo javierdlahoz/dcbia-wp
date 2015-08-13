@@ -102,7 +102,15 @@ get_header(); ?>
 
                     <div id="myStat1" data-dimension="275" data-text="30%" data-info="New Clients" data-width="30" data-fontsize="35" data-percent="30" data-fgcolor="#61a9dc" data-bgcolor="#eee" data-fill="#ddd" data-total="750" data-part="350" data-icon="long-arrow-up" data-icon-size="28" data-icon-color="#fff"></div>
                  <br>   
-                </div> <!--industry end-->                
+                </div> <!--industry end-->
+                
+                    <p>&nbsp;</p>        
+                
+                <div class="quoter">
+                    <h2>IF WE EVER FORGET THAT WE ARE ONE NATION UNDER GOD, THEN WE WILL BE A NATION GONE UNDER.</h2>
+                    <p>— Ronald Reagan</p>
+                </div>        
+                        
             </div> <!--main col8 end-->       
                            
             <div class="col-sm-4"><!--main col4--> 
