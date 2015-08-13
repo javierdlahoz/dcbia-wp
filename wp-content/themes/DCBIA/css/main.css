@@ -266,42 +266,13 @@ footer {
   height: auto;
   left: 0;
 }
-footer p {
-  line-height: 1.9;
-  font-size: 11px;
-  color: #ecebe8!important;
-}
-footer p span {
-  color: #ecebe8;
-  display: block;
-}
-footer a {
-  font-size: 11px;
-  color: #ecebe8;
-}
-footer a:hover {
-  color: #d1d3d4;
-}
-footer h3 {
-  color: #ecebe8;
-  margin-top: 0 !important;
-  padding-top: 0 !important;
+footer h4 {
+  color: #f7f7f7 !important;
+  padding-bottom: 12px;
 }
 footer .inside-footer {
   display: block;
   padding: 0 0 10px 0;
-}
-footer .small-social-icons {
-  margin: 20px 0 0 0;
-}
-footer .small-social-icons a {
-  margin-right: 10px;
-}
-footer .small-social-icons img {
-  padding: 0;
-}
-footer .small-social-icons img:hover {
-  background-color: #606061;
 }
 footer .col-md-4 {
   padding: 0 30px 10px 40px;
