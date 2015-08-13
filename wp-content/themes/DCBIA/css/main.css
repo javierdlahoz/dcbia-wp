@@ -270,6 +270,12 @@ footer h4 {
   color: #f7f7f7 !important;
   padding-bottom: 12px;
 }
+footer a {
+  color: #f7f7f7;
+}
+footer a:hover {
+  color: #f7f7f7;
+}
 footer .inside-footer {
   display: block;
   padding: 0 0 10px 0;
@@ -282,8 +288,15 @@ footer .col-md-4 {
 footer .no-border {
   border: 0 !important;
 }
-.centered {
-  text-align: center;
+footer .social-icons {
+  margin-top: 18px;
+}
+footer .social-icons a {
+  font-size: 32px;
+  margin-right: 20px;
+}
+footer .social-icons a:hover {
+  color: #27a9e1;
 }
 .videowrapper iframe,
 .videowrapper {

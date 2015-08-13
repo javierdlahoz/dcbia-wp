@@ -267,6 +267,8 @@ footer{
         color: #f7f7f7 !important;
         padding-bottom: 12px;
     }
+    & a { color: #f7f7f7; &:hover { color: #f7f7f7; } }
+    
     & .inside-footer{
         display: block;
         padding: 0 0 10px 0;
@@ -274,9 +276,15 @@ footer{
     
     & .col-md-4 { padding: 0 30px 10px 40px; border-right: 1px solid #ecebe8; min-height: 240px; }
     & .no-border { border: 0 !important; }
+    & .social-icons{
+        margin-top:18px;
+        & a { 
+            font-size: 32px;
+            margin-right:20px;
+            &:hover{ color: #27a9e1; } 
+        }
+    }
 }
-
-.centered{ text-align: center; }
 
 // video code
 

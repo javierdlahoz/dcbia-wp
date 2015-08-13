@@ -19,16 +19,17 @@
 		<div class="col-md-4">
             <p>&nbsp;</p>
 			<img class="img-responsive" src="<?php echo get_template_directory_uri() ;?>/img/dcbia-white.png" />
+            <p>&nbsp;</p>
+            <p>&copy; 2015 District of Columbia Building Industry Association. All Rights Reserved.</p>
 		</div>
         
 		<div class="col-md-4">
 			<p>&nbsp;</p>
 			<h4>Address</h4>
-			<p>District of Columbia Building Industry Association<br> 
-                455 Massachusetts Avenue,<br>
-                NW, Suite 400<br> 
-                Washington, D.C. 20001
-            </p>
+			<p>District of Columbia Building Industry Association</p> 
+            <p>455 Massachusetts Avenue,</p>
+            <p>NW, Suite 400</p> 
+            <p>Washington, D.C. 20001</p>
 		</div>
         
 		<div class="col-md-4 no-border">
@@ -36,23 +37,21 @@
 			<h4>Contact</h4>
             <p>Telephone:  (202) 966-8665</p> 
             <p>Fax:  (202) 966-3222</p>
-            <p><a href="mailto:info@dcbia.org">Email: info@dcbia.org</a></p>
+            <p>Email: <a href="mailto:info@dcbia.org">info@dcbia.org</a></p>
 
-			<div class="small-social-icons">
-				<a class="" href="" href="mailto:"></a>
-				<a class="" href=""></a>
-				<a class="" href=""></a>
+			<div class="social-icons">
+				<a href="" href="mailto:"><i class="fa fa-search"></i></a>
+				<a href=""><i class="fa fa-search"></i></a>
+				<a href=""><i class="fa fa-search"></i></a>
 				<p style="clear: both;">&nbsp;</p>
 			</div> 
 		</div>
-	</div>
-	<div class="container">
-		<div class="col-md-12">
+        <div class="col-md-12">
             <p>&nbsp;</p>
-			<p class="centered">&copy; 2015 District of Columbia Building Industry Association.<br> All Rights Reserved.</p>
-		</div>
-		<p>&nbsp;</p>
+            <p>&nbsp;</p>
+        </div>
 	</div>
+    
 </footer>
 <?php wp_footer(); ?>
 <script src="https://maps.googleapis.com/maps/api/js?libraries=places"></script>
