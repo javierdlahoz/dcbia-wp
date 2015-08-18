@@ -1,4 +1,5 @@
 <?php
+use Event\Controller\EventController;
 /*
   Template Name: front-page
 */
@@ -82,12 +83,9 @@ get_header(); ?>
                 </div><!--issues end-->            
                         
                 <div class="events">
-                    <div class="events col-sm-12">
-                        <h2>Events</h2>
-                        <br>
-                        <img class="img-responsive" src="<?php echo get_template_directory_uri() ;?>/img/events-placeholder.jpg" alt="placeholder" />
-                        <br>
-                    </div>     
+                    <div id="aq-block-16-16" class="aq-block aq-block-icy_events_block aq_span8 aq-first clearfix col-md-12">		
+                        <?php EventController::getSingleton()->getCalendarWidget(); ?>
+                    </div>
                 </div><!--events end-->             
                 
                     <p>&nbsp;</p>    

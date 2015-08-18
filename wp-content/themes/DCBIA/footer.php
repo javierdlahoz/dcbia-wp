@@ -67,6 +67,11 @@
 <script src="<?php echo get_template_directory_uri(); ?>/js/tabs.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/dropit.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/jquery.circliful.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/js/jquery.icyscripts.min.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/js/jquery.custom.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/js/excanvas.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/js/modernizr.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/js/superfish.js"></script>
 
 <script>
     jQuery( document ).ready(function() {

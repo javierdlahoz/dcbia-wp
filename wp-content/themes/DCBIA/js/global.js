@@ -226,6 +226,7 @@ function gotoResources(areaOfFocus) {
 	jQuery("#areas-form").submit();
 }
 
+var icySlide = {"slider_speed":"5000","slider_auto":"false"};
 /*
  * function goToTag(tagId){ $('html, body').animate({ scrollTop:
  * $("#"+tagId).offset().top }, 1000); }
