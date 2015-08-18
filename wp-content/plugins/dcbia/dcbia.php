@@ -18,6 +18,7 @@ use Committee\Helper\CommitteeHelper;
 use Job\Helper\JobHelper;
 use INUtils\Helper\PluginHelper;
 use Member\Helper\MemberHelper;
+use Resource\Helper\ResourceHelper;
 
 if (!class_exists("dcbia")) {
 
@@ -60,6 +61,12 @@ if (!class_exists("dcbia")) {
         
         /**
          * 
+         * @var ResourceHelper
+         */
+        private $resourceHelper;
+        
+        /**
+         * 
          * @var JobHelper
          */
         private $jobHelper;
@@ -78,6 +85,7 @@ if (!class_exists("dcbia")) {
             $this->committeeHelper = new CommitteeHelper();
             $this->jobHelper = new JobHelper();
             $this->memberHelper = new MemberHelper();
+            $this->resourceHelper = new ResourceHelper();
         }
 
         public function adminFeatures(){
