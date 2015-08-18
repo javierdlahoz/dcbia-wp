@@ -7841,9 +7841,8 @@ li:last-child .entry-content .the-content { border-bottom: none;}
 }
 .icy-eventslider-content .text .event-title {
     font-size: 39px;
-    color: #fff;
+    color: #fff !important;
     font-weight: 300;
-    font-family: 'Roboto Condensed';
     line-height: 1.43;
     margin-bottom: 0;
     text-transform: uppercase;
