@@ -139,7 +139,7 @@ get_header(); ?>
                         <p class="news-date">July 9, 2015</p>
                         <p>The incumbent serves as an expert public information and communications advisor to senior management, responsible for managing, planning, developing and administering the public information and communications program for DDOT. The incumbent provides leadership and expertise to staff and senior management in planning, designing, executing, and evaluating the Department's public affairs division....</p>
                     </div>
-                    
+                    <hr>
                     <div class="news-block">
                         <h5><a href="">Job Opportunity: Transportation Planner (TDM)</a></h5>
                         <p class="news-date">July 17, 2015</p>

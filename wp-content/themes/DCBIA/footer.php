@@ -40,9 +40,9 @@
             <p>Email: <a href="mailto:info@dcbia.org">info@dcbia.org</a></p>
 
 			<div class="social-icons">
-				<a href="" href="mailto:"><i class="fa fa-search"></i></a>
-				<a href=""><i class="fa fa-search"></i></a>
-				<a href=""><i class="fa fa-search"></i></a>
+				<a href=""><i class="fa fa-facebook-square"></i></a>
+				<a href=""><i class="fa fa-twitter-square"></i></a>
+				<a href=""><i class="fa fa-rss-square"></i></a>
 				<p style="clear: both;">&nbsp;</p>
 			</div> 
 		</div>
