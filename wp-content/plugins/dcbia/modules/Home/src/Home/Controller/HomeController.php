@@ -27,7 +27,7 @@ class HomeController extends PostController
     public function save($postId){
         $homeEntity = new HomeEntity($postId);
         if($homeEntity->getType() == HomeHelper::HOME_POST_TYPE){
-            
+            $homeEntity->setNewcustomers($this->getPost("newcustomers"));
         }
     }
 }

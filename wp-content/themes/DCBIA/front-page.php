@@ -3,7 +3,9 @@ use Event\Controller\EventController;
 /*
   Template Name: front-page
 */
-get_header(); ?>
+$home = dcbia::getController("home")->getHome();
+get_header(); 
+?>
 <div class="container all-pad-gone">
     <?php echo do_shortcode('[slideshow group="home"]'); ?>
             
@@ -96,7 +98,10 @@ get_header(); ?>
 
                 <!--Jquery circle plugin-->
 
-                    <div id="myStat" data-dimension="275" data-text="30%" data-info="New Clients" data-width="30" data-fontsize="35" data-percent="30" data-fgcolor="#61a9dc" data-bgcolor="#eee" data-fill="#ddd" data-total="750" data-part="350" data-icon="long-arrow-up" data-icon-size="28" data-icon-color="#fff"></div>
+                    <div id="myStat" data-dimension="275" data-text="<?php echo $home->getNewcustomers(); ?>%" data-info="New Clients" 
+                        data-width="30" data-fontsize="35" data-percent="<?php echo $home->getNewcustomers(); ?>" data-fgcolor="#61a9dc" 
+                        data-bgcolor="#eee" data-fill="#ddd" data-total="100" data-part="<?php echo $home->getNewcustomers(); ?>" 
+                        data-icon="long-arrow-up" data-icon-size="28" data-icon-color="#fff"></div>
 
                     <div id="myStat1" data-dimension="275" data-text="30%" data-info="New Clients" data-width="30" data-fontsize="35" data-percent="30" data-fgcolor="#61a9dc" data-bgcolor="#eee" data-fill="#ddd" data-total="750" data-part="350" data-icon="long-arrow-up" data-icon-size="28" data-icon-color="#fff"></div>
                  <br>   
