@@ -35,7 +35,16 @@ get_header();
         <div class="row">
             <div class="col-md-12 advocacy">   
                 <h2>ADVOCACY</h2>
-                <p>Members serve frequently and prominently on commissions, task forces and study groups to address crucial economic development and municipal governance issues. Member participation on a more continuous basis is encouraged through eleven standing committees, which work closely with agencies of the DC government to advise and assist in the efficient administration of city programs – most recently in areas related to land use, building regulation, comprehensive planning, tax issues and affordable housing and community development. Committees also work in collaboration with other business groups and community organizations to attract and retain business investment and to facilitate the revitalization of distressed areas in the city.</p>
+                <p>Members serve frequently and prominently on commissions, task forces and study groups to address crucial economic development and municipal governance issues. Member participation on a more continuous basis is encouraged through eleven standing committees, which work closely with agencies of the DC government to advise and assist in the efficient administration of city programs – most recently in areas related to land use, building regulation, comprehensive planning, tax issues and affordable housing and community development. Committees also work in collaboration with other business groups and community organizations to attract and retain business investment and to facilitate the revitalization of distressed areas in the city.</p>    
+            </div>    
+        </div>
+        
+        <div class="row">
+            <div class="col-md-12 key-issues-container">
+                <div class="key-top-search">
+                    <input type="text" name="" id="expression" class="form-control" placeholder="Search">
+                    <button class="btn" type="button" onclick="sendSearchResourcesForm();"></button>
+                </div>    
             <p>&nbsp;</p>    
             </div>    
         </div>

@@ -253,6 +253,18 @@ a.back-to-top:hover {
   padding: 25px;
   margin-top: 25px;
 }
+.advocacy h2 {
+  color: #27a9e1 !important;
+}
+.advocacy p {
+  font-size: 16px;
+  line-height: 1.6em;
+}
+.key-issues-container {
+  background-color: #ffffff;
+  margin-top: 15px;
+  padding: 15px 25px!important;
+}
 .foot-break {
   display: block;
   overflow: auto;
