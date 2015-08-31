@@ -8,6 +8,7 @@
     "require": {
         "php": ">=5.3",
         "solarium/solarium": "dev-master",
-        "javierdlahoz/inutils": "dev-master"
+        "javierdlahoz/inutils": "dev-master",
+        "m8rge/curl-helper": "dev-master"
     }
 }

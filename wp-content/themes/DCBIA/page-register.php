@@ -30,24 +30,17 @@ get_header(); ?>
                       <label>Last Name</label>
                       <input type="text" class="form-control" placeholder="Last name" ng-model="member.last_name" required>
                     </div>
-                    <div class="form-group">
-                        <label>Username</label>
-                        <input type="text" class="form-control" placeholder="Username" ng-model="member.username" 
-                            required ng-change="isUsernameTaken()">
-                        <div ng-show="usernameTaken">
-                            <br>
-                            <div class="alert alert-danger">This username is already taken</div>
-                        </div>
-                        
-                    </div>
-                    <div class="form-group">
-                      <label>Password</label>
-                      <input type="password" class="form-control" placeholder="Password" ng-model="member.password" required>
-                    </div>
+                    
                     <div class="form-group">
                       <label>Email</label>
                       <input type="email" class="form-control" placeholder="Email" ng-model="member.email" required>
                     </div>
+                   
+                    <div class="form-group">
+                      <label>Password</label>
+                      <input type="password" class="form-control" placeholder="Password" ng-model="member.password" required>
+                    </div>
+                    
                     <div class="form-group">
                       <label>Address</label>
                       <input type="text" class="form-control" placeholder="Address" ng-model="member.address1">

@@ -32,6 +32,7 @@ class MemberHelper
      * 
      */
     private function addFieldsToRegistration(){
+        
         $moreFields = array(
             array(
                 "field" => "address",
