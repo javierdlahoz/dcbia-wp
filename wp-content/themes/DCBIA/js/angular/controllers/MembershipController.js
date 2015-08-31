@@ -5,6 +5,7 @@ angular.module('angular-wp')
     	$scope.c = -1;
     	$scope.usernameTaken = false;
     	$scope.isSuccess = false;
+    	$scope.billing = {};
     	
     	$scope.add = function(){
     		$scope.c ++;
@@ -45,6 +46,7 @@ angular.module('angular-wp')
                 headers: getContentTypes().form
             }).success(function (data) {
             	$scope.isSuccess = true;
+            	window.location = "/checkout";
             });
     		
     	};
@@ -61,6 +63,20 @@ angular.module('angular-wp')
                 	$scope.usernameTaken = data.is_taken;
                 });
     		}
+    	};
+    	
+    	$scope.charge = function(){
+    		$scope.billing.expiration_date = $scope.billing.expiration_month + $scope.billing.expiration_year;
+    		$scope.billing.country = "US";
+    		var url = "/api/member/pay";
+    		$http({
+                url: url,
+                method: "POST",
+                data: jQuery.param($scope.billing),
+                headers: getContentTypes().form
+            }).success(function (data) {
+            	$scope.billing.status = data.status;
+            });
     	};
     
     	angular.element("#address").attr("g-places-autocomplete", "");

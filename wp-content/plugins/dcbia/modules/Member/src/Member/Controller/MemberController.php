@@ -4,19 +4,54 @@ namespace Member\Controller;
 
 use INUtils\Controller\AbstractController;
 use Member\Helper\ImporterHelper;
-
-require("wp-content/plugins/paid-memberships-pro/paid-memberships-pro.php");
+require_once("wp-content/plugins/paid-memberships-pro/paid-memberships-pro.php");
 
 class MemberController extends AbstractController{
     
+    const ADDITIONAL_USER_COST = 75;
+    const MEMBERSHIP_TOTAL_COST = "membership_total_cost";
+    const ADDITIONAL_USERS_ARRAY = "addUsers";
+    const SUCCESS_STATUS = "success";
+    
     public function registerAction(){
-        $level = 1;
-        $this->createMember($_POST, $level);
+        $additionalUsers = count($_POST["additional_users"]);
+        $level = MemberController::getSingleton()->getMembershipLevel();
+        $_SESSION["amount"] = $level->billing_amount + $additionalUsers * self::ADDITIONAL_USER_COST;
+        
+        $level = MemberController::getSingleton()->getUnpaidLevel();
+        $mainUserId = $this->createMember($_POST, $level->id, true);
+        $addUserIds = array();
+        
         foreach($_POST["additional_users"] as $userToAdd){
-            $this->createAMember($userToAdd, $level);
+            $addUserIds[] = $this->createAMember($userToAdd, $level->id);
         }
-
+        update_user_meta($mainUserId, self::ADDITIONAL_USERS_ARRAY, $addUserIds);
+        
         return array("message" => "success");
+    }
+    
+    public function getMembershipLevel(){
+        global $wpdb;
+        $level = $wpdb->get_row("SELECT * FROM $wpdb->pmpro_membership_levels WHERE id = '" . 1 . "' LIMIT 1");
+        
+        return $level;
+    }
+    
+    public function getUnpaidLevel(){
+        global $wpdb;
+        $level = $wpdb->get_row("SELECT * FROM $wpdb->pmpro_membership_levels WHERE id = '" . 5 . "' LIMIT 1");
+    
+        return $level;
+    }
+    
+    /**
+     * 
+     * @param array $userIds
+     */
+    private function updateToMembershipLevel($userIds){
+        foreach ($userIds as $userId){
+            pmpro_changeMembershipLevel($this->getMembershipLevel()->id, $userId);
+        }
     }
     
     /**
@@ -24,8 +59,8 @@ class MemberController extends AbstractController{
      * @param array $member
      * @param number $level
      */
-    public function createMember($member, $level = 1){
-        $userId = wp_create_user($member["username"], $member["password"], $member["email"]);
+    public function createMember($member, $level = 1, $isMain = false){
+        $userId = wp_create_user($member["email"], $member["password"], $member["email"]);
         pmpro_changeMembershipLevel($level, $userId);
         $user = array(
             "ID" => $userId,
@@ -58,9 +93,20 @@ class MemberController extends AbstractController{
         update_user_meta($userId, "payment_method"      , $member["payment_method"]);
         update_user_meta($userId, "cost_per_affiliate"  , $member["cost_per_affiliate"]);
         update_user_meta($userId, "membership_base_cost", $member["membership_base_cost"]);
+        update_user_meta($userId, "membership_total_cost", $_SESSION["amount"]);
+        
+        if($isMain === true){
+            $creds = array();
+            $creds['user_login'] = $member["email"];
+            $creds['user_password'] = $member["password"];
+            $creds['remember'] = true;
+            wp_signon($creds, false);
+        }
+        
+        return $userId;
     }
-    
-    
+
+        
     
     /**
      * 
@@ -94,5 +140,51 @@ class MemberController extends AbstractController{
     
     public function importAction(){
         ImporterHelper::importMembers();
+    }
+    
+    /**
+     * it handles authorize.net payments
+     */
+    public function payAction(){
+        $authorize = new \PMProGateway_authorizenet();
+        $order = new \MemberOrder();
+        $order->billing = new \stdClass();
+        $order->membership_level = new \stdClass();
+        
+        $order->InitialPayment = $_SESSION["amount"];
+        $order->Address1 = $this->getPost("address1");
+        $order->Address2 = $this->getPost("address2");
+        $order->Email = $this->getPost("email");
+        $order->billing->phone = $this->getPost("phone");
+        $order->cardtype = $this->getPost("card_type");
+        $order->accountnumber = $this->getPost("account_number");
+        $order->ExpirationDate = $this->getPost("expiration_date");
+        $order->membership_level->name = "DCBIA";
+        $order->FirstName = $this->getPost("first_name");
+        $order->LastName = $this->getPost("last_name");
+        $order->billing->city = $this->getPost("city");
+        $order->billing->state = $this->getPost("state");
+        $order->billing->zip = $this->getPost("zip");
+        $order->billing->country = $this->getPost("country");
+        $order->CVV2 = $this->getPost("cvv");
+        $order->billing->name = $order->FirstName." ".$order->LastName;
+        $order->billing->street = $order->Address1." ".$order->Address2;
+        
+        
+        $status = $authorize->authorize($order);
+        if($status === true){
+            $user = wp_get_current_user();
+            $order->user_id = $user->ID;
+            $order->status = self::SUCCESS_STATUS;
+            $order->payment_type = "Credit Card";
+            $order->membership_id = $this->getMembershipLevel()->id;
+            
+            $this->updateToMembershipLevel(get_user_meta($user->ID, 
+                self::ADDITIONAL_USERS_ARRAY, false)
+            );
+            $order->saveOrder();
+        }
+        
+        return array("status" => $status);
     }
 }

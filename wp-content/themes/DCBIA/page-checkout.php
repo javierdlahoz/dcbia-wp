@@ -1,14 +1,22 @@
-<?php get_header(); ?>
-<?php
+<?php 
+
     global $wpdb, $current_user, $pmpro_msg, $pmpro_msgt, $show_paypal_link;
     global $bfirstname, $blastname, $baddress1, $baddress2, $bcity, $bstate, $bzipcode, $bcountry, $bphone, $bemail, $bconfirmemail, $CardType, $AccountNumber, $ExpirationMonth, $ExpirationYear;
 
+    if($current_user->ID == 0){
+        header('Location: '. "/register");
+    }
+
+    use Member\Controller\MemberController;
+    get_header(); 
 	
-	$level = $wpdb->get_row("SELECT * FROM $wpdb->pmpro_membership_levels WHERE id = '" . 1 . "' LIMIT 1");
+	$level = MemberController::getSingleton()->getMembershipLevel();
     $current_user->membership_level = pmpro_getMembershipLevelForUser($current_user->ID);
-    $current_user->membership_level->billing_amount = $level->billing_amount;
-    
-	//var_dump($current_user); die();
+    if(!$current_user->membership_level){
+        $current_user->membership_level = new stdClass();
+        $current_user->membership_level = $level;
+    }
+    $current_user->membership_level->billing_amount = get_user_meta($current_user->ID, MemberController::MEMBERSHIP_TOTAL_COST, true);
 
 	/**
 	 * Filter to set if PMPro uses email or text as the type for email field inputs.
@@ -28,7 +36,6 @@
 	{
 	    $level->billing_amount = (float) $level->billing_amount;
 	?>
-		<p><?php printf(__("Logged in as <strong>%s</strong>.", "pmpro"), $current_user->user_login);?> <small><a href="<?php echo wp_logout_url(get_bloginfo("url") . "/membership-checkout/?level=" . $level->id);?>"><?php _e("logout", "pmpro");?></a></small></p>
 		<ul>
 			<li><strong><?php _e("Level", "pmpro");?>:</strong> <?php echo $level->name?></li>
 		<?php if($level->billing_amount > 0) { ?>
@@ -61,9 +68,10 @@
 
 	<?php } else { ?>
 
-		<form id="pmpro_form" class="pmpro_form" action="<?php echo pmpro_url("billing", "", "https")?>" method="post">
-
-			<input type="hidden" name="level" value="<?php echo esc_attr($level->id);?>" />
+		<form ng-controller="MembershipController" id="pmpro_form" class="pmpro_form" ng-submit="charge()">
+            <div class="alert alert-danger" ng-show="billing.status == false">Please check your credit card information</div>
+            
+			<input type="hidden" ng-model="billing.level" name="level" value="<?php echo esc_attr($level->id);?>" />
 			<?php if($pmpro_msg)
 				{
 			?>
@@ -84,19 +92,19 @@
 					<td>
 						<div>
 							<label for="bfirstname"><?php _e('First Name', 'pmpro');?></label>
-							<input id="bfirstname" name="bfirstname" type="text" class="input" size="20" value="<?php echo esc_attr($bfirstname);?>" />
+							<input ng-model="billing.first_name" id="bfirstname" name="bfirstname" type="text" class="input" size="20" value="<?php echo esc_attr($bfirstname);?>" />
 						</div>
 						<div>
 							<label for="blastname"><?php _e('Last Name', 'pmpro');?></label>
-							<input id="blastname" name="blastname" type="text" class="input" size="20" value="<?php echo esc_attr($blastname);?>" />
+							<input ng-model="billing.last_name" id="blastname" name="blastname" type="text" class="input" size="20" value="<?php echo esc_attr($blastname);?>" />
 						</div>
 						<div>
 							<label for="baddress1"><?php _e('Address 1', 'pmpro');?></label>
-							<input id="baddress1" name="baddress1" type="text" class="input" size="20" value="<?php echo esc_attr($baddress1);?>" />
+							<input ng-model="billing.address1" id="baddress1" name="baddress1" type="text" class="input" size="20" value="<?php echo esc_attr($baddress1);?>" />
 						</div>
 						<div>
 							<label for="baddress2"><?php _e('Address 2', 'pmpro');?></label>
-							<input id="baddress2" name="baddress2" type="text" class="input" size="20" value="<?php echo esc_attr($baddress2);?>" /> <small class="lite">(<?php _e('optional', 'pmpro');?>)</small>
+							<input ng-model="billing.address2" id="baddress2" name="baddress2" type="text" class="input" size="20" value="<?php echo esc_attr($baddress2);?>" /> <small class="lite">(<?php _e('optional', 'pmpro');?>)</small>
 						</div>
 
 						<?php
@@ -106,15 +114,15 @@
 							?>
 								<div>
 									<label for="bcity"><?php _e('City', 'pmpro');?>City</label>
-									<input id="bcity" name="bcity" type="text" class="input" size="30" value="<?php echo esc_attr($bcity)?>" />
+									<input ng-model="billing.city" id="bcity" name="bcity" type="text" class="input" size="30" value="<?php echo esc_attr($bcity)?>" />
 								</div>
 								<div>
 									<label for="bstate"><?php _e('State', 'pmpro');?>State</label>
-									<input id="bstate" name="bstate" type="text" class="input" size="30" value="<?php echo esc_attr($bstate)?>" />
+									<input ng-model="billing.state" id="bstate" name="bstate" type="text" class="input" size="30" value="<?php echo esc_attr($bstate)?>" />
 								</div>
 								<div>
 									<label for="bzipcode"><?php _e('Postal Code', 'pmpro');?></label>
-									<input id="bzipcode" name="bzipcode" type="text" class="input" size="30" value="<?php echo esc_attr($bzipcode)?>" />
+									<input ng-model="billing.zip" id="bzipcode" name="bzipcode" type="text" class="input" size="30" value="<?php echo esc_attr($bzipcode)?>" />
 								</div>
 							<?php
 							}
@@ -123,14 +131,14 @@
 							?>
 								<div>
 									<label for="bcity_state_zip"><?php _e('City, State Zip', 'pmpro');?></label>
-									<input id="bcity" name="bcity" type="text" class="input" size="14" value="<?php echo esc_attr($bcity)?>" />,
+									<input ng-model="billing.city" id="bcity" name="bcity" type="text" class="input" size="14" value="<?php echo esc_attr($bcity)?>" />,
 									<?php
 										$state_dropdowns = apply_filters("pmpro_state_dropdowns", false);
 										if($state_dropdowns === true || $state_dropdowns == "names")
 										{
 											global $pmpro_states;
 										?>
-										<select name="bstate">
+										<select name="bstate" ng-model="billing.state">
 											<option value="">--</option>
 											<?php
 												foreach($pmpro_states as $ab => $st)
@@ -145,7 +153,7 @@
 										{
 											global $pmpro_states_abbreviations;
 										?>
-											<select name="bstate">
+											<select name="bstate" ng-model="billing.state">
 												<option value="">--</option>
 												<?php
 													foreach($pmpro_states_abbreviations as $ab)
@@ -159,11 +167,11 @@
 										else
 										{
 										?>
-										<input id="bstate" name="bstate" type="text" class="input" size="2" value="<?php echo esc_attr($bstate)?>" />
+										<input ng-model="billing.state" id="bstate" name="bstate" type="text" class="input" size="2" value="<?php echo esc_attr($bstate)?>" />
 										<?php
 										}
 									?>
-									<input id="bzipcode" name="bzipcode" type="text" class="input" size="5" value="<?php echo esc_attr($bzipcode)?>" />
+									<input ng-model="billing.zip" id="bzipcode" name="bzipcode" type="text" class="input" size="5" value="<?php echo esc_attr($bzipcode)?>" />
 								</div>
 							<?php
 							}
@@ -176,7 +184,7 @@
 						?>
 						<div>
 							<label for="bcountry"><?php _e('Country', 'pmpro');?></label>
-							<select name="bcountry">
+							<select name="bcountry" ng-model="billing.country">
 								<?php
 									global $pmpro_countries, $pmpro_default_country;
 									foreach($pmpro_countries as $abbr => $country)
@@ -195,13 +203,13 @@
 							else
 							{
 							?>
-								<input type="hidden" id="bcountry" name="bcountry" value="US" />
+								<input type="hidden" ng-model="billing.country" id="bcountry" name="bcountry" value="US" />
 							<?php
 							}
 						?>
 						<div>
 							<label for="bphone"><?php _e('Phone', 'pmpro');?></label>
-							<input id="bphone" name="bphone" type="text" class="input" size="20" value="<?php echo esc_attr($bphone)?>" />
+							<input ng-model="billing.phone" id="bphone" name="bphone" type="text" class="input" size="20" value="<?php echo esc_attr($bphone)?>" />
 						</div>
 						<?php if($current_user->ID) { ?>
 						<?php
@@ -212,7 +220,7 @@
 						?>
 						<div>
 							<label for="bemail"><?php _e('E-mail Address', 'pmpro');?></label>
-							<input id="bemail" name="bemail" type="<?php echo ($pmpro_email_field_type ? 'email' : 'text'); ?>" class="input" size="20" value="<?php echo esc_attr($bemail)?>" />
+							<input ng-model="billing.email" id="bemail" name="bemail" type="<?php echo ($pmpro_email_field_type ? 'email' : 'text'); ?>" class="input" size="20" value="<?php echo esc_attr($bemail)?>" />
 						</div>
 						<div>
 							<label for="bconfirmemail"><?php _e('Confirm E-mail', 'pmpro');?></label>
@@ -253,7 +261,7 @@
 						<?php if(empty($pmpro_stripe_lite) || $gateway != "stripe") { ?>
 						<div>
 							<label for="CardType"><?php _e('Card Type', 'pmpro');?></label>
-							<select id="CardType" <?php if($gateway != "stripe") { ?>name="CardType"<?php } ?>>
+							<select ng-model="billing.card_type" id="CardType" <?php if($gateway != "stripe") { ?>name="CardType"<?php } ?>>
 								<?php foreach($pmpro_accepted_credit_cards as $cc) { ?>
 									<option value="<?php echo $cc?>" <?php if($CardType == $cc) { ?>selected="selected"<?php } ?>><?php echo $cc?></option>
 								<?php } ?>
@@ -263,12 +271,12 @@
 
 						<div>
 							<label for="AccountNumber"><?php _e('Card Number', 'pmpro');?></label>
-							<input id="AccountNumber" <?php if($gateway != "stripe" && $gateway != "braintree") { ?>name="AccountNumber"<?php } ?> class="input <?php echo pmpro_getClassForField("AccountNumber");?>" type="text" size="25" value="<?php echo esc_attr($AccountNumber)?>" <?php if($gateway == "braintree") { ?>data-encrypted-name="number"<?php } ?> autocomplete="off" />
+							<input ng-model="billing.account_number" id="AccountNumber" <?php if($gateway != "stripe" && $gateway != "braintree") { ?>name="AccountNumber"<?php } ?> class="input <?php echo pmpro_getClassForField("AccountNumber");?>" type="text" size="25" value="<?php echo esc_attr($AccountNumber)?>" <?php if($gateway == "braintree") { ?>data-encrypted-name="number"<?php } ?> autocomplete="off" />
 						</div>
 
 						<div>
 							<label for="ExpirationMonth"><?php _e('Expiration Date', 'pmpro');?></label>
-							<select id="ExpirationMonth" <?php if($gateway != "stripe") { ?>name="ExpirationMonth"<?php } ?>>
+							<select ng-model="billing.expiration_month" id="ExpirationMonth" <?php if($gateway != "stripe") { ?>name="ExpirationMonth"<?php } ?>>
 								<option value="01" <?php if($ExpirationMonth == "01") { ?>selected="selected"<?php } ?>>01</option>
 								<option value="02" <?php if($ExpirationMonth == "02") { ?>selected="selected"<?php } ?>>02</option>
 								<option value="03" <?php if($ExpirationMonth == "03") { ?>selected="selected"<?php } ?>>03</option>
@@ -281,7 +289,7 @@
 								<option value="10" <?php if($ExpirationMonth == "10") { ?>selected="selected"<?php } ?>>10</option>
 								<option value="11" <?php if($ExpirationMonth == "11") { ?>selected="selected"<?php } ?>>11</option>
 								<option value="12" <?php if($ExpirationMonth == "12") { ?>selected="selected"<?php } ?>>12</option>
-							</select>/<select id="ExpirationYear" <?php if($gateway != "stripe") { ?>name="ExpirationYear"<?php } ?>>
+							</select>/<select ng-model="billing.expiration_year" id="ExpirationYear" <?php if($gateway != "stripe") { ?>name="ExpirationYear"<?php } ?>>
 								<?php
 									for($i = date("Y"); $i < date("Y") + 10; $i++)
 									{
@@ -300,7 +308,7 @@
 						?>
 						<div>
 							<label for="CVV"><?php _ex('CVV', 'Credit card security code, CVV/CCV/CVV2', 'pmpro');?></label>
-							<input class="input" id="CVV" <?php if($gateway != "stripe" && $gateway != "braintree") { ?>name="CVV"<?php } ?> type="text" size="4" value="<?php if(!empty($_REQUEST['CVV'])) { echo esc_attr($_REQUEST['CVV']); }?>" class=" <?php echo pmpro_getClassForField("CVV");?>" <?php if($gateway == "braintree") { ?>data-encrypted-name="cvv"<?php } ?> />  <small>(<a href="javascript:void(0);" onclick="javascript:window.open('<?php echo pmpro_https_filter(PMPRO_URL)?>/pages/popup-cvv.html','cvv','toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=600, height=475');"><?php _ex("what's this?", 'link to CVV help', 'pmpro');?></a>)</small>
+							<input class="input" ng-model="billing.cvv" id="CVV" <?php if($gateway != "stripe" && $gateway != "braintree") { ?>name="CVV"<?php } ?> type="text" size="4" value="<?php if(!empty($_REQUEST['CVV'])) { echo esc_attr($_REQUEST['CVV']); }?>" class=" <?php echo pmpro_getClassForField("CVV");?>" <?php if($gateway == "braintree") { ?>data-encrypted-name="cvv"<?php } ?> />  <small>(<a href="javascript:void(0);" onclick="javascript:window.open('<?php echo pmpro_https_filter(PMPRO_URL)?>/pages/popup-cvv.html','cvv','toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=600, height=475');"><?php _ex("what's this?", 'link to CVV help', 'pmpro');?></a>)</small>
 						</div>
 						<?php
 							}
@@ -348,16 +356,9 @@
 			</div>
 
 		</form>
-		<script>
-			// Find ALL <form> tags on your page
-			jQuery('form').submit(function(){
-				// On submit disable its submit button
-				jQuery('input[type=submit]', this).attr('disabled', 'disabled');
-				jQuery('input[type=image]', this).attr('disabled', 'disabled');
-			});
-		</script>
 	<?php } ?>
 <?php } else { ?>
 	<p><?php _e("This subscription is not recurring. So you don't need to update your billing information.", "pmpro");?></p>
 <?php } ?>
 <?php get_footer(); ?>
+<script src="<?php echo get_template_directory_uri(); ?>/js/angular/controllers/MembershipController.js"></script>
