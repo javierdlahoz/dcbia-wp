@@ -46,11 +46,35 @@ get_header();
                     <button class="btn advo-search-btn" type="button" onclick="">Submit</button>
                 </div>
                    <p>&nbsp;</p>
-                <div class="row">    
-                    <div class="col-sm-3">1</div>    
-                    <div class="col-sm-3">2</div>    
-                    <div class="col-sm-3">3</div>    
-                    <div class="col-sm-3">4</div>    
+                <div class="row key-issue-boxes">    
+                    <div class="col-sm-3">
+                        <a href="">
+                            <span></span>
+                            <span>key issues</span>
+                            <span></span>
+                        </a>
+                    </div>    
+                    <div class="col-sm-3">
+                        <a href="">
+                            <span></span>
+                            <span>recent testimony</span>
+                            <span></span>
+                        </a>
+                    </div>    
+                    <div class="col-sm-3">
+                        <a href="">
+                            <span></span>
+                            <span>publications</span>
+                            <span></span>
+                        </a>
+                    </div>    
+                    <div class="col-sm-3">
+                        <a href="">
+                            <span></span>
+                            <span>Industry data</span>
+                            <span></span>
+                        </a>
+                    </div>    
                 </div>
          </div>    
     </div>
