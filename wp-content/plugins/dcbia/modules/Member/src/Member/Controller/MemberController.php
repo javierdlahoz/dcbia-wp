@@ -171,7 +171,7 @@ class MemberController extends AbstractController{
         $order->billing->street = $order->Address1." ".$order->Address2;
         
         
-        $status = $authorize->authorize($order);
+        $status = $authorize->charge($order);
         if($status === true){
             $user = wp_get_current_user();
             $order->user_id = $user->ID;
