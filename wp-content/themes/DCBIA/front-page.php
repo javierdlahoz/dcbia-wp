@@ -160,7 +160,7 @@ Transportation Planner (Transportation Demand Management / TDM) is the senior le
 
                     <p>&nbsp;</p>  
                 <h2>Sponsors</h2>
-                <div class="sponsor-box">
+                <div class="sponsor-box-sidebar">
                     <a href=""><img class="img-responsive" src="<?php echo get_template_directory_uri() ;?>/img/property-team.jpg" alt="Property Group Partners logo" /></a>
                     <p>&nbsp;</p>
                     <a href=""><img class="img-responsive" src="<?php echo get_template_directory_uri() ;?>/img/pepco.jpg" alt="Pepco logo" /></a>

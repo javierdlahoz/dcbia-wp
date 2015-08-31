@@ -49,7 +49,7 @@ get_header();
                 <div class="row key-issue-boxes">    
                     <div class="col-sm-3">
                         <a href="">
-                            <span></span>
+                            <i class="fa"</i>
                             <span>key issues</span>
                             <span></span>
                         </a>

@@ -249,7 +249,7 @@ a.back-to-top:hover {
   color: #000000;
   font-style: italic;
 }
-.sponsor-box {
+.sponsor-box-sidebar {
   background-color: #ffffff;
   padding: 25px;
   margin-top: 25px;
@@ -294,6 +294,7 @@ a.back-to-top:hover {
 }
 .key-issue-boxes a {
   color: #6d6e70;
+  text-transform: uppercase;
   background-color: #dddddd;
   padding: 25px;
   text-align: center;
