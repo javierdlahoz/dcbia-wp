@@ -286,6 +286,15 @@ a.back-to-top:hover {
   color: #ffffff !important;
   background-color: #1d8ebe;
 }
+.key-issue-boxes a {
+  color: #6d6e70;
+  background-color: #dddddd;
+}
+.key-issue-boxes a:hover {
+  background-color: #27a9e1;
+  color: #ffffff;
+  text-decoration: none;
+}
 .foot-break {
   display: block;
   overflow: auto;
