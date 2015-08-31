@@ -43,14 +43,19 @@ get_header();
             <div class="col-md-12 key-issues-container">
                 <div class="key-top-search">
                     <input type="text" name="" id="advocacy-search" class="form-control" placeholder="Search">
-                    <button class="btn" type="button" onclick="sendSearchResourcesForm();"></button>
-                </div>    
-            <p>&nbsp;</p>    
-            </div>    
-        </div>
+                    <button class="btn advo-search-btn" type="button" onclick="">Submit</button>
+                </div>
+                   <p>&nbsp;</p>
+                <div class="row">    
+                    <div class="col-sm-3">1</div>    
+                    <div class="col-sm-3">2</div>    
+                    <div class="col-sm-3">3</div>    
+                    <div class="col-sm-3">4</div>    
+                </div>
+         </div>    
     </div>
-    <!--main col8-->
 </div>
+
    
 
 <?php get_footer();
