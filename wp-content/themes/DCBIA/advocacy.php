@@ -42,7 +42,7 @@ get_header();
         <div class="row">
             <div class="col-md-12 key-issues-container">
                 <div class="key-top-search">
-                    <input type="text" name="" id="expression" class="form-control" placeholder="Search">
+                    <input type="text" name="" id="advocacy-search" class="form-control" placeholder="Search">
                     <button class="btn" type="button" onclick="sendSearchResourcesForm();"></button>
                 </div>    
             <p>&nbsp;</p>    

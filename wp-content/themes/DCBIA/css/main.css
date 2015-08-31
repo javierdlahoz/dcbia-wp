@@ -265,6 +265,13 @@ a.back-to-top:hover {
   margin-top: 15px;
   padding: 15px 25px!important;
 }
+#advocacy-search {
+  background-color: #f7f7f7;
+  padding: 12px;
+  border: 0!important;
+  width: 75%;
+  display: inline-block;
+}
 .foot-break {
   display: block;
   overflow: auto;
