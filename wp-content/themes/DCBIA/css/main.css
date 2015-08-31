@@ -8946,21 +8946,6 @@ html[xmlns] .slides {
   height: 100%;
   display: block;
 }
-.caption-title {
-  font-size: 16px;
-  line-height: 28px;
-  font-family: 'Roboto', Helvetica, Arial;
-  font-weight: 300;
-  text-transform: uppercase;
-  position: absolute;
-  left: 0px;
-  background-color: #ef3f42;
-  width: auto;
-  padding: 0 10px;
-  color: #fff;
-  bottom: 0px;
-  margin-bottom: 0;
-}
 /* Control Navs */
 .flex-control-nav {
   width: 100% !important;
@@ -9019,9 +9004,7 @@ html[xmlns] .slides {
   background-image: none;
   border: none;
 }
-.icy-block-title,
 .aq-block-title {
-  font-family: 'Roboto Condensed', Arial;
   font-size: 24px;
   line-height: 24px;
   padding-bottom: 23px;
