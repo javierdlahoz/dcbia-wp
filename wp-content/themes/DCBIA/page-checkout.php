@@ -70,6 +70,7 @@
 
 		<form ng-controller="MembershipController" id="pmpro_form" class="pmpro_form" ng-submit="charge()">
             <div class="alert alert-danger" ng-show="billing.status == false">Please check your credit card information</div>
+            <div class="alert alert-success" ng-show="billing.status == true">Payment successful, redirecting to home in 5s</div>
             
 			<input type="hidden" ng-model="billing.level" name="level" value="<?php echo esc_attr($level->id);?>" />
 			<?php if($pmpro_msg)
@@ -349,7 +350,7 @@
 				</script>
 			<?php } ?>
 
-			<div align="center">
+			<div align="center" ng-hide="billing.status">
 				<input type="hidden" name="update-billing" value="1" />
 				<input type="submit" class="pmpro_btn pmpro_btn-submit" value="<?php _e('Update', 'pmpro');?>" />
 				<input type="button" name="cancel" class="pmpro_btn pmpro_btn-cancel" value="<?php _e('Cancel', 'pmpro');?>" onclick="location.href='<?php echo pmpro_url("account")?>';" />

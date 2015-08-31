@@ -1,5 +1,5 @@
 angular.module('angular-wp')
-    .controller('MembershipController', function ($scope, $http) {
+    .controller('MembershipController', function ($scope, $http, $timeout) {
 
     	$scope.users = {};
     	$scope.c = -1;
@@ -76,6 +76,14 @@ angular.module('angular-wp')
                 headers: getContentTypes().form
             }).success(function (data) {
             	$scope.billing.status = data.status;
+            	if(data.status == true){
+            		$timeout(
+            			function(){
+            				window.location = "/";
+            			}, 
+            			5000
+            		);
+            	}
             });
     	};
     
