@@ -85,8 +85,10 @@ get_header();
                 </div><!--issues end-->            
                         
                 <div class="events">
-                    <div id="aq-block-16-16" class="aq-block aq-block-icy_events_block aq_span8 aq-first clearfix col-md-12">		
-                        <?php EventController::getSingleton()->getCalendarWidget(); ?>
+                    <div class="col-md-12">
+                        <div id="aq-block-16-16" class="aq-block aq-block-icy_events_block aq_span8 aq-first clearfix">		
+                            <?php EventController::getSingleton()->getCalendarWidget(); ?>
+                        </div>
                     </div>
                 </div><!--events end-->             
                 
