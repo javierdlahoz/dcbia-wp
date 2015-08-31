@@ -49,28 +49,28 @@ get_header();
                 <div class="row key-issue-boxes">    
                     <div class="col-sm-3">
                         <a href="">
-                            <i class="fa"</i>
+                            <i class="fa fa-key"></i>
                             <span>key issues</span>
-                            <span></span>
+                            <i class="fa "></i>
                         </a>
                     </div>    
                     <div class="col-sm-3">
                         <a href="">
-                            <span></span>
+                            <i class="fa fa-commenting"></i>
                             <span>recent testimony</span>
                             <span></span>
                         </a>
                     </div>    
                     <div class="col-sm-3">
                         <a href="">
-                            <span></span>
+                            <i class="fa fa-book"></i>
                             <span>publications</span>
                             <span></span>
                         </a>
                     </div>    
                     <div class="col-sm-3">
                         <a href="">
-                            <span></span>
+                            <i class="fa fa-database"></i>
                             <span>Industry data</span>
                             <span></span>
                         </a>

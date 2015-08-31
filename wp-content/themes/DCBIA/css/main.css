@@ -300,11 +300,18 @@ a.back-to-top:hover {
   text-align: center;
   display: inline-block;
   width: 100%;
+  font-size: 21px;
+  height: 350px;
 }
 .key-issue-boxes a:hover {
   background-color: #27a9e1;
   color: #ffffff;
   text-decoration: none;
+}
+.key-issue-boxes a i {
+  font-size: 72px;
+  display: block;
+  margin: 20px 0;
 }
 .foot-break {
   display: block;
