@@ -262,6 +262,8 @@ a.back-to-top{
     background-color: #ffffff;
     margin-top: 15px;
     padding: 25px 25px 15px 25px !important;
+    display: block;
+    overflow: auto;
 }
 
 #advocacy-search{
@@ -286,9 +288,14 @@ a.back-to-top{
     }
 }
 .key-issue-boxes{
+    & .col-sm-3 { padding: 15px; }
     & a{
         color: @dcbia-grey;
         background-color: #dddddd;
+        padding: 25px;
+        text-align: center;
+        display: inline-block;
+        width: 100%;
         &:hover{
             background-color: @light-blue;
             color: #ffffff;
