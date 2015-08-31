@@ -246,7 +246,63 @@ a.back-to-top{
     padding: 25px;
     margin-top: 25px;
 }
- 
+
+// advocacy
+
+.advocacy{
+    & h2{
+        color: @light-blue !important;
+    }
+    & p {
+        font-size: 16px;
+        line-height: 1.6em;
+    }
+}
+.key-issues-container{
+    background-color: #ffffff;
+    margin-top: 15px;
+    padding: 25px 25px 15px 25px !important;
+    display: block;
+    overflow: auto;
+}
+
+#advocacy-search{
+    background-color: #f7f7f7;
+    padding: 12px;
+    border: 0 !important;
+    width: 75%;
+    display: inline-block;
+    height: 45px;
+}
+.advo-search-btn{
+    width: 23%;
+    background-color: @light-blue;
+    border-radius: 0 !important;
+    float: right;
+    padding: 12px;
+    color: #ffffff;
+    height: 45px;
+    &:hover{
+        color: #ffffff !important;
+        background-color: #1d8ebe;
+    }
+}
+.key-issue-boxes{
+    & .col-sm-3 { padding: 15px; }
+    & a{
+        color: @dcbia-grey;
+        background-color: #dddddd;
+        padding: 25px;
+        text-align: center;
+        display: inline-block;
+        width: 100%;
+        &:hover{
+            background-color: @light-blue;
+            color: #ffffff;
+            text-decoration: none;
+        }
+    }
+}
 
 // Footer styles here
 
@@ -326,6 +382,7 @@ footer{
     border: none!important;
     background-color: #ffffff;
     height: 35px;
+    width:100%;
     width:100%;
     font-size: 14px;
     outline: none;
