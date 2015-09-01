@@ -299,15 +299,22 @@ a.back-to-top{
         width: 100%;
         font-size: 21px;
         height: 350px;
+        position: relative;
         &:hover{
             background-color: @light-blue;
             color: #ffffff;
             text-decoration: none;
         }
+        & span { height: 75px; display: block; }
         & i {
             font-size: 72px;
             display: block;
             margin: 20px 0;
+            &.arrowed{
+                position: relative;
+                bottom: 5%;
+                font-size: 42px;
+            }
         }
     }
 }

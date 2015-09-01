@@ -51,28 +51,28 @@ get_header();
                         <a href="">
                             <i class="fa fa-key"></i>
                             <span>key issues</span>
-                            <i class="fa "></i>
+                            <i class="fa fa-chevron-down arrowed"></i>
                         </a>
                     </div>    
                     <div class="col-sm-3">
                         <a href="">
                             <i class="fa fa-commenting"></i>
                             <span>recent testimony</span>
-                            <span></span>
+                            <i class="fa fa-chevron-down arrowed"></i>
                         </a>
                     </div>    
                     <div class="col-sm-3">
                         <a href="">
                             <i class="fa fa-book"></i>
-                            <span>publications</span>
-                            <span></span>
+                            <span>publi cations</span>
+                            <i class="fa fa-chevron-down arrowed"></i>
                         </a>
                     </div>    
                     <div class="col-sm-3">
                         <a href="">
                             <i class="fa fa-database"></i>
                             <span>Industry data</span>
-                            <span></span>
+                            <i class="fa fa-chevron-down arrowed"></i>
                         </a>
                     </div>    
                 </div>

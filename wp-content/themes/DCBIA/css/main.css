@@ -302,16 +302,26 @@ a.back-to-top:hover {
   width: 100%;
   font-size: 21px;
   height: 350px;
+  position: relative;
 }
 .key-issue-boxes a:hover {
   background-color: #27a9e1;
   color: #ffffff;
   text-decoration: none;
 }
+.key-issue-boxes a span {
+  height: 75px;
+  display: block;
+}
 .key-issue-boxes a i {
   font-size: 72px;
   display: block;
   margin: 20px 0;
+}
+.key-issue-boxes a i.arrowed {
+  position: relative;
+  bottom: 5%;
+  font-size: 42px;
 }
 .foot-break {
   display: block;
