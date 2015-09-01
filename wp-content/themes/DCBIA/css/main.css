@@ -332,11 +332,15 @@ a.back-to-top:hover {
 .top-key-nav ul {
   margin: 15px 0;
   padding: 0;
+  text-align: center;
 }
 .top-key-nav ul li {
   list-style-type: none;
   display: inline;
   margin: 0 auto;
+  font-weight: 700;
+  color: #6d6e70;
+  font-size: 16px;
 }
 .foot-break {
   display: block;
