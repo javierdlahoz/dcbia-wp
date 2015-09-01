@@ -89,13 +89,18 @@ get_header();
                         </ul>
                     </div>    
                 </div>
-            
-                <div class="row lower-key-results">
-                    <div class="col-sm-3 bookmark-box">
+            <p>&nbsp;</p>
+                <div class="lower-key-results">
+                    <div class="col-sm-2 bookmark-box">
                         <i class="fa fa-bookmark"></i>
                     </div>
-                    <div class="col-sm-9 key-info">
-                        <    
+                    <div class="col-sm-9 col-sm-offset-1 key-info">
+                        <h5>Sed volutpat magna sed sapien finibus, a blandit felis dapibus. Vestibulum in 
+pellentesque urna</h5>  
+                        <p>Vestibulum ligula augue, ultricies in tempus vel, interdum sed tellus. Nulla nec interdum est Nullam dictum, quam et dignissim aliquet, nibh libero rutrum quam, in convallis sapien quam non
+est aliquet, nibh libero rutrum.</p>
+                        
+                        <a class="button1" href="">More Information</a>
                     </div>
                 </div>     
          </div>    

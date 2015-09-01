@@ -354,6 +354,30 @@ a.back-to-top:hover {
   color: #ff8d0c;
   text-decoration: none;
 }
+@media (min-width: 768px) {
+  .col-sm-offset-1 {
+    margin-left: 3%!important;
+  }
+}
+.bookmark-box {
+  background-color: #ff8d0c;
+  overflow: auto;
+}
+.bookmark-box i {
+  font-size: 100px;
+  color: #ffffff;
+  position: relative;
+  padding: 30% 0;
+}
+.key-info h5 {
+  color: #27a9e1 !important;
+  margin-top: 0!important;
+  font-weight: 600;
+  font-size: 15px;
+}
+.key-info p {
+  color: #2a2d2f !important;
+}
 .foot-break {
   display: block;
   overflow: auto;
