@@ -323,6 +323,21 @@ a.back-to-top:hover {
   bottom: 5%;
   font-size: 42px;
 }
+.top-key-nav p {
+  color: #2a2d2f;
+  font-size: 21px;
+  font-weight: 700;
+  text-align: center;
+}
+.top-key-nav ul {
+  margin: 15px 0;
+  padding: 0;
+}
+.top-key-nav ul li {
+  list-style-type: none;
+  display: inline;
+  margin: 0 auto;
+}
 .foot-break {
   display: block;
   overflow: auto;

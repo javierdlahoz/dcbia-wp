@@ -38,9 +38,9 @@ get_header();
                 <p>Members serve frequently and prominently on commissions, task forces and study groups to address crucial economic development and municipal governance issues. Member participation on a more continuous basis is encouraged through eleven standing committees, which work closely with agencies of the DC government to advise and assist in the efficient administration of city programs – most recently in areas related to land use, building regulation, comprehensive planning, tax issues and affordable housing and community development. Committees also work in collaboration with other business groups and community organizations to attract and retain business investment and to facilitate the revitalization of distressed areas in the city.</p>    
             </div>    
         </div>
-        
-        <div class="row">
-            <div class="col-md-12 key-issues-container">
+
+    <div class="row">
+        <div class="col-md-12 key-issues-container">
                 <div class="key-top-search">
                     <input type="text" name="" id="advocacy-search" class="form-control" placeholder="Search">
                     <button class="btn advo-search-btn" type="button" onclick="">Submit</button>
@@ -76,6 +76,19 @@ get_header();
                         </a>
                     </div>    
                 </div>
+           
+                <div class="row key-results">
+                    <div class="col-md-12 top-key-nav">
+                        <p>Choose a Key Issue:</p>
+                        <ul>
+                            <li>Lorem Ipsum</li>        
+                            <li>ipsum</li>
+                            <li>dolor</li>
+                            <li>sit amet</li>
+                            <li>suscipit cursus</li>
+                        </ul>
+                    </div>    
+                </div>    
          </div>    
     </div>
 </div>
