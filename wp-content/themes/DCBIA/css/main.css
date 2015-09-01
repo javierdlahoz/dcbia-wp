@@ -341,6 +341,18 @@ a.back-to-top:hover {
   font-weight: 700;
   color: #6d6e70;
   font-size: 16px;
+  padding: 0 10px;
+  border-left: 2px solid #6d6e70;
+}
+.top-key-nav ul li.no-border {
+  border: 0!important;
+}
+.top-key-nav ul li a {
+  color: #6d6e70;
+}
+.top-key-nav ul li a:hover {
+  color: #ff8d0c;
+  text-decoration: none;
 }
 .foot-break {
   display: block;

@@ -337,6 +337,16 @@ a.back-to-top{
             font-weight: 700;
             color: @dcbia-grey;
             font-size: 16px;
+            padding: 0 10px;
+            border-left: 2px solid @dcbia-grey;
+            &.no-border{ border: 0!important; }
+            & a {
+                color: @dcbia-grey;
+                &:hover{
+                    color: @orange;
+                    text-decoration: none;
+                }
+            }
         }
     }
 }

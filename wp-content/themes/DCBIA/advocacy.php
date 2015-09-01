@@ -81,14 +81,23 @@ get_header();
                     <div class="col-md-12 top-key-nav">
                         <p>Choose a Key Issue:</p>
                         <ul>
-                            <li>Lorem Ipsum</li>        
-                            <li>ipsum</li>
-                            <li>dolor</li>
-                            <li>sit amet</li>
-                            <li>suscipit cursus</li>
+                            <li class="no-border"><a href="">Lorem Ipsum</a></li>        
+                            <li><a href="">Lorem Ipsum</a></li>        
+                            <li><a href="">Lorem Ipsum</a></li>        
+                            <li><a href="">Lorem Ipsum</a></li>        
+                            <li><a href="">Lorem Ipsum</a></li>        
                         </ul>
                     </div>    
-                </div>    
+                </div>
+            
+                <div class="row lower-key-results">
+                    <div class="col-sm-3 bookmark-box">
+                        <i class="fa fa-bookmark"></i>
+                    </div>
+                    <div class="col-sm-9 key-info">
+                        <    
+                    </div>
+                </div>     
          </div>    
     </div>
 </div>
