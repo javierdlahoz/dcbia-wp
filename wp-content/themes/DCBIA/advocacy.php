@@ -92,7 +92,7 @@ get_header();
             <p>&nbsp;</p>
                 <div class="lower-key-results">
                     <div class="col-sm-2 bookmark-box">
-                        <i class="fa fa-bookmark"></i>
+                        <p><i class="fa fa-bookmark-o"></i></p>
                     </div>
                     <div class="col-sm-9 col-sm-offset-1 key-info">
                         <h5>Sed volutpat magna sed sapien finibus, a blandit felis dapibus. Vestibulum in 

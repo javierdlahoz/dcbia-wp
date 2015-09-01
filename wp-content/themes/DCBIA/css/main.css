@@ -362,12 +362,18 @@ a.back-to-top:hover {
 .bookmark-box {
   background-color: #ff8d0c;
   overflow: auto;
+  margin-bottom: 15px;
+}
+.bookmark-box p {
+  text-align: center;
+  margin: 0 !important;
 }
 .bookmark-box i {
-  font-size: 100px;
+  font-size: 72px;
   color: #ffffff;
   position: relative;
-  padding: 30% 0;
+  padding: 15%;
+  text-align: center;
 }
 .key-info h5 {
   color: #27a9e1 !important;
@@ -377,6 +383,15 @@ a.back-to-top:hover {
 }
 .key-info p {
   color: #2a2d2f !important;
+}
+.key-info .button1 {
+  background-color: #2a2d2f;
+  color: #ffffff;
+  text-transform: uppercase;
+  padding: 10px 15px;
+  text-align: center;
+  display: inline-block;
+  margin-top: 15px;
 }
 .foot-break {
   display: block;
