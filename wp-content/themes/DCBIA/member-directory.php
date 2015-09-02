@@ -27,17 +27,17 @@ get_header();
             </ul> 
         </nav>
         <div class="member-top-searchbar">
-            
-            <input type="text" name="" id="member-search" class="form-control" placeholder="SEARCH">
-            <button type="submit" class="member-search-btn" title="submit member seach results"><i class="fa fa-search"></i></button>
-
-       
-	     <span class="search-titles">SORT BY:</span>
-           <a href="" class="member-sort">TITLE A-Z</a>
-
-           <a href="" class="member-sort">DATE CREATED</a>
-	    
-     
+            <div class="col-md-5">
+                <input type="text" name="" id="member-search" class="form-control" placeholder="SEARCH">
+                <button type="submit" class="member-search-btn" title="submit member seach results"><i class="fa fa-search"></i></button>
+            </div>    
+            <div class="col-sm-4">
+                <span class="search-titles">SORT BY:</span>
+                <a href="" class="member-sort">TITLE A-Z</a>
+            </div>
+            <div class="col-sm-3">
+                <a href="" class="member-sort">DATE CREATED</a>
+            </div>
         </div> 
     </div> 
 
