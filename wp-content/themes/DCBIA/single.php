@@ -1,7 +1,8 @@
 <?php 
 use Member\Helper\MemberHelper;
-get_header(); 
-var_dump(MemberHelper::isCurrentAccountActive()); die();
-?>
+if(!MemberHelper::isCurrentAccountActive()){
+    header('location: /renewal');
+}
+get_header(); ?>
 <?php the_content(); ?>
 <?php get_footer();

@@ -1,6 +1,7 @@
 <?php
 namespace Member\Helper;
 
+use Member\Controller\MemberController;
 class MemberHelper
 {
     const POST_TYPE = "member";

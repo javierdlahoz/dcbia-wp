@@ -5,6 +5,8 @@ namespace Member\Controller;
 use INUtils\Controller\AbstractController;
 use Member\Helper\ImporterHelper;
 use INUtils\Helper\EmailHelper;
+use Member\Helper\MemberHelper;
+use Member\Facade\MemberFacade;
 require_once("wp-content/plugins/paid-memberships-pro/paid-memberships-pro.php");
 
 class MemberController extends AbstractController{
@@ -14,6 +16,14 @@ class MemberController extends AbstractController{
     const ADDITIONAL_USERS_ARRAY = "addUsers";
     const SUCCESS_STATUS = "success";
     const PMPPRO_MEMBERSHIP_USERS = "pmpro_memberships_users";
+    
+    /**
+     * 
+     * @param int $userId
+     */
+    public function getAdditionalUserIds($userId){
+        return get_user_meta($userId, self::ADDITIONAL_USERS_ARRAY, true);
+    }
     
     public function registerAction(){
         $additionalUsers = count($_POST["additional_users"]);
@@ -28,7 +38,6 @@ class MemberController extends AbstractController{
             $addUserIds[] = $this->createAMember($userToAdd, $level->id);
         }
         update_user_meta($mainUserId, self::ADDITIONAL_USERS_ARRAY, $addUserIds);
-        
         return array("message" => "success");
     }
     
@@ -143,6 +152,8 @@ class MemberController extends AbstractController{
             "last_name" => $user["last_name"],
         );
         wp_update_user($userTmp);
+        update_user_meta($userId, "committee", $user["committee"]);
+        return $userId;
     }
     
     /**
@@ -200,7 +211,7 @@ class MemberController extends AbstractController{
             $order->membership_id = $this->getMembershipLevel()->id;
             
             $this->updateToMembershipLevel(get_user_meta($user->ID, 
-                self::ADDITIONAL_USERS_ARRAY, false)
+                self::ADDITIONAL_USERS_ARRAY, true)
             );
             $this->sendOrderEmail($order, $user);
             $this->updateExpirationDate($user->ID);
@@ -226,4 +237,31 @@ class MemberController extends AbstractController{
         
         EmailHelper::sendEmail($user->user_email, "Registration with DCBIA", null, $content, null);
     }
+    
+    /**
+     * it handles affiliates actions POST for create affiliates and GET to get them
+     */
+    public function affiliatesAction(){
+        $user = wp_get_current_user();
+        if(!empty($_POST)){
+            $addUserIds = array();
+            foreach($_POST["additional_users"] as $userToAdd){
+                $tmpU = get_user_by("email", $userToAdd["email"]);
+                if(!empty($tmpU)){
+                    $addUserIds[] = $tmpU->ID;
+                }
+                else{
+                    $addUserIds[] = $this->createAMember($userToAdd, $this->getUnpaidLevel()->id);
+                }
+            }
+            $amount = $this->getMembershipLevel()->billing_amount + count($addUserIds) * self::ADDITIONAL_USER_COST;
+            update_user_meta($user->ID, self::ADDITIONAL_USERS_ARRAY, $addUserIds);
+            update_user_meta($user->ID, "membership_total_cost", $amount);
+            return array("message" => "success");
+        }
+        else{
+            return MemberFacade::getSingleton()->getAffiliates($this->getAdditionalUserIds($user->ID));
+        }
+    }
+    
 }
