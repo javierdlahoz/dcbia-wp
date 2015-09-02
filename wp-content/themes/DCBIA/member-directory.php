@@ -31,10 +31,10 @@ get_header();
                 <input type="text" name="" id="member-search" class="form-control" placeholder="SEARCH">
                 <button type="submit" class="member-search-btn" title="submit member seach results"><i class="fa fa-search"></i></button>
             </div>    
-            <div class="col-sm-1 col-xs-2">
+            <div class="col-md-1 col-xs-2">
                 <span class="search-titles">SORT BY:</span>
             </div>
-            <div class="col-sm-3 col-xs-4">    
+            <div class="col-sm-2 col-xs-4">    
                 <a href="" class="member-sort">TITLE A-Z</a>
             </div>
             <div class="col-sm-2 col-xs-4">
