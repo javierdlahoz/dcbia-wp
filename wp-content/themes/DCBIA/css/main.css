@@ -492,6 +492,11 @@ a.member-sort:hover {
   color: #ffffff;
   background-color: #6d6e70;
 }
+.member-bottom-resultbar {
+  background-color: #ffffff;
+  height: auto;
+  padding: 10px 0;
+}
 .foot-break {
   display: block;
   overflow: auto;

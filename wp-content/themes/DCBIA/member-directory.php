@@ -6,8 +6,7 @@ use Event\Controller\EventController;
 $home = dcbia::getController("home")->getHome();
 get_header(); 
 ?>
-<div class="container all-pad-gone">
-            
+<div class="container all-pad-gone">      
       <nav class="site-navigation" role="navigation">
           <ul class="nav custom-nav hide-on-phone">
               <li id="about" <?php if($url == "about" || $url == "about")
@@ -40,7 +39,15 @@ get_header();
             <div class="col-sm-2 col-xs-4">
                 <a href="" class="member-sort">DATE CREATED</a>
             </div>
-        </div> 
+        </div>
+        <div class="member-bottom-resultbar">
+            <div class="col-sm-6">
+                <h4></h4>
+                <h5></h5>
+            </div>       
+            <div class="col-sm-6">
+            </div>       
+        </div>    
     </div> 
 
 <!--start main content here-->
