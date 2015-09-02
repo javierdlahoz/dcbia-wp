@@ -41,11 +41,12 @@ get_header();
             </div>
         </div>
         <div class="member-bottom-resultbar">
-            <div class="col-sm-6">
+            <div class="col-sm-6 col-xs-6">
                 <h4>member directory</h4>
                 <h5>DISPLAYING 1-20 OF 195 RESULTS</h5>
             </div>       
-            <div class="col-sm-6">
+            <div class="col-sm-6 col-xs-6">
+                <a class="member-share pull-right" href="">share<i class="fa fa-share-square"></i></a>
             </div>       
         </div>    
     </div> 
