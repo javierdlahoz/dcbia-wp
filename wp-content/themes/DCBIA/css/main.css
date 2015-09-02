@@ -457,6 +457,16 @@ input#member-search:-ms-input-placeholder {
   vertical-align: top;
   margin-left: -4px !important;
 }
+.search-titles {
+  color: #ffffff;
+  font-size: 15px;
+  position: relative;
+  bottom: 50%;
+}
+a.member-sort {
+  background-color: #2a2d2f;
+  color: #ffffff;
+}
 .foot-break {
   display: block;
   overflow: auto;
@@ -524,193 +534,6 @@ footer .social-icons a:hover {
   width: 100%;
   height: 100%;
   max-height: 500px;
-}
-.resources-form {
-  padding: 15px 0!important;
-  overflow: auto;
-}
-.resources-form .col-sm-2 {
-  margin-top: 0px;
-}
-#expression {
-  border: none!important;
-  background-color: #ffffff;
-  height: 35px;
-  width: 100%;
-  font-size: 14px;
-  outline: none;
-  position: relative;
-}
-.search-titles {
-  font-size: 11px;
-  margin-right: 15px;
-}
-.resource-sort {
-  background-color: #4f8cab;
-  color: #ffffff;
-  font-size: 14px;
-  padding: 8px 18px;
-  display: inline-block;
-  min-width: 100%!important;
-  text-align: center;
-}
-.resource-sort:hover {
-  color: #ffffff;
-  text-decoration: none;
-  background-color: #734f7b;
-}
-.resource-sub-btn {
-  color: #ffffff;
-  font-size: 14px;
-  margin: 0!important;
-  padding: 8px 18px;
-  min-width: 100%!important;
-  border: 0!important;
-  background-color: #734f7b;
-}
-.resource-sub-btn:hover {
-  color: #ffffff;
-  text-decoration: none;
-  background-color: #4f8cab;
-}
-.resource-type-widget {
-  color: #ffffff;
-  padding: 5px 35px 25px 35px;
-}
-.resource-type-widget p {
-  margin-top: 25px;
-}
-.resource-type-widget h3 {
-  border-bottom: 2px solid #ffffff;
-  padding-bottom: 6px;
-}
-.resource-type-widget ul {
-  padding-left: 15px;
-}
-.resource-type-widget ul li {
-  list-style-type: none;
-}
-.audiences-widget {
-  color: #ffffff;
-  padding: 5px 25px 25px 25px;
-}
-.audiences-widget h3 {
-  border-bottom: 2px solid #ffffff;
-  padding-bottom: 10px;
-  font-size: 18px;
-  margin-bottom: 20px;
-}
-.audiences-widget ul {
-  padding-left: 0px;
-}
-.audiences-widget ul li {
-  list-style-type: none;
-  padding-bottom: 5px;
-}
-.audiences-widget ul li:hover {
-  text-decoration: underline;
-}
-.audiences-widget ul li a {
-  color: #ffffff;
-}
-.audiences-widget ul li a:hover {
-  text-decoration: underline;
-}
-.audiences-widget .widget-icon {
-  margin: 0 auto 20px auto;
-  display: block;
-}
-.audiences-widget p.large-text {
-  text-align: center;
-  font-size: 21px;
-  font-weight: 300;
-}
-.audiences-widget p {
-  cursor: pointer;
-}
-.resource-main h3 {
-  margin-top: 0;
-  color: #62605f;
-  display: inline-block;
-}
-.resource-main a.share {
-  float: right;
-  font-size: 12px;
-  font-weight: 700;
-  color: #444444;
-  margin-top: 3px;
-}
-.resource-main a.share:hover {
-  color: #444444;
-  text-decoration: none;
-}
-.resource-main a.share img {
-  vertical-align: middle;
-  padding-left: 5px;
-}
-.resource-main a.download-file {
-  font-size: 15px;
-  color: #ffffff;
-  margin-left: 0!important;
-  margin-right: 0!important;
-  text-align: center!important;
-  width: 165px!important;
-}
-.resource-info-blocks {
-  padding-bottom: 18px;
-  border-bottom: 1px solid #444444 ;
-}
-.resource-info-blocks h5 {
-  font-weight: 700;
-  margin-bottom: 10px;
-}
-.resource-info-blocks p span {
-  font-weight: 700;
-}
-.resource-info-blocks p.tags span {
-  font-weight: 700;
-}
-.resource-info-blocks a img {
-  margin-right: 8px;
-}
-.resource-info-blocks .resources-box-text {
-  overflow: hidden;
-}
-.resource-info-blocks .button-orng {
-  display: block;
-  color: #ffffff !important;
-  border: 0;
-  background-color: #ffa33b;
-  padding: 10px 20px;
-  margin: 25px 0 15px 0;
-  width: 165px;
-  text-align: center;
-}
-.resource-info-blocks .button-orng:hover {
-  background-color: #734f7b;
-  text-decoration: none;
-}
-.no-underline .audiences-widget ul {
-  padding-left: 0px;
-}
-.no-underline .audiences-widget ul li {
-  list-style-type: none;
-}
-.no-underline .audiences-widget ul li:hover {
-  text-decoration: none!important;
-}
-.no-underline .audiences-widget ul li a {
-  color: #ffffff;
-}
-.no-underline .audiences-widget ul li a:hover {
-  text-decoration: underline;
-}
-p.tags {
-  max-height: 35px;
-  min-height: 35px;
-}
-p.tags span {
-  font-weight: 700;
 }
 .about-main h3 {
   margin-top: 0;
