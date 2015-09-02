@@ -41,6 +41,10 @@ class ResourceController extends AbstractController
             $rs->setKeyIssueFilter($this->getPost("key_issue"));
         }
         
+        if(!is_null($this->getPost("query"))){
+            $rs->setQuery($this->getPost("query"));
+        }
+        
         $resources = $rs->getPosts();
         $rArr = array();
         foreach ($resources as $resource){

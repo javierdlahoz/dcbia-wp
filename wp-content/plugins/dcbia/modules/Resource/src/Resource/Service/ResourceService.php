@@ -28,7 +28,7 @@ class ResourceService extends WPPostService
     }
     
     public function setKeyIssueFilter($keyIssue){
-        $this->setMetaKey("key_issue");
+        $this->setMetaKey("key_issues");
         $this->setMetaValue($keyIssue);
     }
 }
