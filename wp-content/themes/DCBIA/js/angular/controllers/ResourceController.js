@@ -1,37 +1,72 @@
 angular.module('angular-wp')
-	.controller('ResourceController', function ($scope, $http, $rootScope, ResourceService, $timeout, localStorageService) {
+	.controller('ResourceController', function ($scope, $http, $rootScope, ResourceService, $timeout) {
 		
-		getResources = function(formData){
+		$scope.resources = {};
+		$scope.query = "";
+		$scope.formData = {};
+		
+		getResources = function(){
+			$scope.loading = true;
+			$scope.resources = {};
+			
 			ResourceService.getResources(
-				formData, 
+				$scope.formData, 
 				function(data){
-					console.log(data);
+					$timeout(
+						function(){
+							$scope.loading = false;
+							$scope.resources = data;
+						},
+						500
+					);
 				}
 			);
 		}
 		
+		setTypeActive = function(type){
+			angular.element(".types").removeClass("active");
+			angular.element("#keys").removeClass("active");
+			angular.element("#"+type).addClass("active");
+			$scope.isTypeSearch = true;
+			delete $scope.formData.key_issue;
+		};
+		
+		setActiveKeyIssue = function(keyIssue){
+			angular.element(".types").removeClass("active");
+			angular.element("#keys").addClass("active");
+			angular.element(".issues").removeClass("active");
+			
+			if(keyIssue !== null){
+				angular.element("#"+keyIssue).addClass("active");
+			}
+			
+			delete $scope.formData.resource_type;
+			$scope.isTypeSearch = false;
+		};
+		
+		$scope.search = function(){
+			getResources();
+		};
+		
 		$scope.getResourcesByType = function(type){
-			var formData = {
-				"resource_type": type
-			};
-			getResources(formData);
+			$scope.formData.resource_type = type;
+			setTypeActive(type);
+			getResources();
 		};
 		
 		$scope.getResourcesBySubject = function(subject){
-			var formData = {
-				"subject_of_resource": subject
-			};
-			getResources(formData);
+			$scope.formData.subject_of_resource = subject;
+			getResources();
 		};
 		
 		$scope.getResourcesByKeyIssue = function(keyIssue){
-			var formData = {
-				"key_issue": keyIssue
-			};
-			getResources(formData);
+			$scope.formData.key_issue = keyIssue;
+			setActiveKeyIssue(keyIssue);
+			getResources();
 		};
 		
 		$scope.initial = function(){
-			getResources({});
+			setActiveKeyIssue(null);
+			getResources();
 		};
 	});

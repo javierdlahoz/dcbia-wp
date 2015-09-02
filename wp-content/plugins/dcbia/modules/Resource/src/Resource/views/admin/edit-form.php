@@ -3,7 +3,6 @@
 use INUtils\Helper\PostHelper;
 use Resource\Helper\ResourceHelper;
 $resourceEntity = dcbia::getEntity("resource");
-
 ?>
 <div class="panel-body">
 	<div class="form-group">
@@ -39,7 +38,7 @@ $resourceEntity = dcbia::getEntity("resource");
 	</div>
 	
 	<div class="form-group">
-		<label class="control-label col-lg-2 col-sm-2">Resource Type</label>
+		<label class="control-label col-lg-2 col-sm-2">Key Issues</label>
 		<div class="col-lg-10 col-sm-10">
 			<select class="form-control"
 				name="key_issue" id="key_issue"
