@@ -485,7 +485,7 @@ a.member-sort{
     background-color: @offblack;
     color: #ffffff;
     padding: 12px 20px;
-    height: 45px!important;
+    height: 45px !important;
     width: 150px;
     position: absolute;
     text-align: center;
@@ -498,7 +498,17 @@ a.member-sort{
 .member-bottom-resultbar{
     background-color: #ffffff;
     height: auto;
-    padding: 10px 0;
+    padding: 5px 0;
+    overflow: auto;
+    display: block;
+    & h4 {
+        color: @light-blue !important;
+        margin-bottom: 0;
+    }
+    & h5 { 
+        margin-top: 2px;
+        color: @offblack !important;
+    }
 }
 // Footer styles here
 

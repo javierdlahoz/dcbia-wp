@@ -42,8 +42,8 @@ get_header();
         </div>
         <div class="member-bottom-resultbar">
             <div class="col-sm-6">
-                <h4></h4>
-                <h5></h5>
+                <h4>member directory</h4>
+                <h5>DISPLAYING 1-20 OF 195 RESULTS</h5>
             </div>       
             <div class="col-sm-6">
             </div>       
