@@ -420,6 +420,42 @@ a.back-to-top:hover {
   overflow: auto;
   height: auto;
 }
+#member-search {
+  border: 0!important;
+  padding: 12px 15px;
+  background-color: #2a2d2f;
+  display: inline-block;
+  width: 35%;
+  height: 45px;
+  margin: 0 !important;
+  font-size: 15px;
+  color: #ffffff;
+}
+input#member-search::-webkit-input-placeholder {
+  color: #ffffff;
+}
+input#member-search:-moz-placeholder {
+  /* Firefox 18- */
+  color: #ffffff;
+}
+input#member-search::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #ffffff;
+}
+input#member-search:-ms-input-placeholder {
+  color: #ffffff;
+}
+.member-search-btn {
+  color: #ffffff;
+  font-size: 18px;
+  background-color: #2a2d2f;
+  height: 45px;
+  width: 45px;
+  margin: 0 !important;
+  border: 0 !important;
+  vertical-align: top;
+  margin-left: -2px !important;
+}
 .foot-break {
   display: block;
   overflow: auto;
