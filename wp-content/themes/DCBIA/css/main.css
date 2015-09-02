@@ -398,6 +398,23 @@ a.back-to-top:hover {
   display: inline-block;
   margin-top: 15px;
 }
+.key-info .button1:hover {
+  text-decoration: none;
+  background-color: #6d6e70;
+}
+[ng\:cloak],
+[ng-cloak],
+[data-ng-cloak],
+[x-ng-cloak],
+.ng-cloak,
+.x-ng-cloak {
+  display: none !important;
+}
+.key-issue-boxes .active {
+  background-color: #27a9e1;
+  color: #ffffff;
+  text-decoration: none;
+}
 .foot-break {
   display: block;
   overflow: auto;

@@ -145,6 +145,9 @@ est aliquet, nibh libero rutrum.</p>
                         <a class="button1" href="">More Information</a>
                     </div>
                 </div>
+                
+            <p>&nbsp;</p>
+            
          </div>    
     </div>
 </div>
