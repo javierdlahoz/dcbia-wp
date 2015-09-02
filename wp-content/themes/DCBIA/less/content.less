@@ -430,6 +430,16 @@ a.back-to-top{
     color: #ffffff;
 }
 
+@media ( max-width: 768px){
+    #member-search{
+        width: 85%;
+        margin-bottom: 15px!important;
+    }
+    .member-top-searchbar{
+        padding-bottom: 10px!important;
+    }
+}
+
 input#member-search::-webkit-input-placeholder {
    color: #ffffff;
 }
@@ -468,6 +478,16 @@ input#member-search:-ms-input-placeholder {
 a.member-sort{
     background-color: @offblack;
     color: #ffffff;
+    padding: 12px 20px;
+    height: 45px!important;
+    width: 150px;
+    position: absolute;
+    text-align: center;
+    &:hover{
+        text-decoration: none;
+        color: #ffffff;
+        background-color: @dcbia-grey;
+    }
 }
 
 // Footer styles here

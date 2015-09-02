@@ -432,6 +432,15 @@ a.back-to-top:hover {
   font-size: 15px;
   color: #ffffff;
 }
+@media (max-width: 768px) {
+  #member-search {
+    width: 85%;
+    margin-bottom: 15px!important;
+  }
+  .member-top-searchbar {
+    padding-bottom: 10px!important;
+  }
+}
 input#member-search::-webkit-input-placeholder {
   color: #ffffff;
 }
@@ -466,6 +475,16 @@ input#member-search:-ms-input-placeholder {
 a.member-sort {
   background-color: #2a2d2f;
   color: #ffffff;
+  padding: 12px 20px;
+  height: 45px!important;
+  width: 150px;
+  position: absolute;
+  text-align: center;
+}
+a.member-sort:hover {
+  text-decoration: none;
+  color: #ffffff;
+  background-color: #6d6e70;
 }
 .foot-break {
   display: block;
