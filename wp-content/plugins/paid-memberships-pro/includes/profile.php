@@ -77,6 +77,7 @@ function pmpro_membership_level_profile_fields($user)
 		{					
 			//is there an end date?
 			$user->membership_level = pmpro_getMembershipLevelForUser($user->ID);
+			
 			$end_date = !empty($user->membership_level->enddate);
 			
 			//some vars for the dates

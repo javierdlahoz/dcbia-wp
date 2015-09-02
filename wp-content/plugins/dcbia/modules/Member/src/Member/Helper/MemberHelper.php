@@ -322,5 +322,20 @@ class MemberHelper
                 break;
         }
     }
+    
+    /**
+     * @return boolean
+     */
+    public static function isCurrentAccountActive(){
+        $user = wp_get_current_user();
+        $user->membership_level = pmpro_getMembershipLevelsForUser($user->ID);
+        $today = new \DateTime();
+        if($today->getTimestamp() < $user->membership_level->enddate){
+            return true;   
+        }
+        else{
+            return false;
+        }
+    }
 
 }

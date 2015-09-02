@@ -4,6 +4,7 @@ namespace Member\Controller;
 
 use INUtils\Controller\AbstractController;
 use Member\Helper\ImporterHelper;
+use INUtils\Helper\EmailHelper;
 require_once("wp-content/plugins/paid-memberships-pro/paid-memberships-pro.php");
 
 class MemberController extends AbstractController{
@@ -12,6 +13,7 @@ class MemberController extends AbstractController{
     const MEMBERSHIP_TOTAL_COST = "membership_total_cost";
     const ADDITIONAL_USERS_ARRAY = "addUsers";
     const SUCCESS_STATUS = "success";
+    const PMPPRO_MEMBERSHIP_USERS = "pmpro_memberships_users";
     
     public function registerAction(){
         $additionalUsers = count($_POST["additional_users"]);
@@ -46,11 +48,29 @@ class MemberController extends AbstractController{
     
     /**
      * 
+     * @param int $userId
+     */
+    private function updateExpirationDate($userId){
+        global $wpdb;
+        $wpdb->pmpro_memberships_users = $wpdb->prefix . self::PMPPRO_MEMBERSHIP_USERS;
+        $endDate = new \DateTime();
+        $endDate->add(new \DateInterval('P1Y'));
+        $endDate = date("Y-m-d H:i:s", $endDate->getTimestamp());
+        
+        $sql = "UPDATE $wpdb->pmpro_memberships_users SET `enddate`='" . $endDate . "' WHERE `user_id`=".$userId;
+        $wpdb->query($sql);
+    }
+    
+    /**
+     * 
      * @param array $userIds
      */
     private function updateToMembershipLevel($userIds){
         foreach ($userIds as $userId){
             pmpro_changeMembershipLevel($this->getMembershipLevel()->id, $userId);
+            if(!empty($userId)){
+                $this->updateExpirationDate($userId);
+            }
         }
     }
     
@@ -150,8 +170,9 @@ class MemberController extends AbstractController{
         $order = new \MemberOrder();
         $order->billing = new \stdClass();
         $order->membership_level = new \stdClass();
+        $user = wp_get_current_user();
         
-        $order->InitialPayment = $_SESSION["amount"];
+        $order->InitialPayment = get_user_meta($user->ID, self::MEMBERSHIP_TOTAL_COST, true);
         $order->Address1 = $this->getPost("address1");
         $order->Address2 = $this->getPost("address2");
         $order->Email = $this->getPost("email");
@@ -173,7 +194,6 @@ class MemberController extends AbstractController{
         
         $status = $authorize->charge($order);
         if($status === true){
-            $user = wp_get_current_user();
             $order->user_id = $user->ID;
             $order->status = self::SUCCESS_STATUS;
             $order->payment_type = "Credit Card";
@@ -182,9 +202,28 @@ class MemberController extends AbstractController{
             $this->updateToMembershipLevel(get_user_meta($user->ID, 
                 self::ADDITIONAL_USERS_ARRAY, false)
             );
+            $this->sendOrderEmail($order, $user);
+            $this->updateExpirationDate($user->ID);
+            
             $order->saveOrder();
         }
         
         return array("status" => $status);
+    }
+    
+    /**
+     * 
+     * @param \MemberOrder $order
+     * @param \stdClass $user
+     */
+    private function sendOrderEmail(\MemberOrder $order, $user){
+        $content = "Thanks for register with us \n";
+        $content .= "\nYour Order Details\n\n";
+        
+        $content .="Description: Registration to DCBIA\n";
+        $content .="Payment Type: ".$order->payment_type."\n\n";
+        $content .="Total: $ ".$order->InitialPayment." US\n";
+        
+        EmailHelper::sendEmail($user->user_email, "Registration with DCBIA", null, $content, null);
     }
 }
