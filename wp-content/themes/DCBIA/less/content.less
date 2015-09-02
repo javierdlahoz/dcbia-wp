@@ -393,7 +393,21 @@ a.back-to-top{
         text-align: center;
         display: inline-block;
         margin-top: 15px;
+        &:hover{
+            text-decoration: none;
+            background-color: @dcbia-grey;
+        }
     }
+}
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
+.key-issue-boxes .active {
+    background-color: #27a9e1;
+    color: #ffffff;
+    text-decoration: none;
 }
 
 // Footer styles here
