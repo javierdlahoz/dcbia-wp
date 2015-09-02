@@ -241,7 +241,7 @@ a.back-to-top{
 
 // sponsors
 
-.sponsor-box{
+.sponsor-box-sidebar{
     background-color: #ffffff;
     padding: 25px;
     margin-top: 25px;
@@ -291,16 +291,108 @@ a.back-to-top{
     & .col-sm-3 { padding: 15px; }
     & a{
         color: @dcbia-grey;
+        text-transform: uppercase;
         background-color: #dddddd;
         padding: 25px;
         text-align: center;
         display: inline-block;
         width: 100%;
+        font-size: 21px;
+        height: 350px;
+        position: relative;
         &:hover{
             background-color: @light-blue;
             color: #ffffff;
             text-decoration: none;
         }
+        & span { height: 75px; display: block; }
+        & i {
+            font-size: 72px;
+            display: block;
+            margin: 20px 0;
+            &.arrowed{
+                position: relative;
+                bottom: 5%;
+                font-size: 42px;
+            }
+        }
+    }
+}
+
+.top-key-nav{
+    & p {
+        color: @offblack;
+        font-size: 21px;
+        font-weight: 700;
+        text-align: center;
+    }
+    & ul {
+        margin: 15px 0;
+        padding: 0;
+        text-align: center;
+        & li { 
+            list-style-type: none;
+            display: inline;
+            margin: 0 auto;
+            font-weight: 700;
+            color: @dcbia-grey;
+            font-size: 16px;
+            padding: 0 10px;
+            border-left: 2px solid @dcbia-grey;
+            &.no-border{ border: 0!important; }
+            & a {
+                color: @dcbia-grey;
+                &:hover{
+                    color: @orange;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}
+
+.lower-key-results{
+    display: block;
+    margin: 30px 0;
+    overflow: auto;
+}
+
+@media (min-width: 768px){
+    .col-sm-offset-1{ margin-left: 3%!important; }
+}
+
+.bookmark-box{
+    background-color: @orange;
+    overflow: auto;
+    margin-bottom: 15px;
+    & p { text-align: center; margin: 0 !important; }
+    & i { 
+        font-size: 72px; 
+        color: #ffffff;
+        position: relative;
+        padding: 15%;
+        text-align: center;
+    }
+}
+
+.key-info{
+    & h5{
+        color: @light-blue!important;
+        margin-top:  0!important;
+        font-weight: 600;
+        font-size: 15px;
+    }
+    & p{
+        color: @offblack !important;
+    }
+    & .button1{
+        background-color: @offblack;
+        color: #ffffff;
+        text-transform: uppercase;
+        padding: 10px 15px;
+        text-align: center;
+        display: inline-block;
+        margin-top: 15px;
     }
 }
 

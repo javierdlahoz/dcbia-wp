@@ -249,7 +249,7 @@ a.back-to-top:hover {
   color: #000000;
   font-style: italic;
 }
-.sponsor-box {
+.sponsor-box-sidebar {
   background-color: #ffffff;
   padding: 25px;
   margin-top: 25px;
@@ -294,16 +294,109 @@ a.back-to-top:hover {
 }
 .key-issue-boxes a {
   color: #6d6e70;
+  text-transform: uppercase;
   background-color: #dddddd;
   padding: 25px;
   text-align: center;
   display: inline-block;
   width: 100%;
+  font-size: 21px;
+  height: 350px;
+  position: relative;
 }
 .key-issue-boxes a:hover {
   background-color: #27a9e1;
   color: #ffffff;
   text-decoration: none;
+}
+.key-issue-boxes a span {
+  height: 75px;
+  display: block;
+}
+.key-issue-boxes a i {
+  font-size: 72px;
+  display: block;
+  margin: 20px 0;
+}
+.key-issue-boxes a i.arrowed {
+  position: relative;
+  bottom: 5%;
+  font-size: 42px;
+}
+.top-key-nav p {
+  color: #2a2d2f;
+  font-size: 21px;
+  font-weight: 700;
+  text-align: center;
+}
+.top-key-nav ul {
+  margin: 15px 0;
+  padding: 0;
+  text-align: center;
+}
+.top-key-nav ul li {
+  list-style-type: none;
+  display: inline;
+  margin: 0 auto;
+  font-weight: 700;
+  color: #6d6e70;
+  font-size: 16px;
+  padding: 0 10px;
+  border-left: 2px solid #6d6e70;
+}
+.top-key-nav ul li.no-border {
+  border: 0!important;
+}
+.top-key-nav ul li a {
+  color: #6d6e70;
+}
+.top-key-nav ul li a:hover {
+  color: #ff8d0c;
+  text-decoration: none;
+}
+.lower-key-results {
+  display: block;
+  margin: 30px 0;
+  overflow: auto;
+}
+@media (min-width: 768px) {
+  .col-sm-offset-1 {
+    margin-left: 3%!important;
+  }
+}
+.bookmark-box {
+  background-color: #ff8d0c;
+  overflow: auto;
+  margin-bottom: 15px;
+}
+.bookmark-box p {
+  text-align: center;
+  margin: 0 !important;
+}
+.bookmark-box i {
+  font-size: 72px;
+  color: #ffffff;
+  position: relative;
+  padding: 15%;
+  text-align: center;
+}
+.key-info h5 {
+  color: #27a9e1 !important;
+  margin-top: 0!important;
+  font-weight: 600;
+  font-size: 15px;
+}
+.key-info p {
+  color: #2a2d2f !important;
+}
+.key-info .button1 {
+  background-color: #2a2d2f;
+  color: #ffffff;
+  text-transform: uppercase;
+  padding: 10px 15px;
+  text-align: center;
+  display: inline-block;
+  margin-top: 15px;
 }
 .foot-break {
   display: block;
