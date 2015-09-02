@@ -26,8 +26,8 @@ get_header();
               <li id="news" <?php if($url == "news" || $url == "news") echo "class='active'"; ?>><a href="/news">NEWS</a></li>
             </ul> 
         </nav>
-        <div class="member-top-search">
-            <input type="text" name="" id="advocacy-search" class="form-control" placeholder="Search">
+        <div class="member-top-searchbar">
+            <input type="text" name="" id="member-search" class="form-control" placeholder="Search">
             <button class="btn advo-search-btn" type="button" onclick="">Submit</button>
         </div> 
     </div> 

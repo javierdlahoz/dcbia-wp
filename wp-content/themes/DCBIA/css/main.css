@@ -415,6 +415,11 @@ a.back-to-top:hover {
   color: #ffffff;
   text-decoration: none;
 }
+.member-top-searchbar {
+  background-color: #27a9e1;
+  overflow: auto;
+  height: auto;
+}
 .foot-break {
   display: block;
   overflow: auto;
@@ -9394,18 +9399,3 @@ hr.aq-block-hr-single {
   width: 100%;
 }
 /*@import "";*/
-
-[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
-  display: none !important;
-}
-
-.key-issue-boxes .active {
-    background-color: #27a9e1;
-    color: #ffffff;
-    text-decoration: none;
-}
-
-.top-key-nav .active {
-    color: #ff8d0c;
-    text-decoration: none;
-}
