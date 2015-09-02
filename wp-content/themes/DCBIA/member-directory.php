@@ -25,7 +25,11 @@ get_header();
               <li id="events" <?php if($url == "events" || $url == "events") echo "class='active'"; ?>><a href="/events">EVENTS</a></li>
               <li id="news" <?php if($url == "news" || $url == "news") echo "class='active'"; ?>><a href="/news">NEWS</a></li>
             </ul> 
-        </nav>      
+        </nav>
+        <div class="member-top-search">
+            <input type="text" name="" id="advocacy-search" class="form-control" placeholder="Search">
+            <button class="btn advo-search-btn" type="button" onclick="">Submit</button>
+        </div> 
     </div> 
 
 <!--start main content here-->
@@ -38,10 +42,7 @@ get_header();
 
          </div>
          <div class="col-sm-9">
-                <div class="key-top-search">
-                    <input type="text" name="" id="advocacy-search" class="form-control" placeholder="Search">
-                    <button class="btn advo-search-btn" type="button" onclick="">Submit</button>
-                </div>     
+    
          </div>     
     </div>
 </div>
