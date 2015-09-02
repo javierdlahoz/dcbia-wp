@@ -1,6 +1,7 @@
 <?php
 namespace Member\Helper;
 
+use Member\Controller\MemberController;
 class MemberHelper
 {
     const POST_TYPE = "member";
@@ -320,6 +321,21 @@ class MemberHelper
             case "Systems-Oriented Evaluation":
                 return 1;
                 break;
+        }
+    }
+    
+    /**
+     * @return boolean
+     */
+    public static function isCurrentAccountActive(){
+        $user = wp_get_current_user();
+        $user->membership_level = pmpro_getMembershipLevelsForUser($user->ID);
+        $today = new \DateTime();
+        if($today->getTimestamp() < $user->membership_level->enddate){
+            return true;   
+        }
+        else{
+            return false;
         }
     }
 

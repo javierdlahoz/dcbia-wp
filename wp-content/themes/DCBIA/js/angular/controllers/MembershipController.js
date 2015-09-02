@@ -48,7 +48,33 @@ angular.module('angular-wp')
             	$scope.isSuccess = true;
             	window.location = "/checkout";
             });
-    		
+    	};
+    	
+    	$scope.getAdditionalUsers = function(){
+    		var url = "/api/member/affiliates";
+    		$http({
+                url: url,
+                method: "GET"
+            }).success(function (data) {
+            	$scope.users = data.affiliates;
+            	$scope.c = data.affiliates.length - 1;
+            	console.log($scope.c);
+            });
+    	};
+    	
+    	$scope.setAdditionalUsers = function(){
+    		var url = "/api/member/affiliates";
+    		$scope.member = {};
+    		$scope.member.additional_users = $scope.users;
+    		$http({
+                url: url,
+                method: "POST",
+                data: jQuery.param($scope.member),
+                headers: getContentTypes().form
+            }).success(function (data) {
+            	$scope.isSuccess = true;
+            	window.location = "/checkout";
+            });
     	};
     	
     	$scope.isUsernameTaken = function(){
