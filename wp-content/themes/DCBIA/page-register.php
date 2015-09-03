@@ -5,14 +5,28 @@ use Member\Controller\MemberController;
 $pageEntity = new PostEntity(get_the_ID());
 
 get_header(); ?>
-<p>&nbsp;</p>
-<div class="container inside-pages">
-    <div class="breadcrumbs-box">
-        <a href="/">Home</a><span>></span><a href="/about/">About</a><span>></span>
-        <a href="/<?php echo $pageEntity->getName(); ?>"><?php echo $pageEntity->getTitle(); ?></a>
+<div class="container all-pad-gone">      
+      <nav class="site-navigation" role="navigation">
+          <ul class="nav custom-nav hide-on-phone">
+              <li id="about" <?php if($url == "about" || $url == "about")
+                  echo "class='active'"; ?>><a href="/about">ABOUT</a>
+                  <ul class="" id="" role="menu">       
+                        <li id="staff"><a href="/about/">STAFF</a></li>
+                        <li id="board"><a href="/about/">BOARD</a></li>
+                        <li id="committees"><a href="/about/">COMMITTEES</a></li>
+                  </ul>
+              </li>
+              <li id="join"><a href="/join">JOIN</a></li>
+              <li id="advocacy" <?php if($url == "advocacy" || $url == "advocacy") echo "class='active'"; ?>><a href="/advocacy">ADVOCACY</a></li>
+              <li id="sponsors" <?php if($url == "sponsors" || $url == "sponsors") echo "class='active'"; ?>><a href="/sponsors">SPONSORS</a></li>
+
+              <li id="events" <?php if($url == "events" || $url == "events") echo "class='active'"; ?>><a href="/events">EVENTS</a></li>
+              <li id="news" <?php if($url == "news" || $url == "news") echo "class='active'"; ?>><a href="/news">NEWS</a></li>
+            </ul> 
+        </nav>   
     </div>
-   <p>&nbsp;</p>
-    <div class="container inside-pages" ng-controller="MembershipController">
+
+    <div class="container" ng-controller="MembershipController">
         <div class="row">
             <div class="col-md-12">
                 <h3><?php echo $pageEntity->getTitle(); ?></h3>
@@ -132,7 +146,7 @@ get_header(); ?>
             </div>
         </div>
     </div>
-</div>
+
 <p>&nbsp;</p>
 <?php get_footer(); ?>
 <script src="<?php echo get_template_directory_uri(); ?>/js/angular/controllers/MembershipController.js"></script>
