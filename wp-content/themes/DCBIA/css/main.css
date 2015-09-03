@@ -539,6 +539,30 @@ a.member-sort:hover {
 .members-main h2 {
   margin-top: 5px !important;
 }
+.member-details {
+  padding: 5px 0 25px 0;
+  margin: 5px 0 15px 0;
+  border-bottom: 1px solid #6d6e70;
+}
+.member-details h4 {
+  color: #27a9e1 !important;
+}
+.member-details p {
+  font-size: 15px;
+}
+.member-details a.button1 {
+  background-color: #2a2d2f;
+  color: #ffffff;
+  text-transform: uppercase;
+  padding: 10px 15px;
+  text-align: center;
+  display: inline-block;
+  margin-top: 10px;
+}
+.member-details a.button1:hover {
+  text-decoration: none;
+  background-color: #6d6e70;
+}
 .foot-break {
   display: block;
   overflow: auto;

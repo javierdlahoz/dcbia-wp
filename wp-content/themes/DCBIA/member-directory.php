@@ -87,6 +87,26 @@ get_header();
          </div>
          <div class="col-sm-8 members-main">
             <h2>members found: <span>106</span></h2>
+            <div class="member-details">
+                <h4>Important member example</h4>
+                <p>Lorem ipsum dolor sit amet, eam ne lorem ludus verear. Ullum eleifend vel an, duo modus postea id. Vidit incorrupte ea vis.</p>
+                <a class="button1" href="">View  memeber</a>
+            </div>
+            <div class="member-details">
+                <h4>Important member example</h4>
+                <p>Lorem ipsum dolor sit amet, eam ne lorem ludus verear. Ullum eleifend vel an, duo modus postea id. Vidit incorrupte ea vis.</p>
+                <a class="button1" href="">View  memeber</a>
+            </div>
+            <div class="member-details">
+                <h4>Important member example</h4>
+                <p>Lorem ipsum dolor sit amet, eam ne lorem ludus verear. Ullum eleifend vel an, duo modus postea id. Vidit incorrupte ea vis.</p>
+                <a class="button1" href="">View  memeber</a>
+            </div>
+            <div class="member-details">
+                <h4>Important member example</h4>
+                <p>Lorem ipsum dolor sit amet, eam ne lorem ludus verear. Ullum eleifend vel an, duo modus postea id. Vidit incorrupte ea vis.</p>
+                <a class="button1" href="">View  memeber</a>
+            </div> 
          </div>     
     </div>
 </div>
