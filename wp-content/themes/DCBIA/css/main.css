@@ -518,6 +518,24 @@ a.member-sort:hover {
 .member-bottom-resultbar a.member-share i {
   margin-left: 8px;
 }
+.member-side-result-box {
+  background-color: #2a2d2f;
+}
+.member-side-result-box h4 {
+  color: #ffffff !important;
+  background-color: #27a9e1;
+  padding: 15px 20px;
+}
+.member-side-result-box p {
+  color: #ffffff !important;
+}
+.member-side-result-box a {
+  color: #ffffff !important;
+}
+.inside-side-member {
+  padding: 15px 20px;
+  margin-bottom: 25px;
+}
 .foot-break {
   display: block;
   overflow: auto;

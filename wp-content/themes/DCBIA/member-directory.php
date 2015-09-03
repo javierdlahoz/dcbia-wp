@@ -53,14 +53,39 @@ get_header();
 
 <!--start main content here-->
 
+<p>&nbsp;</p>
+
 <div class="container all-pad-gone">
     <div class="row">
-        <div class="col-sm-3">
-
-            <p>&nbsp;</p>
-
+        <div class="col-sm-4">
+            <div class="member-side-result-box">
+                <h4>Lorem ipsum</h4>
+                <div class="inside-side-member">
+                    <p><a href="">Dolor sit amet <span>(4)</span></a></p>
+                    <p><a href="">Dolor sit amet <span>(4)</span></a></p>
+                    <p><a href="">Dolor sit amet <span>(4)</span></a></p>
+                    <p><a href="">Dolor sit amet <span>(4)</span></a></p>
+                </div>    
+            </div>
+            <div class="member-side-result-box">
+                <h4>Ullum eleifend</h4>
+                <div class="inside-side-member">
+                    <p><a href="">Dolor sit amet <span>(4)</span></a></p>
+                    <p><a href="">Dolor sit amet <span>(4)</span></a></p>
+                    <p><a href="">Dolor sit amet <span>(4)</span></a></p>
+                </div>    
+            </div>
+            <div class="member-side-result-box">
+                <h4>DOLOR SIT AMET</h4>
+                <div class="inside-side-member">
+                    <p><a href="">Dolor sit amet <span>(4)</span></a></p>
+                    <p><a href="">Dolor sit amet <span>(4)</span></a></p>
+                    <p><a href="">Dolor sit amet <span>(4)</span></a></p>
+                    <p><a href="">Dolor sit amet <span>(4)</span></a></p>
+                </div>    
+            </div> 
          </div>
-         <div class="col-sm-9">
+         <div class="col-sm-8">
     
          </div>     
     </div>
