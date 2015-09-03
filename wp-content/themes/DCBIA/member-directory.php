@@ -85,8 +85,8 @@ get_header();
                 </div>    
             </div> 
          </div>
-         <div class="col-sm-8">
-            <h3>Tester</h3>
+         <div class="col-sm-8 members-main">
+            <h2>members found: <span>106</span></h2>
          </div>     
     </div>
 </div>

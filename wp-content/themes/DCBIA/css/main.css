@@ -536,6 +536,9 @@ a.member-sort:hover {
   padding: 15px 20px;
   margin-bottom: 25px;
 }
+.members-main h2 {
+  margin-top: 5px !important;
+}
 .foot-break {
   display: block;
   overflow: auto;
