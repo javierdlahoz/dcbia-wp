@@ -7,6 +7,7 @@ use Member\Helper\ImporterHelper;
 use INUtils\Helper\EmailHelper;
 use Member\Helper\MemberHelper;
 use Member\Facade\MemberFacade;
+use Member\Service\MemberService;
 require_once("wp-content/plugins/paid-memberships-pro/paid-memberships-pro.php");
 
 class MemberController extends AbstractController{
@@ -262,6 +263,70 @@ class MemberController extends AbstractController{
         else{
             return MemberFacade::getSingleton()->getAffiliates($this->getAdditionalUserIds($user->ID));
         }
+    }
+   
+    
+    public function indexAction(){
+        $mS = MemberService::getSingleton();
+        $userPerPage = 20;
+        $mS->setNumber($userPerPage);
+        
+        if(!is_null($this->getPost("page"))){
+            $mS->setOffset(($this->getPost("page") - 1) * $userPerPage);
+        }
+        else{
+            $mS->setOffset(0);
+        }
+        
+        if(!is_null($this->getPost("query"))){
+            $query = $this->getPost("query");
+            //$mS->setSearch($query);
+            
+            $metaQuery = array(
+                'relation' => 'OR',
+                array(
+                    'key' => 'first_name',
+                    'value' => $query, 
+                    'compare' => 'LIKE'
+                ),
+                array(
+                    'key' => 'last_name', 
+                    'value' => $query, 
+                    'compare' => 'LIKE'
+                ),
+                array(
+                    'key' => 'description',
+                    'value' => $query,
+                    'compare' => 'LIKE'
+                ),
+                array(
+                    'key' => 'company_description',
+                    'value' => $query,
+                    'compare' => 'LIKE'
+                ),
+                array(
+                    'key' => 'membership_type',
+                    'value' => $query,
+                    'compare' => 'LIKE'
+                ),
+            );
+            
+            $mS->setMetaQuery($metaQuery);
+        }
+        
+        if(!is_null($this->getPost("order"))){
+            $mS->setOrder($this->getPost("order"));
+        }
+        
+        if(!is_null($this->getPost("orderby"))){
+            $mS->setOrderby($this->getPost("orderby"));
+        }
+        
+        
+        //var_dump($mS->getArgsArray()); die();
+        
+        $users = $mS->getUsers();
+        return MemberFacade::getSingleton()->formatResults($users);
     }
     
 }

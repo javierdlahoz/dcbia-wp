@@ -2,116 +2,464 @@
 
 namespace Member\Service;
 
-use Solarium\Service\AbstractService;
-use INUtils\Helper\TextHelper;
-use Member\Entity\MemberEntity;
+use INUtils\Singleton\AbstractSingleton;
 
 /**
  *
  * @author jdelahoz1
  *
  */
-class MemberService extends AbstractService {
-
-	const RELATED_RESOURCES_LIMIT = 3;
+class MemberService extends AbstractSingleton {
+    
+    /**
+     * 
+     * @var string
+     */
+    private $role = "";
 
     /**
-     *
-     * @param array $entities
-     * @param string $resourcesAsArray
-     * @return multitype:\Resource\Entity\ResourceEntity
+     * 
+     * @var string
      */
-    public function toResourceEntities($entities, $resourcesAsArray = false) {
-        $resourceEntities = array();
-        if (is_array($entities)) {
-            foreach ($entities as $entity) {
-                $resourceEntity = new MemberEntity($entity->toArray());
-                if($resourcesAsArray == true){
-                    $resourceEntities[] = $resourceEntity->getAsArray();
-                }
-                else{
-                    $resourceEntities[] = $resourceEntity;
-                }
-            }
+    private $metaKey = "";
+    
+    /**
+     * 
+     * @var string
+     */
+    private $metaValue = "";
+    
+    /**
+     * 
+     * @var string
+     */
+    private $metaCompare = "";
+    
+    /**
+     * 
+     * @var array
+     */
+    private $metaQuery = array();
+    
+    /**
+     * 
+     * @var array
+     */
+    private $dateQuery = array();
+    
+    /**
+     * 
+     * @var array
+     */
+    private $include = array();
+    
+    /**
+     * 
+     * @var array
+     */
+    private $exclude = array();
+    
+    /**
+     * 
+     * @var string
+     */
+    private $orderby = "login";
+    
+    /**
+     * 
+     * @var string
+     */
+    private $order = "ASC";
+    
+    /**
+     * 
+     * @var string
+     */
+    private $offset = "";
+    
+    /**
+     * 
+     * @var string
+     */
+    private $search = "";
+    
+    /**
+     * 
+     * @var string
+     */
+    private $number = 20;
+    
+    /**
+     * 
+     * @var boolean
+     */
+    private $countTotal = true;
+    
+    /**
+     * 
+     * @var string
+     */
+    private $fields = "all";
+    
+    /**
+     * 
+     * @var string
+     */
+    private $who = "";
+    
+    /**
+     * @return array
+     */
+    public function getArgsArray(){
+        $args = array(
+            'role'         => $this->role,
+            'meta_query'   => $this->metaQuery,
+            'orderby'      => $this->orderby,
+            'order'        => $this->order,
+            'offset'       => $this->offset,
+            'search'       => "*".$this->search."*",
+            'number'       => $this->number,
+            'count_total'  => $this->countTotal,
+        );
+        
+        if($this->metaKey != ""){
+            $args["meta_key"] = $this->metaKey;
         }
-        else {
-            $resourceEntity = new MemberEntity($entities->toArray());
-            if($resourcesAsArray == true){
-                $resourceEntities[] = $resourceEntity->getAsArray();
-            }
-            else{
-                $resourceEntities[] = $resourceEntity;
-            }
+        
+        if($this->metaValue != ""){
+            $args["meta_value"] = $this->metaValue;
         }
-        return $resourceEntities;
+        
+        if($this->metaCompare != ""){
+            $args["meta_compare"] = $this->metaCompare;
+        }
+        
+        return $args;
+    }
+    
+    /**
+     * @return \WP_User_Query
+     */
+    public function getUsers(){
+        $users = new \WP_User_Query($this->getArgsArray());
+        return $users;
     }
 
     /**
      *
-     * @param string $expression
-     * @param array $sort
-     * @param number $pageNumber
-     * @param string $facets
-     * @param string $resourcesAsArray
-     * @return \Resource\Service\multiple:
+     * @return the string
      */
-    public function findResourcesBy($expression, array $sort = null, $pageNumber = 1, $facets = null, $resourcesAsArray = false) {
-        $resultEntity = self::findBy($expression, null, $sort, $pageNumber, $facets);
-        $this->expression = $expression;
-        if ($resultEntity == null) {
-            return null;
-        }
-        return self::toResourceEntities($resultEntity, $resourcesAsArray);
+    public function getRole()
+    {
+        return $this->role;
     }
 
     /**
      *
-     * @param string $resourceId
-     * @return ResourceEntity
+     * @param
+     *            $role
      */
-    public function findResourceById($resourceId) {
-        $result = self::findResourcesBy("id:" . $resourceId);
-        return $result[0];
+    public function setRole($role)
+    {
+        $this->role = $role;
+        return $this;
     }
 
     /**
      *
-     * @param string $resourceId
-     * @return multitype: ResourceEntity
+     * @return the string
      */
-    public function getRelatedResources($resourceId) {
-        $resourceEntity = self::findResourceById($resourceId);
-        $types = $resourceEntity->getType()->getOptions();
-        $query = "-id:" . $resourceEntity->getId() . " AND (";
-        $isFirst = true;
-        foreach ($types as $type) {
-            if ($isFirst) {
-                $query .= "resource_type_ss:" . TextHelper::formatSpaces($type) . "";
-                $isFirst = false;
-            } else {
-                $query .= " OR resource_type_ss:" . TextHelper::formatSpaces($type) . "";
-            }
-        }
-        if($types == null){
-        	$query .= "resource_type_ss:*";
-        }
-
-        $query .= ")";
-
-        $results = self::findResourcesBy($query, array('date_dt' => 'desc'));
-        if ($results == null) {
-            return array();
-        }
-        return array_slice($results, 0, self::RELATED_RESOURCES_LIMIT);
+    public function getMetaKey()
+    {
+        return $this->metaKey;
     }
 
     /**
      *
-     * @return \Resource\Service\multiple:
+     * @param
+     *            $metaKey
      */
-    public function getAllResources(){
-        $resultEntity = self::findBy("type_ss:*");
-        return self::toResourceEntities($resultEntity);
+    public function setMetaKey($metaKey)
+    {
+        $this->metaKey = $metaKey;
+        return $this;
     }
+
+    /**
+     *
+     * @return the string
+     */
+    public function getMetaValue()
+    {
+        return $this->metaValue;
+    }
+
+    /**
+     *
+     * @param
+     *            $metaValue
+     */
+    public function setMetaValue($metaValue)
+    {
+        $this->metaValue = $metaValue;
+        return $this;
+    }
+
+    /**
+     *
+     * @return the string
+     */
+    public function getMetaCompare()
+    {
+        return $this->metaCompare;
+    }
+
+    /**
+     *
+     * @param
+     *            $metaCompare
+     */
+    public function setMetaCompare($metaCompare)
+    {
+        $this->metaCompare = $metaCompare;
+        return $this;
+    }
+
+    /**
+     *
+     * @return the array
+     */
+    public function getMetaQuery()
+    {
+        return $this->metaQuery;
+    }
+
+    /**
+     *
+     * @param array $metaQuery            
+     */
+    public function setMetaQuery(array $metaQuery)
+    {
+        $this->metaQuery = $metaQuery;
+        return $this;
+    }
+
+    /**
+     *
+     * @return the array
+     */
+    public function getDateQuery()
+    {
+        return $this->dateQuery;
+    }
+
+    /**
+     *
+     * @param array $dateQuery            
+     */
+    public function setDateQuery(array $dateQuery)
+    {
+        $this->dateQuery = $dateQuery;
+        return $this;
+    }
+
+    /**
+     *
+     * @return the array
+     */
+    public function getInclude()
+    {
+        return $this->include;
+    }
+
+    /**
+     *
+     * @param array $include            
+     */
+    public function setInclude(array $include)
+    {
+        $this->include = $include;
+        return $this;
+    }
+
+    /**
+     *
+     * @return the array
+     */
+    public function getExclude()
+    {
+        return $this->exclude;
+    }
+
+    /**
+     *
+     * @param array $exclude            
+     */
+    public function setExclude(array $exclude)
+    {
+        $this->exclude = $exclude;
+        return $this;
+    }
+
+    /**
+     *
+     * @return the string
+     */
+    public function getOrderby()
+    {
+        return $this->orderby;
+    }
+
+    /**
+     *
+     * @param
+     *            $orderby
+     */
+    public function setOrderby($orderby)
+    {
+        $this->orderby = $orderby;
+        return $this;
+    }
+
+    /**
+     *
+     * @return the string
+     */
+    public function getOrder()
+    {
+        return $this->order;
+    }
+
+    /**
+     *
+     * @param
+     *            $order
+     */
+    public function setOrder($order)
+    {
+        $this->order = $order;
+        return $this;
+    }
+
+    /**
+     *
+     * @return the string
+     */
+    public function getOffset()
+    {
+        return $this->offset;
+    }
+
+    /**
+     *
+     * @param
+     *            $offset
+     */
+    public function setOffset($offset)
+    {
+        $this->offset = $offset;
+        return $this;
+    }
+
+    /**
+     *
+     * @return the string
+     */
+    public function getSearch()
+    {
+        return $this->search;
+    }
+
+    /**
+     *
+     * @param
+     *            $search
+     */
+    public function setSearch($search)
+    {
+        $this->search = $search;
+        return $this;
+    }
+
+    /**
+     *
+     * @return the string
+     */
+    public function getNumber()
+    {
+        return $this->number;
+    }
+
+    /**
+     *
+     * @param
+     *            $number
+     */
+    public function setNumber($number)
+    {
+        $this->number = $number;
+        return $this;
+    }
+
+    /**
+     *
+     * @return the boolean
+     */
+    public function getCountTotal()
+    {
+        return $this->countTotal;
+    }
+
+    /**
+     *
+     * @param
+     *            $countTotal
+     */
+    public function setCountTotal($countTotal)
+    {
+        $this->countTotal = $countTotal;
+        return $this;
+    }
+
+    /**
+     *
+     * @return the string
+     */
+    public function getFields()
+    {
+        return $this->fields;
+    }
+
+    /**
+     *
+     * @param
+     *            $fields
+     */
+    public function setFields($fields)
+    {
+        $this->fields = $fields;
+        return $this;
+    }
+
+    /**
+     *
+     * @return the string
+     */
+    public function getWho()
+    {
+        return $this->who;
+    }
+
+    /**
+     *
+     * @param
+     *            $who
+     */
+    public function setWho($who)
+    {
+        $this->who = $who;
+        return $this;
+    }
+ 
 
 }
