@@ -138,36 +138,34 @@ get_header(); ?>
                 </div>
                 <div class="col-md-12">
                     <div class="user-container">
-                        <div class="form-horizontal">
-                            <div ng-repeat="user in users">
-                                <div class="form-group">
-                                    <label>First name</label>
-                                    <input type="text" class="form-control" placeholder="First name" ng-model="user.first_name">
-                                </div>
-                                <div class="form-group">
-                                    <label>Last name</label>
-                                    <input type="text" class="form-control" placeholder="Last name" ng-model="user.last_name">
-                                </div>
-                                <div class="form-group">
-                                    <label>E-Mail</label>
-                                    <input type="email" class="form-control" placeholder="E-Mail" ng-model="user.email">
-                                </div>
-                                <div class="form-group">
-                                    <label>Password</label>
-                                    <input type="password" class="form-control" placeholder="Password" ng-model="user.password">
-                                </div>
-                                <div class="form-group">
-                                    <label>Committee</label>
-                                    <select class="form-control" ng-model="user.committee">
-                                    <?php foreach (CommitteeController::getSingleton()->getCommitteeTerms() as $committee): ?>
-                                        <option value="<?php echo $committee->getTermId(); ?>"><?php echo $committee->getName(); ?></option>
-                                    <?php endforeach; ?>
-                                    </select>
-                                </div>
-                                <div class="btn btn-danger" ng-click="remove(user.id)">Remove Affiliate</div>
+                        <div ng-repeat="user in users">
+                            <div class="form-group">
+                                <label>First name</label>
+                                <input type="text" class="form-control" placeholder="First name" ng-model="user.first_name">
                             </div>
-                            <div class="button2" ng-click="add()">Add Affiliate</div>
+                            <div class="form-group">
+                                <label>Last name</label>
+                                <input type="text" class="form-control" placeholder="Last name" ng-model="user.last_name">
+                            </div>
+                            <div class="form-group">
+                                <label>E-Mail</label>
+                                <input type="email" class="form-control" placeholder="E-Mail" ng-model="user.email">
+                            </div>
+                            <div class="form-group">
+                                <label>Password</label>
+                                <input type="password" class="form-control" placeholder="Password" ng-model="user.password">
+                            </div>
+                            <div class="form-group">
+                                <label>Committee</label>
+                                <select class="form-control" ng-model="user.committee">
+                                <?php foreach (CommitteeController::getSingleton()->getCommitteeTerms() as $committee): ?>
+                                    <option value="<?php echo $committee->getTermId(); ?>"><?php echo $committee->getName(); ?></option>
+                                <?php endforeach; ?>
+                                </select>
+                            </div>
+                            <div class="btn btn-danger" ng-click="remove(user.id)">Remove Affiliate</div>
                         </div>
+                        <div class="button2" ng-click="add()">Add Affiliate</div>
                     </div>
                 </div>
                 <div class="col-md-12">
