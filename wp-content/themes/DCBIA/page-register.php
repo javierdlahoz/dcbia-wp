@@ -126,12 +126,12 @@ get_header(); ?>
                       <input type="number" class="form-control" placeholder="Telephone" ng-model="member.telephone">
                     </div>
                     <div class="form-group">
-                      <label><h3>Description for member directory</h3></label>
+                      <label><h4>Description for member directory</h4></label>
                       <textarea class="form-control register-form-text-area" ng-model="member.company_description"></textarea>
                     </div>
                 </div>
                 <div class="col-md-12">
-                    <h3>Affiliate Listing in Directory</h3>
+                    <h4>Affiliate Listing in Directory</h4>
                     <p>Membership in DCBIA is corporate based and it entitles you to one representative to be listed in the Membership Directory under your company’s listing. Additional representatives from a member firm can be listed as affiliate members for a $75/year charge.</p>
                     <p><b>Enter information for Affiliates to be added * :</b></p>
                     <p>($ 75 per individual)</p>
