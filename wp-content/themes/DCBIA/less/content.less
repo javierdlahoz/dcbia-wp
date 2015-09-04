@@ -565,16 +565,31 @@ a.member-sort{
 
 // register form
 
+.register{
+    & h3{
+        color: @light-blue !important;
+    }
+}
+
 textarea.register-form-text-area{
     min-height: 200px!important;
 }
-.button2{
+.button2, .button3{
     padding: 10px 25px;
     margin: 15px 0;
     background-color: @dcbia-grey;
     color: #ffffff;
     display: inline-block;
-    font-size: 16px;
+    font-size: 15px;
+    text-transform: uppercase;
+    &:hover{
+        background-color: @offblack;
+    }
+}
+.button3{
+    width: 300px;
+    margin: 25px auto 15px auto;
+    display: block;
 }
 
 // Footer styles here

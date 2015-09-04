@@ -26,7 +26,7 @@ get_header(); ?>
         </nav>   
     </div>
 
-    <div class="container all-pad-gone" ng-controller="MembershipController">
+    <div class="container all-pad-gone register" ng-controller="MembershipController">
         <div class="row">
             <form class="" ng-init="initialize()" ng-hide="isSuccess">
                 <div class="col-md-12">
@@ -126,9 +126,6 @@ get_header(); ?>
                       <input type="number" class="form-control" placeholder="Telephone" ng-model="member.telephone">
                     </div>
                     <div class="form-group">
-                      <p>&nbsp;</p>
-                    </div>
-                    <div class="form-group">
                       <label><h3>Description for member directory</h3></label>
                       <textarea class="form-control register-form-text-area" ng-model="member.company_description"></textarea>
                     </div>
@@ -174,7 +171,7 @@ get_header(); ?>
                     </div>
                 </div>
                 <div class="col-md-12">
-                    <button class="btn" ng-disabled="usernameTaken" ng-click="register()">Send</button>
+                    <button class="button3" ng-disabled="usernameTaken" ng-click="register()">Submit Registration Form</button>
                 </div>    
             </form>
         </div>
