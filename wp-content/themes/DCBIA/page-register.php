@@ -26,7 +26,7 @@ get_header(); ?>
         </nav>   
     </div>
 
-    <div class="container all-pad-gone" ng-controller="MembershipController">
+    <div class="container all-pad-gone register" ng-controller="MembershipController">
         <div class="row">
             <form class="" ng-init="initialize()" ng-hide="isSuccess">
                 <div class="col-md-12">
@@ -49,6 +49,13 @@ get_header(); ?>
                       <label>Last Name</label>
                       <input type="text" class="form-control" placeholder="Last name" ng-model="member.last_name" required>
                     </div>
+                    <div class="form-group">     
+                      <a href="">Already a Member?</a>
+                    </div>
+                    <div class="form-group">     
+                      <label>Referred By</label>
+                      <input type="text" class="form-control" placeholder="Referred By" ng-model="member.refered_by">
+                    </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
@@ -60,61 +67,77 @@ get_header(); ?>
                       <label>Password</label>
                       <input type="password" class="form-control" placeholder="Password" ng-model="member.password" required>
                     </div>
+                    <div class="form-group">
+                      <p>&nbsp;</p>
+                    </div>
+                     <div class="form-group">
+                      <p>&nbsp;</p>
+                    </div>
                 </div>
-                <div class="form-group">
-                  <label>Address</label>
-                  <input type="text" class="form-control" placeholder="Address" ng-model="member.address1">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <h3>Organization Details</h3>
+                    </div>
                 </div>
-                <div class="form-group">
-                  <label>Address2</label>
-                  <input type="text" class="form-control" placeholder="Address2" ng-model="member.address2">
+                <div class="col-md-12">
+                    <div class="form-group">
+                      <label>Company Name</label>
+                      <input type="text" class="form-control" placeholder="Company Name" ng-model="member.company_name">
+                    </div>    
+                    <div class="form-group">
+                      <label>Address</label>
+                      <input type="text" class="form-control" placeholder="Address" ng-model="member.address1">
+                    </div>
+                    <div class="form-group">
+                      <label>Address2</label>
+                      <input type="text" class="form-control" placeholder="Address2" ng-model="member.address2">
+                    </div>
+                    <div class="form-group">
+                      <label>Address3</label>
+                      <input type="text" class="form-control" placeholder="Address3" ng-model="member.address3">
+                    </div>
                 </div>
-                <div class="form-group">
-                  <label>Address3</label>
-                  <input type="text" class="form-control" placeholder="Address3" ng-model="member.address3">
+                <div class="col-md-5">
+                    <div class="form-group">
+                      <label>City</label>
+                      <input type="text" class="form-control" placeholder="City" ng-model="member.city" 
+                        g-places-autocomplete ng-change="setCity()">
+                    </div>
                 </div>
-                <div class="form-group">
-                  <label>City</label>
-                  <input type="text" class="form-control" placeholder="City" ng-model="member.city" 
-                    g-places-autocomplete ng-change="setCity()">
+                <div class="col-md-3">
+                    <div class="form-group">
+                      <label>State</label>
+                      <input type="text" class="form-control" placeholder="State" ng-model="member.state">
+                    </div>
                 </div>
-                <div class="form-group">
-                  <label>State</label>
-                  <input type="text" class="form-control" placeholder="State" ng-model="member.state">
+                <div class="col-md-4">
+                    <div class="form-group">
+                      <label>ZIP</label>
+                      <input type="number" class="form-control" placeholder="ZIP" ng-model="member.zip">
+                    </div>
                 </div>
-                <div class="form-group">
-                  <label>ZIP</label>
-                  <input type="number" class="form-control" placeholder="ZIP" ng-model="member.zip">
+                <div class="col-md-12">
+                    <div class="form-group">
+                      <label>Company Website</label>
+                      <input type="url" class="form-control" placeholder="Company Website" ng-model="member.company_website">
+                    </div>
+                    <div class="form-group">
+                      <label>Phone</label>
+                      <input type="number" class="form-control" placeholder="Telephone" ng-model="member.telephone">
+                    </div>
+                    <div class="form-group">
+                      <label><h4>Description for member directory</h4></label>
+                      <textarea class="form-control register-form-text-area" ng-model="member.company_description"></textarea>
+                    </div>
                 </div>
-                <div class="form-group">
-                  <label>Telephone</label>
-                  <input type="number" class="form-control" placeholder="Telephone" ng-model="member.telephone">
+                <div class="col-md-12">
+                    <h4>Affiliate Listing in Directory</h4>
+                    <p>Membership in DCBIA is corporate based and it entitles you to one representative to be listed in the Membership Directory under your company’s listing. Additional representatives from a member firm can be listed as affiliate members for a $75/year charge.</p>
+                    <p><b>Enter information for Affiliates to be added * :</b></p>
+                    <p>($ 75 per individual)</p>
                 </div>
-                <div class="form-group">
-                  <label>Referred By</label>
-                  <input type="text" class="form-control" placeholder="Referred By" ng-model="member.refered_by">
-                </div>
-                <div class="form-group">
-                  <label>Company Name</label>
-                  <input type="text" class="form-control" placeholder="Company Name" ng-model="member.company_name">
-                </div>
-                <div class="form-group">
-                  <label>Company Website</label>
-                  <input type="url" class="form-control" placeholder="Company Website" ng-model="member.company_website">
-                </div>
-                <div class="form-group">
-                  <label>Company Description</label>
-                  <textarea class="form-control" ng-model="member.company_description"></textarea>
-                </div>
-
-                <h2>Affiliate Listing in Directory</h2>
-                <p>Membership in DCBIA is corporate based and it entitles you to one representative to be listed in the Membership 
-                Directory under your company’s listing. Additional representatives from a member firm can be listed as 
-                affiliate members for a $75/year charge.</p>
-                <p><b>Enter information for Affiliates to be added * :</b></p>
-                <p>($ 75 per individual)</p>
-                <div class="user-container">
-                    <div class="form-horizontal">
+                <div class="col-md-12">
+                    <div class="user-container">
                         <div ng-repeat="user in users">
                             <div class="form-group">
                                 <label>First name</label>
@@ -142,11 +165,12 @@ get_header(); ?>
                             </div>
                             <div class="btn btn-danger" ng-click="remove(user.id)">Remove Affiliate</div>
                         </div>
-                        <div class="btn btn-primary" ng-click="add()">Add Affiliate</div>
+                        <div class="button2" ng-click="add()">Add Affiliate</div>
                     </div>
                 </div>
-                <br>
-                <button class="btn btn-success" ng-disabled="usernameTaken" ng-click="register()">Send</button>
+                <div class="col-md-12">
+                    <button class="button3" ng-disabled="usernameTaken" ng-click="register()">Submit Registration Form</button>
+                </div>    
             </form>
         </div>
     </div>
