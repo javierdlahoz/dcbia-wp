@@ -66,7 +66,7 @@ get_header();  ?>
     <div class="container all-pad-gone">
         <div class="row">
             <div class="col-sm-4">
-                Show Results per page:
+                Results per page:
                 <span>&nbsp;</span> 
                 <a href="" ng-click="setResultsPerPage(20)">20</a>
                 <span>&nbsp;</span>
