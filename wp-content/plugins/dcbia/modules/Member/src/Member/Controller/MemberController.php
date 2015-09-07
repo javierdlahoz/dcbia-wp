@@ -268,8 +268,13 @@ class MemberController extends AbstractController{
     
     public function indexAction(){
         $mS = MemberService::getSingleton();
-        $userPerPage = 20;
-        $mS->setNumber($userPerPage);
+        
+        if(!is_null($this->getPost("resultsPerPage"))){
+            $userPerPage = $this->getPost("resultsPerPage");
+        }
+        else{
+            $userPerPage = 20;
+        }
         
         if(!is_null($this->getPost("page"))){
             $mS->setOffset(($this->getPost("page") - 1) * $userPerPage);
@@ -319,9 +324,16 @@ class MemberController extends AbstractController{
         }
         
         if(!is_null($this->getPost("orderby"))){
-            $mS->setOrderby($this->getPost("orderby"));
+            if($this->getPost("orderby") == "first_name"){
+                $mS->setOrderby("meta_value");
+                $mS->setMetaKey("first_name");
+            }
+            else{
+                $mS->setOrderby($this->getPost("orderby"));
+            }
         }
         
+        $mS->setNumber($userPerPage);
         
         //var_dump($mS->getArgsArray()); die();
         

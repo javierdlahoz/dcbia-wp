@@ -4,6 +4,9 @@ angular.module('angular-wp')
     	$scope.members = {};
     	$scope.query = {};
     	$scope.query.page = 1;
+    	$scope.query.orderby = "first_name";
+		$scope.query.order = "ASC";
+		$scope.query.resultsPerPage = 20;
     	
     	$scope.increasePage = function(){
     		$scope.query.page ++;
@@ -12,6 +15,25 @@ angular.module('angular-wp')
     	
     	$scope.decreasePage = function(){
     		$scope.query.page --;
+    		$scope.search();
+    	};
+    	
+    	$scope.setResultsPerPage = function(resultsPerPage){
+    		$scope.query.resultsPerPage = resultsPerPage;
+    		$scope.search();
+    	};
+    	
+    	$scope.setOrderBy = function(orderBy){
+    		angular.element(".member-sort").removeClass("active");
+    		angular.element("#sort-"+orderBy).addClass("active");
+    		if(orderBy == "title"){
+    			$scope.query.orderby = "first_name";
+    			$scope.query.order = "ASC";
+    		}
+    		else{
+    			$scope.query.orderby = "date";
+    			$scope.query.order = "DESC";
+    		}
     		$scope.search();
     	};
     	

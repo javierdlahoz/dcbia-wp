@@ -9381,3 +9381,8 @@ hr.aq-block-hr-single {
   width: 100%;
 }
 /*@import "";*/
+
+.member-sort.active{
+	background-color: #6D96B2;
+	color: white;
+}

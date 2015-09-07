@@ -32,10 +32,10 @@ get_header();  ?>
                     <span class="search-titles">SORT BY:</span>
                 </div>
                 <div class="col-sm-2 col-xs-4">    
-                    <a href="" class="member-sort">TITLE A-Z</a>
+                    <a href="" class="member-sort" id="sort-title" ng-click="setOrderBy('title')">TITLE A-Z</a>
                 </div>
                 <div class="col-sm-2 col-xs-4">
-                    <a href="" class="member-sort">DATE CREATED</a>
+                    <a href="" class="member-sort" id="sort-date" ng-click="setOrderBy('date')">DATE CREATED</a>
                 </div>
             </div>
             <div class="member-bottom-resultbar" ng-cloak>
@@ -65,8 +65,15 @@ get_header();  ?>
     <div class="container all-pad-gone">
         <div class="row">
             <div class="col-sm-4">
+                Show Results per page:
+                <span>&nbsp;</span> 
+                <a href="" ng-click="setResultsPerPage(20)">20</a>
+                <span>&nbsp;</span>
+                <a href="" ng-click="setResultsPerPage(50)">50</a>
+                <span>&nbsp;</span>
+                <a href="" ng-click="setResultsPerPage(100)">100</a>
                 <div class="member-side-result-box">
-                    <h4>Lorem ipsum</h4>
+                    <h4>Types</h4>
                     <div class="inside-side-member">
                         <p><a href="">Dolor sit amet <span>(4)</span></a></p>
                         <p><a href="">Dolor sit amet <span>(4)</span></a></p>
@@ -74,23 +81,6 @@ get_header();  ?>
                         <p><a href="">Dolor sit amet <span>(4)</span></a></p>
                     </div>    
                 </div>
-                <div class="member-side-result-box">
-                    <h4>Ullum eleifend</h4>
-                    <div class="inside-side-member">
-                        <p><a href="">Dolor sit amet <span>(4)</span></a></p>
-                        <p><a href="">Dolor sit amet <span>(4)</span></a></p>
-                        <p><a href="">Dolor sit amet <span>(4)</span></a></p>
-                    </div>    
-                </div>
-                <div class="member-side-result-box">
-                    <h4>DOLOR SIT AMET</h4>
-                    <div class="inside-side-member">
-                        <p><a href="">Dolor sit amet <span>(4)</span></a></p>
-                        <p><a href="">Dolor sit amet <span>(4)</span></a></p>
-                        <p><a href="">Dolor sit amet <span>(4)</span></a></p>
-                        <p><a href="">Dolor sit amet <span>(4)</span></a></p>
-                    </div>    
-                </div> 
              </div>
              <div class="col-sm-8 members-main">
                 <h2 ng-cloak>members found: <span>{{total | number}}</span></h2>
