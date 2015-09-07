@@ -1,4 +1,5 @@
 <?php
+use Member\Helper\MemberHelper;
 /*
   Template Name: member-directory
 */
@@ -75,10 +76,16 @@ get_header();  ?>
                 <div class="member-side-result-box">
                     <h4>Types</h4>
                     <div class="inside-side-member">
-                        <p><a href="">Dolor sit amet <span>(4)</span></a></p>
-                        <p><a href="">Dolor sit amet <span>(4)</span></a></p>
-                        <p><a href="">Dolor sit amet <span>(4)</span></a></p>
-                        <p><a href="">Dolor sit amet <span>(4)</span></a></p>
+                        <?php foreach(MemberHelper::getBusinessCategories() as $category): ?>
+                            <p><a href="" class="business-categories" id="<?php echo MemberHelper::replaceSpaces($category); ?>"
+                                ng-click="setBusinessCategory('<?php echo $category?>')">
+                                <?php echo $category; ?>
+                            </a></p>
+                        <?php endforeach; ?>
+                        <p ng-hide="query.business_category == ''"><a href="" ng-click="setBusinessCategory('')" class="pull-right">
+                            Clear
+                        </a></p>
+                        <p><a href="">&nbsp;</a></p>
                     </div>    
                 </div>
              </div>

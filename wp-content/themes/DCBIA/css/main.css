@@ -9386,3 +9386,8 @@ hr.aq-block-hr-single {
 	background-color: #6D96B2;
 	color: white;
 }
+
+.business-categories.active{
+	font-weight: bold;
+	text-decoration: none;
+}

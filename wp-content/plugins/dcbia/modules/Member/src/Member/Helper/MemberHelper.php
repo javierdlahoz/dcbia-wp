@@ -301,6 +301,31 @@ class MemberHelper
     }
     
     /**
+     * @return array
+     */
+    public static function getBusinessCategories(){
+        return array(
+            "Architects / Interior Designers",
+            "Attorneys",
+            "Builders / Developers",
+            "Business Improvement Districts / Community Associations / Government Agencies & Education",
+            "Certified Public Accountants",
+            "Commercial Brokers",
+            "Consultants",
+            "Engineers",
+            "Financial",
+            "General Contractors",
+            "Information Technology",
+            "Insurance / Title Insurance",
+            "Marketing / Communications & Media",
+            "Property  / Asset Management",
+            "Subcontractors",
+            "Suppliers & Misc. Services",
+            "Utilities"
+        );
+    }
+    
+    /**
      * 
      * @param string $facetKey
      */
@@ -337,6 +362,19 @@ class MemberHelper
         else{
             return false;
         }
+    }
+    
+    /**
+     * 
+     * @param string $str
+     * @return string 
+     */
+    public static function replaceSpaces($str){
+        $str = str_replace(" ", "", $str);
+        $str = str_replace("/", "-", $str);
+        $str = str_replace("&", "-", $str);
+        $str = str_replace(".", "-", $str);
+        return $str;
     }
 
 }
