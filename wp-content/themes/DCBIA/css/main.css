@@ -592,7 +592,7 @@ textarea.register-form-text-area {
   border: 0!important;
 }
 .checkedout ul {
-  margin: 20px 0;
+  margin: 0;
   padding: 5px 0;
 }
 .checkedout ul li {
