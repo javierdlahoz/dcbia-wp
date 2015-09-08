@@ -179,7 +179,7 @@
             <input ng-model="billing.city" id="bcity" name="bcity" type="text" class="form-control" size="30" value="<?php echo esc_attr($bcity)?>" />
         </div>    
     </div> 
-    <div class="col-md-12">
+ 
         <?php
             $state_dropdowns = apply_filters("pmpro_state_dropdowns", false);
             if($state_dropdowns === true || $state_dropdowns == "names")
@@ -215,7 +215,7 @@
             else
             {
             ?>
-    </div>
+ 
         <div class="col-md-4">
             <div class="form-group">
                 <label for="bstate"><?php _e('State');?></label>
@@ -239,7 +239,7 @@
                 {
             ?>
     
-        <div class="col-md-6">
+        <div class="col-md-4">
                 <div class="form-group">
                     <label for="bcountry"><?php _e('Country', 'pmpro');?></label>
                     <select class="form-control" name="bcountry" ng-model="billing.country">
@@ -267,36 +267,37 @@
                 }
             ?>
     
-        <div class="col-md-6">
+        <div class="col-md-4">
             <div class="form-group">
                 <label for="bphone"><?php _e('Phone', 'pmpro');?></label>
-                <input ng-model="billing.phone" id="bphone" name="bphone" type="text" class="form-control" size="20" value="<?php echo esc_attr($bphone)?>" />
+                <input ng-model="billing.phone" id="bphone" name="bphone" type="text" class="form-control" value="<?php echo esc_attr($bphone)?>" />
             </div>
         </div>
     
-						<?php if($current_user->ID) { ?>
-						<?php
-							if(!$bemail && $current_user->user_email)
-								$bemail = $current_user->user_email;
-							if(!$bconfirmemail && $current_user->user_email)
-								$bconfirmemail = $current_user->user_email;
-						?>
+            <?php if($current_user->ID) { ?>
+            <?php
+                if(!$bemail && $current_user->user_email)
+                    $bemail = $current_user->user_email;
+                if(!$bconfirmemail && $current_user->user_email)
+                    $bconfirmemail = $current_user->user_email;
+            ?>
     
-    <div class="col-md-6">
+    <div class="col-md-4">
             <div class="form-group">
 							<label for="bemail"><?php _e('E-mail Address', 'pmpro');?></label>
-							<input ng-model="billing.email" id="bemail" name="bemail" type="<?php echo ($pmpro_email_field_type ? 'email' : 'text'); ?>" class="form-control" size="20" value="<?php echo esc_attr($bemail)?>" />
+							<input ng-model="billing.email" id="bemail" name="bemail" type="<?php echo ($pmpro_email_field_type ? 'email' : 'text'); ?>" class="form-control" value="<?php echo esc_attr($bemail)?>" />
             </div>
         </div>
-        <div class="col-md-6">
+    
+        <div class="col-md-4">
             <div class="form-group">
                 <label for="bconfirmemail"><?php _e('Confirm E-mail', 'pmpro');?></label>
-                <input id="bconfirmemail" name="bconfirmemail" type="<?php echo ($pmpro_email_field_type ? 'email' : 'text'); ?>" class="form-control" size="20" value="<?php echo esc_attr($bconfirmemail)?>" />
+                <input id="bconfirmemail" name="bconfirmemail" type="<?php echo ($pmpro_email_field_type ? 'email' : 'text'); ?>" class="form-control" value="<?php echo esc_attr($bconfirmemail)?>" />
 
             </div>
         </div>
     
-        <div class="col-md-12">
+        
 				<?php } ?>  
 			<?php } ?>
 
@@ -305,13 +306,12 @@
 				$pmpro_accepted_credit_cards = explode(",", $pmpro_accepted_credit_cards);
 				$pmpro_accepted_credit_cards_string = pmpro_implodeToEnglish($pmpro_accepted_credit_cards);
 			?>
-        </div>
-    
+     
 			<div id="pmpro_payment_information_fields" class="pmpro_checkout top1em">
-		
-                <h3 colspan="2"><span class="pmpro_thead-msg"><?php printf(__('We accept %s', 'pmpro'), $pmpro_accepted_credit_cards_string);?></span><?php _e('Credit Card Information', 'pmpro');?></h3>
+		      <div class="col-md-12">	
+                <h3><span class=""><?php printf(__('We accept %s', 'pmpro'), $pmpro_accepted_credit_cards_string);?></span><?php _e('Credit Card Information', 'pmpro');?></h3>
 	
-            <div class="col-md-12">		
+           	
                     <?php
                         $sslseal = pmpro_getOption("sslseal");
                         if($sslseal)
@@ -322,7 +322,7 @@
                         }
                     ?>
                     <?php if(empty($pmpro_stripe_lite) || $gateway != "stripe") { ?>
-            </div>
+                </div>
                 
                 <div class="col-md-6">
                     <label for="CardType"><?php _e('Card Type', 'pmpro');?></label>
@@ -339,9 +339,9 @@
                 <input ng-model="billing.account_number" id="AccountNumber" <?php if($gateway != "stripe" && $gateway != "braintree") { ?>name="AccountNumber"<?php } ?> class="form-control <?php echo pmpro_getClassForField("AccountNumber");?>" type="text" value="<?php echo esc_attr($AccountNumber)?>" <?php if($gateway == "braintree") { ?>data-encrypted-name="number"<?php } ?> autocomplete="off" />
             </div>
 
-        <div class="col-md-6">
-            <label class="form-control" for="ExpirationMonth"><?php _e('Expiration Date', 'pmpro');?></label>
-            <select ng-model="billing.expiration_month" id="ExpirationMonth" <?php if($gateway != "stripe") { ?>name="ExpirationMonth"<?php } ?>>
+        <div class="col-md-4">
+            <label for="ExpirationMonth"><?php _e('Expiration Date', 'pmpro');?></label>
+            <select class="form-control" ng-model="billing.expiration_month" id="ExpirationMonth" <?php if($gateway != "stripe") { ?>name="ExpirationMonth"<?php } ?>>
                 <option value="01" <?php if($ExpirationMonth == "01") { ?>selected="selected"<?php } ?>>01</option>
                 <option value="02" <?php if($ExpirationMonth == "02") { ?>selected="selected"<?php } ?>>02</option>
                 <option value="03" <?php if($ExpirationMonth == "03") { ?>selected="selected"<?php } ?>>03</option>
@@ -354,17 +354,21 @@
                 <option value="10" <?php if($ExpirationMonth == "10") { ?>selected="selected"<?php } ?>>10</option>
                 <option value="11" <?php if($ExpirationMonth == "11") { ?>selected="selected"<?php } ?>>11</option>
                 <option value="12" <?php if($ExpirationMonth == "12") { ?>selected="selected"<?php } ?>>12</option>
-            </select>/<select ng-model="billing.expiration_year" id="ExpirationYear" <?php if($gateway != "stripe") { ?>name="ExpirationYear"<?php } ?>>
-                <?php
-                    for($i = date("Y"); $i < date("Y") + 10; $i++)
-                    {
-                ?>
-                    <option value="<?php echo $i?>" <?php if($ExpirationYear == $i) { ?>selected="selected"<?php } ?>><?php echo $i?></option>
-                <?php
-                    }
-                ?>
             </select>
-        </div>
+                </div>
+            <div class="col-md-4">
+                <label for="ExpirationYear"><?php _e('Expiration Year', 'pmpro');?></label>
+                <select ng-model="billing.expiration_year" id="ExpirationYear" class="form-control" <?php if($gateway != "stripe") { ?>name="ExpirationYear"<?php } ?>>
+                    <?php
+                        for($i = date("Y"); $i < date("Y") + 10; $i++)
+                        {
+                    ?>
+                    <option value="<?php echo $i?>" <?php if($ExpirationYear == $i) { ?>selected="selected"<?php } ?>><?php echo $i?></option>
+                    <?php
+                        }
+                    ?>
+                </select>
+            </div>
 
             <?php
                 $pmpro_show_cvv = apply_filters("pmpro_show_cvv", true);
@@ -372,7 +376,7 @@
                 {
             ?>
                 
-            <div class="col-md-6">
+            <div class="col-md-4">
                 <label for="CVV"><?php _ex('CVV', 'Credit card security code, CVV/CCV/CVV2', 'pmpro');?></label>
                 <input class="form-control" ng-model="billing.cvv" id="CVV" <?php if($gateway != "stripe" && $gateway != "braintree") { ?>name="CVV"<?php } ?> type="text" value="<?php if(!empty($_REQUEST['CVV'])) { echo esc_attr($_REQUEST['CVV']); }?>" class=" <?php echo pmpro_getClassForField("CVV");?>" <?php if($gateway == "braintree") { ?>data-encrypted-name="cvv"<?php } ?> />  <small>(<a href="javascript:void(0);" onclick="javascript:window.open('<?php echo pmpro_https_filter(PMPRO_URL)?>/pages/popup-cvv.html','cvv','toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=600, height=475');"><?php _ex("what's this?", 'link to CVV help', 'pmpro');?></a>)</small>
             </div>
