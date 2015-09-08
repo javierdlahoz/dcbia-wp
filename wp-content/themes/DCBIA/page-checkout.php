@@ -62,7 +62,7 @@
 <div class="container all-pad-gone checkedout">
     <div class="row">
     <div class="col-md-12">
-        <h2>Checkout</h2>
+        <h2 style="margin-bottom:0;">Checkout</h2>
         <?php if($level)
         {
             $level->billing_amount = (float) $level->initial_payment;
@@ -91,8 +91,7 @@
         <?php
         }
     ?>
-</div>
-<div class="col-md-12">    
+    
         <?php if($show_paypal_link) { ?>
 
             <p><?php  _e('Your payment subscription is managed by PayPal. Please <a href="http://www.paypal.com">login to PayPal here</a> to update your billing information.', 'pmpro');?></p>
@@ -117,7 +116,7 @@
     </div>                
 </div>                
 	<div class="col-md-12">		
-        <h3><?php _e('Billing Address', 'pmpro');?></h3>
+        <h3 style="margin-top: 0;"><?php _e('Billing Address', 'pmpro');?></h3>
 	</div>
     <div class="col-md-6">
         <div class="form-group">
@@ -307,36 +306,40 @@
 				$pmpro_accepted_credit_cards_string = pmpro_implodeToEnglish($pmpro_accepted_credit_cards);
 			?>
      
-			<div id="pmpro_payment_information_fields" class="pmpro_checkout top1em">
-		      <div class="col-md-12">	
-                <h3><span class=""><?php printf(__('We accept %s', 'pmpro'), $pmpro_accepted_credit_cards_string);?></span><?php _e('Credit Card Information', 'pmpro');?></h3>
-	
-           	
-                    <?php
-                        $sslseal = pmpro_getOption("sslseal");
-                        if($sslseal)
-                        {
-                        ?>
-                            <div class="pmpro_sslseal"><?php echo stripslashes($sslseal)?></div>
-                        <?php
-                        }
-                    ?>
-                    <?php if(empty($pmpro_stripe_lite) || $gateway != "stripe") { ?>
-                </div>
+    <div id="pmpro_payment_information_fields" class="pmpro_checkout top1em">
+          <div class="col-md-12">
+            <h3><?php _e('Credit Card Information', 'pmpro');?></h3>  
+            <h4><span class=""><?php printf(__('We accept %s', 'pmpro'), $pmpro_accepted_credit_cards_string);?></span></h4>
+            <?php
+                $sslseal = pmpro_getOption("sslseal");
+                if($sslseal)
+                {
+                ?>
+                    <div class="pmpro_sslseal"><?php echo stripslashes($sslseal)?></div>
+                <?php
+                }
+            ?>
+            <?php if(empty($pmpro_stripe_lite) || $gateway != "stripe") { ?>
+              <br>
+        </div>
                 
-                <div class="col-md-6">
-                    <label for="CardType"><?php _e('Card Type', 'pmpro');?></label>
-                    <select class="form-control" ng-model="billing.card_type" id="CardType" <?php if($gateway != "stripe") { ?>name="CardType"<?php } ?>>
-                        <?php foreach($pmpro_accepted_credit_cards as $cc) { ?>
-                            <option value="<?php echo $cc?>" <?php if($CardType == $cc) { ?>selected="selected"<?php } ?>><?php echo $cc?></option>
-                        <?php } ?>
-                    </select>
+            <div class="col-md-6">
+                <div class="form-group">
+                <label for="CardType"><?php _e('Card Type', 'pmpro');?></label>
+                <select class="form-control" ng-model="billing.card_type" id="CardType" <?php if($gateway != "stripe") { ?>name="CardType"<?php } ?>>
+                    <?php foreach($pmpro_accepted_credit_cards as $cc) { ?>
+                        <option value="<?php echo $cc?>" <?php if($CardType == $cc) { ?>selected="selected"<?php } ?>><?php echo $cc?></option>
+                    <?php } ?>
+                </select>
                 </div>
+            </div>
                 <?php } ?>
 
             <div class="col-md-6">
+                <div class="form-group">
                 <label for="AccountNumber"><?php _e('Card Number', 'pmpro');?></label>
                 <input ng-model="billing.account_number" id="AccountNumber" <?php if($gateway != "stripe" && $gateway != "braintree") { ?>name="AccountNumber"<?php } ?> class="form-control <?php echo pmpro_getClassForField("AccountNumber");?>" type="text" value="<?php echo esc_attr($AccountNumber)?>" <?php if($gateway == "braintree") { ?>data-encrypted-name="number"<?php } ?> autocomplete="off" />
+            </div>
             </div>
 
         <div class="col-md-4">
