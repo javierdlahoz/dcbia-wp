@@ -61,6 +61,7 @@
 
 <div class="container all-pad-gone checkedout">
     <div class="row">
+    <form ng-controller="MembershipController" id="pmpro_form" class="pmpro_form" ng-submit="charge()">
     <div class="col-md-12">
         <h2 style="margin-bottom:0;">Checkout</h2>
         <?php if($level)
@@ -97,8 +98,6 @@
             <p><?php  _e('Your payment subscription is managed by PayPal. Please <a href="http://www.paypal.com">login to PayPal here</a> to update your billing information.', 'pmpro');?></p>
 
         <?php } else { ?>
-
-            <form ng-controller="MembershipController" id="pmpro_form" class="pmpro_form" ng-submit="charge()">
                 <div class="alert alert-danger" ng-show="billing.status == false">Please check your credit card information</div>
                 <div class="alert alert-success" ng-show="billing.status == true">Payment successful, redirecting to home in 5s</div>
 
@@ -425,10 +424,10 @@
                     <input type="button" name="cancel" class="button2" value="<?php _e('Cancel', 'pmpro');?>" onclick="location.href='<?php echo pmpro_url("account")?>';" />
                 </div>
 			</div>
-                
-		</form>
 	<?php } ?>
-    </div>    
+        </form> 
+    </div>
 </div>    
+
 <?php get_footer(); ?>
 <script src="<?php echo get_template_directory_uri(); ?>/js/angular/controllers/MembershipController.js"></script>

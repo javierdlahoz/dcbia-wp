@@ -3,6 +3,7 @@ namespace Member\Facade;
 
 use INUtils\Singleton\AbstractSingleton;
 use INUtils\Helper\TextHelper;
+use Member\Controller\MemberController;
 
 class MemberFacade extends AbstractSingleton
 {
@@ -83,5 +84,70 @@ class MemberFacade extends AbstractSingleton
             "users" => $userArray,
             
         );
+    }
+    
+    /**
+     * 
+     * @param \WP_User $user
+     * @return array
+     */
+    private function formatUserForRegister(\WP_User $user){
+        $userId = $user->ID;
+        return array(
+            "ID" => $userId,
+            "user_email" => $user->user_email,
+            "email" => $user->user_email,
+            "first_name" => $user->first_name,
+            "last_name" => $user->last_name,
+            "address1" => get_user_meta($userId, "address1", true),
+            "address2" => get_user_meta($userId, "address2", true),
+            "address3" => get_user_meta($userId, "address3", true),
+            "city" => get_user_meta($userId, "city", true),
+            "state" => get_user_meta($userId, "state", true),
+            "zip" => get_user_meta($userId, "zip", true),
+            "telephone" => get_user_meta($userId, "telephone", true),
+            "refered_by" => get_user_meta($userId, "refered_by", true),
+            "company_name" => get_user_meta($userId, "company_name", true),
+            "company_website" => get_user_meta($userId, "company_website", true),
+            "company_description" => get_user_meta($userId, "company_description", true),
+            "registration_date"    => get_user_meta($userId, "registration_date"   , true),
+            "renewal_status"       => get_user_meta($userId, "renewal_status"      , true),
+            "committee"           => get_user_meta($userId, "committee"          , true),
+            "committee1"           => get_user_meta($userId, "committee1"          , true),
+            "committee2"           => get_user_meta($userId, "committee2"          , true),
+            "membership_type"      => get_user_meta($userId, "membership_type"     , true),
+            "PAC"                  => get_user_meta($userId, "PAC"                 , true),
+            "payment_weblink"      => get_user_meta($userId, "payment_weblink"     , true),
+            "affilates_number"     => get_user_meta($userId, "affilates_number"    , true),
+            "total_amount"         => get_user_meta($userId, "total_amount"        , true),
+            "payment_received"     => get_user_meta($userId, "payment_received"    , true),
+            "payment_method"       => get_user_meta($userId, "payment_method"      , true),
+            "cost_per_affiliate"   => get_user_meta($userId, "cost_per_affiliate"  , true),
+            "membership_base_cost" => get_user_meta($userId, "membership_base_cost", true),
+            "business_category" => get_user_meta($userId, "business_category", true),
+            "membership_total_cost" => get_user_meta($userId, "membership_total_cost", true),
+            "membership_level" => get_user_meta($userId, "tmp_membership_level", true),
+        );
+    }
+    
+    /**
+     * 
+     * @return multitype:string mixed string int Ambigous <mixed, boolean, string, multitype:, unknown, string>
+     */
+    public function formatCurrentUserForRegister(){
+        $user = wp_get_current_user();
+        $affiliateIds = get_user_meta($user->ID, MemberController::ADDITIONAL_USERS_ARRAY, true);
+        $affiliates = array();
+        //var_dump($affiliateIds); die();
+        if(!empty($affiliateIds)){
+            foreach($affiliateIds as $affiliateId){
+                $affiliate = get_user_by("id", $affiliateId);
+                $affiliates[] = $this->formatUserForRegister($affiliate);
+            }    
+        }
+        $userArray = $this->formatUserForRegister($user);
+        $userArray["affiliates"] = $affiliates;
+        
+        return $userArray;
     }
 }

@@ -26,7 +26,7 @@ get_header(); ?>
         </nav>   
     </div>
 
-    <div class="container all-pad-gone register" ng-controller="MembershipController" ng-init="getMembershipLevels()">
+    <div class="container all-pad-gone register" ng-controller="MembershipController" ng-init="getMembershipLevels(); getCurrentUser()">
         <div class="row">
             <form class="" ng-init="initialize()" ng-hide="isSuccess">
                 <div class="col-md-12">

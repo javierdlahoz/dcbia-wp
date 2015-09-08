@@ -393,4 +393,12 @@ class MemberController extends AbstractController{
         return MemberFacade::getSingleton()->formatResults($users);
     }
     
+    /**
+     * 
+     * @return multitype:string
+     */
+    public function currentAction(){
+        return MemberFacade::getSingleton()->formatCurrentUserForRegister();
+    }
+    
 }

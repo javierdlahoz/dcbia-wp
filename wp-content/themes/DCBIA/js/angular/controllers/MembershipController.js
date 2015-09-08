@@ -98,7 +98,7 @@ angular.module('angular-wp')
         		$http({
                     url: url,
                     method: "POST",
-                    data: jQuery.param({username: $scope.member.username}),
+                    data: jQuery.param({username: $scope.member.email}),
                     headers: getContentTypes().form
                 }).success(function (data) {
                 	$scope.usernameTaken = data.is_taken;
@@ -124,6 +124,19 @@ angular.module('angular-wp')
             			}, 
             			5000
             		);
+            	}
+            });
+    	};
+    	
+    	$scope.getCurrentUser = function(){
+    		var url = "/api/member/current";
+    		$http({
+                url: url,
+                method: "GET",
+            }).success(function (data) {
+            	if(data.first_name !== false){
+            		$scope.member = data;
+            		$scope.users = data.affiliates;
             	}
             });
     	};
