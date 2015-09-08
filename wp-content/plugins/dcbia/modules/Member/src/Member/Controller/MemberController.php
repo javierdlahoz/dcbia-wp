@@ -268,8 +268,13 @@ class MemberController extends AbstractController{
     
     public function indexAction(){
         $mS = MemberService::getSingleton();
-        $userPerPage = 20;
-        $mS->setNumber($userPerPage);
+        
+        if(!is_null($this->getPost("resultsPerPage"))){
+            $userPerPage = $this->getPost("resultsPerPage");
+        }
+        else{
+            $userPerPage = 20;
+        }
         
         if(!is_null($this->getPost("page"))){
             $mS->setOffset(($this->getPost("page") - 1) * $userPerPage);
@@ -278,50 +283,65 @@ class MemberController extends AbstractController{
             $mS->setOffset(0);
         }
         
-        if(!is_null($this->getPost("query"))){
-            $query = $this->getPost("query");
-            //$mS->setSearch($query);
-            
+        //query search and business categories
+        $query = $this->getPost("query");
+        $metaQueryOrRelation = array(
+            'relation' => 'OR',
+            array(
+                'key' => 'first_name',
+                'value' => $query, 
+                'compare' => 'LIKE'
+            ),
+            array(
+                'key' => 'last_name', 
+                'value' => $query, 
+                'compare' => 'LIKE'
+            ),
+            array(
+                'key' => 'description',
+                'value' => $query,
+                'compare' => 'LIKE'
+            ),
+            array(
+                'key' => 'company_description',
+                'value' => $query,
+                'compare' => 'LIKE'
+            )
+        );
+        
+        if(!is_null($this->getPost("business_category")) && $this->getPost("business_category") != ''){
             $metaQuery = array(
-                'relation' => 'OR',
+                "relation" => "AND",
+                $metaQueryOrRelation,
                 array(
-                    'key' => 'first_name',
-                    'value' => $query, 
-                    'compare' => 'LIKE'
-                ),
-                array(
-                    'key' => 'last_name', 
-                    'value' => $query, 
-                    'compare' => 'LIKE'
-                ),
-                array(
-                    'key' => 'description',
-                    'value' => $query,
-                    'compare' => 'LIKE'
-                ),
-                array(
-                    'key' => 'company_description',
-                    'value' => $query,
-                    'compare' => 'LIKE'
-                ),
-                array(
-                    'key' => 'membership_type',
-                    'value' => $query,
-                    'compare' => 'LIKE'
-                ),
+                    'key' => 'business_category',
+                    'value' => $this->getPost("business_category")
+                )
             );
-            
-            $mS->setMetaQuery($metaQuery);
         }
+        else{
+            $metaQuery = $metaQueryOrRelation;
+        }
+        
+        $mS->setMetaQuery($metaQuery);
+        //end of query search
+        
         
         if(!is_null($this->getPost("order"))){
             $mS->setOrder($this->getPost("order"));
         }
         
         if(!is_null($this->getPost("orderby"))){
-            $mS->setOrderby($this->getPost("orderby"));
+            if($this->getPost("orderby") == "first_name"){
+                $mS->setOrderby("meta_value");
+                $mS->setMetaKey("first_name");
+            }
+            else{
+                $mS->setOrderby($this->getPost("orderby"));
+            }
         }
         
+        $mS->setNumber($userPerPage);
         
         //var_dump($mS->getArgsArray()); die();
         

@@ -1,4 +1,5 @@
 <?php
+use Member\Helper\MemberHelper;
 /*
   Template Name: member-directory
 */
@@ -32,10 +33,10 @@ get_header();  ?>
                     <span class="search-titles">SORT BY:</span>
                 </div>
                 <div class="col-sm-2 col-xs-4">    
-                    <a href="" class="member-sort">TITLE A-Z</a>
+                    <a href="" class="member-sort" id="sort-title" ng-click="setOrderBy('title')">TITLE A-Z</a>
                 </div>
                 <div class="col-sm-2 col-xs-4">
-                    <a href="" class="member-sort">DATE CREATED</a>
+                    <a href="" class="member-sort" id="sort-date" ng-click="setOrderBy('date')">DATE CREATED</a>
                 </div>
             </div>
             <div class="member-bottom-resultbar" ng-cloak>
@@ -65,32 +66,28 @@ get_header();  ?>
     <div class="container all-pad-gone">
         <div class="row">
             <div class="col-sm-4">
+                Results per page:
+                <span>&nbsp;</span> 
+                <a href="" ng-click="setResultsPerPage(20)">20</a>
+                <span>&nbsp;</span>
+                <a href="" ng-click="setResultsPerPage(50)">50</a>
+                <span>&nbsp;</span>
+                <a href="" ng-click="setResultsPerPage(100)">100</a>
                 <div class="member-side-result-box">
-                    <h4>Lorem ipsum</h4>
+                    <h4>Types</h4>
                     <div class="inside-side-member">
-                        <p><a href="">Dolor sit amet <span>(4)</span></a></p>
-                        <p><a href="">Dolor sit amet <span>(4)</span></a></p>
-                        <p><a href="">Dolor sit amet <span>(4)</span></a></p>
-                        <p><a href="">Dolor sit amet <span>(4)</span></a></p>
+                        <?php foreach(MemberHelper::getBusinessCategories() as $category): ?>
+                            <p><a href="" class="business-categories" id="<?php echo MemberHelper::replaceSpaces($category); ?>"
+                                ng-click="setBusinessCategory('<?php echo $category?>')">
+                                <?php echo $category; ?>
+                            </a></p>
+                        <?php endforeach; ?>
+                        <p ng-hide="query.business_category == ''"><a href="" ng-click="setBusinessCategory('')" class="pull-right">
+                            Clear
+                        </a></p>
+                        <p><a href="">&nbsp;</a></p>
                     </div>    
                 </div>
-                <div class="member-side-result-box">
-                    <h4>Ullum eleifend</h4>
-                    <div class="inside-side-member">
-                        <p><a href="">Dolor sit amet <span>(4)</span></a></p>
-                        <p><a href="">Dolor sit amet <span>(4)</span></a></p>
-                        <p><a href="">Dolor sit amet <span>(4)</span></a></p>
-                    </div>    
-                </div>
-                <div class="member-side-result-box">
-                    <h4>DOLOR SIT AMET</h4>
-                    <div class="inside-side-member">
-                        <p><a href="">Dolor sit amet <span>(4)</span></a></p>
-                        <p><a href="">Dolor sit amet <span>(4)</span></a></p>
-                        <p><a href="">Dolor sit amet <span>(4)</span></a></p>
-                        <p><a href="">Dolor sit amet <span>(4)</span></a></p>
-                    </div>    
-                </div> 
              </div>
              <div class="col-sm-8 members-main">
                 <h2 ng-cloak>members found: <span>{{total | number}}</span></h2>
