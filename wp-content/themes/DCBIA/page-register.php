@@ -43,7 +43,7 @@ get_header(); ?>
                 <div class="col-md-12">
                     <div class="form-group">
                         <label>Membership Level</label>
-                        <select class="form-control" ng-model="member.membership_level" ng-change="setMembershipCost()" required>
+                        <select class="form-control new-select-checkout" ng-model="member.membership_level" ng-change="setMembershipCost()" required>
                             <option ng-repeat="level in membershipLevels" value="{{level.id}}">{{level.name}}</option>
                         </select>
                         <p ng-show="membershipCost != null">This will cost you: ${{membershipCost}} US</p>
@@ -96,7 +96,7 @@ get_header(); ?>
                     
                     <div class="form-group">
                       <label>Business Category</label>
-                      <select ng-model="member.business_category" class="form-control">
+                      <select ng-model="member.business_category" class="form-control new-select-checkout">
                         <?php foreach(MemberHelper::getBusinessCategories() as $category): ?>
                             <option value="<?php echo $category; ?>"><?php echo $category; ?></option>
                         <?php endforeach; ?>
@@ -176,7 +176,7 @@ get_header(); ?>
                             </div>
                             <div class="form-group">
                                 <label>Committee</label>
-                                <select class="form-control" ng-model="user.committee">
+                                <select class="form-control new-select-checkout" ng-model="user.committee">
                                 <?php foreach (CommitteeController::getSingleton()->getCommitteeTerms() as $committee): ?>
                                     <option value="<?php echo $committee->getTermId(); ?>"><?php echo $committee->getName(); ?></option>
                                 <?php endforeach; ?>
