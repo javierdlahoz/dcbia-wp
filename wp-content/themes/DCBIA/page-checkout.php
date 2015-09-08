@@ -59,142 +59,166 @@
     </div>
 
 
-<div class="container all-pad-gone"> 
-	<?php if($level)
-	{
-	    $level->billing_amount = (float) $level->initial_payment;
-	?>
-		<ul>
-			<li><strong><?php _e("Level", "pmpro");?>:</strong> <?php echo $level->name?></li>
-		<?php if($level->billing_amount > 0) { ?>
-			<li><strong><?php _e("Membership Fee", "pmpro");?>:</strong>
-				<?php
-					//$level = $current_user->membership_level;
-					if($current_user->membership_level->cycle_number > 1) {
-						printf(__('%s every %d %s.', 'pmpro'), pmpro_formatPrice($level->billing_amount), $level->cycle_number, pmpro_translate_billing_period($level->cycle_period, $level->cycle_number));
-					} elseif($current_user->membership_level->cycle_number == 1) {
-						printf(__('%s per %s.', 'pmpro'), pmpro_formatPrice($level->billing_amount), pmpro_translate_billing_period($level->cycle_period));
-					} else {
-						echo pmpro_formatPrice($current_user->membership_level->billing_amount);
-					}
-				?>
-			</li>
-		<?php } ?>
+<div class="container all-pad-gone checkedout">
+    <div class="row">
+    <div class="col-md-12">
+        <h2>Checkout</h2>
+        <?php if($level)
+        {
+            $level->billing_amount = (float) $level->initial_payment;
+        ?>
+            <ul>
+                <li><strong><?php _e("Level", "pmpro");?>:</strong> <?php echo $level->name?></li>
+            <?php if($level->billing_amount > 0) { ?>
+                <li><strong><?php _e("Membership Fee", "pmpro");?>:</strong>
+                    <?php
+                        //$level = $current_user->membership_level;
+                        if($current_user->membership_level->cycle_number > 1) {
+                            printf(__('%s every %d %s.', 'pmpro'), pmpro_formatPrice($level->billing_amount), $level->cycle_number, pmpro_translate_billing_period($level->cycle_period, $level->cycle_number));
+                        } elseif($current_user->membership_level->cycle_number == 1) {
+                            printf(__('%s per %s.', 'pmpro'), pmpro_formatPrice($level->billing_amount), pmpro_translate_billing_period($level->cycle_period));
+                        } else {
+                            echo pmpro_formatPrice($current_user->membership_level->billing_amount);
+                        }
+                    ?>
+                </li>
+            <?php } ?>
 
-		<?php if($level->billing_limit) { ?>
-			<li><strong><?php _e("Duration", "pmpro");?>:</strong> <?php echo $level->billing_limit.' '.sornot($level->cycle_period,$level->billing_limit)?></li>
-		<?php } ?>
-		</ul>
-	<?php
-	}
-?>
-	<?php if($show_paypal_link) { ?>
+            <?php if($level->billing_limit) { ?>
+                <li><strong><?php _e("Duration", "pmpro");?>:</strong> <?php echo $level->billing_limit.' '.sornot($level->cycle_period,$level->billing_limit)?></li>
+            <?php } ?>
+            </ul>
+        <?php
+        }
+    ?>
+</div>
+<div class="col-md-12">    
+        <?php if($show_paypal_link) { ?>
 
-		<p><?php  _e('Your payment subscription is managed by PayPal. Please <a href="http://www.paypal.com">login to PayPal here</a> to update your billing information.', 'pmpro');?></p>
+            <p><?php  _e('Your payment subscription is managed by PayPal. Please <a href="http://www.paypal.com">login to PayPal here</a> to update your billing information.', 'pmpro');?></p>
 
-	<?php } else { ?>
+        <?php } else { ?>
 
-		<form ng-controller="MembershipController" id="pmpro_form" class="pmpro_form" ng-submit="charge()">
-            <div class="alert alert-danger" ng-show="billing.status == false">Please check your credit card information</div>
-            <div class="alert alert-success" ng-show="billing.status == true">Payment successful, redirecting to home in 5s</div>
+            <form ng-controller="MembershipController" id="pmpro_form" class="pmpro_form" ng-submit="charge()">
+                <div class="alert alert-danger" ng-show="billing.status == false">Please check your credit card information</div>
+                <div class="alert alert-success" ng-show="billing.status == true">Payment successful, redirecting to home in 5s</div>
+
+    <input type="hidden" ng-model="billing.level" name="level" value="<?php echo esc_attr($level->id);?>" />
+    <?php if($pmpro_msg)
+        {
+    ?>
+        <div class="pmpro_message <?php echo $pmpro_msgt?>"><?php echo $pmpro_msg?></div>
+    <?php
+        }
+    ?>
+
+    <?php if(empty($pmpro_stripe_lite) || $gateway != "stripe") { ?>
+                <div id="pmpro_billing_address_fields" class="pmpro_checkout" width="100%" cellpadding="0" cellspacing="0" border="0">
+    </div>                
+</div>                
+	<div class="col-md-12">		
+        <h3><?php _e('Billing Address', 'pmpro');?></h3>
+	</div>
+    <div class="col-md-6">
+        <div class="form-group">
+            <label for="bfirstname"><?php _e('First Name', 'pmpro');?></label>
+            <input ng-model="billing.first_name" id="bfirstname" name="bfirstname" type="text" class="form-control" value="<?php echo esc_attr($bfirstname);?>" />
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+            <label for="blastname"><?php _e('Last Name', 'pmpro');?></label>
+            <input ng-model="billing.last_name" id="blastname" name="blastname" type="text" class="form-control" value="<?php echo esc_attr($blastname);?>" />
+        </div>
+    </div>
+    <div class="col-md-12">
+        <div class="form-group">
+            <label for="baddress1"><?php _e('Address 1', 'pmpro');?></label>
+            <input ng-model="billing.address1" id="baddress1" name="baddress1" type="text" class="form-control" value="<?php echo esc_attr($baddress1);?>" />
+        </div>
+    </div>
+    <div class="col-md-12">
+        <div class="form-group">
+            <label for="baddress2"><?php _e('Address 2', 'pmpro');?></label>
+            <input ng-model="billing.address2" id="baddress2" name="baddress2" type="text" class="form-control" value="<?php echo esc_attr($baddress2);?>" /> <small class="lite">(<?php _e('optional', 'pmpro');?>)</small>
+        </div>
+    </div>
+
+        <?php
+            $longform_address = apply_filters("pmpro_longform_address", false);
+            if($longform_address)
+            {
+            ?>
+    
             
-			<input type="hidden" ng-model="billing.level" name="level" value="<?php echo esc_attr($level->id);?>" />
-			<?php if($pmpro_msg)
-				{
-			?>
-				<div class="pmpro_message <?php echo $pmpro_msgt?>"><?php echo $pmpro_msg?></div>
-			<?php
-				}
-			?>
-
-			<?php if(empty($pmpro_stripe_lite) || $gateway != "stripe") { ?>
-			<div id="pmpro_billing_address_fields" class="pmpro_checkout" width="100%" cellpadding="0" cellspacing="0" border="0">
-			
-					<h4><?php _e('Billing Address', 'pmpro');?></h4>
-	
-						<div>
-							<label for="bfirstname"><?php _e('First Name', 'pmpro');?></label>
-							<input ng-model="billing.first_name" id="bfirstname" name="bfirstname" type="text" class="input" size="20" value="<?php echo esc_attr($bfirstname);?>" />
-						</div>
-						<div>
-							<label for="blastname"><?php _e('Last Name', 'pmpro');?></label>
-							<input ng-model="billing.last_name" id="blastname" name="blastname" type="text" class="input" size="20" value="<?php echo esc_attr($blastname);?>" />
-						</div>
-						<div>
-							<label for="baddress1"><?php _e('Address 1', 'pmpro');?></label>
-							<input ng-model="billing.address1" id="baddress1" name="baddress1" type="text" class="input" size="20" value="<?php echo esc_attr($baddress1);?>" />
-						</div>
-						<div>
-							<label for="baddress2"><?php _e('Address 2', 'pmpro');?></label>
-							<input ng-model="billing.address2" id="baddress2" name="baddress2" type="text" class="input" size="20" value="<?php echo esc_attr($baddress2);?>" /> <small class="lite">(<?php _e('optional', 'pmpro');?>)</small>
-						</div>
-
-						<?php
-							$longform_address = apply_filters("pmpro_longform_address", false);
-							if($longform_address)
-							{
-							?>
-								<div>
-									<label for="bcity"><?php _e('City', 'pmpro');?>City</label>
-									<input ng-model="billing.city" id="bcity" name="bcity" type="text" class="input" size="30" value="<?php echo esc_attr($bcity)?>" />
-								</div>
-								<div>
-									<label for="bstate"><?php _e('State', 'pmpro');?>State</label>
-									<input ng-model="billing.state" id="bstate" name="bstate" type="text" class="input" size="30" value="<?php echo esc_attr($bstate)?>" />
-								</div>
-								<div>
-									<label for="bzipcode"><?php _e('Postal Code', 'pmpro');?></label>
-									<input ng-model="billing.zip" id="bzipcode" name="bzipcode" type="text" class="input" size="30" value="<?php echo esc_attr($bzipcode)?>" />
-								</div>
-							<?php
-							}
-							else
-							{
-							?>
-								<div>
-									<label for="bcity_state_zip"><?php _e('City, State Zip', 'pmpro');?></label>
-									<input ng-model="billing.city" id="bcity" name="bcity" type="text" class="input" size="14" value="<?php echo esc_attr($bcity)?>" />,
-									<?php
-										$state_dropdowns = apply_filters("pmpro_state_dropdowns", false);
-										if($state_dropdowns === true || $state_dropdowns == "names")
-										{
-											global $pmpro_states;
-										?>
-										<select name="bstate" ng-model="billing.state">
-											<option value="">--</option>
-											<?php
-												foreach($pmpro_states as $ab => $st)
-												{
-											?>
-												<option value="<?php echo esc_attr($ab);?>" <?php if($ab == $bstate) { ?>selected="selected"<?php } ?>><?php echo $st;?></option>
-											<?php } ?>
-										</select>
-										<?php
-										}
-										elseif($state_dropdowns == "abbreviations")
-										{
-											global $pmpro_states_abbreviations;
-										?>
-											<select name="bstate" ng-model="billing.state">
-												<option value="">--</option>
-												<?php
-													foreach($pmpro_states_abbreviations as $ab)
-													{
-												?>
-													<option value="<?php echo esc_attr($ab);?>" <?php if($ab == $bstate) { ?>selected="selected"<?php } ?>><?php echo $ab;?></option>
-												<?php } ?>
-											</select>
-										<?php
-										}
-										else
-										{
-										?>
-										<input ng-model="billing.state" id="bstate" name="bstate" type="text" class="input" size="2" value="<?php echo esc_attr($bstate)?>" />
-										<?php
-										}
-									?>
-									<input ng-model="billing.zip" id="bzipcode" name="bzipcode" type="text" class="input" size="5" value="<?php echo esc_attr($bzipcode)?>" />
-								</div>
+    <div class="col-md-4">
+        <div class="form-group">
+            <label for="bcity"><?php _e('City', 'pmpro');?>City</label>
+            <input ng-model="billing.city" id="bcity" name="bcity" type="text" class="form-control" value="<?php echo esc_attr($bcity)?>" />
+        </div>
+    </div>
+    
+    <div class="col-md-4">
+        <div class="form-group">
+            <label for="bstate"><?php _e('State', 'pmpro');?>State</label>
+            <input ng-model="billing.state" id="bstate" name="bstate" type="text" class="form-control" value="<?php echo esc_attr($bstate)?>" />
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="form-group">
+            <label for="bzipcode"><?php _e('Postal Code', 'pmpro');?></label>
+            <input ng-model="billing.zip" id="bzipcode" name="bzipcode" type="text" class="form-control" value="<?php echo esc_attr($bzipcode)?>" />
+        </div>
+    </div>
+    
+        <?php } else { ?>
+    
+    <div class="col-md-12">
+        <div class="form-group">
+        <label for="bcity_state_zip"><?php _e('City, State Zip', 'pmpro');?></label>
+        <input ng-model="billing.city" id="bcity" name="bcity" type="text" class="form-control" size="30" value="<?php echo esc_attr($bcity)?>" />,
+        <?php
+            $state_dropdowns = apply_filters("pmpro_state_dropdowns", false);
+            if($state_dropdowns === true || $state_dropdowns == "names")
+            {
+                global $pmpro_states;
+            ?>
+            <select name="bstate" ng-model="billing.state">
+                <option value="">--</option>
+                <?php
+                    foreach($pmpro_states as $ab => $st)
+                    {
+                ?>
+                    <option value="<?php echo esc_attr($ab);?>" <?php if($ab == $bstate) { ?>selected="selected"<?php } ?>><?php echo $st;?></option>
+                <?php } ?>
+            </select>
+            <?php
+            }
+            elseif($state_dropdowns == "abbreviations")
+            {
+                global $pmpro_states_abbreviations;
+            ?>
+                <select name="bstate" ng-model="billing.state">
+                    <option value="">--</option>
+                    <?php
+                        foreach($pmpro_states_abbreviations as $ab)
+                        {
+                    ?>
+                        <option value="<?php echo esc_attr($ab);?>" <?php if($ab == $bstate) { ?>selected="selected"<?php } ?>><?php echo $ab;?></option>
+                    <?php } ?>
+                </select>
+            <?php
+            }
+            else
+            {
+            ?>
+            <input ng-model="billing.state" id="bstate" name="bstate" type="text" class="form-control"  value="<?php echo esc_attr($bstate)?>" />
+            <?php
+            }
+        ?>
+        <input ng-model="billing.zip" id="bzipcode" name="bzipcode" type="text" class="form-control" value="<?php echo esc_attr($bzipcode)?>" />
+    </div>
+</div>
 							<?php
 							}
 						?>
@@ -376,7 +400,7 @@
 
 		</form>
 	<?php } ?>
+    </div>    
+</div>    
 <?php get_footer(); ?>
 <script src="<?php echo get_template_directory_uri(); ?>/js/angular/controllers/MembershipController.js"></script>
-    
-</div>    

@@ -591,6 +591,16 @@ textarea.register-form-text-area {
   display: block;
   border: 0!important;
 }
+.checkedout ul {
+  margin: 0;
+  padding: 5px 0;
+}
+.checkedout ul li {
+  list-style-type: none;
+  padding: 0;
+  font-size: 18px;
+  color: #27a9e1;
+}
 .member-sort.active {
   background-color: #6D96B2;
   color: white;
