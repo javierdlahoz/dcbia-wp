@@ -59,36 +59,40 @@
     </div>
 
 
-<div class="container all-pad-gone"> 
-	<?php if($level)
-	{
-	    $level->billing_amount = (float) $level->billing_amount;
-	?>
-		<ul>
-			<li><strong><?php _e("Level", "pmpro");?>:</strong> <?php echo $level->name?></li>
-		<?php if($level->billing_amount > 0) { ?>
-			<li><strong><?php _e("Membership Fee", "pmpro");?>:</strong>
-				<?php
-					//$level = $current_user->membership_level;
-					if($current_user->membership_level->cycle_number > 1) {
-						printf(__('%s every %d %s.', 'pmpro'), pmpro_formatPrice($level->billing_amount), $level->cycle_number, pmpro_translate_billing_period($level->cycle_period, $level->cycle_number));
-					} elseif($current_user->membership_level->cycle_number == 1) {
-						printf(__('%s per %s.', 'pmpro'), pmpro_formatPrice($level->billing_amount), pmpro_translate_billing_period($level->cycle_period));
-					} else {
-						echo pmpro_formatPrice($current_user->membership_level->billing_amount);
-					}
-				?>
-			</li>
-		<?php } ?>
+<div class="container all-pad-gone checkedout">
+    <div class="row">
+    <div class="col-md-12">
+        <h2>Checkout</h2>
+        <?php if($level)
+        {
+            $level->billing_amount = (float) $level->billing_amount;
+        ?>
+            <ul>
+                <li><strong><?php _e("Level", "pmpro");?>:</strong> <?php echo $level->name?></li>
+            <?php if($level->billing_amount > 0) { ?>
+                <li><strong><?php _e("Membership Fee", "pmpro");?>:</strong>
+                    <?php
+                        //$level = $current_user->membership_level;
+                        if($current_user->membership_level->cycle_number > 1) {
+                            printf(__('%s every %d %s.', 'pmpro'), pmpro_formatPrice($level->billing_amount), $level->cycle_number, pmpro_translate_billing_period($level->cycle_period, $level->cycle_number));
+                        } elseif($current_user->membership_level->cycle_number == 1) {
+                            printf(__('%s per %s.', 'pmpro'), pmpro_formatPrice($level->billing_amount), pmpro_translate_billing_period($level->cycle_period));
+                        } else {
+                            echo pmpro_formatPrice($current_user->membership_level->billing_amount);
+                        }
+                    ?>
+                </li>
+            <?php } ?>
 
-		<?php if($level->billing_limit) { ?>
-			<li><strong><?php _e("Duration", "pmpro");?>:</strong> <?php echo $level->billing_limit.' '.sornot($level->cycle_period,$level->billing_limit)?></li>
-		<?php } ?>
-		</ul>
-	<?php
-	}
-?>
-
+            <?php if($level->billing_limit) { ?>
+                <li><strong><?php _e("Duration", "pmpro");?>:</strong> <?php echo $level->billing_limit.' '.sornot($level->cycle_period,$level->billing_limit)?></li>
+            <?php } ?>
+            </ul>
+        <?php
+        }
+    ?>
+</div>
+    
 <?php if(pmpro_isLevelRecurring($level)) { ?>
 	<?php if($show_paypal_link) { ?>
 
@@ -384,4 +388,5 @@
 <?php get_footer(); ?>
 <script src="<?php echo get_template_directory_uri(); ?>/js/angular/controllers/MembershipController.js"></script>
     
+    </div>    
 </div>    
