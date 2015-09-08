@@ -9,6 +9,7 @@
 
     use Member\Controller\MemberController;
     get_header(); 
+    
 	
 	$level = MemberController::getSingleton()->getMembershipLevel();
     $current_user->membership_level = pmpro_getMembershipLevelForUser($current_user->ID);
@@ -17,6 +18,9 @@
         $current_user->membership_level = $level;
     }
     $current_user->membership_level->billing_amount = get_user_meta($current_user->ID, MemberController::MEMBERSHIP_TOTAL_COST, true);
+
+        
+
 
 	/**
 	 * Filter to set if PMPro uses email or text as the type for email field inputs.
@@ -32,7 +36,31 @@
 
 	//$level = $current_user->membership_level;
 	//var_dump($level->billing_amount); die();
-	if($level)
+    ?>
+    <div class="container all-pad-gone">      
+      <nav class="site-navigation" role="navigation">
+          <ul class="nav custom-nav hide-on-phone">
+              <li id="about" <?php if($url == "about" || $url == "about")
+                  echo "class='active'"; ?>><a href="/about">ABOUT</a>
+                  <ul class="" id="" role="menu">       
+                        <li id="staff"><a href="/about/">STAFF</a></li>
+                        <li id="board"><a href="/about/">BOARD</a></li>
+                        <li id="committees"><a href="/about/">COMMITTEES</a></li>
+                  </ul>
+              </li>
+              <li id="join"><a href="/join">JOIN</a></li>
+              <li id="advocacy" <?php if($url == "advocacy" || $url == "advocacy") echo "class='active'"; ?>><a href="/advocacy">ADVOCACY</a></li>
+              <li id="sponsors" <?php if($url == "sponsors" || $url == "sponsors") echo "class='active'"; ?>><a href="/sponsors">SPONSORS</a></li>
+
+              <li id="events" <?php if($url == "events" || $url == "events") echo "class='active'"; ?>><a href="/events">EVENTS</a></li>
+              <li id="news" <?php if($url == "news" || $url == "news") echo "class='active'"; ?>><a href="/news">NEWS</a></li>
+            </ul> 
+        </nav>   
+    </div>
+
+
+<div class="container all-pad-gone"> 
+	<?php if($level)
 	{
 	    $level->billing_amount = (float) $level->billing_amount;
 	?>
@@ -82,15 +110,10 @@
 			?>
 
 			<?php if(empty($pmpro_stripe_lite) || $gateway != "stripe") { ?>
-			<table id="pmpro_billing_address_fields" class="pmpro_checkout" width="100%" cellpadding="0" cellspacing="0" border="0">
-			<thead>
-				<tr>
-					<th><?php _e('Billing Address', 'pmpro');?></th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td>
+			<div id="pmpro_billing_address_fields" class="pmpro_checkout" width="100%" cellpadding="0" cellspacing="0" border="0">
+			
+					<h4><?php _e('Billing Address', 'pmpro');?></h4>
+	
 						<div>
 							<label for="bfirstname"><?php _e('First Name', 'pmpro');?></label>
 							<input ng-model="billing.first_name" id="bfirstname" name="bfirstname" type="text" class="input" size="20" value="<?php echo esc_attr($bfirstname);?>" />
@@ -229,10 +252,7 @@
 
 						</div>
 						<?php } ?>
-					</td>
-				</tr>
-			</tbody>
-			</table>
+                </div>
 			<?php } ?>
 
 			<?php
@@ -363,3 +383,5 @@
 <?php } ?>
 <?php get_footer(); ?>
 <script src="<?php echo get_template_directory_uri(); ?>/js/angular/controllers/MembershipController.js"></script>
+    
+</div>    
