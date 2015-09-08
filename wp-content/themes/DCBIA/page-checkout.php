@@ -185,7 +185,7 @@
             {
                 global $pmpro_states;
             ?>
-            <select name="bstate" ng-model="billing.state">
+            <select class="new-select-checkout" name="bstate" ng-model="billing.state">
                 <option value="">--</option>
                 <?php
                     foreach($pmpro_states as $ab => $st)
@@ -200,7 +200,7 @@
             {
                 global $pmpro_states_abbreviations;
             ?>
-                <select name="bstate" ng-model="billing.state">
+                <select class="new-select-checkout" name="bstate" ng-model="billing.state">
                     <option value="">--</option>
                     <?php
                         foreach($pmpro_states_abbreviations as $ab)
@@ -241,7 +241,7 @@
         <div class="col-md-4">
                 <div class="form-group">
                     <label for="bcountry"><?php _e('Country', 'pmpro');?></label>
-                    <select class="form-control" name="bcountry" ng-model="billing.country">
+                    <select class="form-control new-select-checkout" name="bcountry" ng-model="billing.country">
                         <?php
                             global $pmpro_countries, $pmpro_default_country;
                             foreach($pmpro_countries as $abbr => $country)
@@ -326,7 +326,7 @@
             <div class="col-md-6">
                 <div class="form-group">
                 <label for="CardType"><?php _e('Card Type', 'pmpro');?></label>
-                <select class="form-control" ng-model="billing.card_type" id="CardType" <?php if($gateway != "stripe") { ?>name="CardType"<?php } ?>>
+                <select class="form-control new-select-checkout" ng-model="billing.card_type" id="CardType" <?php if($gateway != "stripe") { ?>name="CardType"<?php } ?>>
                     <?php foreach($pmpro_accepted_credit_cards as $cc) { ?>
                         <option value="<?php echo $cc?>" <?php if($CardType == $cc) { ?>selected="selected"<?php } ?>><?php echo $cc?></option>
                     <?php } ?>
@@ -344,7 +344,7 @@
 
         <div class="col-md-4">
             <label for="ExpirationMonth"><?php _e('Expiration Date', 'pmpro');?></label>
-            <select class="form-control" ng-model="billing.expiration_month" id="ExpirationMonth" <?php if($gateway != "stripe") { ?>name="ExpirationMonth"<?php } ?>>
+            <select class="form-control new-select-checkout" ng-model="billing.expiration_month" id="ExpirationMonth" <?php if($gateway != "stripe") { ?>name="ExpirationMonth"<?php } ?>>
                 <option value="01" <?php if($ExpirationMonth == "01") { ?>selected="selected"<?php } ?>>01</option>
                 <option value="02" <?php if($ExpirationMonth == "02") { ?>selected="selected"<?php } ?>>02</option>
                 <option value="03" <?php if($ExpirationMonth == "03") { ?>selected="selected"<?php } ?>>03</option>
@@ -361,7 +361,7 @@
                 </div>
             <div class="col-md-4">
                 <label for="ExpirationYear"><?php _e('Expiration Year', 'pmpro');?></label>
-                <select ng-model="billing.expiration_year" id="ExpirationYear" class="form-control" <?php if($gateway != "stripe") { ?>name="ExpirationYear"<?php } ?>>
+                <select ng-model="billing.expiration_year" id="ExpirationYear" class="form-control new-select-checkout" <?php if($gateway != "stripe") { ?>name="ExpirationYear"<?php } ?>>
                     <?php
                         for($i = date("Y"); $i < date("Y") + 10; $i++)
                         {
@@ -421,8 +421,8 @@
             <div class="col-md-12">
                 <div ng-hide="billing.status">
                     <input type="hidden" name="update-billing" value="1" />
-                    <input type="submit" class="pmpro_btn pmpro_btn-submit" value="<?php _e('Update', 'pmpro');?>" />
-                    <input type="button" name="cancel" class="pmpro_btn pmpro_btn-cancel" value="<?php _e('Cancel', 'pmpro');?>" onclick="location.href='<?php echo pmpro_url("account")?>';" />
+                    <input type="submit" class="button2" value="<?php _e('Update', 'pmpro');?>" />
+                    <input type="button" name="cancel" class="button2" value="<?php _e('Cancel', 'pmpro');?>" onclick="location.href='<?php echo pmpro_url("account")?>';" />
                 </div>
 			</div>
                 

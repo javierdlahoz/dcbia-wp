@@ -608,8 +608,10 @@ textarea.register-form-text-area {
 .checkedout h4 {
   color: #2a2d2f !important;
 }
-.checkedout .new-select {
-  height: 35px !important;
+.checkedout .new-select-checkout {
+  height: 34px !important;
+  width: 100%;
+  border-radius: 0 !important;
 }
 .member-sort.active {
   background-color: #6D96B2;
