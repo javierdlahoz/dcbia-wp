@@ -11,7 +11,7 @@
     get_header(); 
     
 	
-	$level = MemberController::getSingleton()->getMembershipLevel();
+	$level = MemberController::getSingleton()->getStoredMembershipLevel($current_user->ID);
     $current_user->membership_level = pmpro_getMembershipLevelForUser($current_user->ID);
     if(!$current_user->membership_level){
         $current_user->membership_level = new stdClass();
@@ -62,7 +62,7 @@
 <div class="container all-pad-gone"> 
 	<?php if($level)
 	{
-	    $level->billing_amount = (float) $level->billing_amount;
+	    $level->billing_amount = (float) $level->initial_payment;
 	?>
 		<ul>
 			<li><strong><?php _e("Level", "pmpro");?>:</strong> <?php echo $level->name?></li>
@@ -88,8 +88,6 @@
 	<?php
 	}
 ?>
-
-<?php if(pmpro_isLevelRecurring($level)) { ?>
 	<?php if($show_paypal_link) { ?>
 
 		<p><?php  _e('Your payment subscription is managed by PayPal. Please <a href="http://www.paypal.com">login to PayPal here</a> to update your billing information.', 'pmpro');?></p>
@@ -378,9 +376,6 @@
 
 		</form>
 	<?php } ?>
-<?php } else { ?>
-	<p><?php _e("This subscription is not recurring. So you don't need to update your billing information.", "pmpro");?></p>
-<?php } ?>
 <?php get_footer(); ?>
 <script src="<?php echo get_template_directory_uri(); ?>/js/angular/controllers/MembershipController.js"></script>
     

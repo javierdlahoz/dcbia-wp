@@ -2,8 +2,8 @@
 use INUtils\Entity\PostEntity;
 use Committee\Controller\CommitteeController;
 use Member\Controller\MemberController;
+use Member\Helper\MemberHelper;
 $pageEntity = new PostEntity(get_the_ID());
-
 get_header(); ?>
 <div class="container all-pad-gone">      
       <nav class="site-navigation" role="navigation">
@@ -26,7 +26,7 @@ get_header(); ?>
         </nav>   
     </div>
 
-    <div class="container all-pad-gone register" ng-controller="MembershipController">
+    <div class="container all-pad-gone register" ng-controller="MembershipController" ng-init="getMembershipLevels()">
         <div class="row">
             <form class="" ng-init="initialize()" ng-hide="isSuccess">
                 <div class="col-md-12">
@@ -38,6 +38,15 @@ get_header(); ?>
                     </div>
                     <div ng-show="isSuccess">
                         <div class="alert alert-success">The membership was created successfully</div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label>Membership Level</label>
+                        <select class="form-control" ng-model="member.membership_level" ng-change="setMembershipCost()" required>
+                            <option ng-repeat="level in membershipLevels" value="{{level.id}}">{{level.name}}</option>
+                        </select>
+                        <p ng-show="membershipCost != null">This will cost you: ${{membershipCost}} US</p>
                     </div>
                 </div>
                 <div class="col-md-6">
@@ -83,7 +92,17 @@ get_header(); ?>
                     <div class="form-group">
                       <label>Company Name</label>
                       <input type="text" class="form-control" placeholder="Company Name" ng-model="member.company_name">
-                    </div>    
+                    </div>
+                    
+                    <div class="form-group">
+                      <label>Business Category</label>
+                      <select ng-model="member.business_category" class="form-control">
+                        <?php foreach(MemberHelper::getBusinessCategories() as $category): ?>
+                            <option value="<?php echo $category; ?>"><?php echo $category; ?></option>
+                        <?php endforeach; ?>
+                      </select>
+                    </div>
+                        
                     <div class="form-group">
                       <label>Address</label>
                       <input type="text" class="form-control" placeholder="Address" ng-model="member.address1">

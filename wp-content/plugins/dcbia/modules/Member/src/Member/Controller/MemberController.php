@@ -17,6 +17,7 @@ class MemberController extends AbstractController{
     const ADDITIONAL_USERS_ARRAY = "addUsers";
     const SUCCESS_STATUS = "success";
     const PMPPRO_MEMBERSHIP_USERS = "pmpro_memberships_users";
+    const UNPAID_LEVEL = 5;
     
     /**
      * 
@@ -29,29 +30,58 @@ class MemberController extends AbstractController{
     public function registerAction(){
         $additionalUsers = count($_POST["additional_users"]);
         $level = MemberController::getSingleton()->getMembershipLevel();
-        $_SESSION["amount"] = $level->billing_amount + $additionalUsers * self::ADDITIONAL_USER_COST;
+        $_SESSION["amount"] = $level->initial_payment + $additionalUsers * self::ADDITIONAL_USER_COST;
         
         $level = MemberController::getSingleton()->getUnpaidLevel();
         $mainUserId = $this->createMember($_POST, $level->id, true);
         $addUserIds = array();
         
         foreach($_POST["additional_users"] as $userToAdd){
-            $addUserIds[] = $this->createAMember($userToAdd, $level->id);
+            $addUserIds[] = $this->createAMember($userToAdd, $level->id, $_POST);
         }
         update_user_meta($mainUserId, self::ADDITIONAL_USERS_ARRAY, $addUserIds);
         return array("message" => "success");
     }
     
-    public function getMembershipLevel(){
+    
+    public function levelsAction(){
+        return json_decode(json_encode(MemberHelper::getMembershipLevels()), true);
+    }
+    
+    /**
+     * 
+     * @param int $id
+     * @return \stdClass
+     */
+    private function getMembershipLevelById($id){
         global $wpdb;
-        $level = $wpdb->get_row("SELECT * FROM $wpdb->pmpro_membership_levels WHERE id = '" . 1 . "' LIMIT 1");
+        $level = $wpdb->get_row("SELECT * FROM $wpdb->pmpro_membership_levels WHERE id = '" .
+            $id . "' LIMIT 1");
         
         return $level;
     }
     
+    /**
+     * 
+     * @return \stdClass
+     */
+    public function getMembershipLevel(){
+        return $this->getMembershipLevelById($this->getPost("membership_level"));
+    }
+    
+    /**
+     * 
+     * @param int $userId
+     * @return \stdClass
+     */
+    public function getStoredMembershipLevel($userId){
+        return $this->getMembershipLevelById(get_user_meta($userId, "tmp_membership_level", true));
+    }
+    
     public function getUnpaidLevel(){
         global $wpdb;
-        $level = $wpdb->get_row("SELECT * FROM $wpdb->pmpro_membership_levels WHERE id = '" . 5 . "' LIMIT 1");
+        $level = $wpdb->get_row("SELECT * FROM $wpdb->pmpro_membership_levels WHERE id = '" .
+            self::UNPAID_LEVEL . "' LIMIT 1");
     
         return $level;
     }
@@ -77,7 +107,7 @@ class MemberController extends AbstractController{
      */
     private function updateToMembershipLevel($userIds){
         foreach ($userIds as $userId){
-            pmpro_changeMembershipLevel($this->getMembershipLevel()->id, $userId);
+            pmpro_changeMembershipLevel($this->getStoredMembershipLevel($userId)->id, $userId);
             if(!empty($userId)){
                 $this->updateExpirationDate($userId);
             }
@@ -99,6 +129,26 @@ class MemberController extends AbstractController{
             "last_name" => $member["last_name"],
         );
         wp_update_user($user);
+        $this->setAdditionalInfoToUser($userId, $member);
+        
+        if($isMain === true){
+            $creds = array();
+            $creds['user_login'] = $member["email"];
+            $creds['user_password'] = $member["password"];
+            $creds['remember'] = true;
+            wp_signon($creds, false);
+        }
+        
+        return $userId;
+    }
+
+    /**
+     * 
+     * @param int $userId
+     * @param array $member
+     */
+    private function setAdditionalInfoToUser($userId, $member)
+    {
         update_user_meta($userId, "address1", $member["address1"]);
         update_user_meta($userId, "address2", $member["address2"]);
         update_user_meta($userId, "address3", $member["address3"]);
@@ -123,27 +173,17 @@ class MemberController extends AbstractController{
         update_user_meta($userId, "payment_method"      , $member["payment_method"]);
         update_user_meta($userId, "cost_per_affiliate"  , $member["cost_per_affiliate"]);
         update_user_meta($userId, "membership_base_cost", $member["membership_base_cost"]);
+        update_user_meta($userId, "business_category", $member["business_category"]);
         update_user_meta($userId, "membership_total_cost", $_SESSION["amount"]);
-        
-        if($isMain === true){
-            $creds = array();
-            $creds['user_login'] = $member["email"];
-            $creds['user_password'] = $member["password"];
-            $creds['remember'] = true;
-            wp_signon($creds, false);
-        }
-        
-        return $userId;
+        update_user_meta($userId, "tmp_membership_level", $member["membership_level"]);
     }
-
-        
     
     /**
      * 
      * @param array $user
      * @param int $level
      */
-    public function createAMember($user, $level = 1){
+    public function createAMember($user, $level = 1, $additionalInfo){
         $userId = wp_create_user($user["email"], $user["password"], $user["email"]);
         pmpro_changeMembershipLevel($level, $userId);
         $userTmp = array(
@@ -154,6 +194,8 @@ class MemberController extends AbstractController{
         );
         wp_update_user($userTmp);
         update_user_meta($userId, "committee", $user["committee"]);
+        $this->setAdditionalInfoToUser($userId, $additionalInfo);
+        
         return $userId;
     }
     
@@ -209,7 +251,9 @@ class MemberController extends AbstractController{
             $order->user_id = $user->ID;
             $order->status = self::SUCCESS_STATUS;
             $order->payment_type = "Credit Card";
-            $order->membership_id = $this->getMembershipLevel()->id;
+            $order->membership_id = $this->getStoredMembershipLevel($user->ID)->id;
+            
+            pmpro_changeMembershipLevel($this->getStoredMembershipLevel($user->ID)->id, $user->ID);
             
             $this->updateToMembershipLevel(get_user_meta($user->ID, 
                 self::ADDITIONAL_USERS_ARRAY, true)
@@ -255,7 +299,7 @@ class MemberController extends AbstractController{
                     $addUserIds[] = $this->createAMember($userToAdd, $this->getUnpaidLevel()->id);
                 }
             }
-            $amount = $this->getMembershipLevel()->billing_amount + count($addUserIds) * self::ADDITIONAL_USER_COST;
+            $amount = $this->getStoredMembershipLevel($user->ID)->initial_payment + count($addUserIds) * self::ADDITIONAL_USER_COST;
             update_user_meta($user->ID, self::ADDITIONAL_USERS_ARRAY, $addUserIds);
             update_user_meta($user->ID, "membership_total_cost", $amount);
             return array("message" => "success");

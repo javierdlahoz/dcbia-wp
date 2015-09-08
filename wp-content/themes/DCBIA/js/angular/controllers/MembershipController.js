@@ -6,6 +6,7 @@ angular.module('angular-wp')
     	$scope.usernameTaken = false;
     	$scope.isSuccess = false;
     	$scope.billing = {};
+    	$scope.membershipCost = null;
     	
     	$scope.add = function(){
     		$scope.c ++;
@@ -48,6 +49,20 @@ angular.module('angular-wp')
             	$scope.isSuccess = true;
             	window.location = "/checkout";
             });
+    	};
+    	
+    	$scope.getMembershipLevels = function(){
+    		var url = "/api/member/levels";
+    		$http({
+                url: url,
+                method: "GET"
+            }).success(function (data) {
+            	$scope.membershipLevels = data;
+            });
+    	};
+    	
+    	$scope.setMembershipCost = function(){
+    		$scope.membershipCost = $scope.membershipLevels[$scope.member.membership_level - 1].initial_payment;
     	};
     	
     	$scope.getAdditionalUsers = function(){
