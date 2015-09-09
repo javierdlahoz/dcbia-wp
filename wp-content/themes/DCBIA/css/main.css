@@ -8591,7 +8591,7 @@ button.close {
   min-width: 160px;
   max-width: 320px;
   list-style: none;
-  background-color: #ffffff;
+  background-color: #f7f7f7 !important;
   border: 1px solid #ccc;
   border: 1px solid rgba(0, 0, 0, 0.2);
   -webkit-border-radius: 5px;
@@ -8606,7 +8606,6 @@ button.close {
   *border-right-width: 2px;
   *border-bottom-width: 2px;
   color: #333333;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 13px;
   line-height: 20px;
 }
@@ -10653,18 +10652,18 @@ ul.tribe-events-sub-nav a:hover,
 /* Global Main Button Style */
 .tribe-events-button,
 #tribe-events .tribe-events-button {
-  background-color: #27a9e1;
+  background-color: #27a9e1 !important;
   color: #fff;
   background-image: none;
-  font-size: 11px;
+  font-size: 14px!important;
   font-weight: bold;
-  padding: 6px 9px;
+  padding: 15px !important;
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 1px;
-  -webkit-border-radius: 3px;
-  border-radius: 3px;
-  border: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  border: 0 !important;
   line-height: normal;
   cursor: pointer;
   -webkit-box-shadow: none;
@@ -10674,6 +10673,10 @@ ul.tribe-events-sub-nav a:hover,
   zoom: 1;
   *display: inline;
   vertical-align: middle;
+}
+.tribe-events-button:hover,
+#tribe-events .tribe-events-button:hover {
+  background-color: #6d6e70 !important;
 }
 .tribe-events-button.tribe-active {
   background-color: #6d6e70;
@@ -12646,5 +12649,11 @@ h2.tribe-events-page-title,
 #tribe-bar-form #tribe-bar-views + .tribe-bar-filters {
   background-color: #ffffff;
   padding: 3px;
+}
+#tribe-events-bar * {
+  cursor: pointer;
+}
+#tribe-events-daynum-9 {
+  background-color: #27a9e1;
 }
 /*@import "";*/

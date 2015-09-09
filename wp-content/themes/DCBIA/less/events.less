@@ -1127,18 +1127,18 @@ ul.tribe-events-sub-nav a:hover,
 /* Global Main Button Style */
 .tribe-events-button,
 #tribe-events .tribe-events-button {
-	background-color: @light-blue;
+	background-color: @light-blue !important;
 	color: #fff;
 	background-image: none;
-	font-size: 11px;
+	font-size: 14px!important;
 	font-weight: bold;
-	padding: 6px 9px;
+	padding: 15px !important;
 	text-align: center;
 	text-transform: uppercase;
 	letter-spacing: 1px;
-	-webkit-border-radius: 3px;
-			border-radius: 3px;
-	border: 0;
+	-webkit-border-radius: 0;
+			border-radius: 0;
+	border: 0 !important;
 	line-height: normal;
 	cursor: pointer;
 	-webkit-box-shadow: none;
@@ -1148,6 +1148,7 @@ ul.tribe-events-sub-nav a:hover,
 	zoom: 1;
 	*display: inline;
 	vertical-align: middle;
+    &:hover{ background-color: @dcbia-grey !important; }
 }
 
 .tribe-events-button.tribe-active {
@@ -3258,4 +3259,10 @@ h2.tribe-events-page-title,
 #tribe-bar-form #tribe-bar-views+.tribe-bar-filters{
     background-color: #ffffff;
     padding: 3px;
+}
+#tribe-events-bar *{
+    cursor: pointer;
+}
+#tribe-events-daynum-9{
+    background-color: @light-blue;
 }
