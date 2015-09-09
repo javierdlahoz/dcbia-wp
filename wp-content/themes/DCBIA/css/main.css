@@ -563,6 +563,14 @@ a.member-sort:hover {
   text-decoration: none;
   background-color: #6d6e70;
 }
+.results-heading h4 {
+  display: inline-block;
+}
+.results-heading a {
+  font-weight: 700;
+  font-size: 18px;
+  color: #27a9e1;
+}
 .register h3,
 .register h4 {
   color: #27a9e1 !important;

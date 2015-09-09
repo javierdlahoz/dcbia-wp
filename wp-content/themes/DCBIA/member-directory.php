@@ -67,7 +67,7 @@ get_header();  ?>
         <div class="row">
             <div class="col-sm-4">
                 <div class="results-heading">
-                    <h6>Results per page:</h6>
+                    <h4>Results per page:</h4>
                     <span>&nbsp;</span> 
                     <a href="" ng-click="setResultsPerPage(20)">20</a>
                     <span>&nbsp;</span>
