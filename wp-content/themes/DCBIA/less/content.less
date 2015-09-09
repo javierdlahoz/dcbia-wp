@@ -571,15 +571,6 @@ a.member-sort{
         color: @light-blue;
     }
 }
-.disabled1{
-    background-color: #CCCCCC;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-}
 
 // register form
 
@@ -610,6 +601,23 @@ textarea.register-form-text-area{
     margin: 25px auto 15px auto;
     display: block;
     border: 0!important;
+}
+.button3 [disabled=disabled], button:disabled{
+    width: 300px;
+    margin: 25px auto 15px auto;
+    display: block;
+    border: 0!important;
+    background-color: #CCCCCC;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: not-allowed; 
+    &:hover{
+        background-color: #CCCCCC;    
+    }
 }
 
 // checkout

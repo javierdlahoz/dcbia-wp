@@ -190,7 +190,7 @@ get_header(); ?>
                     </div>
                 </div>
                 <div class="col-md-12">
-                    <button class="button3 disabled1" ng-disabled="disabledToSend" ng-click="register()">Submit Registration Form</button>
+                    <button class="button3" ng-disabled="disabledToSend" ng-click="register()">Submit Registration Form</button>
                 </div>    
             </form>
         </div> 
