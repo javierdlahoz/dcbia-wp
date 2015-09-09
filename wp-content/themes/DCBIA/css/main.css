@@ -571,6 +571,9 @@ a.member-sort:hover {
   font-size: 18px;
   color: #27a9e1;
 }
+.disabled1 {
+  background-color: #CCCCCC;
+}
 .register h3,
 .register h4 {
   color: #27a9e1 !important;
