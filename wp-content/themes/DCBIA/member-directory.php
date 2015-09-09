@@ -66,13 +66,15 @@ get_header();  ?>
     <div class="container all-pad-gone">
         <div class="row">
             <div class="col-sm-4">
-                Results per page:
-                <span>&nbsp;</span> 
-                <a href="" ng-click="setResultsPerPage(20)">20</a>
-                <span>&nbsp;</span>
-                <a href="" ng-click="setResultsPerPage(50)">50</a>
-                <span>&nbsp;</span>
-                <a href="" ng-click="setResultsPerPage(100)">100</a>
+                <div class="results-heading">
+                    <h6>Results per page:</h6>
+                    <span>&nbsp;</span> 
+                    <a href="" ng-click="setResultsPerPage(20)">20</a>
+                    <span>&nbsp;</span>
+                    <a href="" ng-click="setResultsPerPage(50)">50</a>
+                    <span>&nbsp;</span>
+                    <a href="" ng-click="setResultsPerPage(100)">100</a>
+                </div>    
                 <div class="member-side-result-box">
                     <h4>Types</h4>
                     <div class="inside-side-member">
