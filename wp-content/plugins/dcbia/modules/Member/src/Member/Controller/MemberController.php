@@ -204,7 +204,7 @@ class MemberController extends AbstractController{
      * @return multitype:boolean
      */
     public function checkAction(){
-        if(username_exists($this->getPost("username"))){
+        if(username_exists($this->getPost("email"))){
             return array("is_taken" => true);
         }
         else{

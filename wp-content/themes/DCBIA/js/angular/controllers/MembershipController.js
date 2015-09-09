@@ -7,6 +7,7 @@ angular.module('angular-wp')
     	$scope.isSuccess = false;
     	$scope.billing = {};
     	$scope.membershipCost = null;
+    	$scope.disabledToSend = false;
     	
     	$scope.add = function(){
     		$scope.c ++;
@@ -73,7 +74,6 @@ angular.module('angular-wp')
             }).success(function (data) {
             	$scope.users = data.affiliates;
             	$scope.c = data.affiliates.length - 1;
-            	console.log($scope.c);
             });
     	};
     	
@@ -92,18 +92,43 @@ angular.module('angular-wp')
             });
     	};
     	
-    	$scope.isUsernameTaken = function(){
-    		if($scope.member.username.length > 4){
+    	setDisabledToSend = function(isTaken){
+        	$scope.disabledToSend = isTaken;
+    	};
+    	
+    	$scope.isUsernameTaken = function(email){
+    		if($scope.member.email.length > 4){
     			var url = "/api/member/check";
         		$http({
                     url: url,
                     method: "POST",
-                    data: jQuery.param({username: $scope.member.email}),
+                    data: jQuery.param({email: $scope.member.email}),
                     headers: getContentTypes().form
                 }).success(function (data) {
                 	$scope.usernameTaken = data.is_taken;
+                	setDisabledToSend(data.is_taken);
                 });
     		}
+    	};
+    	
+    	$scope.checkEmailForAffiliates = function(index){
+    		var user = $scope.users[index];
+    		if(user.email.length > 4){
+    			var url = "/api/member/check";
+        		$http({
+                    url: url,
+                    method: "POST",
+                    data: jQuery.param({email: user.email}),
+                    headers: getContentTypes().form
+                }).success(function (data) {
+                	$scope.users[index].isTaken = data.is_taken;
+                	if($scope.users[index].email == $scope.member.email){
+            			$scope.users[index].isTaken = true;
+            		}
+                	setDisabledToSend(data.is_taken);
+                });
+    		}
+    		
     	};
     	
     	$scope.charge = function(){

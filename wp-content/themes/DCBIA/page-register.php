@@ -69,7 +69,8 @@ get_header(); ?>
                 <div class="col-md-6">
                     <div class="form-group">
                       <label>Email</label>
-                      <input type="email" class="form-control" placeholder="Email" ng-model="member.email" required>
+                      <input type="email" class="form-control" placeholder="Email" ng-model="member.email" required ng-change="isUsernameTaken()">
+                      <div class="alert alert-danger" ng-show="usernameTaken">This email belongs to a member</div>
                     </div>
 
                     <div class="form-group">
@@ -168,7 +169,8 @@ get_header(); ?>
                             </div>
                             <div class="form-group">
                                 <label>E-Mail</label>
-                                <input type="email" class="form-control" placeholder="E-Mail" ng-model="user.email">
+                                <input type="email" class="form-control" placeholder="E-Mail" ng-model="user.email" ng-change="checkEmailForAffiliates($index)">
+                                <div class="alert alert-danger" ng-show="user.isTaken">This email belongs to a member</div>
                             </div>
                             <div class="form-group">
                                 <label>Password</label>
@@ -188,7 +190,7 @@ get_header(); ?>
                     </div>
                 </div>
                 <div class="col-md-12">
-                    <button class="button3" ng-disabled="usernameTaken" ng-click="register()">Submit Registration Form</button>
+                    <button class="button3" ng-disabled="disabledToSend" ng-click="register()">Submit Registration Form</button>
                 </div>    
             </form>
         </div>
