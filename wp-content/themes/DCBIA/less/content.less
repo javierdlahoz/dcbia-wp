@@ -561,6 +561,16 @@ a.member-sort{
         }
     }
 }
+.results-heading{
+    & h4{
+        display: inline-block;
+    }
+    & a {
+        font-weight: 700;
+        font-size: 18px;
+        color: @light-blue;
+    }
+}
 
 // register form
 
@@ -613,6 +623,21 @@ textarea.register-form-text-area{
     & h4 {
         color: @offblack !important;
     }
+    form.pmpro_form div {
+        clear: none;
+        margin: 0;
+    }
+    form.pmpro_form label {
+        float: none;
+        margin: 15px 0 0 0;
+        width: 100%;
+        font-weight: bold;
+        text-align: left;
+    }
+    form.pmpro_form select {
+    margin: 0;
+    font-size: inherit;
+}
 }
 
 .new-select-checkout{
@@ -620,11 +645,13 @@ textarea.register-form-text-area{
     width: 100%;
     border-radius: 0 !important;
 }
-
+.form-control {
+    
+}
 //javier add ons
 
 .member-sort.active{
-	background-color: #6D96B2;
+	background-color: @dcbia-grey;
 	color: white;
 }
 

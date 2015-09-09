@@ -563,6 +563,14 @@ a.member-sort:hover {
   text-decoration: none;
   background-color: #6d6e70;
 }
+.results-heading h4 {
+  display: inline-block;
+}
+.results-heading a {
+  font-weight: 700;
+  font-size: 18px;
+  color: #27a9e1;
+}
 .register h3,
 .register h4 {
   color: #27a9e1 !important;
@@ -608,13 +616,28 @@ textarea.register-form-text-area {
 .checkedout h4 {
   color: #2a2d2f !important;
 }
+.checkedout form.pmpro_form div {
+  clear: none;
+  margin: 0;
+}
+.checkedout form.pmpro_form label {
+  float: none;
+  margin: 15px 0 0 0;
+  width: 100%;
+  font-weight: bold;
+  text-align: left;
+}
+.checkedout form.pmpro_form select {
+  margin: 0;
+  font-size: inherit;
+}
 .new-select-checkout {
   height: 34px !important;
   width: 100%;
   border-radius: 0 !important;
 }
 .member-sort.active {
-  background-color: #6D96B2;
+  background-color: #6d6e70;
   color: white;
 }
 .business-categories.active {
