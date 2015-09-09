@@ -10661,8 +10661,8 @@ ul.tribe-events-sub-nav a:hover,
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 1px;
-  -webkit-border-radius: 0;
-  border-radius: 0;
+  -webkit-border-radius: 0!important;
+  border-radius: 0!important;
   border: 0 !important;
   line-height: normal;
   cursor: pointer;
