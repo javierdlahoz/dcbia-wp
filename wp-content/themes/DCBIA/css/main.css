@@ -10020,8 +10020,8 @@ hr.aq-block-hr-single {
 /* = Global & Miscellaneous Styles
 =============================================*/
 #tribe-events-pg-template {
-  max-width: 1000px;
-  margin: 0 auto;
+  max-width: 100%!important;
+  margin: 0;
 }
 /* Default Events Template Base HTML STyles */
 .tribe-events-after-html {
@@ -10107,7 +10107,7 @@ hr.aq-block-hr-single {
 .tribe-events-after-html ol li,
 #tribe-events-pg-template .tribe-events-content ul li,
 #tribe-events-pg-template .tribe-events-content ol li {
-  margin: 0 0 20px;
+  margin: 0;
   line-height: 1.7;
 }
 .tribe-events-back {
@@ -11604,17 +11604,11 @@ input[name*="tribe-bar-"]:-moz-placeholder {
 }
 .tribe-theme-twentyfourteen #tribe-events-pg-template #tribe-events,
 .tribe-theme-parent-twentyfourteen #tribe-events-pg-template #tribe-events {
-  padding: 20px;
+  padding: 20px 0;
 }
 .tribe-theme-twentyfourteen #tribe-bar-views .tribe-bar-views-list,
 .tribe-theme-parent-twentyfourteen #tribe-bar-views .tribe-bar-views-list {
   z-index: 3;
-}
-@media screen and (min-width: 1000px) {
-  .tribe-theme-twentyfourteen #tribe-events-pg-template,
-  .tribe-theme-parent-twentyfourteen #tribe-events-pg-template {
-    padding-left: 220px;
-  }
 }
 /* Stop themes from hiding elements with the .updated CSS class */
 #tribe-events-content .updated {
@@ -12103,11 +12097,11 @@ h2.tribe-events-page-title,
   padding-top: .5em;
 }
 .events-list.tribe-bar-is-disabled #tribe-events-content-wrapper {
-  max-width: 700px;
+  width: 100%;
   margin: 0 auto;
 }
 .tribe-events-map.tribe-bar-is-disabled #tribe-events-content-wrapper {
-  max-width: none;
+  width: 100%;
 }
 /* = Events Retina
 =============================================*/
@@ -12115,5 +12109,13 @@ h2.tribe-events-page-title,
   .tribe-events-tooltip .tribe-events-arrow {
     background-image: url(../images/tribe-theme/tribe-theme-tooltips@2x.png);
   }
+}
+#tribe-events-pg-template {
+  width: 100%!important;
+  margin: 0 !important;
+}
+#tribe-events-pg-template {
+  width: 100%!important;
+  margin: 0 !important;
 }
 /*@import "";*/
