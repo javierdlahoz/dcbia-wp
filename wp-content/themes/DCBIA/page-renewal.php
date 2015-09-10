@@ -4,6 +4,9 @@ use Committee\Controller\CommitteeController;
 use Member\Controller\MemberController;
 $pageEntity = new PostEntity(get_the_ID());
 get_header(); ?>
+<div class="container all-pad-gone">      
+    <?php echo getTopMenu(); ?> 
+</div>
 <p>&nbsp;</p>
 
     <div class="container all-pad-gone" ng-controller="MembershipController">
