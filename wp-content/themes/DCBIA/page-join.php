@@ -133,15 +133,16 @@ get_header(); ?>
                       <textarea class="form-control register-form-text-area" ng-model="member.company_description"></textarea>
                     </div>
                 </div>
-                <div class="col-md-12">
-                    <h4>Affiliate Listing in Directory</h4>
-                    <p>Membership in DCBIA is corporate based and it entitles you to one representative to be listed in the Membership Directory under your company’s listing. Additional representatives from a member firm can be listed as affiliate members for a $75/year charge.</p>
-                    <p><b>Enter information for Affiliates to be added * :</b></p>
-                    <p>($ 75 per individual)</p>
-                </div>
+
                 <div class="col-md-12">
                     <div class="user-container">
                         <div ng-repeat="user in users">
+                            <div class="form-group">
+                                <h4>Affiliate Listing in Directory</h4>
+                                <p>Membership in DCBIA is corporate based and it entitles you to one representative to be listed in the Membership Directory under your company’s listing. Additional representatives from a member firm can be listed as affiliate members for a $75/year charge.</p>
+                                <p><b>Enter information for Affiliates to be added * :</b></p>
+                                <p>($ 75 per individual)</p>
+                            </div>    
                             <div class="form-group">
                                 <label>First name</label>
                                 <input type="text" class="form-control" placeholder="First name" ng-model="user.first_name">
