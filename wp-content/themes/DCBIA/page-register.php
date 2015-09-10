@@ -91,17 +91,17 @@ get_header(); ?>
                 </div>
                 <div class="col-md-12">
                     <div class="form-group">
-                      <label>Company Name</label>
-                      <input type="text" class="form-control" placeholder="Company Name" ng-model="member.company_name">
-                    </div>
-                    
-                    <div class="form-group">
                       <label>Business Category</label>
                       <select ng-model="member.business_category" class="form-control new-select-checkout">
                         <?php foreach(MemberHelper::getBusinessCategories() as $category): ?>
                             <option value="<?php echo $category; ?>"><?php echo $category; ?></option>
                         <?php endforeach; ?>
                       </select>
+                    </div>
+                    
+                    <div class="form-group">
+                      <label>Company Name</label>
+                      <input type="text" class="form-control" placeholder="Company Name" ng-model="member.company_name">
                     </div>
                         
                     <div class="form-group">

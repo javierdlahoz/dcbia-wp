@@ -26,7 +26,7 @@ if ( !defined('ABSPATH') ) { die('-1'); } ?>
                         <li id="committees"><a href="/about/">COMMITTEES</a></li>
                   </ul>
               </li>
-              <li id="join"><a href="/join">JOIN</a></li>
+              <li id="join"><a href="/register">JOIN</a></li>
               <li id="advocacy" <?php if($url == "advocacy" || $url == "advocacy") echo "class='active'"; ?>><a href="/advocacy">ADVOCACY</a></li>
               <li id="sponsors" <?php if($url == "sponsors" || $url == "sponsors") echo "class='active'"; ?>><a href="/sponsors">SPONSORS</a></li>
 
