@@ -34,8 +34,12 @@ $keyIssues = ResourceHelper::getKeyIssues();
 <div class="container all-pad-gone">
     <div class="row">
         <div class="col-md-12 about">   
-            <h2>ABOUT</h2>
-            <p>Members serve frequently and prominently on commissions, task forces and study groups to address crucial economic development and municipal governance issues. Member participation on a more continuous basis is encouraged through eleven standing committees, which work closely with agencies of the DC government to advise and assist in the efficient administration of city programs – most recently in areas related to land use, building regulation, comprehensive planning, tax issues and affordable housing and community development. Committees also work in collaboration with other business groups and community organizations to attract and retain business investment and to facilitate the revitalization of distressed areas in the city.</p>    
+            <h2>About dcbia</h2>
+            <p>The District of Columbia Building Industry Association (DCBIA) is the professional association representing both the commercial and residential real estate industries in the nation’s capital. Its membership of nearly 500 companies and organizations comprises several thousand real estate professionals. Association members are engaged in all aspects of real estate development and include developers, general contractors, architects and engineers, lenders, attorneys, brokers, title companies, utility companies, community development organizations and other industry members.</p>
+
+<p>As an advocacy organization, DCBIA represents the interests and views of its members before the District of Columbia and the federal governments, community organizations and other business associations. As a service organization, it offers comprehensive educational programs, social events and community service activities.</p>
+
+<p>DCBIA’s extensive committee structure invites direct member participation in the shaping of association and business community positions on key issues impacting the economic health and governance of Washington, DC – from investment and economic development to regulatory and management reform; from city-wide housing development to tax reform; from retail business expansion to development “east of the river.” Many DCBIA members participate in its 10 standing committees.</p>
         </div>    
     </div>
 </div>

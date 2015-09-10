@@ -39,6 +39,10 @@ ol li {
 a {
   cursor: pointer;
 }
+p {
+  font-size: 16px;
+  line-height: 1.6em;
+}
 header {
   height: auto;
   background-color: #f7f7f7;
@@ -3170,7 +3174,6 @@ th {
 .table .table {
   background-color: #f7f7f7;
 }
-
 .table-condensed > thead > tr > th,
 .table-condensed > tbody > tr > th,
 .table-condensed > tfoot > tr > th,
@@ -12641,9 +12644,6 @@ h2.tribe-events-page-title,
   width: 100%!important;
   margin: 0 !important;
 }
-<<<<<<< HEAD
-/*@import "";*/
-=======
 #tribe-bar-form #tribe-bar-views + .tribe-bar-filters {
   background-color: #ffffff;
   padding: 3px;
@@ -12655,4 +12655,3 @@ h2.tribe-events-page-title,
   background-color: #27a9e1 !important;
 }
 /*@import "";*/
->>>>>>> b9b66d1b584d7219da423e2f9b93149c0cad9237
