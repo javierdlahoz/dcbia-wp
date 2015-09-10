@@ -11,7 +11,9 @@
     <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,400italic' rel='stylesheet' type='text/css'>
     <title>DCBIA</title>
     <link href="<?php bloginfo('stylesheet_url');?>" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">  
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/wp-content/profile-builder\assets\css\style-front-end.css">
+    
     <script src="<?php wp_enqueue_script("jquery"); ?>"></script>
     <?php wp_head(); ?>
   </head> 
