@@ -1,4 +1,6 @@
-<?php?>
+<?php
+    require_once __DIR__."/helpers/front-page-helper.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
