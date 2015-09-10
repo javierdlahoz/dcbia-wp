@@ -1,40 +1,44 @@
 <?php
-use INUtils\Entity\PostEntity;
-use INUtils\Service\PostService;
-use INUtils\Helper\TextHelper;
+use Resource\Helper\ResourceHelper;
 /*
   Template Name: about
 */
-require_once __DIR__ . "/helpers/front-page-helper.php";
-$pageEntity = new PostEntity(get_the_ID());
-$donatePage = PostService::getSingleton()->getPostByPageName("donate");
-get_header(); ?>
+get_header();
+$keyIssues = ResourceHelper::getKeyIssues();
+?>
+<div class="container all-pad-gone">
+    <?php echo do_shortcode('[slideshow group="about"]'); ?>
+            
+      <nav class="site-navigation" role="navigation">
+          <ul class="nav custom-nav hide-on-phone">
+              <li id="about" <?php if($url == "about" || $url == "about")
+                  echo "class='active'"; ?>><a href="/about">ABOUT</a>
+                  <ul class="" id="" role="menu">       
+                        <li id="staff"><a href="/about/">STAFF</a></li>
+                        <li id="board"><a href="/about/">BOARD</a></li>
+                        <li id="committees"><a href="/about/">COMMITTEES</a></li>
+                  </ul>
+              </li>
+              <li id="join"><a href="/register">JOIN</a></li>
+              <li id="advocacy" <?php if($url == "advocacy" || $url == "advocacy") echo "class='active'"; ?>><a href="/advocacy">ADVOCACY</a></li>
+              <li id="sponsors" <?php if($url == "sponsors" || $url == "sponsors") echo "class='active'"; ?>><a href="/sponsors">SPONSORS</a></li>
 
-        <?php echo do_shortcode('[slideshow group="about"]'); ?>
-<!--start main content here-->
-<?php getAboutNav(); ?>
+              <li id="events" <?php if($url == "events" || $url == "events") echo "class='active'"; ?>><a href="/events">EVENTS</a></li>
+              <li id="news" <?php if($url == "news" || $url == "news") echo "class='active'"; ?>><a href="/news">NEWS</a></li>
+            </ul> 
+        </nav>      
+    </div> 
+
 <!--start main content here-->
 
-<p>&nbsp;</p>
-<!--sidebar-->
-<div class="container">
+<div class="container all-pad-gone">
     <div class="row">
-
-        <div class="col-md-12 about-main">
-            <h3>About Us</h3>
-            <share-this></share-this>
-            <p><?php echo $pageEntity->getContent(); ?></p>
-    
-            <p>&nbsp;</p>    
-        </div>
+        <div class="col-md-12 about">   
+            <h2>ABOUT</h2>
+            <p>Members serve frequently and prominently on commissions, task forces and study groups to address crucial economic development and municipal governance issues. Member participation on a more continuous basis is encouraged through eleven standing committees, which work closely with agencies of the DC government to advise and assist in the efficient administration of city programs – most recently in areas related to land use, building regulation, comprehensive planning, tax issues and affordable housing and community development. Committees also work in collaboration with other business groups and community organizations to attract and retain business investment and to facilitate the revitalization of distressed areas in the city.</p>    
+        </div>    
     </div>
 </div>
-<p>&nbsp;</p>
-<script type="text/javascript">
-jQuery(document).ready(function(){
-	jQuery("#company").addClass("active");
-});
-</script>
-<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/angular/services/ResourceService.js"></script>
-<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/angular/controllers/ResourceController.js"></script>
-<?php get_footer();
+<?php get_footer(); ?>
+<script src="<?php echo get_template_directory_uri(); ?>/js/angular/controllers/ResourceController.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/js/angular/services/ResourceService.js"></script>
