@@ -749,13 +749,40 @@ footer{
 // login page, editme, password-recovery
 
 #wppb-edit-user{
-
+      & #edit_profile{
+        background-color: @offblack;
+        color: #ffffff;
+        padding: 8px 25px;
+        border: 0; 
+        text-transform: uppercase;
+        &:hover{
+            background-color: @dcbia-grey;
+            }  
+        }
     & ul{
         padding: 0!important;
         margin-top: 25px;
         & li{
             list-style-type: none;
             margin: 15px 0;
+            & label{
+                display: block;
+            }
+            & input{
+                width: 100%;
+                height: 38px;
+                padding: 15px;
+            }
+            & select#display-name{
+                width: 100%;
+                height: 38px!important;
+                padding: 15px;   
+            }
+            & #description{
+                width: 100%;
+                height: 200px!important;
+                padding: 15px;    
+            }
         }
     }
 }
