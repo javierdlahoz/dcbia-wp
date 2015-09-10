@@ -14,4 +14,11 @@ get_header(); ?>
     </div>
 </div>
 <p>&nbsp;</p>
-<?php get_footer();
+<?php get_footer(); ?>
+<script type="text/javascript">
+	jQuery(document).ready(function(){
+		jQuery("#edit_profile").click(function(){
+	    	jQuery("#wppb-edit-user").submit();
+	    });
+	});
+</script>
