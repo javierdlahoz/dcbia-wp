@@ -5,9 +5,8 @@ use Member\Controller\MemberController;
 $pageEntity = new PostEntity(get_the_ID());
 get_header(); ?>
 <p>&nbsp;</p>
-<div class="container inside-pages">
-   <p>&nbsp;</p>
-    <div class="container inside-pages" ng-controller="MembershipController">
+
+    <div class="container all-pad-gone" ng-controller="MembershipController">
         <div class="row">
             <div class="col-md-12">
                 <h3><?php echo $pageEntity->getTitle(); ?></h3>
@@ -54,7 +53,7 @@ get_header(); ?>
             </div>
         </div>
     </div>
-</div>
+
 <p>&nbsp;</p>
 <?php get_footer(); ?>
 <script src="<?php echo get_template_directory_uri(); ?>/js/angular/controllers/MembershipController.js"></script>
