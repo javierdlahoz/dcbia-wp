@@ -743,6 +743,12 @@ footer .social-icons a:hover {
   list-style-type: none;
   margin: 15px 0;
 }
+.wppb-logout-url {
+  display: block;
+  margin-top: 15px;
+  font-size: 16px;
+  font-weight: 700;
+}
 #contact-form .form-control,
 #contact-form textarea {
   padding: 15px 12px;
