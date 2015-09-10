@@ -26,7 +26,7 @@ get_header(); ?>
         </nav>   
     </div>
 
-    <div class="container all-pad-gone register" ng-controller="MembershipController" ng-init="getMembershipLevels(); getCurrentUser()">
+    <div class="container all-pad-gone register" ng-controller="MembershipController" ng-init="getMembershipLevels(); getCurrentUser()" ng-cloak>
         <div class="row">
             <form class="" ng-init="initialize()" ng-hide="isSuccess">
                 <div class="col-md-12">
@@ -59,7 +59,7 @@ get_header(); ?>
                       <input type="text" class="form-control" placeholder="Last name" ng-model="member.last_name" required>
                     </div>
                     <div class="form-group">     
-                      <a href="">Already a Member?</a>
+                      <a href="/login">Already a Member?</a>
                     </div>
                     <div class="form-group">     
                       <label>Referred By</label>
