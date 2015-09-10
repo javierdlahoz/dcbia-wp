@@ -77,6 +77,7 @@
     jQuery( document ).ready(function() {
         jQuery('#myStat').circliful();
         jQuery('#myStat1').circliful();
+        jQuery(jQuery("#wp-admin-bar-edit-profile").children()[0]).attr("href", "/editme");
     });
 </script>
     
