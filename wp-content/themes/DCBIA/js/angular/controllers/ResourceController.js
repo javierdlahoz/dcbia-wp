@@ -2,8 +2,8 @@ angular.module('angular-wp')
 	.controller('ResourceController', function ($scope, $http, $rootScope, ResourceService, $timeout) {
 		
 		$scope.resources = {};
-		$scope.query = "";
 		$scope.formData = {};
+		$scope.resultsInTop = false;
 		
 		getResources = function(){
 			$scope.loading = true;
@@ -44,7 +44,17 @@ angular.module('angular-wp')
 			$scope.isTypeSearch = false;
 		};
 		
+		$scope.searchOnlyInText = function(){
+			$scope.resultsInTop = true;
+			delete $scope.formData.key_issue;
+			delete $scope.formData.resource_type;
+			delete $scope.formData.subject_of_resource;
+			getResources();
+		};
+		
 		$scope.search = function(){
+			$scope.formData.query = "";
+			$scope.resultsInTop = false;
 			getResources();
 		};
 		
@@ -66,6 +76,8 @@ angular.module('angular-wp')
 		};
 		
 		$scope.initial = function(){
+			$scope.formData.query = "";
+			$scope.resultsInTop = false;
 			setActiveKeyIssue(null);
 			getResources();
 		};

@@ -43,9 +43,34 @@ $keyIssues = ResourceHelper::getKeyIssues();
         <div class="col-md-12 key-issues-container">
                 <div class="key-top-search">
                     <input type="text" name="" id="advocacy-search" class="form-control" placeholder="Search" ng-model="formData.query">
-                    <button class="btn advo-search-btn" type="button" ng-click="search()">Submit</button>
+                    <button class="btn advo-search-btn" type="button" ng-click="searchOnlyInText()">Submit</button>
                 </div>
-                   <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                
+                <div ng-show="resultsInTop">
+                    <div ng-show="resources.length == 0" ng-cloak>
+                        <h2>No results were found</h2>
+                    </div>
+                    
+                    <div ng-show="loading">
+                        <center>
+                            <img src="<?php echo get_template_directory_uri(); ?>/img/loading.gif" height="64">
+                        </center>
+                    </div>
+                    
+                    <div class="lower-key-results" ng-repeat="resource in resources" ng-cloak >
+                        <div class="col-sm-2 bookmark-box">
+                            <p><i class="fa fa-bookmark-o"></i></p>
+                        </div>
+                        <div class="col-sm-9 col-sm-offset-1 key-info">
+                            <h5>{{resource.title}}</h5>  
+                            <p>{{resource.limitedContent}}</p>
+                            
+                            <a class="button1" href="{{resoure.permalink}}">More Information</a>
+                        </div>
+                    </div>
+                </div>
+                   
                 <div class="row key-issue-boxes">    
                     <div class="col-sm-3">
                         <a ng-click="initial()" id="keys">
@@ -103,25 +128,27 @@ $keyIssues = ResourceHelper::getKeyIssues();
                     </div>    
                 </div>
                 
-                <div ng-show="resources.length == 0" ng-cloak>
-                    <h2>No results were found</h2>
-                </div>
-                
-                <div ng-show="loading">
-                    <center>
-                        <img src="<?php echo get_template_directory_uri(); ?>/img/loading.gif" height="64">
-                    </center>
-                </div>
-                
-                <div class="lower-key-results" ng-repeat="resource in resources" ng-cloak>
-                    <div class="col-sm-2 bookmark-box">
-                        <p><i class="fa fa-bookmark-o"></i></p>
+                <div ng-hide="resultsInTop">
+                    <div ng-show="resources.length == 0" ng-cloak>
+                        <h2>No results were found</h2>
                     </div>
-                    <div class="col-sm-9 col-sm-offset-1 key-info">
-                        <h5>{{resource.title}}</h5>  
-                        <p>{{resource.limitedContent}}</p>
-                        
-                        <a class="button1" href="{{resoure.permalink}}">More Information</a>
+                    
+                    <div ng-show="loading">
+                        <center>
+                            <img src="<?php echo get_template_directory_uri(); ?>/img/loading.gif" height="64">
+                        </center>
+                    </div>
+                    
+                    <div class="lower-key-results" ng-repeat="resource in resources" ng-cloak>
+                        <div class="col-sm-2 bookmark-box">
+                            <p><i class="fa fa-bookmark-o"></i></p>
+                        </div>
+                        <div class="col-sm-9 col-sm-offset-1 key-info">
+                            <h5>{{resource.title}}</h5>  
+                            <p>{{resource.limitedContent}}</p>
+                            
+                            <a class="button1" href="{{resoure.permalink}}">More Information</a>
+                        </div>
                     </div>
                 </div>
             
