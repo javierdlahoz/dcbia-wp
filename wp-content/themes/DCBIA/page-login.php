@@ -8,6 +8,9 @@ get_header(); ?>
             <div class="col-md-12">
                 <h3><?php the_title(); ?></h3>
                 <?php echo do_shortcode("[wppb-login]"); ?>
+                <?php if(get_current_user_id() == 0): ?>
+                    <a href="/password-recovery">I forgot my password</a>
+                <?php endif; ?>
                 <br>
             </div>
         </div>
