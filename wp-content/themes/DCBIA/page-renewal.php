@@ -23,7 +23,7 @@ get_header(); ?>
                 <p><b>Enter information for Affiliates to be added * :</b></p>
                 <p>($ 75 per individual)</p>
                 <div class="user-container" ng-init="getAdditionalUsers()">
-                    <div class="form-horizontal">
+                    <div class="">
                         <div ng-repeat="user in users">
                             <div class="form-group">
                                 <label>First name</label>
@@ -45,13 +45,13 @@ get_header(); ?>
                                 <?php endforeach; ?>
                                 </select>
                             </div>
-                            <div class="btn btn-danger" ng-click="remove(user.id)">Remove Affiliate</div>
+                            <div class="btn button2" ng-click="remove(user.id)">Remove Affiliate</div>
                         </div>
-                        <div class="btn btn-primary" ng-click="add()">Add Affiliate</div>
+                        <div class="btn button2" ng-click="add()">Add Affiliate</div>
                     </div>
                 </div>
                 <br>
-                <button class="btn btn-success" ng-disabled="usernameTaken" ng-click="setAdditionalUsers()">Renew</button>
+                <button class="btn button2" ng-disabled="usernameTaken" ng-click="setAdditionalUsers()">Renew</button>
                 
                 <br>
             </div>
