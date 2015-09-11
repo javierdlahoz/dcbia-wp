@@ -14,10 +14,9 @@ $featuredIssues = IssueController::getSingleton()->getFeatured();
 get_header(); 
 ?>
 <div class="container all-pad-gone">
-    <?php echo do_shortcode('[slideshow group="home"]'); ?>
-            
-      <?php echo getTopMenu(); ?>     
-    </div> 
+    <?php echo do_shortcode('[slideshow group="home"]'); ?>      
+    <?php echo getTopMenu(); ?>     
+</div> 
 
 <!--start main content here-->
 
