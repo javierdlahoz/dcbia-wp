@@ -36,8 +36,9 @@ angular.module('angular-wp')
 			angular.element("#keys").addClass("active");
 			angular.element(".issues").removeClass("active");
 			
+			console.log(keyIssue);
 			if(keyIssue !== null){
-				angular.element("#"+keyIssue).addClass("active");
+				angular.element("#heading_"+keyIssue).addClass("active");
 			}
 			
 			delete $scope.formData.resource_type;
