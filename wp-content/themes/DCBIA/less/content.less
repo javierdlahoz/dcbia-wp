@@ -746,21 +746,75 @@ footer{
     max-height: 500px;
 }
 
-// login page
+// login page, editme, password-recovery, and renewal
 
-#wppb-edit-user{
-
+#wppb-edit-user, #wppb-recover-password{
+      & #edit_profile{
+        background-color: @offblack;
+        color: #ffffff;
+        padding: 8px 25px;
+        border: 0; 
+        text-transform: uppercase;
+        &:hover{
+            background-color: @dcbia-grey;
+            }  
+        }
     & ul{
         padding: 0!important;
         margin-top: 25px;
         & li{
             list-style-type: none;
             margin: 15px 0;
+            & label{
+                display: block;
+            }
+            & input{
+                width: 100%;
+                height: 38px;
+                padding: 15px;
+            }
+            & select#display-name{
+                width: 100%;
+                height: 38px!important;
+                padding: 15px;   
+            }
+            & #description{
+                width: 100%;
+                height: 200px!important;
+                padding: 15px;    
+            }
         }
     }
 }
 
+.wppb-logout-url, #wppb-recover-password-button{
+    display: block;
+    margin-top: 25px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #ffffff;
+    background-color: @offblack;
+    padding: 8px 25px;
+    text-transform: uppercase;
+    width: 300px;
+    text-align: center;
+    border: 0;
+    &:hover{
+        color: #ffffff;
+        text-decoration: none;
+        background-color: @dcbia-grey;
+    }
+}
 
+.renewal{
+    & .button2{
+        border-radius: 0!important;
+        padding: 10px 25px;
+        &:hover{
+            color: #ffffff;
+        } 
+    }
+}
 
 // Contact Page
 
