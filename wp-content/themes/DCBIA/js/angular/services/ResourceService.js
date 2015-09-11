@@ -11,6 +11,17 @@ angular.module('angular-wp')
 	            }).success(function (data) {
 	            	return callBack(data);
 	            });
+			},
+			
+			getKeyIssues: function(formData, callBack){
+				$http({
+	                url: "/api/issue/index",
+	                method: "POST",
+	                data: jQuery.param(formData),
+	                headers: getContentTypes().form
+	            }).success(function (data) {
+	            	return callBack(data);
+	            });
 			}
 		};
 	});

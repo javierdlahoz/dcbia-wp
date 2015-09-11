@@ -99,8 +99,8 @@ $headings = IssueController::getSingleton()->getHeadings();
                             <?php foreach($headings as $heading): ?>
                                 <?php if($isFirst): ?>
                                     <li class="no-border">
-                                        <a class="issues" href="" ng-click="getResourcesByKeyIssue('<?php echo $heading->getTermId(); ?>')" 
-                                            id="heading_<?php echo $heading->getTermId(); ?>">
+                                        <a class="issues" href="" ng-click="getResourcesByKeyIssue('<?php echo $heading->getSlug(); ?>')" 
+                                            id="heading_<?php echo $heading->getSlug(); ?>">
                                             <?php echo $heading->getName(); ?>
                                         </a>
                                     </li>
@@ -109,7 +109,7 @@ $headings = IssueController::getSingleton()->getHeadings();
                                 else: ?>
                                     <li>
                                         <a class="issues" href="" ng-click="getResourcesByKeyIssue('<?php echo $heading->getTermId(); ?>')" 
-                                            id="heading_<?php echo $heading->getTermId(); ?>">
+                                            id="heading_<?php echo $heading->getSlug(); ?>">
                                             <?php echo $heading->getName(); ?>
                                         </a>
                                     </li>
