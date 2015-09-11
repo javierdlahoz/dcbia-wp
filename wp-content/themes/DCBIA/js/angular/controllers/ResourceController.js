@@ -21,7 +21,25 @@ angular.module('angular-wp')
 					);
 				}
 			);
-		}
+		};
+		
+		getKeyIssues = function(){
+			$scope.loading = true;
+			$scope.resources = {};
+			
+			ResourceService.getKeyIssues(
+				$scope.formData, 
+				function(data){
+					$timeout(
+						function(){
+							$scope.loading = false;
+							$scope.resources = data;
+						},
+						500
+					);
+				}
+			);
+		};
 		
 		setTypeActive = function(type){
 			angular.element(".types").removeClass("active");
@@ -36,8 +54,9 @@ angular.module('angular-wp')
 			angular.element("#keys").addClass("active");
 			angular.element(".issues").removeClass("active");
 			
+			console.log(keyIssue);
 			if(keyIssue !== null){
-				angular.element("#"+keyIssue).addClass("active");
+				angular.element("#heading_"+keyIssue).addClass("active");
 			}
 			
 			delete $scope.formData.resource_type;
@@ -72,13 +91,14 @@ angular.module('angular-wp')
 		$scope.getResourcesByKeyIssue = function(keyIssue){
 			$scope.formData.key_issue = keyIssue;
 			setActiveKeyIssue(keyIssue);
-			getResources();
+			getKeyIssues();
 		};
 		
 		$scope.initial = function(){
 			$scope.formData.query = "";
 			$scope.resultsInTop = false;
-			setActiveKeyIssue(null);
-			getResources();
+			delete $scope.formData.key_issue;
+			getKeyIssues();
+			setActiveKeyIssue();
 		};
 	});
