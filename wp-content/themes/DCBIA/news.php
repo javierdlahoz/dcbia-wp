@@ -32,7 +32,7 @@ get_header();  ?>
                 </div>    
            </div>   
            <div class="col-sm-4">
-                <img class="img-responsive" src="<?php echo get_template_directory_uri() ;?>/img/featured-icerink.jpg" alt="sail boat on water" />
+                <img class="img-responsive" src="<?php echo get_template_directory_uri() ;?>/img/place-holder.jpg" alt="sail boat on water" />
                 <div class="inside-blog">
                     <h4>Latest News</h4>
                     <p>This is a sample post that will be cropped</p>
