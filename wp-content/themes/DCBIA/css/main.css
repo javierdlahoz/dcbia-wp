@@ -806,6 +806,16 @@ footer .social-icons a:hover {
 .renewal .button2:hover {
   color: #ffffff;
 }
+.blog .inside-blog {
+  background-color: #ffffff;
+  padding: 12px;
+}
+.blog .inside-blog h4 {
+  text-align: center;
+}
+.blog .inside-blog p {
+  text-align: center;
+}
 #contact-form .form-control,
 #contact-form textarea {
   padding: 15px 12px;

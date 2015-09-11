@@ -32,7 +32,9 @@ h1, h2, h3, h4, h5, h6 {
 
 ul li, ol li { font-size: 14px; }
 
-a { cursor: pointer; }
+a { 
+    cursor: pointer; 
+}
 
 p {
     font-size: 16px;
@@ -813,6 +815,21 @@ footer{
         &:hover{
             color: #ffffff;
         } 
+    }
+}
+
+// Blog or news styles
+
+.blog{
+    & .inside-blog{
+        background-color: #ffffff;
+        padding: 12px;
+        & h4{
+            text-align: center;
+        }
+        & p {
+            text-align: center;
+        }
     }
 }
 

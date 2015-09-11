@@ -12,25 +12,41 @@ get_header();  ?>
     
     <!--start main content here-->
     
-    ]<div class="container all-pad-gone">
+    <div class="container all-pad-gone">
         <div class="row">
             <div class="col-md-12">
                 <h2>Blog Results</h2>
+                <br>
             </div>    
         </div>    
     </div>    
     
-    <div class="container all-pad-gone">
+    <div class="container all-pad-gone blog">
         <div class="row">
-            <div class="col-sm-4">   
+            <div class="col-sm-4">
+                <img class="img-responsive" src="<?php echo get_template_directory_uri() ;?>/img/featured-sailboat.jpg" alt="sail boat on water" />
                 <div class="inside-blog">
-                    <h4>Blog Catagories</h4>
-                    <div class="inside-side-member">
-                        <p><a href="" class="business-categories">Sample1</a></p>
-                        <p><a href="">&nbsp;</a></p>
-                    </div>    
-                </div> 
-             </div>
+                    <h4>Latest News</h4>
+                    <p>This is a sample post that will be cropped</p>
+                    <a href="">Read More</a>
+                </div>    
+           </div>   
+           <div class="col-sm-4">
+                <img class="img-responsive" src="<?php echo get_template_directory_uri() ;?>/img/featured-icerink.jpg" alt="sail boat on water" />
+                <div class="inside-blog">
+                    <h4>Latest News</h4>
+                    <p>This is a sample post that will be cropped</p>
+                    <a href="">Read More</a>
+                </div>
+           </div> 
+           <div class="col-sm-4">
+                <img class="img-responsive" src="<?php echo get_template_directory_uri() ;?>/img/featured-building.jpg" alt="sail boat on water" />
+                <div class="inside-blog">
+                    <h4>Latest News</h4>
+                    <p>This is a sample post that will be cropped</p>
+                    <a href="">Read More</a>
+                </div>
+           </div>
    
         </div>
     </div>
