@@ -799,6 +799,13 @@ footer .social-icons a:hover {
   text-decoration: none;
   background-color: #6d6e70;
 }
+.renewal .button2 {
+  border-radius: 0!important;
+  padding: 10px 25px;
+}
+.renewal .button2:hover {
+  color: #ffffff;
+}
 #contact-form .form-control,
 #contact-form textarea {
   padding: 15px 12px;

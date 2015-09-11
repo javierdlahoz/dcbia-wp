@@ -9,7 +9,7 @@ get_header(); ?>
 </div>
 <p>&nbsp;</p>
 
-    <div class="container all-pad-gone" ng-controller="MembershipController">
+    <div class="container all-pad-gone renewal" ng-controller="MembershipController">
         <div class="row">
             <div class="col-md-12">
                 <h2><?php echo $pageEntity->getTitle(); ?></h2>
