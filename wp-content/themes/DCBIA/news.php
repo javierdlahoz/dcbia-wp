@@ -16,7 +16,6 @@ get_header();  ?>
         <div class="row">
             <div class="col-md-12">
                 <h2>Blog Results</h2>
-                <br>
             </div>    
         </div>    
     </div>    
@@ -47,6 +46,14 @@ get_header();  ?>
                     <a href="">Read More</a>
                 </div>
            </div>
+           <div class="col-sm-4">
+                <img class="img-responsive" src="<?php echo get_template_directory_uri() ;?>/img/place-holder.jpg" alt="sail boat on water" />
+                <div class="inside-blog">
+                    <h4>Latest News</h4>
+                    <p>This is a sample post that will be cropped</p>
+                    <a href="">Read More</a>
+                </div>
+           </div>    
    
         </div>
     </div>
