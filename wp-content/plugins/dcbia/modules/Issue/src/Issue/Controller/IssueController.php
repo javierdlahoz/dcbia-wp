@@ -29,6 +29,9 @@ class IssueController extends AbstractController
         $iS = IssueService::getSingleton();
         $iS->setMetaKey("is_featured");
         $iS->setMetaValue(true);
+        $iS->setPostsPerPage(2);
+        $iS->setOrderby("post_date");
+        $iS->setOrder("DESC");
         
         return $iS->getPosts();
     }
