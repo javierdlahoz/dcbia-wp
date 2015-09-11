@@ -791,6 +791,7 @@ footer .social-icons a:hover {
   text-transform: uppercase;
   width: 300px;
   text-align: center;
+  border: 0;
 }
 .wppb-logout-url:hover,
 #wppb-recover-password-button:hover {
