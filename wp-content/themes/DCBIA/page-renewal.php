@@ -12,10 +12,11 @@ get_header(); ?>
     <div class="container all-pad-gone" ng-controller="MembershipController">
         <div class="row">
             <div class="col-md-12">
-                <h3><?php echo $pageEntity->getTitle(); ?></h3>
-                <h4>Your registration has expired, now you need to renew your account in order to access to our content</h4>
-                    
-                <h2>Affiliate Listing in Directory</h2>
+                <h2><?php echo $pageEntity->getTitle(); ?></h2>
+                
+                <h5>Your registration has expired, now you need to renew your account in order to access to our content</h5>
+                <br>    
+                <h3>Affiliate Listing in Directory</h3>
                 <p>Membership in DCBIA is corporate based and it entitles you to one representative to be listed in the Membership 
                 Directory under your company’s listing. Additional representatives from a member firm can be listed as 
                 affiliate members for a $75/year charge.</p>
