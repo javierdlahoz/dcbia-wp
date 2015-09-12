@@ -3,9 +3,9 @@ namespace Home\Controller;
 
 use INUtils\Controller\PostController;
 use Home\Service\HomeService;
-use INUtils\Entity\WPPostEntity;
 use Home\Helper\HomeHelper;
 use Home\Entity\HomeEntity;
+use Home\Service\NewsService;
 
 class HomeController extends PostController
 {
@@ -30,4 +30,5 @@ class HomeController extends PostController
             $homeEntity->setNewcustomers($this->getPost("newcustomers"));
         }
     }
+   
 }

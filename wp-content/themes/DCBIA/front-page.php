@@ -1,9 +1,16 @@
 <?php
 use Event\Controller\EventController;
+use Issue\Controller\IssueController;
+use Home\Controller\NewsController;
+use INUtils\Helper\TextHelper;
 /*
   Template Name: front-page
 */
+$stickyNews = NewsController::getSingleton()->getStickyNews();
+$recentNews = NewsController::getSingleton()->getRecentNews();
 $home = dcbia::getController("home")->getHome();
+$featuredIssues = IssueController::getSingleton()->getFeatured();
+
 get_header(); 
 ?>
 <div class="container all-pad-gone">
@@ -19,27 +26,15 @@ get_header();
                 <h2>FEATURED</h2>
             </div>    
         <br>
+            <?php foreach($stickyNews as $news): ?>
            <div class="col-sm-4">
-                <a href="">
-                    <img class="img-responsive" src="<?php echo get_template_directory_uri() ;?>/img/featured-sailboat.jpg" alt="sail boat on water" />
-                        <span class="infoblock1 light-blue">WE KEEP YOU UPDATED...</span>
-                        <span class="infoblock2 red">28 OCTOBER 2015</span>
+                <a href="<?php echo $news->getPermalink(); ?>">
+                    <img class="img-responsive" src="<?php echo $news->getImage(); ?>" alt="<?php echo $news->getTitle(); ?>" />
+                        <span class="infoblock1 light-blue"><?php echo $news->getTitle(); ?></span>
+                        <span class="infoblock2 red"><?php echo mysql2date('j F Y', $news->getDate()); ?></span>
                 </a>
            </div>   
-           <div class="col-sm-4">
-                <a href="">
-                    <img class="img-responsive" src="<?php echo get_template_directory_uri() ;?>/img/featured-icerink.jpg" alt="sail boat on water" />
-                        <span class="infoblock1 light-blue">WE KEEP YOU UPDATED...</span>
-                        <span class="infoblock2 orange">28 OCTOBER 2015</span>
-                </a>
-           </div> 
-           <div class="col-sm-4">
-                <a href="">
-                    <img class="img-responsive" src="<?php echo get_template_directory_uri() ;?>/img/featured-building.jpg" alt="sail boat on water" />
-                        <span class="infoblock1 light-blue">WE KEEP YOU UPDATED...</span>
-                        <span class="infoblock2 grey">28 OCTOBER 2015</span>
-                </a>
-           </div> 
+            <?php endforeach; ?>          
         </div>
     </div>
 
@@ -52,18 +47,20 @@ get_header();
                     <div class="col-sm-12">
                         <h2>ISSUES<h2>
                     </div>    
+                    <?php foreach ($featuredIssues as $issue): ?>
                     <div class="col-sm-6">
-                        <a href="">
-                            <img class="img-responsive" src="<?php echo get_template_directory_uri() ;?>/img/issues.jpg" alt="sail boat on water" />
-                            <span class="infoblock3 light-blue">JOBS &amp; THE ECONOMY</span>
+                        <a href="<?php echo $issue->getPermalink(); ?>">
+                            <?php if($issue->getImage() == ""): ?>
+                                <img class="img-responsive" src="<?php echo get_template_directory_uri() ;?>/img/issues.jpg" 
+                                    alt="<?php echo $issue->getTitle(); ?>" />
+                            <?php else: ?>
+                                <img class="img-responsive" src="<?php echo $issue->getImage(); ?>" 
+                                    alt="<?php echo $issue->getTitle(); ?>" />
+                            <?php endif; ?>
+                            <span class="infoblock3 light-blue"><?php echo $issue->getTitle(); ?></span>
                         </a>
                     </div>
-                    <div class="col-sm-6">
-                        <a href="">
-                            <img class="img-responsive" src="<?php echo get_template_directory_uri() ;?>/img/issues1.jpg" alt="sail boat on water" />
-                            <span class="infoblock3 light-blue">IMMIGRATION</span>
-                        </a>
-                    </div>
+                    <?php endforeach; ?>
                 </div><!--issues end-->            
                         
                 <div class="events">
@@ -123,18 +120,18 @@ get_header();
                 <h2>News</h2>
                 <div class="light-blue news">
                     <h3>Recent news</h3>
+                    <?php 
+                    $isFirst = true;
+                    foreach ($recentNews as $news): ?>
                     <div class="news-block">
-                        <h5><a href="">Job Opportunity: Public Information Officer</a></h5>
-                        <p class="news-date">July 9, 2015</p>
-                        <p>The incumbent serves as an expert public information and communications advisor to senior management, responsible for managing, planning, developing and administering the public information and communications program for DDOT. The incumbent provides leadership and expertise to staff and senior management in planning, designing, executing, and evaluating the Department's public affairs division....</p>
+                        <h5><a href="<?php echo $news->getPermalink(); ?>"><?php echo $news->getTitle(); ?></a></h5>
+                        <p class="news-date"><?php echo mysql2date('F j, Y', $news->getDate()); ?></p>
+                        <p><?php echo TextHelper::cropText($news->getContent(), 400); ?></p>
                     </div>
-                    <hr>
-                    <div class="news-block">
-                        <h5><a href="">Job Opportunity: Transportation Planner (TDM)</a></h5>
-                        <p class="news-date">July 17, 2015</p>
-                        <p>District Department of Transportation (DDOT) 
-Transportation Planner (Transportation Demand Management / TDM) is the senior level position within the Transportation Planning Coordinator job progression. Develops and manages the transportation demand management program for the District of Columbia, with emphasis on a multi-modal approach to reduce travel demand.</p>
-                    </div>
+                    <?php if($isFirst): $isFirst = false; ?>
+                        <hr>
+                    <?php endif; ?>
+                    <?php endforeach; ?>
                     <br>
                 </div>  
 

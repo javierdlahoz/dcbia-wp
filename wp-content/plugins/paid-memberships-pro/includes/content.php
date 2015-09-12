@@ -190,7 +190,9 @@ function pmpro_search_filter($query)
         //make this work
         if($hidden_cat_ids)
 		{			
-            $query->set('category__not_in', $hidden_cat_ids);
+            // TODO: fix this shit
+            // JAVIER WAS HERE
+            // $query->set('category__not_in', $hidden_cat_ids);
 						
 			//filter so posts in this member's categories are allowed
 			add_action('posts_where', 'pmpro_posts_where_unhide_cats');
