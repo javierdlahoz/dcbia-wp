@@ -947,6 +947,11 @@ a.share:visited {
   display: inline-block;
   width: 100%;
 }
+@-moz-document url-prefix() {
+  .custom-nav {
+    display: inherit;
+  }
+}
 .navbar {
   position: relative;
   margin-bottom: 0px;
