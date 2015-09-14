@@ -28,8 +28,7 @@ get_header();
         <br>
             <?php foreach($stickyNews as $news): ?>
            <div class="col-sm-4">
-                <a class="image-cover" href="<?php echo $news->getPermalink(); ?>">
-                    <!--img class="img-responsive" src="<!--?php echo $news->getImage(); ?>" alt="<!--?php echo $news->getTitle(); ?>" /-->
+                <a class="image-cover" href="<?php echo $news->getPermalink(); ?>" style="background-image: url(<?php echo $news->getImage(); ?>)">
                         <span class="infoblock1 light-blue"><?php echo $news->getTitle(); ?></span>
                         <span class="infoblock2 red"><?php echo mysql2date('j F Y', $news->getDate()); ?></span>
                 </a>  
@@ -49,14 +48,7 @@ get_header();
                     </div>    
                     <?php foreach ($featuredIssues as $issue): ?>
                     <div class="col-sm-6">
-                        <a class="image-cover2" href="<?php echo $issue->getPermalink(); ?>">
-                            <?php if($issue->getImage() == ""): ?>
-                                <img class="img-responsive" src="<?php echo get_template_directory_uri() ;?>/img/issues.jpg" 
-                                    alt="<?php echo $issue->getTitle(); ?>" />
-                            <?php else: ?>
-                                <img class="img-responsive" src="<?php echo $issue->getImage(); ?>" 
-                                    alt="<?php echo $issue->getTitle(); ?>" />
-                            <?php endif; ?>
+                        <a class="image-cover2" href="<?php echo $issue->getPermalink(); ?>" style="background-image: url(<?php echo $issue->getImage(); ?>)">
                             <span class="infoblock3 light-blue"><?php echo $issue->getTitle(); ?></span>
                         </a>     
                     </div>
