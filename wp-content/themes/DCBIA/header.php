@@ -64,7 +64,7 @@
                         <li><a href="/member-directory">MEMBER DIRECTORY</a></li>
                         <li><a href="">JOB BANK</a></li>    
                         <li><a href="">MEDIA</a></li>    
-                        <li><a href="">CONTACT</a></li>
+                        <li><a href="/contact">CONTACT</a></li>
                     </ul>
                 </li>  
                </ul>

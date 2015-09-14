@@ -16,30 +16,6 @@ function getUrl(){
     return $url;
 }
 
-function getResourcesNav(){
-    include __DIR__.'/resources-nav.php';
-}
-
-function getAboutNav(){
-    include __DIR__.'/about-nav.php';
-}
-
-function getContactSidebar($isBlog = false){
-    include __DIR__.'/contact-sidebar.php';
-}
-
-function getBlogSidebar(){
-    include __DIR__.'/blog-sidebar.php';
-}
-
-function getFeaturedContentNav(){
-    include __DIR__.'/featured-content.php';
-}
-
-function getDonateNav(){
-    include __DIR__.'/donate-nav.php';
-}
-
 function getTopMenu(){ ?>
     <nav class="site-navigation" role="navigation">
         <ul class="nav custom-nav hide-on-phone">
