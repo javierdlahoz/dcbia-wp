@@ -20,6 +20,7 @@ use INUtils\Helper\PluginHelper;
 use Member\Helper\MemberHelper;
 use Resource\Helper\ResourceHelper;
 use Issue\Helper\IssueHelper;
+use Sponsor\Helper\SponsorHelper;
 
 if (!class_exists("dcbia")) {
 
@@ -88,6 +89,7 @@ if (!class_exists("dcbia")) {
             $this->memberHelper = new MemberHelper();
             $this->resourceHelper = new ResourceHelper();
             $this->issueHelper = new IssueHelper();
+            $this->sponsorHelper = new SponsorHelper();
         }
 
         public function adminFeatures(){

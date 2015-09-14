@@ -94,17 +94,30 @@ get_header();
                         
             </div> <!--main col8 end-->       
                            
-            <div class="col-sm-4"><!--main col4--> 
+            <div class="col-sm-4" ng-controller="EmailController"><!--main col4--> 
                 <div class="email-sign-up offblack">
                 <h3>SIGN UP FOR DCBIA emails</h3>
                     <div id="inside-email">
-                        <p>Feel free to subscribe to the DCBIA mailing list. You'll get promotional and crucial information regarding DCBIA</p>
+                        <p ng-hide="successToNewsletter">
+                            Feel free to subscribe to the DCBIA mailing list. You'll get promotional and crucial information regarding DCBIA
+                        </p>
+                        
+                        <p ng-show="successToNewsletter">
+                            Thanks for subsribing with us
+                        </p>
+                        
                      </div>    
-                    <form id="signup-form" action="" method="">
+                    <form id="signup-form" action="" method="" ng-submit="addToNewsletter()" ng-hide="successToNewsletter">
                         <label class="hidden" for="email"></label>
-                        <input id="email1" class="" name="email" type="text" placeholder="Email Address" />
+                        <input id="email1" class="" name="email" type="email" placeholder="Email Address" ng-model="newsletter.ne" />
                         <input class="light-blue" id="submit-btn" type="submit" value="SUBMIT" />
-                    </form>						
+                    </form>	
+                    
+                    <div id="inside-email" ng-show="errorOnNewsletter" ng-cloak>
+                        <p>
+                            {{errorOnNewsletter}}
+                        </p>
+                     </div>    					
                 </div>
                 
                 <!--news starts-->  
@@ -141,6 +154,6 @@ get_header();
             </div><!--main col4 end-->
         </div>
     </div>
-   
-
-<?php get_footer();
+<?php get_footer(); ?>
+<script src="<?php echo get_template_directory_uri(); ?>/js/angular/controllers/EmailController.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/js/angular/services/EmailService.js"></script>
