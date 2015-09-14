@@ -1099,6 +1099,11 @@ textarea.wp-editor-area {
     margin-right: 0 !important;
     margin-left: 0 !important;
   }
+  #tribe-events .tribe-events-button,
+  .tribe-events-button {
+    height: 45px!important;
+    line-height: normal!important;
+  }
 }
 @media (max-width: 992px) {
   footer .col-md-4 {
