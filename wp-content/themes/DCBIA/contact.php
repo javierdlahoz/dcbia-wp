@@ -1,4 +1,5 @@
 <?php
+use INUtils\Helper\AdminPanelHelper;
 /*
   Template Name: contact
 */
@@ -17,27 +18,27 @@ get_header(); ?>
 </div>
 <p>&nbsp;</p>
 <div class="container all-pad-gone">
-    <div class="row">
-        <div class="col-sm-6" id="contact-form">
+    <div class="row" ng-controller="EmailController">
+        <div class="col-sm-6" id="contact-form" ng-hide="successfull">
             <h4>Contact DCBIA</h4>
             <div class="form-group">
                 <label for="name">Name</label>
-                <input class="form-control" type="text" name="name" id="name">
+                <input class="form-control" type="text" name="name" id="name" ng-model="name" required>
             </div>
             <div class="form-group">
                 <label for="email">Email</label>
-                <input class="form-control" type="email" name="from" id="from">
+                <input class="form-control" type="email" name="from" id="from" ng-model="from" required>
             </div>
             <div class="form-group">
                 <label for="comment">Comment</label>
-                <textarea name="content" cols="30" rows="10" style="resize:none; width:100%;" id="content"></textarea>
+                <textarea name="content" cols="30" rows="10" style="resize:none; width:100%;" ng-model="content" id="content" required></textarea>
             </div>
             <input type="hidden" name="send_email">
-            <input type="hidden" name="to" id="to" value="trevor@innuevodigital.com">
-            <input class="button2" type="submit" name="submit" value="Send" onclick="sendContactEmail();">
+            <input type="hidden" name="to" id="to" ng-model="to" value="<?php echo AdminPanelHelper::getSingleton()->getOption("admin_email"); ?>">
+            <input class="button2" type="submit" name="submit" value="Send" ng-click="sendContactEmail()">
         </div>
-        <div class="col-sm-6" id="contact-form-sent" style="display: none">
-            <h3>Your email was sent</h3>
+        <div class="col-sm-6" id="contact-form-sent" ng-show="successfull">
+            <h3>Your email was sent successfully</h3>
         </div>
         <div class="col-sm-6">
         	<h4>Info</h4>
@@ -52,3 +53,5 @@ get_header(); ?>
 </div>
 
 <?php get_footer(); ?>
+<script src="<?php echo get_template_directory_uri(); ?>/js/angular/controllers/EmailController.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/js/angular/services/EmailService.js"></script>
