@@ -26,6 +26,19 @@ angular.module('angular-wp')
 	            }).error(function(data){
 	            	return callBack(false);
 	            });
+			},
+			
+			addToNewsletter: function(formData, callBack){
+				$http({
+	                url: "/wp-content/plugins/newsletter/api/add.php",
+	                method: "POST",
+	                data: jQuery.param(formData),
+	                headers: getContentTypes().form
+	            }).success(function (data) {
+	            	return callBack(data);
+	            }).error(function(data){
+	            	return callBack(data);
+	            });
 			}
 		};
 	});

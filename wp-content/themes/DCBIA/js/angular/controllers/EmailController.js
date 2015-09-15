@@ -1,6 +1,9 @@
 angular.module('angular-wp')
     .controller('EmailController', function ($scope, $http, EmailService) {
-
+    	
+    	$scope.successToNewsletter = false;
+    	$scope.errorOnNewsletter = false;
+    	
     	$scope.sendContactEmail = function(){
     		$scope.to = jQuery("#to").val();
 
@@ -16,6 +19,21 @@ angular.module('angular-wp')
     		});
 
     	};
+    	
+    	$scope.addToNewsletter = function(){
+    		$scope.newsletter.nk = "5db2d2f6d9";
+    		$scope.errorOnNewsletter = false;
+    		EmailService.addToNewsletter($scope.newsletter, function(data){
+    			console.log(data);
+    			if(data.message == true){
+    				$scope.successToNewsletter = true;
+    			}
+    			else{
+    				$scope.errorOnNewsletter = data.message;
+    			}
+    		});
+    	};
+    		
 
     	$scope.shareThis = function(){
     		$scope.to = jQuery("#to").val();
