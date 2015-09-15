@@ -160,6 +160,9 @@ a.back-to-top:hover {
   font-size: 16px;
   font-weight: 500;
 }
+.issues h2 {
+  display: table;
+}
 .issues img {
   max-height: 220px;
 }
@@ -198,6 +201,9 @@ a.back-to-top:hover {
 }
 #signup-form input#email1:-ms-input-placeholder {
   color: #ffffff;
+}
+.events {
+  margin: 25px 0 0 0;
 }
 .events h2,
 .events h1 {

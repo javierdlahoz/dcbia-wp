@@ -45,7 +45,8 @@ get_header();
                 <div class="issues">
                     <div class="col-sm-12">
                         <h2>ISSUES<h2>
-                    </div>    
+                    </div>
+                    <br>        
                     <?php foreach ($featuredIssues as $issue): ?>
                     <div class="col-sm-6">
                         <a class="image-cover2" href="<?php echo $issue->getPermalink(); ?>" style="background-image: url(<?php echo $issue->getImage(); ?>)">
@@ -55,13 +56,13 @@ get_header();
                     <?php endforeach; ?>
                 </div><!--issues end-->            
                         
-                <div class="events">
-                    <div class="col-md-12">
-                        <div id="aq-block-16-16" class="aq-block aq-block-icy_events_block aq_span8 aq-first clearfix">		
-                            <?php EventController::getSingleton()->getCalendarWidget(); ?>
-                        </div>
+            <div class="events">
+                <div class="col-md-12">
+                    <div id="aq-block-16-16" class="aq-block aq-block-icy_events_block aq_span8 aq-first clearfix">		                       <br>
+                        <?php EventController::getSingleton()->getCalendarWidget(); ?>
                     </div>
-                </div><!--events end-->             
+                </div>
+            </div><!--events end-->             
                 
                     <p>&nbsp;</p>    
                         
