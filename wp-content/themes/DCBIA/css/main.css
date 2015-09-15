@@ -162,6 +162,7 @@ a.back-to-top:hover {
 }
 .issues h2 {
   display: table;
+  margin: 0!important;
 }
 .issues img {
   max-height: 220px;
