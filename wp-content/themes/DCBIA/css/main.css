@@ -884,6 +884,9 @@ footer .social-icons a:hover {
   text-decoration: none;
   color: #ffffff;
 }
+.about h4 {
+  color: #27a9e1 !important;
+}
 #drop {
   min-height: 70px;
   width: 100%;
