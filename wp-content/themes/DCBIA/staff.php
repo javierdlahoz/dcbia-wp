@@ -44,7 +44,7 @@ get_header();
                     <h5><?php echo $staff->getJobTitle(); ?></h5>  
                     <p><?php echo $staff->getContent(); ?></p>
     
-                    <a class="button1" href="mailto: <?php echo $staff->getEmail(); ?>">Contact</a>
+                    <a class="button1" href="mailto:<?php echo $staff->getEmail(); ?>">Contact</a>
                 </div>
             <?php endforeach; ?>
         </div>
