@@ -2,6 +2,7 @@
 use Member\Helper\MemberHelper;
 use INUtils\Entity\PostEntity;
 use Staff\Helper\StaffHelper;
+use Director\Helper\DirectorHelper;
 
 $p = new PostEntity(get_the_ID());
 
