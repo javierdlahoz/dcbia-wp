@@ -4,6 +4,7 @@ namespace Director\Controller;
 use INUtils\Controller\AbstractController;
 use Director\Entity\DirectorEntity;
 use Director\Helper\DirectorHelper;
+use INUtils\Helper\FileHelper;
 use Director\Service\DirectorService;
 
 class DirectorController extends AbstractController
@@ -11,7 +12,12 @@ class DirectorController extends AbstractController
     public function save($postId){
         $directorEntity = new DirectorEntity($postId);
         if($directorEntity->getType() == DirectorHelper::DIRECTOR_POST_TYPE){
-            $directorEntity->setJobTitle($this->getPost(DirectorEntity::JOB_TITLE));
+             if(isset($_FILES) && $_FILES["file"]["name"] != ""){
+                $fileArray = FileHelper::uploadFile("file");
+                $directorEntity->setFileName($fileArray["fileName"]);
+                $directorEntity->setFileUrl($fileArray["fileUrl"]);
+                $directorEntity->setFileSize($fileArray["fileSize"]);
+             }
         }
     }
     

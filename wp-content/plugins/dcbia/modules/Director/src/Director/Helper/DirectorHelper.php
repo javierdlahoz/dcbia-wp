@@ -7,9 +7,9 @@ use Director\Controller\DirectorController;
 
 class DirectorHelper
 {
-    const DIRECTOR_SINGULAR = "Director";
-    const DIRECTOR_PLURAL = "Directors";
-    const DIRECTOR_POST_TYPE = "director";
+    const DIRECTOR_SINGULAR = "Board Entry";
+    const DIRECTOR_PLURAL = "Board Entries";
+    const DIRECTOR_POST_TYPE = "board";
 
     function __construct(){
         $this->directorController = DirectorController::getSingleton();

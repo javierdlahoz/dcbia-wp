@@ -1,10 +1,12 @@
 <?php
 use INUtils\Entity\PostEntity;
 use Staff\Controller\StaffController;
+use Director\Controller\DirectorController;
 /*
   Template Name: board
 */
 $pageEntity = new PostEntity(get_the_ID());
+$boards = DirectorController::getSingleton()->getAll();
 get_header();
 ?>
 <div class="container all-pad-gone">
@@ -23,9 +25,13 @@ get_header();
     </div>
 
     <div class="row">
+        <?php foreach ($boards as $board): ?>
         <div class="col-md-12 board">
-            <a class="button2" href=""><i class="fa fa-file-pdf-o"></i>2015 Executive Committee and Counsel</a>
+            <a class="button2" href="<?php echo $board->getFileUrl(); ?>">
+                <i class="fa fa-file-pdf-o"></i><?php echo $board->getTitle(); ?>
+            </a>
         </div>
+        <?php endforeach; ?>
     </div>
 
 </div>
