@@ -22,9 +22,9 @@ get_header();
             <p><?php echo $pageEntity->getContent(); ?></p>
         </div>    
     </div>
+    <?php foreach($staffs as $staff): ?>
     <div class="row">
         <div class="staff-results">
-            <?php foreach($staffs as $staff): ?>
                 <div class="col-sm-2 staff-pic">
                     <img class="img-responsive" 
                     src="<?php 
@@ -44,9 +44,8 @@ get_header();
     
                     <a class="button1" href="mailto:<?php echo $staff->getEmail(); ?>">Contact</a>
                 </div>
-            <?php endforeach; ?>
         </div>
-    
     </div>
+    <?php endforeach; ?>
 </div>
 <?php get_footer(); 
