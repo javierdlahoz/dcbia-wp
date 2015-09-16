@@ -22,7 +22,7 @@ function getTopMenu(){ ?>
         <li id="about">
             <a href="<?php echo get_site_url(); ?>/about">ABOUT</a>
             <ul class="" id="" role="menu">       
-                <li id="staff"><a href="<?php echo get_site_url(); ?>/staff/">STAFF</a></li>
+                <li id="staff"><a href="<?php echo get_site_url(); ?>/about/staff">STAFF</a></li>
                 <li id="board"><a href="<?php echo get_site_url(); ?>/about/">BOARD</a></li>
                 <li id="committees"><a href="<?php echo get_site_url(); ?>/about/">COMMITTEES</a></li>
             </ul>

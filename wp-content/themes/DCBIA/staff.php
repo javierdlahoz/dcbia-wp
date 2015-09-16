@@ -1,10 +1,13 @@
 <?php
+use INUtils\Entity\PostEntity;
 /*
   Template Name: staff
 */
+$pageEntity = new PostEntity(get_the_ID());
 get_header();
 ?>
 <div class="container all-pad-gone">
+    <?php echo do_shortcode('[slideshow group="about"]'); ?>
     <?php echo getTopMenu(); ?>       
 </div> 
 
