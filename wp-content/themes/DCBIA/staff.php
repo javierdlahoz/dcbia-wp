@@ -21,9 +21,8 @@ get_header();
             <h2><?php echo $pageEntity->getTitle(); ?></h2>
             <p><?php echo $pageEntity->getContent(); ?></p>
         </div>    
-        
-        <p>&nbsp;</p>
-    
+    </div>
+    <div class="row">
         <div class="staff-results">
             <?php foreach($staffs as $staff): ?>
                 <div class="col-sm-2 staff-pic">
