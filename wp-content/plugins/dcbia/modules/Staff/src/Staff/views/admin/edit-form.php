@@ -14,6 +14,15 @@ $staffEntity = dcbia::getEntity("staff");
 				required="true" />
 		</div>
 	</div>
+	<div class="form-group">
+		<label class="control-label col-lg-2 col-sm-2">Email</label>
+		<div class="col-lg-10 col-sm-10">
+			<input type="email" class="form-control"
+				name="staff_email" id="staff_email"
+				value="<?php echo $staffEntity->getEmail(); ?>"
+				required="true" />
+		</div>
+	</div>
 </div>
 <?php
 echo PostHelper::addStylesAndScripts();
