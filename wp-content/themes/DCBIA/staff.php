@@ -26,7 +26,6 @@ get_header();
         <div class="staff-results">
             <?php foreach($staffs as $staff): ?>
                 <div class="col-sm-2 staff-pic">
-                    <a href="">
                     <img class="img-responsive" 
                     src="<?php 
                             if($staff->getImage() != ''){
@@ -37,7 +36,6 @@ get_header();
                             }
                         ?>"
                          alt="<?php echo $staff->getTitle(); ?>" />
-                    </a>
                 </div>
                 <div class="col-sm-10 key-info">
                     <h4><?php echo $staff->getTitle(); ?></h4>
