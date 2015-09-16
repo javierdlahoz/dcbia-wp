@@ -23,8 +23,8 @@ get_header();
     </div>
 
     <div class="row">
-        <div class="col-12 board">
-            <a class="button1" href=""><i class="fa fa-pdf"></i></a>
+        <div class="col-md-12 board">
+            <a class="button2" href=""><i class="fa fa-file-pdf-o"></i>2015 Executive Committee and Counsel</a>
         </div>
     </div>
 

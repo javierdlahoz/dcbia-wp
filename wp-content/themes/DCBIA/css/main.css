@@ -876,6 +876,14 @@ footer .social-icons a:hover {
 .staff-results h4 {
   margin-top: 0!important;
 }
+.board i {
+  font-size: 18px;
+  margin-right: 10px;
+}
+.board .button2:hover {
+  text-decoration: none;
+  color: #ffffff;
+}
 #drop {
   min-height: 70px;
   width: 100%;
