@@ -19,9 +19,8 @@ get_header();
             <h2><?php echo $pageEntity->getTitle(); ?></h2>
             <p><?php echo $pageEntity->getContent(); ?></p>
         </div>    
-        
-        <p>&nbsp;</p>
-    
+    </div>
+    <div class="row">
         <div class="staff-results">
             <div class="col-sm-2 staff-pic">
                  <a href=""><img class="img-responsive" src="<?php echo get_template_directory_uri() ;?>/img/mallory_lisa.jpg" alt="staff image" /></a>
