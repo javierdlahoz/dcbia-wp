@@ -5,9 +5,9 @@ use Member\Helper\MemberHelper;
 */
 get_header();  ?>
 <div id="container-app" ng-controller="MemberController" ng-init="search()">
-    <div class="container all-pad-gone">      
-        <?php echo getTopMenu(); ?>
+    <div class="container all-pad-gone">
         <?php echo do_shortcode('[slideshow group="blog"]'); ?> 
+        <?php echo getTopMenu(); ?>
     </div> 
     
     <!--start main content here-->

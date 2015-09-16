@@ -24,9 +24,7 @@ get_header();
 
     <div class="row">
         <div class="col-12 board">
-            <h4><?php echo $staff->getTitle(); ?></h4> 
-            <p><?php echo $staff->getContent(); ?></p>
-            <a class="button1" href="mailto:<?php echo $staff->getEmail(); ?>">Contact</a>
+            <a class="button1" href=""><i class="fa fa-pdf"></i></a>
         </div>
     </div>
 
