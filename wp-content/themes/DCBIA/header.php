@@ -62,8 +62,8 @@
                 <li>
                     <ul id="btn-top-nav" class="nav new-pull-right">
                         <li><a href="<?php echo get_site_url(); ?>/member-directory">MEMBER DIRECTORY</a></li>
-                        <li><a href="<?php echo get_site_url(); ?>/">JOB BANK</a></li>    
-                        <li><a href="<?php echo get_site_url(); ?>/">MEDIA</a></li>    
+                        <li><a href="<?php echo get_site_url(); ?>/job-bank">JOB BANK</a></li>    
+                        <li><a href="<?php echo get_site_url(); ?>/media">MEDIA</a></li>    
                         <li><a href="<?php echo get_site_url(); ?>/contact">CONTACT</a></li>
                     </ul>
                 </li>  
