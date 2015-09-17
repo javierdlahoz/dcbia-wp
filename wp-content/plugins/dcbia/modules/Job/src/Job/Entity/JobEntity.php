@@ -15,4 +15,24 @@ class JobEntity extends WPPostEntity
     public function getCompanies(){
         return $this->getTermList(JobHelper::COMPANY_TAXONOMY);
     }
+    
+    /**
+     * @return string
+     */
+    public function getCompanyNames(){
+        $companies = $this->getCompanies();
+        $cn = "";
+        $isFirst = true;
+        foreach ($companies as $company){
+            if($isFirst){
+                $cn = $company->getName();
+                $isFirst = false;
+            }
+            else{
+                $cn .= ", ".$company->getName();
+            }
+        }
+        
+        return $cn;
+    }
 }

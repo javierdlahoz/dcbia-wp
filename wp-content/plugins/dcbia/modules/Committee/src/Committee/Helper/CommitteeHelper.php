@@ -55,7 +55,7 @@ class CommitteeHelper
         
         register_taxonomy(
             'committee',
-            array(self::POST_TYPE, DirectorHelper::DIRECTOR_POST_TYPE),
+            array(self::POST_TYPE),
             array( 'hierarchical' => true,
                 'labels' => $labels,
                 'query_var' => 'committee',

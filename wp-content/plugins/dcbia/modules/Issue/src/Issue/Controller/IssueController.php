@@ -65,7 +65,8 @@ class IssueController extends AbstractController
                 array(
                     "taxonomy" => IssueHelper::TAXONOMY_NAME,
                     "field" => "slug",
-                    "terms" => array($termId)
+                    "terms" => array($termId),
+                    "operator"  => "IN"
                 )
             );
             
