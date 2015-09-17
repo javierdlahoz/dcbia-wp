@@ -899,6 +899,18 @@ footer .social-icons a:hover {
 .about h4 {
   color: #27a9e1 !important;
 }
+.job-bank {
+  background-color: #ffffff;
+  border-bottom: 1px dashed #6d6e70;
+  padding: 5px 20px 10px;
+  margin: 15px 0;
+}
+.job-bank h4 {
+  color: #2a2d2f !important;
+}
+.job-bank h5 {
+  color: #27a9e1 !important;
+}
 #drop {
   min-height: 70px;
   width: 100%;

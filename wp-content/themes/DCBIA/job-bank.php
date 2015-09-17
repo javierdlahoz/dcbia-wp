@@ -23,14 +23,12 @@ get_header();
     </div>
     <div class="row">
         <div class="col-md-6">
-            <div class="committees">
-                <h4>Capital Markets</h4> 
-                <p>Provides roundtable discussions on current and future capital markets, financing trends, and current project financing. Evaluates federal/local legislative/regulatory proposals and government policies relating to financing issues. Organizes Annual Capital Markets Seminar.</p>
-
-                <div class="col-md-12 board">
-                    <a class="button2" href="<?php echo $board->getFileUrl(); ?>">
-                        <i class="fa fa-file-pdf-o"></i><?php echo $board->getTitle(); ?>
-                    </a>
+            <div class="job-bank">
+                <h4>Economic Development Manager</h4> 
+                <h5>Golden Triangle Business Improvement District (BID)</h5>
+                <p>Posted 9/03/2015</p>
+                <div class="board">
+                    <a class="button2" href=""><i class="fa fa-file-pdf-o"></i>Download full job post here!</a>
                 </div> 
             </div>
         </div>
