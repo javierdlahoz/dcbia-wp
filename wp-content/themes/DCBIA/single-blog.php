@@ -24,7 +24,7 @@ get_header();
  <br>
     <div class="row">
         <div class="col-md-4">
-            <img class="img-responsive" alt="" src="<?php echo get_template_directory_uri() ;?>/img/property-team.jpg" alt="Property Group Partners logo" />
+            <img class="img-responsive" alt="" src="<?php echo get_template_directory_uri() ;?>/img/place-holder.jpg" alt="Property Group Partners logo" />
         </div>
         <div class="col-md-8 key-info">
             <h4>Title of Post</h4>
