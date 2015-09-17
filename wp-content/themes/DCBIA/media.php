@@ -1,13 +1,13 @@
 <?php
 use INUtils\Entity\PostEntity;
 /*
-  Template Name: job-bank
+  Template Name: media
 */
 $pageEntity = new PostEntity(get_the_ID());
 get_header();
 ?>
 <div class="container all-pad-gone">
-    <?php echo do_shortcode('[slideshow group="job-bank"]'); ?>
+    <?php echo do_shortcode('[slideshow group="media"]'); ?>
     <?php echo getTopMenu(); ?>       
 </div> 
 
@@ -21,13 +21,13 @@ get_header();
         </div>    
     </div>
     <div class="row">
-        <div class="col-md-6">
-            <div class="job-bank">
-                <h4>Economic Development Manager</h4> 
-                <h5>Golden Triangle Business Improvement District (BID)</h5>
-                <p>Posted 9/03/2015</p>
+        <div class="col-md-4">
+            <div class="media">
+                <h4>DCBIA Announces 1st Scholarship Recipient to Georgetown University’s Master’s in Real Estate Program </h4> 
+                <h5>August 6, 2015</h5>
+                <p>Talented DC Recipient to Use Georgetown University Degree to Find Solutions for DC’s Neighborhood Challenges</p>
                 <div class="board">
-                    <a class="button2" href=""><i class="fa fa-file-pdf-o"></i>Download full job post here!</a>
+                    <a class="button2" href=""><i class="fa fa-file-pdf-o"></i>Download press release here!</a>
                 </div> 
             </div>
         </div>
