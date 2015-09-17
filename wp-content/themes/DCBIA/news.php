@@ -1,8 +1,13 @@
 <?php
-use Member\Helper\MemberHelper;
+
+use INUtils\Service\PostService;
 /*
   Template Name: news
 */
+$pS = new PostService();
+$pS->setPostsPerPage(-1);
+$news = $pS->getPosts(); 
+
 get_header();  ?>
 <div id="container-app" ng-controller="MemberController" ng-init="search()">
     <div class="container all-pad-gone">
@@ -22,39 +27,23 @@ get_header();  ?>
     
     <div class="container all-pad-gone blog">
         <div class="row">
+            <?php foreach ($news as $p): ?>
             <div class="col-sm-4">
-                <img class="img-responsive" src="<?php echo get_template_directory_uri() ;?>/img/featured-sailboat.jpg" alt="sail boat on water" />
+                <img class="img-responsive" src="<?php 
+                    if($p->getImage() == "") { 
+                        echo get_template_directory_uri()."/img/featured-sailboat.jpg";
+                    } 
+                    else{
+                        echo $p->getImage();
+                    }
+                    ?>" alt="sail boat on water" />
                 <div class="inside-blog">
-                    <h4>Latest News</h4>
-                    <p>This is a sample post that will be cropped</p>
-                    <a href="">Read More</a>
+                    <h4><?php echo $p->getTitle(); ?></h4>
+                    <p><?php echo $p->getContent(); ?></p>
+                    <a href="<?php echo $p->getPermalink(); ?>">Read More</a>
                 </div>    
-           </div>   
-           <div class="col-sm-4">
-                <img class="img-responsive" src="<?php echo get_template_directory_uri() ;?>/img/place-holder.jpg" alt="sail boat on water" />
-                <div class="inside-blog">
-                    <h4>Latest News</h4>
-                    <p>This is a sample post that will be cropped</p>
-                    <a href="">Read More</a>
-                </div>
-           </div> 
-           <div class="col-sm-4">
-                <img class="img-responsive" src="<?php echo get_template_directory_uri() ;?>/img/featured-building.jpg" alt="sail boat on water" />
-                <div class="inside-blog">
-                    <h4>Latest News</h4>
-                    <p>This is a sample post that will be cropped</p>
-                    <a href="">Read More</a>
-                </div>
-           </div>
-           <div class="col-sm-4">
-                <img class="img-responsive" src="<?php echo get_template_directory_uri() ;?>/img/place-holder.jpg" alt="sail boat on water" />
-                <div class="inside-blog">
-                    <h4>Latest News</h4>
-                    <p>This is a sample post that will be cropped</p>
-                    <a href="">Read More</a>
-                </div>
-           </div>    
-   
+            </div>
+            <?php endforeach; ?>   
         </div>
     </div>
 </div>

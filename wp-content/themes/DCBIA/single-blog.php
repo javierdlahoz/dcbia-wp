@@ -28,7 +28,7 @@ get_header();
             alt="Property Group Partners logo" />
         </div>
         <div class="col-md-8 key-info">
-            <h5><?php echo mysql2date("j F, Y", $p->getDate()); ?></h5>  
+            <h5><?php echo mysql2date("F j, Y", $p->getDate()); ?></h5>  
             <p><?php echo $p->getContent(); ?></p>
         </div>
     </div>
