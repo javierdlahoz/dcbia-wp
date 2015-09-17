@@ -30,14 +30,7 @@ get_header();  ?>
         <div class="row">
             <?php foreach ($news as $p): ?>
             <div class="col-sm-4">
-                <img class="img-responsive" src="<?php 
-                    if($p->getImage() == "") { 
-                        echo get_template_directory_uri()."/img/featured-sailboat.jpg";
-                    } 
-                    else{
-                        echo $p->getImage();
-                    }
-                    ?>" alt="sail boat on water" />
+                <a class="image-cover" href=""><img src="" /></a>
                 <div class="inside-blog">
                     <h4><?php echo $p->getTitle(); ?></h4>
                     <p><?php echo TextHelper::cropText($p->getContent(), 200); ?></p>
