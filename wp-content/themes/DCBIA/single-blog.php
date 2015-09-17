@@ -16,7 +16,7 @@ get_header();
     </div>
  <br>
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-5">
             <img class="img-responsive" alt="" src="<?php if($p->getImage() == "")
             { 
                 echo get_template_directory_uri()."/img/place-holder.jpg"; 
@@ -27,7 +27,7 @@ get_header();
             ?>" 
             alt="Property Group Partners logo" />
         </div>
-        <div class="col-md-8 key-info">
+        <div class="col-md-7 key-info">
             <h5><?php echo mysql2date("F j, Y", $p->getDate()); ?></h5>  
             <p><?php echo $p->getContent(); ?></p>
         </div>
