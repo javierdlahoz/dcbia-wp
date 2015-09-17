@@ -1,6 +1,7 @@
 <?php
 
 use INUtils\Service\PostService;
+use INUtils\Helper\TextHelper;
 /*
   Template Name: news
 */
@@ -39,7 +40,7 @@ get_header();  ?>
                     ?>" alt="sail boat on water" />
                 <div class="inside-blog">
                     <h4><?php echo $p->getTitle(); ?></h4>
-                    <p><?php echo $p->getContent(); ?></p>
+                    <p><?php echo TextHelper::cropText($p->getContent(), 200); ?></p>
                     <a href="<?php echo $p->getPermalink(); ?>">Read More</a>
                 </div>    
             </div>
