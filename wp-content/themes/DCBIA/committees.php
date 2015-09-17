@@ -1,6 +1,8 @@
 <?php
 use INUtils\Entity\PostEntity;
 use Staff\Controller\StaffController;
+use Committee\Controller\CommitteeController;
+use INUtils\Helper\TextHelper;
 /*
   Template Name: committees
 */
@@ -23,19 +25,20 @@ get_header();
         </div>    
     </div>
     <div class="row">
+        <?php foreach (CommitteeController::getSingleton()->getAll() as $committee): ?>
         <div class="col-md-6">
             <div class="committees">
-                <h4>Capital Markets</h4> 
-                <p>Provides roundtable discussions on current and future capital markets, financing trends, and current project financing. Evaluates federal/local legislative/regulatory proposals and government policies relating to financing issues. Organizes Annual Capital Markets Seminar.</p>
+                <h4><?php echo $committee->getTitle(); ?></h4> 
+                <p><?php echo TextHelper::cropText($committee->getContent(), 400); ?></p>
 
                 <h5>Co-Chairs:</h5>
-                <p>Brian Berry | Oak Point Investors</p>
-                <p>Kent Marquis | StonebridgeCarras</p>
+                <p><?php echo $committee->getCoChairs(); ?></p>
 
                 <h5>DLD Vice Chair:</h5>
-                <p>Jeffrey Chod | Tishman Speyer</p> 
+                <p><?php echo $committee->getViceChairs(); ?></p> 
             </div>
         </div>
+        <?php endforeach; ?>
     </div>
 </div>
 <?php get_footer(); 

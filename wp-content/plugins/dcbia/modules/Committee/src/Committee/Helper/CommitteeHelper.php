@@ -8,8 +8,8 @@ use Director\Helper\DirectorHelper;
 
 class CommitteeHelper
 {
-    const POST_SINGULAR = "Committee Member";
-    const POST_PLURAL = "Committee Members";
+    const POST_SINGULAR = "Committee";
+    const POST_PLURAL = "Committees";
     const POST_TYPE = "committee";
     const TAXONOMY = "committee";
     const TAXONOMY_URL = "committee_tax";
