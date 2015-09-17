@@ -1,6 +1,5 @@
 <?php
 use INUtils\Entity\PostEntity;
-use Staff\Controller\StaffController;
 use Director\Controller\DirectorController;
 /*
   Template Name: board
