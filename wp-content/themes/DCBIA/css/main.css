@@ -884,6 +884,12 @@ footer .social-icons a:hover {
   text-decoration: none;
   color: #ffffff;
 }
+.committees {
+  background-color: #ffffff;
+  border-bottom: 1px dashed #6d6e70;
+  padding: 5px 20px 10px;
+  margin: 15px 0;
+}
 .about h4 {
   color: #27a9e1 !important;
 }

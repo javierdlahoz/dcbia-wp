@@ -24,7 +24,7 @@ function getTopMenu(){ ?>
             <ul class="" id="" role="menu">       
                 <li id="staff"><a href="<?php echo get_site_url(); ?>/about/staff">STAFF</a></li>
                 <li id="board"><a href="<?php echo get_site_url(); ?>/about/board">BOARD</a></li>
-                <li id="committees"><a href="<?php echo get_site_url(); ?>/about/">COMMITTEES</a></li>
+                <li id="committees"><a href="<?php echo get_site_url(); ?>/about/committees">COMMITTEES</a></li>
             </ul>
             </li>
             <li id="join"><a href="<?php echo get_site_url(); ?>/join">JOIN</a></li>
