@@ -3,6 +3,7 @@ namespace Director\Entity;
 
 use INUtils\Entity\WPPostEntity;
 use Committee\Helper\CommitteeHelper;
+use Director\Helper\DirectorHelper;
 
 class DirectorEntity extends WPPostEntity
 {
@@ -14,5 +15,14 @@ class DirectorEntity extends WPPostEntity
      */
     public function getCommittes(){
         return $this->getTermList(CommitteeHelper::TAXONOMY);
+    }
+    
+    /**
+     * 
+     * @return string
+     */
+    public function getCategory(){
+        $cats = $this->getTermList(DirectorHelper::TAXONOMY);
+        return $cats[0]->getName();
     }
 }

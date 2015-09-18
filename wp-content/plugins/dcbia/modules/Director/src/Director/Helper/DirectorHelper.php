@@ -4,6 +4,8 @@ namespace Director\Helper;
 use INUtils\Helper\PostHelper;
 use Director\Service\DirectorService;
 use Director\Controller\DirectorController;
+use INUtils\Entity\WPPostEntity;
+use Director\Entity\DirectorEntity;
 
 class DirectorHelper
 {
@@ -19,6 +21,8 @@ class DirectorHelper
 
         add_action('add_meta_boxes_'.self::DIRECTOR_POST_TYPE, array(&$this, 'addMetaBoxes'));
         add_action('save_post', array(&$this->directorController, 'save'));
+        add_filter('manage_board_posts_columns', array(&$this, 'createColumnHead'));
+        add_action('manage_board_posts_custom_column', array(&$this, 'createColumnContent'), 10, 2);
         $this->createCategoryTaxonomy();
     }
 
@@ -78,5 +82,24 @@ class DirectorHelper
                 "slug" => "media"
             )
         );
+    }
+    
+    public function createColumnHead($defaults){
+        $defaults['board_media_category'] = 'Category';
+        return $defaults;
+    }
+    
+    public function createColumnContent($columnName, $postId){
+        if ($columnName == 'board_media_category') {
+            $p = new DirectorEntity($postId);
+            $cat = $p->getCategory();
+            
+            if($cat == "Media"){
+                echo "<div style='background-color: rgb(145, 15, 15); color: #fff; padding: 5px; border-radius: 3px; width: 120px; text-align: center;'>".$cat."</div>";
+            }
+            else{
+                echo "<div style='background-color: rgb(15, 130, 145); color: #fff; padding: 5px; border-radius: 3px; width: 120px; text-align: center;'>".$cat."</div>";
+            }
+        }
     }
 }
