@@ -14,6 +14,6 @@ class CommitteeService extends WPPostService
      */
     public function init(){
         $this->setEntityClass(self::ENTITY_CLASS);
-        $this->setPostType(self::STAFF_POST_TYPE);
+        $this->setPostType(self::POST_TYPE);
     }
 }

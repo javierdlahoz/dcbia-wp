@@ -1,5 +1,7 @@
 <?php
 use INUtils\Entity\PostEntity;
+use Director\Controller\DirectorController;
+use INUtils\Helper\TextHelper;
 /*
   Template Name: media
 */
@@ -21,16 +23,18 @@ get_header();
         </div>    
     </div>
     <div class="row">
+        <?php foreach (DirectorController::getSingleton()->getAllMedia() as $media): ?>
         <div class="col-md-4">
             <div class="media">
-                <h4>DCBIA Announces 1st Scholarship Recipient to Georgetown University’s Master’s in Real Estate Program </h4> 
-                <h5>August 6, 2015</h5>
-                <p>Talented DC Recipient to Use Georgetown University Degree to Find Solutions for DC’s Neighborhood Challenges</p>
+                <h4><?php echo $media->getTitle(); ?></h4> 
+                <h5><?php echo mysql2date("F j, Y", $media->getDate()); ?></h5>
+                <p><?php echo TextHelper::cropText($media->getContent(), 200); ?></p>
                 <div class="board">
-                    <a class="button2" href=""><i class="fa fa-file-pdf-o"></i>Download press release here!</a>
+                    <a class="button2" href="<?php echo $media->getFileUrl(); ?>"><i class="fa fa-file-pdf-o"></i>Download press release here!</a>
                 </div> 
             </div>
         </div>
+        <?php endforeach; ?>
     </div>
 </div>
 <?php get_footer(); 

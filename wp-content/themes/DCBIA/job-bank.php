@@ -1,9 +1,11 @@
 <?php
 use INUtils\Entity\PostEntity;
+use Job\Controller\JobController;
 /*
   Template Name: job-bank
 */
 $pageEntity = new PostEntity(get_the_ID());
+$jobs = JobController::getSingleton()->getAll();
 get_header();
 ?>
 <div class="container all-pad-gone">
@@ -21,16 +23,18 @@ get_header();
         </div>    
     </div>
     <div class="row">
+        <?php foreach ($jobs as $job): ?>
         <div class="col-md-6">
             <div class="job-bank">
-                <h4>Economic Development Manager</h4> 
-                <h5>Golden Triangle Business Improvement District (BID)</h5>
-                <p>Posted 9/03/2015</p>
+                <h4><?php echo $job->getTitle(); ?></h4> 
+                <h5><?php echo $job->getCompanyNames(); ?></h5>
+                <p>Posted <?php echo mysql2date("F j, Y", $job->getDate()); ?></p>
                 <div class="board">
-                    <a class="button2" href=""><i class="fa fa-file-pdf-o"></i>Download full job post here!</a>
+                    <a class="button2" href="<?php echo $job->getFileUrl(); ?>"><i class="fa fa-file-pdf-o"></i>Download full job post here!</a>
                 </div> 
             </div>
         </div>
+        <?php endforeach; ?>
     </div>
 </div>
 <?php get_footer(); 
