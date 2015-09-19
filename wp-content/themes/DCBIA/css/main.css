@@ -126,13 +126,12 @@ a.back-to-top:hover {
 }
 .featured .infoblock1,
 .issues .infoblock1 {
-  position: absolute;
+  position: relative;
   top: 35%;
 }
 .featured .infoblock2,
 .issues .infoblock2 {
   position: absolute;
-  top: 50%;
 }
 .featured .infoblock3,
 .issues .infoblock3 {
