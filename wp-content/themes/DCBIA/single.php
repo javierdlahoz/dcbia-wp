@@ -13,6 +13,15 @@ elseif($p->getType() == "post"){
     require_once __DIR__.'/single-blog.php';
     exit();
 }
+elseif($p->getType() == "issue" || $p->getType() == "resource"){
+    header('location: /advocacy');
+}
+elseif($p->getType() == "job"){
+    header('location: /job-bank');
+}
+elseif($p->getType() == "sponsor"){
+    header('location: /sponsors');
+}
 elseif(!MemberHelper::isCurrentAccountActive()){
     header('location: /renewal');
 }
