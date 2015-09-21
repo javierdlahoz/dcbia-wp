@@ -127,6 +127,7 @@ a.back-to-top:hover {
 .featured .infoblock1,
 .issues .infoblock1 {
   position: relative;
+  display: inline-block;
 }
 .featured .infoblock2,
 .issues .infoblock2 {
@@ -134,8 +135,6 @@ a.back-to-top:hover {
 }
 .featured .infoblock3,
 .issues .infoblock3 {
-  position: relative;
-  top: 178px;
   width: auto;
   text-align: center;
 }
