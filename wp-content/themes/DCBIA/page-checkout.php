@@ -44,7 +44,7 @@
 
 <div class="container all-pad-gone checkedout">
     <div class="row">
-    <form ng-controller="MembershipController" id="pmpro_form" class="pmpro_form" ng-submit="charge()">
+    <form ng-controller="MembershipController" id="pmpro_form" class="pmpro_form" ng-submit="charge()" ng-cloak>
     <div class="col-md-12">
         <h2 style="margin-bottom:0;">Checkout</h2>
         <?php if($level)
@@ -103,25 +103,29 @@
     <div class="col-md-6">
         <div class="form-group">
             <label for="bfirstname"><?php _e('First Name', 'pmpro');?></label>
-            <input ng-model="billing.first_name" id="bfirstname" name="bfirstname" type="text" class="form-control" value="<?php echo esc_attr($bfirstname);?>" />
+            <input ng-model="billing.first_name" id="bfirstname" name="bfirstname" type="text" class="form-control" 
+                ng-value="'<?php echo $current_user->first_name; ?>'" />
         </div>
     </div>
     <div class="col-md-6">
         <div class="form-group">
             <label for="blastname"><?php _e('Last Name', 'pmpro');?></label>
-            <input ng-model="billing.last_name" id="blastname" name="blastname" type="text" class="form-control" value="<?php echo esc_attr($blastname);?>" />
+            <input ng-model="billing.last_name" id="blastname" name="blastname" type="text" class="form-control" 
+                ng-value="'<?php echo $current_user->last_name; ?>'" />
         </div>
     </div>
     <div class="col-md-12">
         <div class="form-group">
             <label for="baddress1"><?php _e('Address 1', 'pmpro');?></label>
-            <input ng-model="billing.address1" id="baddress1" name="baddress1" type="text" class="form-control" value="<?php echo esc_attr($baddress1);?>" />
+            <input ng-model="billing.address1" id="baddress1" name="baddress1" type="text" class="form-control" 
+                ng-value="'<?php echo get_user_meta($current_user->ID, "address1", true); ?>'" />
         </div>
     </div>
     <div class="col-md-12">
         <div class="form-group">
             <label for="baddress2"><?php _e('Address 2', 'pmpro');?></label>
-            <input ng-model="billing.address2" id="baddress2" name="baddress2" type="text" class="form-control" value="<?php echo esc_attr($baddress2);?>" /> <small class="lite">(<?php _e('optional', 'pmpro');?>)</small>
+            <input ng-model="billing.address2" id="baddress2" name="baddress2" type="text" class="form-control" 
+                ng-value="'<?php echo get_user_meta($current_user->ID, "address2", true); ?>'" /> <small class="lite">(<?php _e('optional', 'pmpro');?>)</small>
         </div>
     </div>
 
@@ -135,20 +139,23 @@
     <div class="col-md-4">
         <div class="form-group">
             <label for="bcity"><?php _e('City', 'pmpro');?>City</label>
-            <input ng-model="billing.city" id="bcity" name="bcity" type="text" class="form-control" value="<?php echo esc_attr($bcity)?>" />
+            <input ng-model="billing.city" id="bcity" name="bcity" type="text" class="form-control" 
+                ng-value="'<?php echo get_user_meta($current_user->ID, "city", true); ?>'" />
         </div>
     </div>
     
     <div class="col-md-4">
         <div class="form-group">
             <label for="bstate"><?php _e('State', 'pmpro');?>State</label>
-            <input ng-model="billing.state" id="bstate" name="bstate" type="text" class="form-control" value="<?php echo esc_attr($bstate)?>" />
+            <input ng-model="billing.state" id="bstate" name="bstate" type="text" class="form-control" 
+                ng-value="'<?php echo get_user_meta($current_user->ID, "state", true); ?>'" />
         </div>
     </div>
     <div class="col-md-4">
         <div class="form-group">
             <label for="bzipcode"><?php _e('Postal Code', 'pmpro');?></label>
-            <input ng-model="billing.zip" id="bzipcode" name="bzipcode" type="text" class="form-control" value="<?php echo esc_attr($bzipcode)?>" />
+            <input ng-model="billing.zip" id="bzipcode" name="bzipcode" type="text" class="form-control" 
+                ng-value="'<?php echo get_user_meta($current_user->ID, "zip", true); ?>'" />
         </div>
     </div>
     
@@ -157,7 +164,8 @@
     <div class="col-md-4">
         <div class="form-group">
             <label for="bcity"><?php _e('City');?></label>
-            <input ng-model="billing.city" id="bcity" name="bcity" type="text" class="form-control" size="30" value="<?php echo esc_attr($bcity)?>" />
+            <input ng-model="billing.city" id="bcity" name="bcity" type="text" class="form-control" size="30" 
+                ng-value="'<?php echo get_user_meta($current_user->ID, "city", true);?>'" />
         </div>    
     </div> 
  
@@ -200,7 +208,8 @@
         <div class="col-md-4">
             <div class="form-group">
                 <label for="bstate"><?php _e('State');?></label>
-                <input ng-model="billing.state" id="bstate" name="bstate" type="text" class="form-control"  value="<?php echo esc_attr($bstate)?>" />
+                <input ng-model="billing.state" id="bstate" name="bstate" type="text" class="form-control"  
+                    ng-value="'<?php echo get_user_meta($current_user->ID, "state", true);?>'" />
                 <?php
                 }
             ?>
@@ -209,7 +218,8 @@
         <div class="col-md-4">
         <div class="form-group">
         <label for="bzip"><?php _e('Zip');?></label>    
-        <input ng-model="billing.zip" id="bzipcode" name="bzipcode" type="text" class="form-control" value="<?php echo esc_attr($bzipcode)?>" />  
+        <input ng-model="billing.zip" id="bzipcode" name="bzipcode" type="text" class="form-control" 
+            ng-value="'<?php echo get_user_meta($current_user->ID, "phone", true);?>'" />  
         </div>
     </div>
         <?php } ?>
@@ -251,7 +261,8 @@
         <div class="col-md-4">
             <div class="form-group">
                 <label for="bphone"><?php _e('Phone', 'pmpro');?></label>
-                <input ng-model="billing.phone" id="bphone" name="bphone" type="text" class="form-control" value="<?php echo esc_attr($bphone)?>" />
+                <input ng-model="billing.phone" id="bphone" name="bphone" type="text" class="form-control" 
+                    ng-value="'<?php echo get_user_meta($current_user->ID, "telephone", true); ?>'" />
             </div>
         </div>
     
@@ -266,7 +277,8 @@
     <div class="col-md-4">
             <div class="form-group">
 							<label for="bemail"><?php _e('E-mail Address', 'pmpro');?></label>
-							<input ng-model="billing.email" id="bemail" name="bemail" type="<?php echo ($pmpro_email_field_type ? 'email' : 'text'); ?>" class="form-control" value="<?php echo esc_attr($bemail)?>" />
+							<input ng-model="billing.email" id="bemail" name="bemail" type="<?php echo ($pmpro_email_field_type ? 'email' : 'text'); ?>" class="form-control"
+							 ng-value="'<?php echo esc_attr($bemail)?>'" />
             </div>
         </div>
     
@@ -403,9 +415,16 @@
             <div class="col-md-12">
                 <div ng-hide="billing.status">
                     <input type="hidden" name="update-billing" value="1" />
-                    <input type="submit" class="button2" value="<?php _e('Update', 'pmpro');?>" />
+                    <input type="submit" class="button2" value="<?php _e('Pay', 'pmpro');?>" />
                     <input type="button" name="cancel" class="button2" value="<?php _e('Cancel', 'pmpro');?>" onclick="location.href='<?php echo pmpro_url("account")?>';" />
                 </div>
+                <div ng-show="loading">
+                    <center>
+                        <img src="<?php echo get_template_directory_uri(); ?>/img/loading.gif" height="64">
+                    </center>
+                </div>
+                <div class="alert alert-danger" ng-show="billing.status == false">Please check your credit card information</div>
+                <div class="alert alert-success" ng-show="billing.status == true">Payment successful, redirecting to home in 5s</div>
 			</div>
 	<?php } ?>
 	   </form>

@@ -3,6 +3,10 @@ use INUtils\Entity\PostEntity;
 use Committee\Controller\CommitteeController;
 use Member\Controller\MemberController;
 use Member\Helper\MemberHelper;
+if(wp_get_current_user()->ID != 0){
+    header("Location: /editme");
+}
+
 $pageEntity = new PostEntity(get_the_ID());
 get_header(); ?>
 <div class="container all-pad-gone">      
