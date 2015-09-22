@@ -1,11 +1,7 @@
 <?php
-use INUtils\Entity\PostEntity;
-
 if ( ! defined( 'ABSPATH' ) ) {
 	die( '-1' );
 }
-
-$events_label_singular = tribe_get_event_label_singular();
 $event_id = get_the_ID();
 ?>
 

@@ -64,7 +64,7 @@
 						$event_url = tribe_get_events_link();
 					?>
 					<a href="<?php echo $event_url; ?>" title="<?php echo $see_all; ?>"><span class="text"><?php echo $see_all; ?></span></a>
-					<span class="icy-button icon-next"></span>
+					<i class="fa fa-calendar"></i>
 			</div>
 		</div>
 
@@ -107,16 +107,16 @@
 			    	<article class="content">					    		
 			    		<span class="meta day">
 			    			<?php echo $start_day . ', ' . $start_day_r2;	?>
-			    			<span class="icy-button icon-time"></span>
+			    			&nbsp;<i class="fa fa-calendar-check-o"></i>
 			    		</span>
 			    		
 			    		<span class="meta address">
 			    			<?php echo $address . ', ' . $city; ?>
-			    			<span class="icy-button icon-location"></span>
+			    			&nbsp;<i class="fa fa-map-marker"></i>
 			    		</span>
 			    		<span class="meta cost">
 			    			<?php echo $cost; ?>
-			    			<span class="icy-button icon-pricetag"></span>
+			    			&nbsp;<i class="fa fa-usd"></i>
 			    		</span>
 			    	</article>
 
