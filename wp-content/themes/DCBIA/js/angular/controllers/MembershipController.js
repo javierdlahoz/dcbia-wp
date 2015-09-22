@@ -8,6 +8,7 @@ angular.module('angular-wp')
     	$scope.billing = {};
     	$scope.membershipCost = null;
     	$scope.disabledToSend = false;
+    	$scope.loading = false;
     	
     	$scope.add = function(){
     		$scope.c ++;
@@ -132,6 +133,7 @@ angular.module('angular-wp')
     	};
     	
     	$scope.charge = function(){
+    		$scope.loading = true;
     		$scope.billing.expiration_date = $scope.billing.expiration_month + $scope.billing.expiration_year;
     		$scope.billing.country = "US";
     		var url = "/api/member/pay";
@@ -142,6 +144,7 @@ angular.module('angular-wp')
                 headers: getContentTypes().form
             }).success(function (data) {
             	$scope.billing.status = data.status;
+            	$scope.loading = false;
             	if(data.status == true){
             		$timeout(
             			function(){

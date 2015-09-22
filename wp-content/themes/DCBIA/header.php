@@ -1,5 +1,7 @@
 <?php
-    require_once __DIR__."/helpers/front-page-helper.php";
+    use Member\Controller\MemberController;
+use Member\Helper\MemberHelper;
+require_once __DIR__."/helpers/front-page-helper.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -75,4 +77,14 @@
      </div>     
   </header>
 <div class="container-fluid">
-
+<?php if(wp_get_current_user()->ID != 0 && !MemberHelper::isCurrentAccountActive() && wp_get_current_user()->roles[0] != "administrator"): ?>
+    <div class="container all-pad-gone">
+        <div class="row">
+            <div class="col-md-12 about">   
+               <div class="alert alert-warning">
+                    Your account has expired, if you want to continue using our services click <a href="/renewal">here</a>
+               </div>
+            </div>
+        </div>
+    </div>
+<?php endif; ?>
