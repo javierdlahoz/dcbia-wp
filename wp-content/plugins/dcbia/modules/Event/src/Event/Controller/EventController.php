@@ -2,6 +2,8 @@
 namespace Event\Controller;
 
 use INUtils\Controller\AbstractController;
+use INUtils\Entity\PostEntity;
+use Event\Helper\EventHelper;
 
 class EventController extends AbstractController
 {
@@ -24,5 +26,13 @@ class EventController extends AbstractController
         extract($instance);
         global $icy_options;
         require_once __DIR__."/../views/frontend/calendar-widget.php";
+    }
+    
+    
+    public function save($postId){
+        $eventEntity = new PostEntity($postId);
+        if($eventEntity->getType() == EventHelper::POST_TYPE){
+            $eventEntity->setPaymentUrl($_POST["payment_url"]);
+        }
     }
 }

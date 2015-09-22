@@ -1,4 +1,5 @@
 <?php
+use INUtils\Entity\PostEntity;
 if ( ! defined( 'ABSPATH' ) ) {
 	die( '-1' );
 }
@@ -23,6 +24,16 @@ $event_id = get_the_ID();
             <?php while ( have_posts()) :  the_post(); ?>
                 <?php do_action( 'tribe_events_single_event_before_the_content' ) ?>
                 <?php the_content(); ?>
+                <?php 
+                if(get_the_ID() != 0):
+                    $p = new PostEntity(get_the_ID());
+                    if($p->getPaymentUrl() != ""): ?>
+                    <div class="register_iframe">
+                        <h2>Register</h2>
+                        <?php echo $p->getPaymentUrl(); ?>
+                    </div>
+                    <?php endif; ?>    
+                <?php endif; ?>
                 <?php //do_action( 'tribe_events_single_event_after_the_content' ); ?>
                 <?php do_action( 'tribe_events_single_event_before_the_meta' ) ?>
                 <div class="event-details">
@@ -36,4 +47,5 @@ $event_id = get_the_ID();
 <script type="text/javascript">
 	jQuery(jQuery(".date-start.dtstart")[0]).hide();
 	jQuery(jQuery(".event-details")[0]).hide();
+	jQuery(jQuery(".register_iframe")[1]).hide();
 </script>
