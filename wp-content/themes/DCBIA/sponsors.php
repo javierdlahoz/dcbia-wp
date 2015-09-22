@@ -24,13 +24,11 @@ get_header();
     </div>
 
     <div class="row">
-        <?php foreach ($boards as $board): ?>
         <div class="col-md-12 board">
             <a class="button2" href="<?php echo $board->getFileUrl(); ?>">
                 <i class="fa fa-file-pdf-o"></i><?php echo $board->getTitle(); ?>
             </a>
         </div>
-        <?php endforeach; ?>
     </div>
 
 </div>
