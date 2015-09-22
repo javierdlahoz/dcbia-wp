@@ -17,7 +17,7 @@ $website = tribe_get_venue_website_link();
 
 ?>
 
-<div class="tribe-events-meta-group tribe-events-meta-group-venue">
+<div class="col-md-4 tribe-events-meta-group-venue">
 	<h3 class="tribe-events-single-section-title"> <?php _e( tribe_get_venue_label_singular(), 'tribe-events-calendar' ) ?> </h3>
 	<dl>
 		<?php do_action( 'tribe_events_single_meta_venue_section_start' ) ?>
