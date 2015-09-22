@@ -9,7 +9,7 @@ $boards = DirectorController::getSingleton()->getAll();
 get_header();
 ?>
 <div class="container all-pad-gone">
-    <?php echo do_shortcode('[slideshow group="about"]'); ?>
+    <?php echo do_shortcode('[slideshow group="sponsors"]'); ?>
     <?php echo getTopMenu(); ?>       
 </div> 
 
@@ -25,8 +25,8 @@ get_header();
 
     <div class="row">
         <div class="col-md-12 board">
-            <a class="button2" href="<?php echo $board->getFileUrl(); ?>">
-                <i class="fa fa-file-pdf-o"></i><?php echo $board->getTitle(); ?>
+            <a class="button2" href="">
+                <i class="fa fa-file-pdf-o"></i>
             </a>
         </div>
     </div>
