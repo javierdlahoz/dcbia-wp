@@ -29,6 +29,9 @@ h6 {
   color: #6d6e70 !important;
   text-transform: uppercase;
 }
+.text a:hover {
+  text-decoration: none!important;
+}
 * {
   box-sizing: border-box;
 }
