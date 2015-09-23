@@ -275,13 +275,17 @@ a.back-to-top:hover {
   font-size: 21px;
   text-transform: capitalize;
 }
+.news-block h5 a:hover {
+  text-decoration: none;
+  color: #2a2d2f !important;
+}
 .news-block p {
   color: #ffffff;
   font-weight: 600;
 }
 .news-block p.news-date {
   color: #000000;
-  font-style: italic;
+  font-weight: 400;
 }
 .sponsor-box-sidebar {
   background-color: #ffffff;

@@ -270,9 +270,12 @@ a.back-to-top{
 }
 .news-block{
     padding: 15px 25px;
-        & h5 a { color: #ffffff !important; font-size: 21px; text-transform: capitalize; }
+        & h5 a { color: #ffffff !important; font-size: 21px; text-transform: capitalize; &:hover{
+            text-decoration: none;
+            color: @offblack !important;
+        } }
         & p { color: #ffffff; font-weight: 600; }
-        & p.news-date { color: #000000; font-style: italic; }
+        & p.news-date { color: #000000; font-weight: 400; }
 }
 
 
