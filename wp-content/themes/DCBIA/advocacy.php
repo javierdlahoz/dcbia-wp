@@ -78,7 +78,7 @@ $headings = IssueController::getSingleton()->getHeadings();
                     <div class="col-sm-3">
                         <a class="types" ng-click="getResourcesByType('resource_publications')" id="resource_publications">
                             <i class="fa fa-book"></i>
-                            <span>publi cations</span>
+                            <span>publications</span>
                             <i class="fa fa-chevron-down arrowed"></i>
                         </a>
                     </div>    
