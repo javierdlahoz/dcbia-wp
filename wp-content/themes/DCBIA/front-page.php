@@ -134,7 +134,7 @@ get_header();
                         <p class="news-date"><?php echo mysql2date('F j, Y', $news->getDate()); ?></p>
                         <p><?php echo TextHelper::cropText($news->getContent(), 400); ?></p>
                     </div>
-                    <hr>
+                    
                     <?php if($isFirst): $isFirst = false; ?>
                         
                     <?php endif; ?>

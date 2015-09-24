@@ -271,7 +271,11 @@ a.back-to-top:hover {
   background-color: #ffffff;
 }
 .news-block {
+  border-bottom: 1px solid #ffffff;
   padding: 15px 25px;
+}
+.news-block:last-child {
+  border-bottom: 0!important;
 }
 .news-block h5 a {
   color: #ffffff !important;
