@@ -128,8 +128,10 @@ get_header();
                     <h3>Recent news</h3>
                     <?php 
                     $isFirst = true;
-                    foreach ($recentNews as $news): ?>
-                    <div class="news-block">
+                    $c = 0;
+                    foreach ($recentNews as $news): $c++; ?>
+                    <div class="news-block"
+                        <?php if(count($recentNews) == $c): ?> style="border: 0px" <?php endif; ?>>
                         <h5><a href="<?php echo $news->getPermalink(); ?>"><?php echo $news->getTitle(); ?></a></h5>
                         <p class="news-date"><?php echo mysql2date('F j, Y', $news->getDate()); ?></p>
                         <p><?php echo TextHelper::cropText($news->getContent(), 400); ?></p>
