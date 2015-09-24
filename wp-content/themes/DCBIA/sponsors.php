@@ -38,10 +38,43 @@ get_header();
             <h4>2015-2016 Event Sponsors</h4>
             <div class="sonsors-lower-box">
                 <h5>Pinniacle Sponsors</h5>
-                <div class="col-md-4">
+                <div class="col-md-3">  
+                    <a href=""><img class="img-responsive" src="<?php echo get_template_directory_uri() ;?>/img/PGP_logo.gif" alt="Property Group Partners logo" /></a>    
+                </div>
+                <div class="col-md-3">
+                    <a href=""><img class="img-responsive" src="<?php echo get_template_directory_uri() ;?>/img/Balfour_logo.gif" alt="Balfour Logo" /></a>    
+                </div>    
+            </div>
+            <br>
+            <div class="sonsors-lower-box">
+                <h5>Premium Sponsors</h5>
+                <div class="col-md-3">
                     
                 </div>
-            </div>    
+                <div class="col-md-3">
+                    
+                </div>
+            </div>
+            <br>
+            <div class="sonsors-lower-box">
+                <h5>Event Title Sponsors</h5>
+                <div class="col-md-3">
+                    
+                </div>
+                <div class="col-md-3">
+                    
+                </div>
+            </div>
+            <br>
+            <div class="sonsors-lower-box">
+                <h5>Signature Sponsors</h5>
+                <div class="col-md-3">
+                    
+                </div>
+                <div class="col-md-3">
+                    
+                </div>
+            </div>
         </div>
     </div>
 
