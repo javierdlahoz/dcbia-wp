@@ -25,6 +25,9 @@ get_header();
 
     <div class="row">
         <div class="col-md-12 board">
+            <h4>SEMINARS &amp; PROGRAMS</h4>
+
+            <p>DCBIA seminars and programs are content-rich, led by the best and brightest of the DC real estate development industry. Designed to educate and inform real estate development professionals of the latest market forecasts, developing trends, and capital markets, our programs and seminars also inform members of the changes in the DC legislation and regulatory environment that affect both residential and commercial development.</p>
             <a class="button2" href="">
                 <i class="fa fa-file-pdf-o"></i>
             </a>
