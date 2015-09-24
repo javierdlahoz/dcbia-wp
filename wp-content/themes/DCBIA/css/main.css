@@ -12779,4 +12779,10 @@ h2.tribe-events-page-title,
 #tribe-events-daynum {
   background-color: #27a9e1 !important;
 }
+.icy-eventslider {
+  max-height: 600px;
+}
+.icy-eventslider .picture {
+  max-height: 600px;
+}
 /*@import "";*/
