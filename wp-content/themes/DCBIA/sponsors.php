@@ -36,7 +36,12 @@ get_header();
 <p>Contact Sherrita Lancaster at (202) 966-8665 or <a href="mailto:slancaster@dcbia.org">slancaster@dcbia.org</a> to get details!</p>
             <br>
             <h4>2015-2016 Event Sponsors</h4>
-            
+            <div class="sonsors-lower-box">
+                <h5>Pinniacle Sponsors</h5>
+                <div class="col-md-4">
+                    
+                </div>
+            </div>    
         </div>
     </div>
 
