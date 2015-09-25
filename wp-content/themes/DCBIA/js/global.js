@@ -179,6 +179,34 @@ function formatAsForm(jsonArray) {
 	return result;
 }
 
+function setActiveStateOnMenu(){
+	var url = window.location.pathname;
+	if(url.indexOf("/about/") > -1){
+		jQuery("#about").addClass("active");
+		jQuery("#m-about").addClass("active");
+	}
+	else if(url.indexOf("/join/") > -1){
+		jQuery("#join").addClass("active");
+		jQuery("#m-join").addClass("active");
+	}
+	else if(url.indexOf("/advocacy/") > -1){
+		jQuery("#advocacy").addClass("active");
+		jQuery("#m-advocacy").addClass("active");
+	}
+	else if(url.indexOf("/sponsors/") > -1){
+		jQuery("#sponsors").addClass("active");
+		jQuery("#m-sponsors").addClass("active");
+	}
+	else if(url.indexOf("/events/") > -1 || url.indexOf("/event/") > -1){
+		jQuery("#events").addClass("active");
+		jQuery("#m-events").addClass("active");
+	}
+	else if(url.indexOf("/news/") > -1 || url.indexOf("/blog/") > -1){
+		jQuery("#news").addClass("active");
+		jQuery("#m-news").addClass("active");
+	}
+}
+
 jQuery("#main-nav #resources").hover(function() {
 	jQuery(".dropdown-menu-left").slideDown();
 }, function() {
@@ -219,6 +247,7 @@ jQuery(".dropit-submenu").children()
 
 jQuery(document).ready(function() {
 	jQuery("#angular-app").show();
+	setActiveStateOnMenu();
 });
 
 function gotoResources(areaOfFocus) {

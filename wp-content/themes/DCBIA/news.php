@@ -10,7 +10,7 @@ $pS->setPostsPerPage(-1);
 $news = $pS->getPosts(); 
 
 get_header();  ?>
-<div id="container-app" ng-controller="MemberController" ng-init="search()">
+<div id="container-app">
     <div class="container all-pad-gone">
         <?php echo do_shortcode('[slideshow group="blog"]'); ?> 
         <?php echo getTopMenu(); ?>

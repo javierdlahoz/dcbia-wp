@@ -40,15 +40,15 @@ require_once __DIR__."/helpers/front-page-helper.php";
 
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul id="main-nav" class="nav navbar-nav hide-desktop">
-                  <li id="about" <?php if($url == "about" || $url == "about")
+                  <li id="m-about" <?php if($url == "about" || $url == "about")
                       echo "class='active'"; ?>><a href="<?php echo get_site_url(); ?>/about">ABOUT</a>
                   </li>
-                <li id="register" <?php if($url == "register" || $url == "register") echo "class='active'"; ?>><a href="<?php echo get_site_url(); ?>/register">JOIN</a></li>
-                <li id="advocacy" <?php if($url == "advocacy" || $url == "advocacy") echo "class='active'"; ?>><a href="<?php echo get_site_url(); ?>/advocacy">ADVOCACY</a></li>
-                  <li id="sponsors" <?php if($url == "sponsors" || $url == "sponsors") echo "class='active'"; ?>><a href="<?php echo get_site_url(); ?>/sponsors">SPONSORS</a></li>
+                <li id="m-join" <?php if($url == "register" || $url == "register") echo "class='active'"; ?>><a href="<?php echo get_site_url(); ?>/register">JOIN</a></li>
+                <li id="m-advocacy" <?php if($url == "advocacy" || $url == "advocacy") echo "class='active'"; ?>><a href="<?php echo get_site_url(); ?>/advocacy">ADVOCACY</a></li>
+                  <li id="m-sponsors" <?php if($url == "sponsors" || $url == "sponsors") echo "class='active'"; ?>><a href="<?php echo get_site_url(); ?>/sponsors">SPONSORS</a></li>
 
-                  <li id="events" <?php if($url == "events" || $url == "events") echo "class='active'"; ?>><a href="<?php echo get_site_url(); ?>/events">EVENTS</a></li>
-                  <li id="news" <?php if($url == "news" || $url == "news") echo "class='active'"; ?>><a href="<?php echo get_site_url(); ?>/news">NEWS</a></li>
+                  <li id="m-events" <?php if($url == "events" || $url == "events") echo "class='active'"; ?>><a href="<?php echo get_site_url(); ?>/events">EVENTS</a></li>
+                  <li id="m-news" <?php if($url == "news" || $url == "news") echo "class='active'"; ?>><a href="<?php echo get_site_url(); ?>/news">NEWS</a></li>
              </ul>   	         
                 
               <ul class="nav new-pull-right">
