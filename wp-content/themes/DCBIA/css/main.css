@@ -1002,8 +1002,7 @@ a.share:visited {
   min-width: 1%!important;
 }
 .custom-nav li:hover,
-.custom-nav li:active,
-.custom-nav li .active {
+.custom-nav li:active {
   background-color: #27a9e1;
 }
 .custom-nav li a {
@@ -1018,7 +1017,9 @@ a.share:visited {
   display: inline-block;
   width: 100%;
 }
-.custom-nav li .active {
+.custom-nav li:hover,
+.custom-nav li:active,
+.custom-nav .active {
   background-color: #27a9e1;
 }
 @-moz-document url-prefix() {
