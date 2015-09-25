@@ -130,8 +130,7 @@ get_header();
                     $isFirst = true;
                     $c = 0;
                     foreach ($recentNews as $news): $c++; ?>
-                    <div class="news-block"
-                        <?php if(count($recentNews) == $c): ?> style="border: 0px" <?php endif; ?>>
+                    <div class="news-block" <?php if(count($recentNews) == $c): ?> style="border: 0px" <?php endif; ?>>
                         <h5><a href="<?php echo $news->getPermalink(); ?>"><?php echo $news->getTitle(); ?></a></h5>
                         <p class="news-date"><?php echo mysql2date('F j, Y', $news->getDate()); ?></p>
                         <p><?php echo TextHelper::cropText($news->getContent(), 400); ?></p>
@@ -143,8 +142,7 @@ get_header();
                     <?php endforeach; ?>
                     <br>
                 </div>  
-
-                 <!--sponsors starts-->
+                <!--sponsors starts-->
 
                     <p>&nbsp;</p>  
                 <h2>Sponsors</h2>
