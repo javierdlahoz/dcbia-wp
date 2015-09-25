@@ -1002,7 +1002,8 @@ a.share:visited {
   min-width: 1%!important;
 }
 .custom-nav li:hover,
-.custom-nav li.active {
+.custom-nav li:active,
+.custom-nav li .active {
   background-color: #27a9e1;
 }
 .custom-nav li a {
