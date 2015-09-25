@@ -294,6 +294,10 @@ a.back-to-top:hover {
   color: #000000;
   font-weight: 400;
 }
+.news-block a {
+  color: #ffffff!important;
+  font-size: 15px;
+}
 .sponsor-box-sidebar {
   background-color: #ffffff;
   padding: 25px;

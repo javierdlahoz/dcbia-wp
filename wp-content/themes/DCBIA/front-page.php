@@ -135,6 +135,7 @@ get_header();
                         <h5><a href="<?php echo $news->getPermalink(); ?>"><?php echo $news->getTitle(); ?></a></h5>
                         <p class="news-date"><?php echo mysql2date('F j, Y', $news->getDate()); ?></p>
                         <p><?php echo TextHelper::cropText($news->getContent(), 400); ?></p>
+                        <a href="<?php echo $news->getPermalink(); ?>">Read More...</a>
                     </div>
                     
                     <?php if($isFirst): $isFirst = false; ?>
