@@ -1018,6 +1018,9 @@ a.share:visited {
   display: inline-block;
   width: 100%;
 }
+.custom-nav li .active {
+  background-color: #27a9e1;
+}
 @-moz-document url-prefix() {
   .custom-nav {
     display: inherit;
