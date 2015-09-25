@@ -27,9 +27,7 @@
 			<p>&nbsp;</p>
 			<h4>Address</h4>
 			<p>District of Columbia Building Industry Association</p> 
-            <p>455 Massachusetts Avenue,</p>
-            <p>NW, Suite 400</p> 
-            <p>Washington, D.C. 20001</p>
+            <p>455 Massachusetts Avenue, <br>NW, Suite 400 <br>Washington, D.C. 20001</p>
 		</div>
         
 		<div class="col-md-4 no-border">
