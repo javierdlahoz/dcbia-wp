@@ -760,6 +760,15 @@ footer .inside-footer {
   display: block;
   padding: 0 0 10px 0;
 }
+footer .inside-footer .back-to-top > i {
+  color: #f7f7f7;
+  font-size: 28px;
+  font-weight: 300;
+  opacity: 0.6;
+}
+footer .inside-footer .back-to-top > i:hover {
+  opacity: 1;
+}
 footer .col-md-4 {
   padding: 0 30px 10px 40px;
   border-right: 1px solid #ecebe8;
