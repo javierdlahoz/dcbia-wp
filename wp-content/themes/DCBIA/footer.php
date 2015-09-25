@@ -9,8 +9,10 @@
 		<div class="inside-footer">
 			<div class="row">
 				<div class="col-md-12">
-					<a href="" class="back-to-top"><img
-						src="<?php echo get_template_directory_uri() ;?>/img/back-to-top.png" /></a>
+					<a href="" class="back-to-top">
+                        <i class="fa fa-arrow-circle-o-up"></i>
+                        <!--<img
+						src="<!--?php echo get_template_directory_uri() ;?>/img/back-to-top.png" />--></a>
 				</div>
 			</div>
 		</div>
@@ -27,9 +29,7 @@
 			<p>&nbsp;</p>
 			<h4>Address</h4>
 			<p>District of Columbia Building Industry Association</p> 
-            <p>455 Massachusetts Avenue,</p>
-            <p>NW, Suite 400</p> 
-            <p>Washington, D.C. 20001</p>
+            <p>455 Massachusetts Avenue, <br>NW, Suite 400 <br>Washington, D.C. 20001</p>
 		</div>
         
 		<div class="col-md-4 no-border">
