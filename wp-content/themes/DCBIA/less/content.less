@@ -1029,7 +1029,7 @@ a.share:focus, a.share:visited { text-decoration:none; outline: 0; }
         padding: 18px 0;
         display: table-cell!important;
         min-width: 1%!important;
-        &:hover, &:active, & .active{ background-color: #27a9e1; }
+        &:hover, &:active { background-color: #27a9e1; }
         & a{
             color: #ffffff;
             font-size: 18px;
@@ -1045,8 +1045,8 @@ a.share:focus, a.share:visited { text-decoration:none; outline: 0; }
     width: 100%;
 }
 
-.custom-nav{
-    & li .active{ background-color: #27a9e1; }
+.custom-nav li:hover, .custom-nav li:active, .custom-nav .active {
+    background-color: #27a9e1;
 }
 
 @-moz-document url-prefix() { 
