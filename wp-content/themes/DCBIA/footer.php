@@ -20,7 +20,7 @@
 	<div class="container all-pad-gone">
 		<div class="col-md-4">
             <p>&nbsp;</p>
-			<img class="img-responsive" src="<?php echo get_template_directory_uri() ;?>/img/dcbia-white.png" />
+			<img class="img-responsive" src="<?php echo get_template_directory_uri() ;?>/img/dcbia-logo-footer.svg" />
             <p>&nbsp;</p>
             <p>&copy; 2015 District of Columbia Building Industry Association. All Rights Reserved.</p>
 		</div>
