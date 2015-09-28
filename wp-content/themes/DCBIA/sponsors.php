@@ -48,12 +48,12 @@ get_header();
             <br>
             <div class="sonsors-lower-box">
                 <h5>Premium Sponsors</h5>
-                <div class="col-md-3">
-                    
+                <div class="col-md-3">  
+                    <a href=""><img class="img-responsive" src="<?php echo get_template_directory_uri() ;?>/img/pepco.gif" alt="Pepco logo" /></a>    
                 </div>
                 <div class="col-md-3">
-                    
-                </div>
+                    <a href=""><img class="img-responsive" src="<?php echo get_template_directory_uri() ;?>/img/MMD.png" alt="MMD Logo" /></a>    
+                </div> 
             </div>
             <br>
             <div class="sonsors-lower-box">
