@@ -337,7 +337,7 @@
             </div>
 
         <div class="col-md-4">
-            <label for="ExpirationMonth"><?php _e('Expiration Date', 'pmpro');?></label>
+            <label for="ExpirationMonth"><?php _e('Expiration Month', 'pmpro');?></label>
             <select class="form-control new-select-checkout" ng-model="billing.expiration_month" id="ExpirationMonth" <?php if($gateway != "stripe") { ?>name="ExpirationMonth"<?php } ?>>
                 <option value="01" <?php if($ExpirationMonth == "01") { ?>selected="selected"<?php } ?>>01</option>
                 <option value="02" <?php if($ExpirationMonth == "02") { ?>selected="selected"<?php } ?>>02</option>
