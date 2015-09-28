@@ -330,14 +330,14 @@
                 <?php } ?>
 
             <div class="col-md-6">
-                <div class="form-group">
+            <div class="form-group">
                 <label for="AccountNumber"><?php _e('Card Number', 'pmpro');?></label>
                 <input ng-model="billing.account_number" id="AccountNumber" <?php if($gateway != "stripe" && $gateway != "braintree") { ?>name="AccountNumber"<?php } ?> class="form-control <?php echo pmpro_getClassForField("AccountNumber");?>" type="text" value="<?php echo esc_attr($AccountNumber)?>" <?php if($gateway == "braintree") { ?>data-encrypted-name="number"<?php } ?> autocomplete="off" />
             </div>
             </div>
-
+        <p>&nbsp;</p>
         <div class="col-md-4">
-            <label for="ExpirationMonth"><?php _e('Expiration Date', 'pmpro');?></label>
+            <label for="ExpirationMonth"><?php _e('Expiration Month', 'pmpro');?></label>
             <select class="form-control new-select-checkout" ng-model="billing.expiration_month" id="ExpirationMonth" <?php if($gateway != "stripe") { ?>name="ExpirationMonth"<?php } ?>>
                 <option value="01" <?php if($ExpirationMonth == "01") { ?>selected="selected"<?php } ?>>01</option>
                 <option value="02" <?php if($ExpirationMonth == "02") { ?>selected="selected"<?php } ?>>02</option>
@@ -352,7 +352,7 @@
                 <option value="11" <?php if($ExpirationMonth == "11") { ?>selected="selected"<?php } ?>>11</option>
                 <option value="12" <?php if($ExpirationMonth == "12") { ?>selected="selected"<?php } ?>>12</option>
             </select>
-                </div>
+        </div>
             <div class="col-md-4">
                 <label for="ExpirationYear"><?php _e('Expiration Year', 'pmpro');?></label>
                 <select ng-model="billing.expiration_year" id="ExpirationYear" class="form-control new-select-checkout" <?php if($gateway != "stripe") { ?>name="ExpirationYear"<?php } ?>>

@@ -29,7 +29,7 @@ require_once __DIR__."/helpers/front-page-helper.php";
         <div class="container all-pad-gone"> 
           <nav class="navbar navbar-default" role="navigation">
             <div class="navbar-header">
-              <a title="link to home page" id="logo" href="/"><span id="top"></span><img class="img-responsive" alt="DCBIA logo" src="<?php echo get_template_directory_uri() ;?>/img/dcbia-logo.png" /></a>
+              <a title="link to home page" id="logo" href="/"><span id="top"></span><img class="img-responsive" alt="DCBIA logo" src="<?php echo get_template_directory_uri() ;?>/img/dcbia-logo-top-nav.svg" /></a>
               <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>

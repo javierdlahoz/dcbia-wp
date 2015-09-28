@@ -37,7 +37,7 @@ get_header();
             <br>
             <h4>2015-2016 Event Sponsors</h4>
             <div class="sonsors-lower-box">
-                <h5>Pinniacle Sponsors</h5>
+                <h5>Pinnacle Sponsors</h5>
                 <div class="col-md-3">  
                     <a href=""><img class="img-responsive" src="<?php echo get_template_directory_uri() ;?>/img/PGP_logo.gif" alt="Property Group Partners logo" /></a>    
                 </div>
@@ -48,18 +48,18 @@ get_header();
             <br>
             <div class="sonsors-lower-box">
                 <h5>Premium Sponsors</h5>
-                <div class="col-md-3">
-                    
+                <div class="col-md-3">  
+                    <a href=""><img class="img-responsive" src="<?php echo get_template_directory_uri() ;?>/img/pepco.gif" alt="Pepco logo" /></a>    
                 </div>
                 <div class="col-md-3">
-                    
-                </div>
+                    <a href=""><img class="img-responsive" src="<?php echo get_template_directory_uri() ;?>/img/MMD.png" alt="MMD Logo" /></a>    
+                </div> 
             </div>
             <br>
             <div class="sonsors-lower-box">
                 <h5>Event Title Sponsors</h5>
                 <div class="col-md-3">
-                    
+                    <a href=""><img class="img-responsive" src="<?php echo get_template_directory_uri() ;?>/img/electricalalliance.jpg" alt="lectrical alliance logo" /></a>     
                 </div>
                 <div class="col-md-3">
                     
@@ -69,14 +69,19 @@ get_header();
             <div class="sonsors-lower-box">
                 <h5>Signature Sponsors</h5>
                 <div class="col-md-3">
-                    
+                    <a href=""><img class="img-responsive" src="<?php echo get_template_directory_uri() ;?>/img/WDG_logo.gif" alt="WDG logo" /></a>    
                 </div>
                 <div class="col-md-3">
                     
                 </div>
             </div>
+            <br><br>
         </div>
     </div>
 
+    <div class="row">
+        <div class="col-md-12 committees">
+        </div>
+    </div>
 </div>
 <?php get_footer(); 
