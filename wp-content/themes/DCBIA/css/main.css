@@ -319,7 +319,7 @@ a.back-to-top:hover {
   overflow: auto;
 }
 .sonsors-lower-box h5 {
-  font-size: 21px !important;
+  font-size: 18px !important;
   margin-bottom: 25px;
   margin-top: 20px;
   padding-bottom: 8px;
@@ -12813,10 +12813,6 @@ h2.tribe-events-page-title,
 #tribe-events-pg-template {
   width: 100%!important;
   margin: 0 !important;
-}
-#tribe-bar-form #tribe-bar-views + .tribe-bar-filters {
-  background-color: #ffffff;
-  padding: 3px;
 }
 #tribe-events-bar * {
   cursor: pointer;
