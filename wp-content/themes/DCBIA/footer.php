@@ -72,6 +72,7 @@
 <script src="<?php echo get_template_directory_uri(); ?>/js/excanvas.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/modernizr.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/superfish.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/js/tribe-events-ajax-list.min.js"></script>
 
 <script>
     jQuery( document ).ready(function() {
