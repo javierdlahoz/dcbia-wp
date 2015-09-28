@@ -319,10 +319,11 @@ a.back-to-top:hover {
   overflow: auto;
 }
 .sonsors-lower-box h5 {
-  font-size: 18px !important;
+  font-size: 21px !important;
   margin-bottom: 25px;
   margin-top: 20px;
-  text-align: center;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #27a9e1;
 }
 .advocacy h2 {
   color: #27a9e1 !important;
