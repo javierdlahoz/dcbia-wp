@@ -12,6 +12,10 @@ class MemberHelper
     function __construct(){
         $this->addFieldsToRegistration(); 
         add_action("pmpro_checkout_before_submit_button", array(&$this, "getUserMembers"));
+        add_action('show_user_profile', array(&$this, 'addCategoryFieldInUserProfile'));
+        add_action('edit_user_profile', array(&$this, 'addCategoryFieldInUserProfile'));
+        add_action('personal_options_update', array(&$this, 'saveMemberCustomFields'));
+        add_action('edit_user_profile_update', array(&$this, 'saveMemberCustomFields'));
     }
     
     
@@ -178,5 +182,14 @@ class MemberHelper
         $str = str_replace(".", "-", $str);
         return $str;
     }
+    
+    public function addCategoryFieldInUserProfile($user){
+        require_once __DIR__.'/../views/admin/member-fields.php';
+    }
 
+    public function saveMemberCustomFields($userId ) {
+        if ( !current_user_can('edit_user', $userId))
+            return false;
+        update_usermeta($userId, 'business_category', $_POST['business_category'] );
+    }
 }
