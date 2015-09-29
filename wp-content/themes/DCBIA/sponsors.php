@@ -97,5 +97,28 @@ get_header();
             </div>
         </div>
     </div>
+    <div class="row">
+        <div class="col-md-12 sponsor-sections">
+                <h4>GOLF CLASSIC</h4>
+                <p>The DCBIA Golf Classic has been a sold out event every year since its inception in 1999. The tournament takes place at the Belmont Country Club where players meet every year in September for good fun and challenges.</p>
+            <p>The DCBIA Golf Classic has been a sold out event every year since its inception in 1999. The tournament takes place at the Belmont Country Club where players meet every year in September for good fun and challenges.</p>
+
+                <h5>We have customized sponsorship packages available to provide maximum visibility for your company in the DC real estate development industry.</h5>
+
+                <p>Contact Sherrita Lancaster at (202) 966-8665 or <a href="mailto:slancaster@dcbia.org">slancaster@dcbia.org</a> to get details!</p>
+            <br>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-md-12 sponsor-sections">
+                <h4>HOLIDAY CHEER</h4>
+                <p>"Holiday Cheer" is an annual event that takes place each year in December, generally at a newly developed building in the District.</p>
+                <p>We have customized sponsorship packages available to provide maximum visibility for your company in the DC real estate development industry.</p>
+                <p>Contact Sherrita Lancaster at (202) 966-8665 or <a href="mailto:slancaster@dcbia.org">slancaster@dcbia.org</a> to get details!</p>
+            <br>
+        </div>
+    </div>
+    
 </div>
 <?php get_footer(); 
