@@ -932,7 +932,7 @@ footer .social-icons a:hover {
 }
 .job-bank,
 .media,
-.committees {
+.sponsor-sections {
   background-color: #ffffff;
   border-bottom: 1px dashed #6d6e70;
   padding: 5px 20px 10px;
@@ -940,12 +940,12 @@ footer .social-icons a:hover {
 }
 .job-bank h4,
 .media h4,
-.committees h4 {
+.sponsor-sections h4 {
   color: #2a2d2f !important;
 }
 .job-bank h5,
 .media h5,
-.committees h5 {
+.sponsor-sections h5 {
   color: #27a9e1 !important;
 }
 #drop {

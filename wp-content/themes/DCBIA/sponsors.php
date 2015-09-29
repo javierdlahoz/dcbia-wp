@@ -24,7 +24,7 @@ get_header();
     </div>
 
     <div class="row">
-        <div class="col-md-12 committees">
+        <div class="col-md-12 sponsor-sections">
             <h4>SEMINARS &amp; PROGRAMS</h4>
 
             <p>DCBIA seminars and programs are content-rich, led by the best and brightest of the DC real estate development industry. Designed to educate and inform real estate development professionals of the latest market forecasts, developing trends, and capital markets, our programs and seminars also inform members of the changes in the DC legislation and regulatory environment that affect both residential and commercial development.</p>
@@ -80,7 +80,10 @@ get_header();
     </div>
 
     <div class="row">
-        <div class="col-md-12 committees">
+        <div class="col-md-12 sponsor-sections">
+            <h4>ANNUAL AWARDS DINNER</h4>
+
+<p>Every year, DCBIA attracts hundreds of real estate professionals from the Washington, DC area to its Annual Awards Dinner where Building Industry Awards are presented to outstanding individuals and/or entities.</p>
         </div>
     </div>
 </div>
