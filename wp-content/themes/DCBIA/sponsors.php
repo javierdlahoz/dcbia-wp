@@ -81,9 +81,20 @@ get_header();
 
     <div class="row">
         <div class="col-md-12 sponsor-sections">
-            <h4>ANNUAL AWARDS DINNER</h4>
+            <div class="col-md-6">
+                <h4>ANNUAL AWARDS DINNER</h4>
 
-<p>Every year, DCBIA attracts hundreds of real estate professionals from the Washington, DC area to its Annual Awards Dinner where Building Industry Awards are presented to outstanding individuals and/or entities.</p>
+    <p>Every year, DCBIA attracts hundreds of real estate professionals from the Washington, DC area to its Annual Awards Dinner where Building Industry Awards are presented to outstanding individuals and/or entities.</p>
+                <p>Sponsorship Opportunities are now available for DCBIA’s 31st Annual Achievement Awards Dinner. The premier black-tie affair that attracts over 1,000 of the best in DC real estate development! It is sure to sell-out again this year.</p>
+
+    <p>We have three sponsorship levels available at $9,000, $6,000 and $4,000. Premier seating is available and there will be plenty of marketing for your company before and during the event. Act now so you don’t miss out on these anticipated opportunities.</p>
+                <br>
+            </div>    
+            <div class="col-md-6">
+                <br>
+                <a href=""><img class="img-responsive" src="<?php echo get_template_directory_uri() ;?>/img/Sponsorship_2015.png" alt="Sponsorship logo" /></a>
+                <p>&nbsp;</p>
+            </div>
         </div>
     </div>
 </div>
