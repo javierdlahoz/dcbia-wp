@@ -157,7 +157,8 @@ class MemberHelper
         $user = wp_get_current_user();
         $user->membership_level = pmpro_getMembershipLevelsForUser($user->ID);
         $today = new \DateTime();
-        if($today->getTimestamp() < $user->membership_level->enddate){
+        
+        if($today->getTimestamp() < (int) $user->membership_level[0]->enddate){
             return true;   
         }
         else{
