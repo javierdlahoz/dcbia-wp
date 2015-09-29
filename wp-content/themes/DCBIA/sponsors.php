@@ -49,7 +49,10 @@ get_header();
             <div class="sonsors-lower-box">
                 <h5>Premium Sponsors</h5>
                 <div class="col-md-3">  
-                    <a href=""><img class="img-responsive" src="<?php echo get_template_directory_uri() ;?>/img/pepco.gif" alt="Pepco logo" /></a>    
+                    <a href=""><img class="img-responsive" src="<?php echo get_template_directory_uri() ;?>/img/mkit-logo.jpg" alt="Mkit Digital logo" /></a>    
+                </div>
+                <div class="col-md-3">  
+                    <a href=""><img class="img-responsive" src="<?php echo get_template_directory_uri() ;?>/img/pepco-small.jpg" alt="Pepco logo" /></a>    
                 </div>
                 <div class="col-md-3">
                     <a href=""><img class="img-responsive" src="<?php echo get_template_directory_uri() ;?>/img/MMD.png" alt="MMD Logo" /></a>    
