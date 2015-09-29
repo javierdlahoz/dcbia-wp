@@ -932,6 +932,7 @@ footer .social-icons a:hover {
 }
 .job-bank,
 .media,
+.sponsor-sections,
 .committees {
   background-color: #ffffff;
   border-bottom: 1px dashed #6d6e70;
@@ -940,11 +941,13 @@ footer .social-icons a:hover {
 }
 .job-bank h4,
 .media h4,
+.sponsor-sections h4,
 .committees h4 {
   color: #2a2d2f !important;
 }
 .job-bank h5,
 .media h5,
+.sponsor-sections h5,
 .committees h5 {
   color: #27a9e1 !important;
 }
@@ -12827,174 +12830,3 @@ h2.tribe-events-page-title,
   max-height: 600px;
 }
 /*@import "";*/
-
-/* List */
-
-.events-list-wrapper { margin: 0; width: 100%; }
-
-.events-list-wrapper .events-list-element {
-	margin: 0 auto;
-	float: left;
-	width: 100%;
-	clear: both;
-}
-
-.events-list-element article {
-	width: 50%;
-}
-
-.tribe-events-list .vevent.hentry {
-	border-bottom: 0;
-	margin: 25px 0;
-	position: relative;
-}
-
-.tribe-events-list-separator-month+.vevent.hentry.tribe-events-first,
-.tribe-events-list .vevent.hentry {
-	padding-top: 0em;
-	padding: 0;
-	margin: 0;
-	position: relative;
-	box-sizing: border-box;
-	-moz-box-sizing: border-box;	
-}
-
-.tribe-events-loop .vevent.tribe-events-last {
-	border-bottom: 0 !important;
-}
-
-.icy-event-datetime {
-	background: #f9f9f9;
-	border-left: 5px solid #0a9de2;
-	float: left;
-	padding: 35px 10px;
-	box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	width: 8%;
-}
-
-.icy-event-price {
-	background: #3b3448;
-	float: right;
-	box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	width: 11%;
-	height: 100%;
-	position: absolute;
-	right: 0;
-	text-align: center;	
-}
-
-.icy-event-price .cost {
-	font-size: 59px;
-	line-height: 157px;
-	font-weight: 100;
-	text-align: center;
-	color: #fff;
-}
-
-.tribe-events-list .events-list-element:nth-child(even) .icy-event-price,
-#tribe-geo-results .vevent:nth-child(even) .icy-event-details .icy-event-price {
-	background: #464052;
-}
-
-.tribe-events-list .events-list-element:nth-child(even) .icy-event-datetime,
-#tribe-geo-results .vevent:nth-child(even) .icy-event-details .icy-event-datetime {
-	border-left-color: #ef3f42;
-	background-color: #fff;
-}
-
-.tribe-events-list .events-list-element:nth-child(even) .icy-event-details,
-#tribe-geo-results .vevent:nth-child(even) .icy-event-details .icy-event-details {
-	background-color: #fff;
-}
-
-.icy-event-datetime span.icy-button::before {
-	font-size: 32px;
-	line-height: 32px;
-	margin: 0 20px;
-	margin-bottom: 5px;
-	color: #697a8c;
-}
-
-.icy-event-datetime .first-row {
-	float: left;
-	display: block;
-	clear: both;
-	font-size: 32px;
-	line-height: 32px;
-	text-align: center;
-	width: 100%;
-	color: #697a8c;
-	font-weight: 100;
-}
-
-.icy-event-datetime .second-row {
-	float: left;
-	display: block;
-	clear: both;
-	font-size: 18px;
-	line-height: 18px;
-	text-transform: uppercase;
-	text-align: center;
-	width: 100%;
-	color: #697a8c;
-	font-weight: 300;
-}
-
-.icy-event-thumbnail {
-	float: left;
-	width: 24%;
-	max-height: 157px;
-	overflow: hidden;
-}
-
-.tribe-events-list .icy-event-details h2.tribe-events-list-event-title {
-	font-family: 'Roboto Condensed';
-	font-weight: 700;
-	font-size: 39px !important;
-	text-transform: uppercase;
-	float: left;
-	width: 55%;
-	vertical-align: bottom;
-	position: absolute;
-	left: 34%;
-	top: 34%;
-}
-
-.icy-event-details {
-	width: 100%;
-	float: left;
-}
-
-.tribe-events-list h2.tribe-events-list-event-title a {
-	color: #394755;
-}
-
-.tribe-events-list h2.tribe-events-list-event-title a:hover {
-	opacity: 0.85;
-}
-
-.single-tribe_events #tribe-events-footer, .tribe-events-day #tribe-events-footer, .events-list #tribe-events-footer, .tribe-events-map #tribe-events-footer, .tribe-events-photo #tribe-events-footer {
-	border-top: none;
-	padding-top: 3em;
-}
-
-.tribe-events-list-widget ol li {
-	padding-bottom: 10px;
-	list-style: none;
-	margin-bottom: 10px;
-	border-bottom: 1px solid #f1f1f1;
-}
-
-.tribe-events-list-widget ol li:last-child {
-	border-bottom: none;
-}
-
-.single-tribe_events .tribe-events-event-meta.primary {
-	width: 66.66%;
-}
-
-.single-tribe_events .tribe-events-event-meta.secondary {
-	width: 33.33%;
-}
