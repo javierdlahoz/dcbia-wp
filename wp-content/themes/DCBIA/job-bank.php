@@ -38,6 +38,7 @@ get_header();
                     }
                     ?>
                     <a class="button2" href="<?php echo $url; ?>"><i class="fa fa-file-pdf-o"></i>Download full job post here!</a>
+                    <a class="button2" href="<?php echo $url; ?>">See the full job post here!</a>
                 </div> 
             </div>
         </div>
