@@ -1263,6 +1263,9 @@ textarea.wp-editor-area {
   #btn-top-nav li a {
     margin: 0!important;
   }
+  button.search-btn {
+    margin-left: 0!important;
+  }
 }
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 html {
