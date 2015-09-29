@@ -5,7 +5,7 @@ use Member\Helper\MemberHelper;
 
 <table class="form-table">
 <tr>
-<th><label for="category">Category</label></th>
+<th><label for="category">Type</label></th>
 <td>
 <select name="business_category" id="business_category">
     <?php foreach(MemberHelper::getBusinessCategories() as $cat): ?>

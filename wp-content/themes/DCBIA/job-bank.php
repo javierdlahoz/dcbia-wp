@@ -30,7 +30,14 @@ get_header();
                 <h5><?php echo $job->getCompanyNames(); ?></h5>
                 <p>Posted <?php echo mysql2date("F j, Y", $job->getDate()); ?></p>
                 <div class="board">
-                    <a class="button2" href="<?php echo $job->getFileUrl(); ?>"><i class="fa fa-file-pdf-o"></i>Download full job post here!</a>
+                    <?php if($job->getFileUrl() == ""){
+                        $url = $job->getUrl();
+                    }
+                    else{
+                        $url = $job->getFileUrl();
+                    }
+                    ?>
+                    <a class="button2" href="<?php echo $url; ?>"><i class="fa fa-file-pdf-o"></i>Download full job post here!</a>
                 </div> 
             </div>
         </div>

@@ -18,8 +18,7 @@ class JobController extends AbstractController
                 $jobEntity->setFileUrl($fileArray["fileUrl"]);
                 $jobEntity->setFileSize($fileArray["fileSize"]);
             }
-            //$jobEntity->setCompany($this->getPost("company"));
-            //$jobEntity->setCompanyUrl($this->getPost("company_url"));
+            $jobEntity->setUrl($this->getPost("url"));
         }
     }
     
