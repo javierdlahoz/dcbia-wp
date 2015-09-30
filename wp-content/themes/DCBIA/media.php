@@ -28,7 +28,7 @@ get_header();
             <div class="media">
                 <h4><?php echo $media->getTitle(); ?></h4> 
                 <h5><?php echo mysql2date("F j, Y", $media->getDate()); ?></h5>
-                <p><?php echo TextHelper::cropText($media->getContent(), 200); ?></p>
+                <p><?php echo TextHelper::cropText($media->getContent(), 100); ?></p>
                 <div class="board">
                     <a class="button2" href="<?php echo $media->getFileUrl(); ?>"><i class="fa fa-file-pdf-o"></i>Download press release here!</a>
                 </div> 

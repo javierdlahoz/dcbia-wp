@@ -33,7 +33,7 @@ get_header();  ?>
                 <a class="image-cover" href=""><img src="" /></a>
                 <div class="inside-blog">
                     <h4><?php echo $p->getTitle(); ?></h4>
-                    <p><?php echo TextHelper::cropText($p->getContent(), 200); ?></p>
+                    <p><?php echo TextHelper::cropText($p->getContent(), 100); ?></p>
                     <a href="<?php echo $p->getPermalink(); ?>">Read More</a>
                 </div>    
             </div>
