@@ -888,7 +888,7 @@ footer .social-icons a:hover {
 .blog .inside-blog {
   background-color: #ffffff;
   padding: 12px;
-  min-height: 200px;
+  min-height: 250px;
 }
 .blog .inside-blog h4 {
   text-align: center;
@@ -923,7 +923,9 @@ footer .social-icons a:hover {
   font-size: 18px;
   margin-right: 10px;
 }
-.board .button2:hover {
+.board .button2:hover,
+.board .button2:active,
+.board .button2:link {
   text-decoration: none;
   color: #ffffff;
 }
