@@ -937,6 +937,10 @@ footer .social-icons a:hover {
   text-decoration: none;
   color: #ffffff;
 }
+.board-list h5 {
+  font-weight: 700!important;
+  color: #2a2d2f;
+}
 .about h4 {
   color: #27a9e1 !important;
 }

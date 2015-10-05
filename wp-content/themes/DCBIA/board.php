@@ -18,7 +18,7 @@ get_header();
     <div class="row">
         <div class="col-md-12 about">   
             <h2><?php echo $pageEntity->getTitle(); ?></h2>
-            <p><?php echo $pageEntity->getContent(); ?></p>
+            <p>The execution of DCBIA’s advocacy and member service functions is broadly overseen by an elected Board of Directors comprising a virtual who’s who of Washington real estate. Closer oversight is exercised through regularly scheduled meetings of the twelve-member Executive Committee of the board, which includes the elected officers of the association and special presidential appointees.</p>
         </div>    
     </div>
     <div class="row about">
@@ -37,16 +37,9 @@ get_header();
     </div>        
     <br>
     <div class="row">
-        <div class="col-md-12 about">
-            <h4>DOWNLOAD THE FOLLOWING PDF'S:</h4>
+        <div class="col-md-12 about board-list">
+            <?php echo $pageEntity->getContent(); ?>
         </div>
-        <?php foreach ($boards as $board): ?>
-        <div class="col-md-12 board">
-            <a class="button2" href="<?php echo $board->getFileUrl(); ?>">
-                <i class="fa fa-file-pdf-o"></i><?php echo $board->getTitle(); ?>
-            </a>
-        </div>
-        <?php endforeach; ?>
     </div>
 
 </div>
