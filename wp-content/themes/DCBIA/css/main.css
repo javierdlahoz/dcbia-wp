@@ -919,6 +919,14 @@ footer .social-icons a:hover {
 .staff-results h4 {
   margin-top: 0!important;
 }
+.board-members h4,
+.board-members h5,
+.board-members p {
+  text-align: center !important;
+}
+.board-members .heading-top-space {
+  margin-top: 20px;
+}
 .board i {
   font-size: 18px;
   margin-right: 10px;
