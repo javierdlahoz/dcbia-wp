@@ -961,6 +961,9 @@ footer .social-icons a:hover {
 .committees h5 {
   color: #27a9e1 !important;
 }
+.job-bank {
+  min-height: 230px;
+}
 #drop {
   min-height: 70px;
   width: 100%;
