@@ -19,9 +19,14 @@ get_header();
         <div class="col-md-12 about">   
             <h2><?php echo $pageEntity->getTitle(); ?></h2>
             <p>The execution of DCBIA’s advocacy and member service functions is broadly overseen by an elected Board of Directors comprising a virtual who’s who of Washington real estate. Closer oversight is exercised through regularly scheduled meetings of the twelve-member Executive Committee of the board, which includes the elected officers of the association and special presidential appointees.</p>
+            <br>
         </div>    
     </div>
     <div class="row about">
+        <div class="col-md-12 about">
+            <h3>2015 Officers</h3>
+            <br>
+        </div>
         <?php foreach (BoardController::getSingleton()->getAll() as $member): ?>
         <div class="col-sm-3 staff-pic board-members">
             <?php if($member->getImage() == ""): ?>
