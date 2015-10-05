@@ -22,6 +22,7 @@ use Resource\Helper\ResourceHelper;
 use Issue\Helper\IssueHelper;
 use Sponsor\Helper\SponsorHelper;
 use Event\Helper\EventHelper;
+use Board\Helper\BoardHelper;
 
 if (!class_exists("dcbia")) {
 
@@ -92,6 +93,7 @@ if (!class_exists("dcbia")) {
             $this->issueHelper = new IssueHelper();
             $this->sponsorHelper = new SponsorHelper();
             $this->eventHelper = new EventHelper();
+            $this->boardHelper = new BoardHelper();
         }
 
         public function adminFeatures(){

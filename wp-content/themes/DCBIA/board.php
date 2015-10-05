@@ -1,6 +1,8 @@
 <?php
 use INUtils\Entity\PostEntity;
 use Director\Controller\DirectorController;
+use Board\Controller\BoardController;
+use INUtils\Helper\TextHelper;
 /*
   Template Name: board
 */
@@ -20,12 +22,18 @@ get_header();
         </div>    
     </div>
     <div class="row about">
+        <?php foreach (BoardController::getSingleton()->getAll() as $member): ?>
         <div class="col-sm-3 staff-pic board-members">
-             <img class="img-responsive" src="<?php echo get_template_directory_uri() ;?>/img/place-holder.jpg" alt="Board memeber" />
-            <h4 class="heading-top-space">Place Holder</h4>
-            <h5>Place holder</h5>  
-            <p>some text for a placeholder</p>
-        </div>    
+            <?php if($member->getImage() == ""): ?>
+                <img class="img-responsive" src="<?php echo get_template_directory_uri() ;?>/img/place-holder.jpg" alt="Board memeber" />
+            <?php else: ?>
+                <img class="img-responsive" src="<?php echo $member->getImage(); ?>" alt="<?php echo $member->getTitle(); ?>" />
+            <?php endif;?>
+            <h4 class="heading-top-space"><?php echo $member->getTitle(); ?></h4>
+            <h5><?php echo $member->getJobTitle(); ?></h5>  
+            <p><?php echo TextHelper::cropText($member->getContent()); ?></p>
+        </div>
+        <?php endforeach;?>    
     </div>        
     <br>
     <div class="row">
