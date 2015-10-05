@@ -20,7 +20,7 @@ get_header();
         </div>    
     </div>
     <div class="row about">
-        <div class="col-sm-2 staff-pic board-members">
+        <div class="col-sm-3 staff-pic board-members">
              <img class="img-responsive" src="<?php echo get_template_directory_uri() ;?>/img/place-holder.jpg" alt="Board memeber" />
             <h4 class="heading-top-space">Place Holder</h4>
             <h5>Place holder</h5>  
