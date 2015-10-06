@@ -922,6 +922,9 @@ footer .social-icons a:hover {
 .staff-pic img {
   margin: 0 auto !important;
 }
+.board-members {
+  min-height: 300px !important;
+}
 .board-members h4,
 .board-members h5,
 .board-members p {
