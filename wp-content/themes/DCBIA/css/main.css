@@ -922,6 +922,11 @@ footer .social-icons a:hover {
 .staff-pic img {
   margin: 0 auto !important;
 }
+@media (max-width: 991px) {
+  .board-members {
+    padding-bottom: 20px;
+  }
+}
 .board-members {
   min-height: 300px !important;
 }
