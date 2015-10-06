@@ -939,7 +939,7 @@ footer .social-icons a:hover {
 }
 .board-list h5 {
   font-weight: 700!important;
-  color: #2a2d2f;
+  color: #2a2d2f !important;
 }
 .about h4 {
   color: #27a9e1 !important;
@@ -967,6 +967,9 @@ footer .social-icons a:hover {
 }
 .job-bank {
   min-height: 230px;
+}
+.committees {
+  min-height: 320px;
 }
 #drop {
   min-height: 70px;
