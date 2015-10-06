@@ -919,6 +919,9 @@ footer .social-icons a:hover {
 .staff-results h4 {
   margin-top: 0!important;
 }
+.staff-pic img {
+  margin: 0 auto !important;
+}
 .board-members h4,
 .board-members h5,
 .board-members p {
