@@ -30,7 +30,7 @@ get_header();
         <?php foreach (BoardController::getSingleton()->getAll() as $member): ?>
         <div class="col-sm-3 staff-pic board-members">
             <?php if($member->getImage() == ""): ?>
-                <img class="img-responsive" src="<?php echo get_template_directory_uri() ;?>/img/place-holder.jpg" alt="Board memeber" />
+                <img class="img-responsive" src="<?php echo get_template_directory_uri() ;?>/img/avatar.jpg" alt="Board memeber" />
             <?php else: ?>
                 <img class="img-responsive" src="<?php echo $member->getImage(); ?>" alt="<?php echo $member->getTitle(); ?>" />
             <?php endif;?>
