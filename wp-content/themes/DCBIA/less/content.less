@@ -966,11 +966,18 @@ footer{
 }
 .board-list{
     & .col-sm-2{
-        min-height: 125px !important;
+        min-height: 150px !important;
     }
     & h5{
         font-weight: 700!important;
         color: @offblack !important;
+    }
+}
+@media (max-width: @screen-sm-min){ 
+    .board-list{
+        & .col-sm-2{
+            min-height: 65px !important;
+        }
     }
 }
 // Committees

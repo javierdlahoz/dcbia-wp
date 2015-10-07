@@ -945,11 +945,16 @@ footer .social-icons a:hover {
   color: #ffffff;
 }
 .board-list .col-sm-2 {
-  min-height: 125px !important;
+  min-height: 150px !important;
 }
 .board-list h5 {
   font-weight: 700!important;
   color: #2a2d2f !important;
+}
+@media (max-width: 768px) {
+  .board-list .col-sm-2 {
+    min-height: 65px !important;
+  }
 }
 .about h4 {
   color: #27a9e1 !important;
