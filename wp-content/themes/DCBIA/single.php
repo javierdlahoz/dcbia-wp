@@ -22,6 +22,9 @@ elseif($p->getType() == "job"){
 elseif($p->getType() == "sponsor"){
     header('location: /sponsors');
 }
+elseif($p->getType() == "board_member"){
+    header('location: /about/board');
+}
 elseif(!MemberHelper::isCurrentAccountActive()){
     header('location: /renewal');
 }
