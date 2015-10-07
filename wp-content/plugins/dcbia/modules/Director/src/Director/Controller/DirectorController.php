@@ -41,12 +41,6 @@ class DirectorController extends AbstractController
      * @return multitype:\Director\Entity\DirectorEntity
      */
     public function getAllMedia(){
-        DirectorService::getSingleton()->setTaxQuery(array(array(
-            "taxonomy"   => DirectorHelper::TAXONOMY,
-            "terms"     => "media",
-            "field"     => "slug",
-            "operator"  => "IN"
-        )));
         $directors = DirectorService::getSingleton()->getPosts();
         return $directors;
     }
