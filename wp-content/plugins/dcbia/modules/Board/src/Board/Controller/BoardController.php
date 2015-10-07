@@ -12,7 +12,7 @@ class BoardController extends AbstractController
         $boardEntity = new BoardEntity($postId);
         if($boardEntity->getType() == BoardHelper::POST_TYPE){
             $boardEntity->setJobTitle($this->getPost(BoardEntity::JOB_TITLE));
-            //$boardEntity->setEmail($this->getPost("board_email"));
+            $boardEntity->setUrl($this->getPost("url"));
         }
     }
     

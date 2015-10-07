@@ -34,7 +34,7 @@ get_header();
             <?php else: ?>
                 <img class="img-responsive" src="<?php echo $member->getImage(); ?>" alt="<?php echo $member->getTitle(); ?>" />
             <?php endif;?>
-            <h4 class="heading-top-space"><a href=""><?php echo $member->getTitle(); ?></a></h4>
+            <h4 class="heading-top-space"><a href="<?php echo $member->getUrl(); ?>"><?php echo $member->getTitle(); ?></a></h4>
             <h5><?php echo $member->getJobTitle(); ?></h5>  
             <p><?php echo TextHelper::cropText($member->getContent()); ?></p>
         </div>

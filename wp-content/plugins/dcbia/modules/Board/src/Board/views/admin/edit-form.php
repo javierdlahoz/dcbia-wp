@@ -15,6 +15,15 @@ $boardEntity = dcbia::getEntity("board");
 				required="true" />
 		</div>
 	</div>
+	<div class="form-group">
+		<label class="control-label col-lg-2 col-sm-2">Url</label>
+		<div class="col-lg-10 col-sm-10">
+			<input type="url" class="form-control"
+				name="url" id="url"
+				value="<?php echo $boardEntity->getUrl(); ?>"
+				required="true" />
+		</div>
+	</div>
 </div>
 <?php
 echo PostHelper::addStylesAndScripts();
