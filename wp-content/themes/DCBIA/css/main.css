@@ -923,7 +923,7 @@ footer .social-icons a:hover {
   margin: 0 auto !important;
 }
 .board-members {
-  min-height: 300px !important;
+  min-height: 310px !important;
   padding-bottom: 20px !important;
 }
 .board-members h4,
@@ -985,6 +985,9 @@ footer .social-icons a:hover {
 }
 .committees {
   min-height: 320px;
+}
+.media {
+  min-height: 380px;
 }
 #drop {
   min-height: 70px;
