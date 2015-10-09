@@ -26,7 +26,11 @@ get_header();
 
     <div class="row">
         <div class="col-md-12 sponsor-sections">
+            <h4>SEMINARS &amp; PROGRAMS</h4>
+            <p>DCBIA seminars and programs are content-rich, led by the best and brightest of the DC real estate development industry. Designed to educate and inform real estate development professionals of the latest market forecasts, developing trends, and capital markets, our programs and seminars also inform members of the changes in the DC legislation and regulatory environment that affect both residential and commercial development.</p>
             <?php echo $pageEntity->getContent(); ?>
+             <h4>SEMINARS &amp; PROGRAMS</h4>
+            <p>We have customized sponsorship packages available to provide maximum visibility for your company in the DC real estate development industry. Contact Sherrita Lancaster at (202) 966-8665 or slancaster@dcbia.org to get details! </p>
             <?php foreach($sts as $st): ?>
             <div class="sonsors-lower-box">
                 <h5><?php echo $st->getName(); ?></h5>
