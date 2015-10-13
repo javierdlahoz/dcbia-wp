@@ -36,7 +36,6 @@
 			<p>&nbsp;</p>
 			<h4>Contact</h4>
             <p>Telephone:  (202) 966-8665</p> 
-            <p>Fax:  (202) 966-3222</p>
             <p>Email: <a href="mailto:info@dcbia.org">info@dcbia.org</a></p>
 
 			<div class="social-icons">
