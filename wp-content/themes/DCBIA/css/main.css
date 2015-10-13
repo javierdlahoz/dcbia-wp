@@ -956,8 +956,12 @@ footer .social-icons a:hover {
     min-height: 65px !important;
   }
 }
+.about h3 {
+  margin-top: 25px !important;
+}
 .about h4 {
   color: #27a9e1 !important;
+  margin-top: 18px !important;
 }
 .job-bank,
 .media,
