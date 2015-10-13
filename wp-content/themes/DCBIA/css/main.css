@@ -374,6 +374,7 @@ a.back-to-top:hover {
   font-size: 21px;
   height: 350px;
   position: relative;
+  margin-bottom: 15px;
 }
 .key-issue-boxes a:hover {
   background-color: #27a9e1;
@@ -387,7 +388,7 @@ a.back-to-top:hover {
 .key-issue-boxes a i {
   font-size: 72px;
   display: block;
-  margin: 20px 0;
+  margin: 50px 0 20px 0;
 }
 .key-issue-boxes a i.arrowed {
   position: relative;
@@ -399,6 +400,7 @@ a.back-to-top:hover {
   font-size: 21px;
   font-weight: 700;
   text-align: center;
+  margin-top: 20px;
 }
 .top-key-nav ul {
   margin: 15px 0;

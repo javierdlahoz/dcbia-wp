@@ -60,29 +60,22 @@ $headings = IssueController::getSingleton()->getHeadings();
                     </div>
                 </div>
                    
-                <div class="row key-issue-boxes">    
-                    <div class="col-sm-3">
-                        <a ng-click="initial()" id="keys">
-                            <i class="fa fa-key"></i>
-                            <span>key issues</span>
-                            <i class="fa fa-chevron-down arrowed"></i>
-                        </a>
-                    </div>    
-                    <div class="col-sm-3">
+                <div class="row key-issue-boxes">      
+                    <div class="col-sm-4">
                         <a class="types" ng-click="getResourcesByType('resource_testimony')" id="resource_testimony">
                             <i class="fa fa-commenting"></i>
-                            <span>recent testimony</span>
+                            <span>Advocacy</span>
                             <i class="fa fa-chevron-down arrowed"></i>
                         </a>
                     </div>    
-                    <div class="col-sm-3">
+                    <div class="col-sm-4">
                         <a class="types" ng-click="getResourcesByType('resource_publications')" id="resource_publications">
                             <i class="fa fa-book"></i>
                             <span>publications</span>
                             <i class="fa fa-chevron-down arrowed"></i>
                         </a>
                     </div>    
-                    <div class="col-sm-3">
+                    <div class="col-sm-4">
                         <a class="types" ng-click="getResourcesByType('resource_industry_data')" id="resource_industry_data">
                             <i class="fa fa-database"></i>
                             <span>Industry data</span>
