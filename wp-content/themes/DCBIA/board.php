@@ -18,7 +18,9 @@ get_header();
     <div class="row">
         <div class="col-md-12 about">   
             <h2><?php echo $pageEntity->getTitle(); ?></h2>
-            <p>The execution of DCBIA’s advocacy and member service functions is broadly overseen by an elected Board of Directors comprising a virtual who’s who of Washington real estate. Closer oversight is exercised through regularly scheduled meetings of the twelve-member Executive Committee of the board, which includes the elected officers of the association and special presidential appointees.</p>
+            <p>DCBIA (District of Columbia Building Industry Association) builds leaders, community, partnership and the economy for our vibrant city through content-rich programs, networking and education.</p>
+            <p>With a membership of nearly 500 companies and organizations and several thousand real estate professionals, DCBIA members represent all aspects of real estate development including developers, general contractors, architects and engineers, lenders, attorneys, brokers, title companies, utility companies, and community development organizations.</p>
+            <p>DCBIA represents the interests and views of its members before the District of Columbia and the federal governments, community organizations and other business associations. As a service organization, it offers comprehensive educational programs, social events and community service activities. DCBIA’s extensive committee structure invites direct member participation in the shaping of association and business community positions on key issues impacting the economic health and governance of Washington, DC. </p>
             <br>
         </div>    
     </div>
