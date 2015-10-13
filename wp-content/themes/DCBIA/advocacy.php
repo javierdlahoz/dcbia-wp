@@ -1,13 +1,14 @@
 <?php
 use Resource\Helper\ResourceHelper;
 use Issue\Controller\IssueController;
+use INUtils\Entity\PostEntity;
 /*
   Template Name: advocacy
 */
 get_header();
 $keyIssues = ResourceHelper::getKeyIssues();
 $headings = IssueController::getSingleton()->getHeadings();
-
+$pageEntity = new PostEntity(get_the_ID());
 //var_dump($headings[0]->getName()); die();
 
 ?>
