@@ -21,8 +21,8 @@ $headings = IssueController::getSingleton()->getHeadings();
 <div class="container all-pad-gone" ng-controller="ResourceController" ng-init="initial()">
     <div class="row">
         <div class="col-md-12 advocacy">   
-            <h2>ADVOCACY</h2>
-            <p>Members serve frequently and prominently on commissions, task forces and study groups to address crucial economic development and municipal governance issues. Member participation on a more continuous basis is encouraged through eleven standing committees, which work closely with agencies of the DC government to advise and assist in the efficient administration of city programs – most recently in areas related to land use, building regulation, comprehensive planning, tax issues and affordable housing and community development. Committees also work in collaboration with other business groups and community organizations to attract and retain business investment and to facilitate the revitalization of distressed areas in the city.</p>    
+            <h2><?php echo $pageEntity->getTitle(); ?></h2>
+            <p><?php echo $pageEntity->getContent(); ?></p>    
         </div>    
     </div>
 
