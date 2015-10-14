@@ -272,15 +272,33 @@ class MemberController extends AbstractController{
      * @param \MemberOrder $order
      * @param \stdClass $user
      */
-    private function sendOrderEmail(\MemberOrder $order, $user){
-        $content = "Thanks for register with us \n";
-        $content .= "\nYour Order Details\n\n";
-        
-        $content .="Description: Registration to DCBIA\n";
-        $content .="Payment Type: ".$order->payment_type."\n\n";
-        $content .="Total: $ ".$order->InitialPayment." US\n";
-        
-        EmailHelper::sendEmail($user->user_email, "Registration with DCBIA", null, $content, null);
+    private function sendOrderEmail(\MemberOrder $order, $user, $isRenewal = false){
+        if(!$isRenewal){
+            $content = "Thank you for joining DCBIA! A DCBIA ambassador will reach out to you shortly
+            to outline the many benefits of membership from an individual and company perspective.
+            \nIn the meantime, please peruse our website to learn of the many ways you can build with us!";
+            $content .= "\nYour Order Details\n\n";
+            
+            $content .="Description: Registration to DCBIA\n";
+            $content .="Payment Type: ".$order->payment_type."\n\n";
+            $content .="Total: $ ".$order->InitialPayment." US\n";
+            
+            EmailHelper::sendEmail($user->user_email, "Registration with DCBIA", null, $content, null);
+        }
+        else{
+            $content = "Thank you for renewing you DCBIA membership! DCBIA will reach out to you shortly 
+                to get your opinion on membership benefits. 
+                \nIn the meantime, please peruse our website to continue to build your company, 
+                community, partnerships, and the economy with us!";
+            
+            $content .= "\nYour Order Details\n\n";
+            
+            $content .="Description: Renewal to DCBIA\n";
+            $content .="Payment Type: ".$order->payment_type."\n\n";
+            $content .="Total: $ ".$order->InitialPayment." US\n";
+            
+            EmailHelper::sendEmail($user->user_email, "Renewal with DCBIA", null, $content, null);
+        }
     }
     
     /**
