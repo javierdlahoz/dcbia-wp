@@ -1,5 +1,5 @@
 angular.module('angular-wp')
-    .controller('MembershipController', function ($scope, $http, $timeout) {
+    .controller('MembershipController', function ($scope, $http, $timeout, $rootScope) {
 
     	$scope.users = {};
     	$scope.c = -1;
@@ -78,7 +78,12 @@ angular.module('angular-wp')
             });
     	};
     	
-    	$scope.setAdditionalUsers = function(){
+    	$scope.setAdditionalUsers = function(isRenewal){    		
+    		if(isRenewal === undefined){
+    			isRenewal = false;
+    		}
+    		localStorage.setItem("isRenewal", isRenewal);
+
     		var url = "/api/member/affiliates";
     		$scope.member = {};
     		$scope.member.additional_users = $scope.users;
@@ -136,6 +141,7 @@ angular.module('angular-wp')
     		$scope.loading = true;
     		$scope.billing.expiration_date = $scope.billing.expiration_month + $scope.billing.expiration_year;
     		$scope.billing.country = "US";
+    		$scope.billing.isRenewal = localStorage.isRenewal;
     		var url = "/api/member/pay";
     		$http({
                 url: url,

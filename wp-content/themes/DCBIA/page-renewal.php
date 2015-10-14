@@ -51,7 +51,7 @@ get_header(); ?>
                     </div>
                 </div>
                 <br>
-                <button class="btn button2" ng-disabled="usernameTaken" ng-click="setAdditionalUsers()">Renew</button>
+                <button class="btn button2" ng-disabled="usernameTaken" ng-click="setAdditionalUsers(true)">Renew</button>
                 
                 <br>
             </div>

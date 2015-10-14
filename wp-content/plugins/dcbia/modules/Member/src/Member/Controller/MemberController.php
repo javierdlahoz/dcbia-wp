@@ -258,7 +258,7 @@ class MemberController extends AbstractController{
             $this->updateToMembershipLevel(get_user_meta($user->ID, 
                 self::ADDITIONAL_USERS_ARRAY, true)
             );
-            $this->sendOrderEmail($order, $user);
+            $this->sendOrderEmail($order, $user, $this->getPost("isRenewal"));
             $this->updateExpirationDate($user->ID);
             
             $order->saveOrder();
@@ -274,8 +274,7 @@ class MemberController extends AbstractController{
      */
     private function sendOrderEmail(\MemberOrder $order, $user, $isRenewal = false){
         if(!$isRenewal){
-            $content = "Thank you for joining DCBIA! A DCBIA ambassador will reach out to you shortly
-            to outline the many benefits of membership from an individual and company perspective.
+            $content = "Thank you for joining DCBIA! A DCBIA ambassador will reach out to you shortly to outline the many benefits of membership from an individual and company perspective.
             \nIn the meantime, please peruse our website to learn of the many ways you can build with us!";
             $content .= "\nYour Order Details\n\n";
             
@@ -286,10 +285,8 @@ class MemberController extends AbstractController{
             EmailHelper::sendEmail($user->user_email, "Registration with DCBIA", null, $content, null);
         }
         else{
-            $content = "Thank you for renewing you DCBIA membership! DCBIA will reach out to you shortly 
-                to get your opinion on membership benefits. 
-                \nIn the meantime, please peruse our website to continue to build your company, 
-                community, partnerships, and the economy with us!";
+            $content = "Thank you for renewing you DCBIA membership! DCBIA will reach out to you shortly to get your opinion on membership benefits. 
+                \nIn the meantime, please peruse our website to continue to build your company, community, partnerships, and the economy with us!";
             
             $content .= "\nYour Order Details\n\n";
             
