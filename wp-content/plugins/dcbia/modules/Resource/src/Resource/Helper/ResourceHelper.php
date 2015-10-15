@@ -34,9 +34,9 @@ class ResourceHelper
      */
     public static function getResourceTypes(){
         return array(
-            "resource_key_issues" => "Issues",
+            //instead"resource_key_issues" => "Issues",
             "resource_publications" => "Publications",
-            "resource_testimony" => "Testimony",
+            "resource_testimony" => "Advocacy",
             "resource_industry_data" => "Industry Data"
         );
     }

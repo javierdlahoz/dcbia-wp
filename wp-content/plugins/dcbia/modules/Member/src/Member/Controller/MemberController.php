@@ -12,7 +12,7 @@ require_once("wp-content/plugins/paid-memberships-pro/paid-memberships-pro.php")
 
 class MemberController extends AbstractController{
     
-    const ADDITIONAL_USER_COST = 75;
+    const ADDITIONAL_USER_COST = 25;
     const MEMBERSHIP_TOTAL_COST = "membership_total_cost";
     const ADDITIONAL_USERS_ARRAY = "addUsers";
     const SUCCESS_STATUS = "success";

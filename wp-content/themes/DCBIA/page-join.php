@@ -145,7 +145,7 @@ get_header(); ?>
                                 <h4>Affiliate Listing in Directory</h4>
                                 <p>Membership in DCBIA is corporate based and it entitles you to one representative to be listed in the Membership Directory under your company’s listing. Additional representatives from a member firm can be listed as affiliate members for a $75/year charge.</p>
                                 <p><b>Enter information for Affiliates to be added * :</b></p>
-                                <p>($ 75 per individual)</p>
+                                <p>$25 Political Action Committee (PAC) as an addition thing members can buy at the application</p>
                             </div>    
                             <div class="form-group">
                                 <label>First name</label>
