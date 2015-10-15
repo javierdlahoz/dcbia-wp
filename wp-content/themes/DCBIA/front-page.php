@@ -3,6 +3,7 @@ use Event\Controller\EventController;
 use Issue\Controller\IssueController;
 use Home\Controller\NewsController;
 use INUtils\Helper\TextHelper;
+use Sponsor\Controller\SponsorController;
 /*
   Template Name: front-page
 */
@@ -148,10 +149,12 @@ get_header();
                     <p>&nbsp;</p>  
                 <h2>Sponsors</h2>
                 <div class="sponsor-box-sidebar">
-                    <a href=""><img class="img-responsive" src="<?php echo get_template_directory_uri() ;?>/img/property-team.jpg" alt="Property Group Partners logo" /></a>
-                    <p>&nbsp;</p>
-                    <a href=""><img class="img-responsive" src="<?php echo get_template_directory_uri() ;?>/img/pepco.jpg" alt="Pepco logo" /></a>
-                    <p>&nbsp;</p>
+                    <?php foreach(SponsorController::getSingleton()->getStartedSponsors() as $sponsor): ?>
+                        <a href="<?php echo $sponsor->getUrl(); ?>">
+                            <img class="img-responsive" src="<?php echo $sponsor->getImage(); ?>" alt="Property Group Partners logo" />
+                        </a>
+                        <p>&nbsp;</p>    
+                    <?php endforeach; ?>
                 </div>   
                 
             </div><!--main col4 end-->

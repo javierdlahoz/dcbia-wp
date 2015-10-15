@@ -38,4 +38,14 @@ class SponsorController extends AbstractController
         $ss->setTaxonomyFilter(SponsorHelper::TAXONOMY, $typeName);
         return $ss->getPosts();
     }
+    
+    /**
+     *
+     * @return multitype:\Sponsor\Entity\SponsorEntity
+     */
+    public function getStartedSponsors(){
+        $ss = SponsorService::getSingleton();
+        $ss->setPostsPerPage(2);
+        return $ss->getPosts();
+    }
 }
