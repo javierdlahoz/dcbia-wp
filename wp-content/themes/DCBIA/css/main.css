@@ -1202,16 +1202,6 @@ textarea.wp-editor-area {
 .new-pull-right {
   float: right;
 }
-@media (min-width: 992px) and (max-width: 1200px) {
-  .featured .infoblock1 {
-    top: 30%;
-  }
-}
-@media (min-width: 768px) and (max-width: 992px) {
-  .featured .infoblock1 {
-    top: 25%;
-  }
-}
 @media (min-width: 768px) {
   .hide-desktop {
     display: none!important;
@@ -11639,7 +11629,7 @@ h2.tribe-events-page-title,
   background-color: #27a9e1 !important;
 }
 .icy-eventslider {
-  max-height: 600px;
+  max-height: 500px;
 }
 .icy-eventslider .picture {
   max-height: 600px;
