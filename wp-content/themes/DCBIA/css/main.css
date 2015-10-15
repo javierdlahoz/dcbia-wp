@@ -256,6 +256,9 @@ a.back-to-top:hover {
   position: relative;
   bottom: 4px;
 }
+.industry {
+  display: block;
+}
 .industry p {
   font-size: 16px;
 }
@@ -11629,9 +11632,12 @@ h2.tribe-events-page-title,
   background-color: #27a9e1 !important;
 }
 .icy-eventslider {
-  max-height: 500px;
+  max-height: ;
 }
 .icy-eventslider .picture {
   max-height: 600px;
+}
+.icy-eventslider .picture img {
+  max-height: 600px!important;
 }
 /*@import "";*/
