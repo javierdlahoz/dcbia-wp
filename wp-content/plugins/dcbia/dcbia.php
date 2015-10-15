@@ -90,7 +90,7 @@ if (!class_exists("dcbia")) {
             $this->jobHelper = new JobHelper();
             $this->memberHelper = new MemberHelper();
             $this->resourceHelper = new ResourceHelper();
-            $this->issueHelper = new IssueHelper();
+            //$this->issueHelper = new IssueHelper();
             $this->sponsorHelper = new SponsorHelper();
             $this->eventHelper = new EventHelper();
             $this->boardHelper = new BoardHelper();
