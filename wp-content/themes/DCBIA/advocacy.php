@@ -84,34 +84,6 @@ $pageEntity = new PostEntity(get_the_ID());
                         </a>
                     </div>    
                 </div>
-           
-                <div class="row key-results" ng-hide="isTypeSearch">
-                    <div class="col-md-12 top-key-nav">
-                        <p>Choose a Key Issue:</p>
-                        <ul>
-                            <?php $isFirst = true; ?>
-                            <?php foreach($headings as $heading): ?>
-                                <?php if($isFirst): ?>
-                                    <li class="no-border">
-                                        <a class="issues" href="" ng-click="getResourcesByKeyIssue('<?php echo $heading->getSlug(); ?>')" 
-                                            id="heading_<?php echo $heading->getSlug(); ?>">
-                                            <?php echo $heading->getName(); ?>
-                                        </a>
-                                    </li>
-                                <?php 
-                                $isFirst = false;
-                                else: ?>
-                                    <li>
-                                        <a class="issues" href="" ng-click="getResourcesByKeyIssue('<?php echo $heading->getTermId(); ?>')" 
-                                            id="heading_<?php echo $heading->getSlug(); ?>">
-                                            <?php echo $heading->getName(); ?>
-                                        </a>
-                                    </li>
-                                <?php endif; ?>
-                            <?php endforeach; ?>
-                        </ul>
-                    </div>    
-                </div>
                 
                 <div ng-hide="resultsInTop">
                     <div ng-show="resources.length == 0" ng-cloak>
