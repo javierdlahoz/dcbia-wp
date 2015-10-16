@@ -43,7 +43,6 @@ get_header(); ?>
         <div class="col-sm-6">
         	<h4>Info</h4>
                 <p>Telephone: (202) 966-8665</p> 
-                <p>Fax: (202) 966-3222</p> 
             <p><a href="mailto:info@dcbia.org">info@dcbia.org</a></p>
             <p>District of Columbia Building Industry Association<br>
                 455 Massachusetts Avenue, NW, Suite 400<br> 
