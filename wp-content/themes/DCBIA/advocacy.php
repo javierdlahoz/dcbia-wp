@@ -84,6 +84,12 @@ $pageEntity = new PostEntity(get_the_ID());
                         </a>
                     </div>    
                 </div>
+           
+                <div class="row key-results" ng-hide="isTypeSearch">
+                    <div class="col-md-12 top-key-nav">
+                        <p>Category Results:</p>
+                    </div>    
+                </div>
                 
                 <div ng-hide="resultsInTop">
                     <div ng-show="resources.length == 0" ng-cloak>
