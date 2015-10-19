@@ -150,7 +150,7 @@ class MemberHelper
             "Subcontractors",
             "Suppliers & Misc. Services",
             "Utilities",
-            "Others"
+            "Other"
         );
     }
     

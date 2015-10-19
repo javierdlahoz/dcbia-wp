@@ -87,7 +87,7 @@ get_header(); ?>
                       </select>
                     </div>
                     
-                    <div class="form-group" ng-show="member.business_category == 'Others'">
+                    <div class="form-group" ng-show="member.business_category == 'Other'">
                       <label>Business Category</label>
                       <input type="text" class="form-control" placeholder="Business Category" ng-model="member.business_category2">
                     </div>
