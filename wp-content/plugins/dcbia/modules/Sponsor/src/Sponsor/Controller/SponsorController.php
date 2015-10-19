@@ -45,6 +45,13 @@ class SponsorController extends AbstractController
      */
     public function getStartedSponsors(){
         $ss = SponsorService::getSingleton();
+        $ss->setTaxQuery(array(
+    		array(
+    			'taxonomy' => SponsorHelper::TAXONOMY,
+    			'field'    => 'slug',
+    			'terms'    => 'pinnacle-sponsors',
+    		),
+    	));
         $ss->setPostsPerPage(2);
         return $ss->getPosts();
     }
