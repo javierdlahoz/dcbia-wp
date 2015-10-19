@@ -24,6 +24,17 @@ angular.module('angular-wp')
     		};
     	};
     	
+    	getMembershipIndex = function(id){
+    		var j = 0;
+    		for(var index in $scope.membershipLevels){
+    			if(id == $scope.membershipLevels[index].id){
+    				return j; 
+    			}
+    			j++;
+    		}
+    		return 0;
+    	}
+    	
     	$scope.addPac = function(){
     		$http({
                 url: "/api/member/addPac",
@@ -85,7 +96,8 @@ angular.module('angular-wp')
     	};
     	
     	$scope.setMembershipCost = function(){
-    		$scope.membershipCost = $scope.membershipLevels[$scope.member.membership_level - 1].initial_payment;
+    		var index = getMembershipIndex($scope.member.membership_level);
+    		$scope.membershipCost = $scope.membershipLevels[index].initial_payment;
     	};
     	
     	$scope.getAdditionalUsers = function(){
