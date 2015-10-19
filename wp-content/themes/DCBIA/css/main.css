@@ -316,6 +316,9 @@ a.back-to-top:hover {
   padding: 25px;
   margin-top: 25px;
 }
+.sponsor-box-sidebar img {
+  margin: 0 auto;
+}
 .sonsors-lower-box {
   margin-top: 10px;
   display: block;

@@ -56,8 +56,7 @@ get_header();
             </div>    
             <div class="col-md-6">
                 <br>
-                <!--video coming-->
-                <p>Video Coming!</p>
+                <iframe width="100%" height="400px" src="https://www.youtube.com/embed/w61BOg_ngKQ" frameborder="0" allowfullscreen></iframe>
             </div>
         </div>
     </div>
