@@ -88,7 +88,7 @@ get_header();  ?>
                     <h4>{{member.name}}</h4>
                     <p ng-hide="member.cropBio == ''">{{member.cropBio}}</p>
                     <p ng-show="member.cropBio == ''">{{member.email}}</p>
-                    <a class="button1" href="{{member.permalink}}">View  memeber</a>
+                    <a class="button1" href="{{member.permalink}}">View Company Site</a>
                 </div>
              </div>     
         </div>
