@@ -31,7 +31,8 @@ get_header(); ?>
                     <div class="form-group">
                         <label>Membership Level</label>
                         <select class="form-control new-select-checkout" ng-model="member.membership_level" ng-change="setMembershipCost()" required>
-                            <option ng-repeat="level in membershipLevels" value="{{level.id}}">{{level.name}}</option>
+                            <option ng-repeat="level in membershipLevels" value="{{level.id}}"
+                                ng-if="level.name != 'unpaid' && level.name != 'DLD'">{{level.name}}</option>
                         </select>
                         <p ng-show="membershipCost != null">This will cost you: ${{membershipCost}} US</p>
                     </div>
