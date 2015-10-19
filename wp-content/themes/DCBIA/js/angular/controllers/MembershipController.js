@@ -9,6 +9,7 @@ angular.module('angular-wp')
     	$scope.membershipCost = null;
     	$scope.disabledToSend = false;
     	$scope.loading = false;
+    	$scope.isPacAdded = false;
     	
     	$scope.add = function(){
     		$scope.c ++;
@@ -23,11 +24,30 @@ angular.module('angular-wp')
     		};
     	};
     	
+    	$scope.addPac = function(){
+    		$http({
+                url: "/api/member/addPac",
+                method: "GET"
+            }).success(function (data) {
+            	$scope.isPacAdded = data.pac;
+            });
+    	};
+    	
+    	$scope.checkPac = function(){
+    		$http({
+                url: "/api/member/checkPac",
+                method: "GET"
+            }).success(function (data) {
+            	$scope.isPacAdded = data.pac;
+            });
+    	};
+    	
     	$scope.remove = function(i){
     		delete $scope.users[i];
     	};
     	
     	$scope.initialize = function(){
+    		$scope.checkPac();
     		$scope.users = {
     		};
     	};
@@ -42,6 +62,7 @@ angular.module('angular-wp')
     	$scope.register = function(){
     		var url = "/api/member/register";
     		$scope.member.additional_users = $scope.users;
+    		
     		$http({
                 url: url,
                 method: "POST",

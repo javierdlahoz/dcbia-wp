@@ -125,6 +125,7 @@ class MemberFacade extends AbstractSingleton
             "cost_per_affiliate"   => get_user_meta($userId, "cost_per_affiliate"  , true),
             "membership_base_cost" => get_user_meta($userId, "membership_base_cost", true),
             "business_category" => get_user_meta($userId, "business_category", true),
+            "business_category2" => get_user_meta($userId, "business_category2", true),
             "membership_total_cost" => get_user_meta($userId, "membership_total_cost", true),
             "membership_level" => get_user_meta($userId, "tmp_membership_level", true),
         );

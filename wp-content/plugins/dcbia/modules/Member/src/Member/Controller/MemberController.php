@@ -12,12 +12,13 @@ require_once("wp-content/plugins/paid-memberships-pro/paid-memberships-pro.php")
 
 class MemberController extends AbstractController{
     
-    const ADDITIONAL_USER_COST = 25;
+    const ADDITIONAL_USER_COST = 75;
     const MEMBERSHIP_TOTAL_COST = "membership_total_cost";
     const ADDITIONAL_USERS_ARRAY = "addUsers";
     const SUCCESS_STATUS = "success";
     const PMPPRO_MEMBERSHIP_USERS = "pmpro_memberships_users";
     const UNPAID_LEVEL = 5;
+    const PAC_COST = 25;
     
     /**
      * 
@@ -27,19 +28,56 @@ class MemberController extends AbstractController{
         return get_user_meta($userId, self::ADDITIONAL_USERS_ARRAY, true);
     }
     
+    public function checkPacAction(){
+        if(isset($_SESSION["pac"]) && $_SESSION["pac"] === true){
+            return array(
+                "pac" => true
+            );
+        }
+        else{
+            return array(
+                "pac" => false
+            );
+        }
+    }
+    
+    public function addPacAction(){
+        if(isset($_SESSION["pac"]) && $_SESSION["pac"] === true){
+            $_SESSION["pac"] = false;
+            return array(
+                "message" => "PAC removed",
+                "pac"   => false
+            );
+        }
+        else{
+            $_SESSION["pac"] = true;
+            return array(
+                "message" => "PAC added",
+                "pac"   => true
+            );
+        }
+    }
+    
     public function registerAction(){
         $additionalUsers = count($_POST["additional_users"]);
         $level = MemberController::getSingleton()->getMembershipLevel();
         $_SESSION["amount"] = $level->initial_payment + $additionalUsers * self::ADDITIONAL_USER_COST;
         
+        if($_SESSION["pac"] === true){
+            $_SESSION["amount"] += self::PAC_COST;
+        }
+        
         $level = MemberController::getSingleton()->getUnpaidLevel();
         $mainUserId = $this->createMember($_POST, $level->id, true);
         $addUserIds = array();
         
-        foreach($_POST["additional_users"] as $userToAdd){
-            $addUserIds[] = $this->createAMember($userToAdd, $level->id, $_POST);
+        if(isset($_POST["additional_users"])){
+            foreach($_POST["additional_users"] as $userToAdd){
+                $addUserIds[] = $this->createAMember($userToAdd, $level->id, $_POST);
+            }
+            update_user_meta($mainUserId, self::ADDITIONAL_USERS_ARRAY, $addUserIds);
         }
-        update_user_meta($mainUserId, self::ADDITIONAL_USERS_ARRAY, $addUserIds);
+        
         return array("message" => "success");
     }
     
@@ -120,7 +158,11 @@ class MemberController extends AbstractController{
      * @param number $level
      */
     public function createMember($member, $level = 1, $isMain = false){
-        $userId = wp_create_user($member["email"], $member["password"], $member["email"]);
+        $userId = wp_get_current_user()->ID;
+        if($userId == 0){
+            $userId = wp_create_user($member["email"], $member["password"], $member["email"]);
+        }
+        
         pmpro_changeMembershipLevel($level, $userId);
         $user = array(
             "ID" => $userId,
@@ -138,7 +180,6 @@ class MemberController extends AbstractController{
             $creds['remember'] = true;
             wp_signon($creds, false);
         }
-        
         return $userId;
     }
 
@@ -174,6 +215,7 @@ class MemberController extends AbstractController{
         update_user_meta($userId, "cost_per_affiliate"  , $member["cost_per_affiliate"]);
         update_user_meta($userId, "membership_base_cost", $member["membership_base_cost"]);
         update_user_meta($userId, "business_category", $member["business_category"]);
+        update_user_meta($userId, "business_category2", $member["business_category2"]);
         update_user_meta($userId, "membership_total_cost", $_SESSION["amount"]);
         update_user_meta($userId, "tmp_membership_level", $member["membership_level"]);
     }
@@ -225,6 +267,10 @@ class MemberController extends AbstractController{
         $order->billing = new \stdClass();
         $order->membership_level = new \stdClass();
         $user = wp_get_current_user();
+        
+        if(isset($_SESSION["pac"])){
+            unset($_SESSION["pac"]);
+        }
         
         $order->InitialPayment = get_user_meta($user->ID, self::MEMBERSHIP_TOTAL_COST, true);
         $order->Address1 = $this->getPost("address1");

@@ -110,7 +110,8 @@ $pageEntity = new PostEntity(get_the_ID());
                             <h5>{{resource.title}}</h5>  
                             <p>{{resource.limitedContent}}</p>
                             
-                            <a class="button1" href="{{resoure.permalink}}">More Information</a>
+                            <a class="button1" ng-show="resource.file_url == ''" href="{{resource.url}}">More Information</a>
+                            <a class="button1" ng-hide="resource.file_url == ''" href="{{resource.file_url}}">More Information</a>
                         </div>
                     </div>
                 </div>

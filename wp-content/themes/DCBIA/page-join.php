@@ -1,9 +1,9 @@
 <?php
 use INUtils\Entity\PostEntity;
 use Committee\Controller\CommitteeController;
-use Member\Controller\MemberController;
 use Member\Helper\MemberHelper;
-if(wp_get_current_user()->ID != 0){
+
+if(wp_get_current_user()->ID != 0 && wp_get_current_user()->membership_level->name != "unpaid"){
     header("Location: /editme");
 }
 
@@ -86,6 +86,11 @@ get_header(); ?>
                       </select>
                     </div>
                     
+                    <div class="form-group" ng-show="member.business_category == 'Others'">
+                      <label>Business Category</label>
+                      <input type="text" class="form-control" placeholder="Business Category" ng-model="member.business_category2">
+                    </div>
+                    
                     <div class="form-group">
                       <label>Company Name</label>
                       <input type="text" class="form-control" placeholder="Company Name" ng-model="member.company_name">
@@ -134,7 +139,7 @@ get_header(); ?>
                     </div>
                     <div class="form-group">
                       <label><h4>Description for member directory</h4></label>
-                      <textarea class="form-control register-form-text-area" ng-model="member.company_description"></textarea>
+                      <textarea class="form-control register-form-text-area" ng-model="member.company_description" maxlength="150"></textarea>
                     </div>
                 </div>
 
@@ -145,7 +150,7 @@ get_header(); ?>
                                 <h4>Affiliate Listing in Directory</h4>
                                 <p>Membership in DCBIA is corporate based and it entitles you to one representative to be listed in the Membership Directory under your company’s listing. Additional representatives from a member firm can be listed as affiliate members for a $75/year charge.</p>
                                 <p><b>Enter information for Affiliates to be added * :</b></p>
-                                <p>$25 Political Action Committee (PAC) as an addition thing members can buy at the application</p>
+                                <p>$75 per affilate:</p>
                             </div>    
                             <div class="form-group">
                                 <label>First name</label>
@@ -174,7 +179,12 @@ get_header(); ?>
                             </div>
                             <div class="btn btn-danger" ng-click="remove(user.id)">Remove Affiliate</div>
                         </div>
+                        <div class="alert alert-success" ng-show="isPacAdded">A $25 PAC HAS BEEN ADDED</div>
                         <div class="button2" ng-click="add()">Add Affiliate</div>
+                        <div class="button2" ng-click="addPac()">
+                            <span ng-hide="isPacAdded">ADD 25$ PAC</span>
+                            <span ng-show="isPacAdded">REMOVE 25$ PAC</span>
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-12">

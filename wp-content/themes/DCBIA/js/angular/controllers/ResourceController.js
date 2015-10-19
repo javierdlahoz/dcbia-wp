@@ -97,8 +97,6 @@ angular.module('angular-wp')
 		$scope.initial = function(){
 			$scope.formData.query = "";
 			$scope.resultsInTop = false;
-			delete $scope.formData.key_issue;
-			getKeyIssues();
-			setActiveKeyIssue();
+			$scope.getResourcesByType("resource_testimony");
 		};
 	});

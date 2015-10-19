@@ -149,7 +149,8 @@ class MemberHelper
             "Property  / Asset Management",
             "Subcontractors",
             "Suppliers & Misc. Services",
-            "Utilities"
+            "Utilities",
+            "Others"
         );
     }
     

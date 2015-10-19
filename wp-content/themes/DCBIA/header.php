@@ -1,5 +1,4 @@
 <?php
-    use Member\Controller\MemberController;
 use Member\Helper\MemberHelper;
 require_once __DIR__."/helpers/front-page-helper.php";
 ?>
