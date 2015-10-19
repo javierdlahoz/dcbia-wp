@@ -655,7 +655,7 @@ a.member-sort:hover {
   color: #27a9e1 !important;
 }
 textarea.register-form-text-area {
-  min-height: 200px!important;
+  min-height: 100px!important;
 }
 .button2,
 .button3 {
