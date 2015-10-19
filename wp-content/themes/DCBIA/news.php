@@ -30,7 +30,10 @@ get_header();  ?>
         <div class="row">
             <?php foreach ($news as $p): ?>
             <div class="col-sm-4">
-                <a class="image-cover" href=""><img src="" /></a>
+                <a class="image-cover" href=""
+                    <?php if($p->getImage() != ""): ?>
+                        style="background: transparent url(<?php echo $p->getImage(); ?>) no-repeat center center;"
+                    <?php endif; ?>><img src="" /></a>
                 <div class="inside-blog">
                     <h4><?php echo $p->getTitle(); ?></h4>
                     <p><?php echo TextHelper::cropText($p->getContent(), 100); ?></p>
