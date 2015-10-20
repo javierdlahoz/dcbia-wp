@@ -183,9 +183,10 @@ get_header(); ?>
                         <div class="alert alert-success" ng-show="isPacAdded">A $25 PAC HAS BEEN ADDED</div>
                         <div class="button2" ng-click="add()">Add Affiliate</div>
                         <div class="button2" ng-click="addPac()">
-                            <span ng-hide="isPacAdded">ADD 25$ PAC</span>
-                            <span ng-show="isPacAdded">REMOVE 25$ PAC</span>
+                            <span ng-hide="isPacAdded">ADD 25$ Political Action Committee</span>
+                            <span ng-show="isPacAdded">REMOVE 25$ Political Action Committee</span>
                         </div>
+                        <div class="button2">your total: $</div>
                     </div>
                 </div>
                 <div class="col-md-12">
