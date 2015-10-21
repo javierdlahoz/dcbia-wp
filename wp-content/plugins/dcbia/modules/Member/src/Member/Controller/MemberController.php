@@ -22,6 +22,12 @@ class MemberController extends AbstractController{
     
     /**
      * 
+     * @var boolean
+     */
+    private $isNewUser;
+    
+    /**
+     * 
      * @param int $userId
      */
     public function getAdditionalUserIds($userId){
@@ -78,7 +84,7 @@ class MemberController extends AbstractController{
             update_user_meta($mainUserId, self::ADDITIONAL_USERS_ARRAY, $addUserIds);
         }
         
-        return array("message" => "success");
+        return array("message" => "success", "isNewUser" => $this->isNewUser);
     }
     
     
@@ -159,8 +165,10 @@ class MemberController extends AbstractController{
      */
     public function createMember($member, $level = 1, $isMain = false){
         $userId = wp_get_current_user()->ID;
+        $this->isNewUser = false;
         if($userId == 0){
             $userId = wp_create_user($member["email"], $member["password"], $member["email"]);
+            $this->isNewUser = true;
         }
         
         pmpro_changeMembershipLevel($level, $userId);

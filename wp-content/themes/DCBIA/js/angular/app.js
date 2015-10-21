@@ -25,5 +25,16 @@ function getContentTypes() {
 		form: {
 			'Content-Type': 'application/x-www-form-urlencoded'
 		},
+		xml: {
+			'Content-Type': 'application/xml'
+		},
 	};
 }
+
+
+var zohoEnv = {
+	url: "https://crm.zoho.com/crm/private/xml/",
+	authtoken: "22ddae076da1ccb0bcc5b3e9d81ac2fa",
+	version: 2,
+	scope: "crmapi",
+};

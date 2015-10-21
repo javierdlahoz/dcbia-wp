@@ -1,5 +1,5 @@
 angular.module('angular-wp')
-    .controller('MembershipController', function ($scope, $http, $timeout, $rootScope) {
+    .controller('MembershipController', function ($scope, $http, $timeout, $rootScope, ZohoService) {
 
     	$scope.users = {};
     	$scope.c = -1;
@@ -10,6 +10,23 @@ angular.module('angular-wp')
     	$scope.disabledToSend = false;
     	$scope.loading = false;
     	$scope.isPacAdded = false;
+    	$scope.membershipName = "";
+    	
+    	var today = new Date();
+		var dd = today.getDate();
+		var mm = today.getMonth()+1; //January is 0!
+		var yyyy = today.getFullYear();
+
+		if(dd<10) {
+		    dd='0'+dd
+		} 
+		if(mm<10) {
+		    mm='0'+mm
+		} 
+
+		$scope.today = mm+'/'+dd+'/'+yyyy;
+		yyyy = yyyy + 1;
+		$scope.nextYear = mm+'/'+dd+'/'+yyyy;
     	
     	$scope.add = function(){
     		$scope.c ++;
@@ -28,12 +45,67 @@ angular.module('angular-wp')
     		var j = 0;
     		for(var index in $scope.membershipLevels){
     			if(id == $scope.membershipLevels[index].id){
+    				$scope.membershipName = $scope.membershipLevels[index].name;
     				return j; 
     			}
     			j++;
     		}
     		return 0;
+    	};
+    	
+    	getContactsInfo = function(){
+    		var contacts = {};
+    		contacts[0] = {
+    			"First Name": $scope.member.first_name,
+    			"Last Name": $scope.member.last_name,
+    			"Account Name": $scope.member.company_name,
+    			"Role": "Primary",
+    			"Email": $scope.member.email,
+    			"Phone": $scope.member.telephone,
+    			"Membership Level": $scope.membershipName,
+    			"Membership Expiration Date": $scope.nextYear,
+    			"Membership Status": "Active",
+    			"Billing Street": $scope.member.address1 + " " + $scope.member.address2,
+    			"Billing City": $scope.member.city,
+    			"Billing State": $scope.member.state,
+    			"Billing Code": $scope.member.zip
+    		};
+    		
+    		var j = 1;
+    		for(index in $scope.users){
+    			contacts[j] = {
+					"First Name": $scope.users[index].first_name,
+	    			"Last Name": $scope.users[index].last_name,
+	    			"Account Name": $scope.member.company_name,
+	    			"Role": "Affiliate",
+	    			"Email": $scope.users[index].email,
+	    			"Membership Level": $scope.membershipName,
+	    			"Membership Expiration Date": $scope.nextYear,
+	    			"Membership Status": "Active"
+    			};
+    		}
+    		
+    		return contacts;
     	}
+    	
+    	getAccountInfo = function(){
+    		var account = {
+    			"Account Name": $scope.member.company_name,
+    			"Website": $scope.member.company_website,
+    			"Business Categories": $scope.member.business_category,
+    			"Description": $scope.member.company_description,
+    			"Membership Level": $scope.membershipName,
+    			"Member Since": $scope.today,
+    			"Membership Expiration Date": $scope.nextYear,
+    			"Account Status": "Active",
+    			"Billing Street": $scope.member.address1 + " " + $scope.member.address2,
+    			"Billing City": $scope.member.city,
+    			"Billing State": $scope.member.state,
+    			"Billing Code": $scope.member.zip
+    		};
+    		
+    		return account;
+    	};
     	
     	$scope.addPac = function(){
     		$http({
@@ -81,6 +153,11 @@ angular.module('angular-wp')
                 headers: getContentTypes().form
             }).success(function (data) {
             	$scope.isSuccess = true;
+            	console.log(data);
+            	if(data.isNewUser === true){
+            		ZohoService.insertAccount(getAccountInfo(), function(data){});
+                	ZohoService.insertContacts(getContactsInfo(), function(data){});
+            	}
             	window.location = "/checkout";
             });
     	};

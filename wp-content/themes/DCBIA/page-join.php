@@ -15,7 +15,7 @@ get_header(); ?>
 
     <div class="container all-pad-gone register" ng-controller="MembershipController" ng-init="getMembershipLevels(); getCurrentUser()" ng-cloak>
         <div class="row">
-            <form class="" ng-init="initialize()" ng-hide="isSuccess">
+            <form class="" ng-init="initialize()" ng-hide="isSuccess" ng-submit="register()">
                 <div class="col-md-12">
                     <div class="form-group">
                         <h2><?php echo $pageEntity->getTitle(); ?></h2>
@@ -189,7 +189,7 @@ get_header(); ?>
                     </div>
                 </div>
                 <div class="col-md-12">
-                    <button class="button3" ng-disabled="disabledToSend" ng-click="register()">Submit Registration Form</button>
+                    <button class="button3" type="submit" ng-disabled="disabledToSend">Submit Registration Form</button>
                 </div>    
             </form>
         </div> 
