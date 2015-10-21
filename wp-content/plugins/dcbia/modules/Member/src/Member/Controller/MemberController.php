@@ -19,6 +19,10 @@ class MemberController extends AbstractController{
     const PMPPRO_MEMBERSHIP_USERS = "pmpro_memberships_users";
     const UNPAID_LEVEL = 5;
     const PAC_COST = 25;
+    const ZOHO_TOKEN = "22ddae076da1ccb0bcc5b3e9d81ac2fa";
+    const ZOHO_URL = "https://crm.zoho.com/crm/private/";
+    const ZOHO_API_VERSION = 2;
+    const ZOHO_TIMEOUT = 15;
     
     /**
      * 
@@ -233,6 +237,8 @@ class MemberController extends AbstractController{
         update_user_meta($userId, "business_category2", $member["business_category2"]);
         update_user_meta($userId, "membership_total_cost", $_SESSION["amount"]);
         update_user_meta($userId, "tmp_membership_level", $member["membership_level"]);
+        
+        $this->getZohoAccountId($member["company_name"]);
     }
     
     /**
@@ -475,6 +481,26 @@ class MemberController extends AbstractController{
      */
     public function currentAction(){
         return MemberFacade::getSingleton()->formatCurrentUserForRegister();
+    }
+    
+    private function getZohoAccountId($accountName){
+        $accountName = "ZGF Architects LLP";
+        $zohoUrl = self::ZOHO_URL."json/Accounts/searchRecords?authtoken=".self::ZOHO_TOKEN 
+				."&scope=crmapi&wfTrigger=true&version=".self::ZOHO_API_VERSION
+				."&newFormat=1&criteria=(Account Name:".$accountName.")";
+        
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $zohoUrl);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_TIMEOUT, self::ZOHO_TIMEOUT);
+        //curl_setopt($ch, CURLOPT_POST, 1);
+        $response = curl_exec($ch);
+        curl_close($ch);
+        
+        var_dump($response); die();
     }
     
 }
