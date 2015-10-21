@@ -469,8 +469,6 @@ class MemberController extends AbstractController{
         
         $mS->setNumber($userPerPage);
         
-        //var_dump($mS->getArgsArray()); die();
-        
         $users = $mS->getUsers();
         return MemberFacade::getSingleton()->formatResults($users);
     }

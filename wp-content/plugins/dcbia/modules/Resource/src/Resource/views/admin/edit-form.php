@@ -37,7 +37,7 @@ $resourceEntity = dcbia::getEntity("resource");
 		</div>
 	</div>
 	
-	<div class="form-group">
+	<!-- div class="form-group">
 		<label class="control-label col-lg-2 col-sm-2">Key Issues</label>
 		<div class="col-lg-10 col-sm-10">
 			<select class="form-control"
@@ -51,7 +51,7 @@ $resourceEntity = dcbia::getEntity("resource");
 				<?php endforeach; ?>
 			</select>
 		</div>
-	</div>
+	</div -->
 	
 	<div class="form-group">
         <label for="url" class="control-label col-lg-2 col-sm-2">URL</label>
