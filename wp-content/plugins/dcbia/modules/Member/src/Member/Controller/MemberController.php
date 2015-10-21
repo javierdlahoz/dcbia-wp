@@ -20,7 +20,7 @@ class MemberController extends AbstractController{
     const UNPAID_LEVEL = 5;
     const PAC_COST = 25;
     const ZOHO_TOKEN = "22ddae076da1ccb0bcc5b3e9d81ac2fa";
-    const ZOHO_URL = "https://crm.zoho.com/crm/private/";
+    const ZOHO_URL = "http://crm.zoho.com/crm/private/";
     const ZOHO_API_VERSION = 2;
     const ZOHO_TIMEOUT = 15;
     
@@ -488,6 +488,9 @@ class MemberController extends AbstractController{
 				."&newFormat=1&criteria=(Account Name:".$accountName.")";
         
         $ch = curl_init();
+
+        curl_setopt($ch, CURLOPT_AUTOREFERER, TRUE);
+        curl_setopt($ch, CURLOPT_HEADER, 0);
         curl_setopt($ch, CURLOPT_URL, $zohoUrl);
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
