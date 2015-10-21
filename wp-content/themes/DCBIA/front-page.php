@@ -10,7 +10,6 @@ use Sponsor\Controller\SponsorController;
 $stickyNews = NewsController::getSingleton()->getStickyNews();
 $recentNews = NewsController::getSingleton()->getRecentNews();
 $home = dcbia::getController("home")->getHome();
-$featuredIssues = IssueController::getSingleton()->getFeatured();
 
 get_header(); 
 ?>
@@ -43,19 +42,19 @@ get_header();
     <div class="container all-pad-gone">
         <div class="row">
             <div class="col-sm-8 all-pad-gone">
-                <div class="issues">
+<!--                <div class="issues">
                     <div class="col-sm-12">
                         <h2>ISSUES<h2>
                     </div>
                     <br>        
-                    <?php foreach ($featuredIssues as $issue): ?>
+                    <!--?php foreach ($featuredIssues as $issue): ?>
                     <div class="col-sm-6">
-                        <a class="image-cover2" href="<?php echo $issue->getPermalink(); ?>" style="background-image: url(<?php echo $issue->getImage(); ?>)">
-                            <span class="infoblock3 light-blue"><?php echo $issue->getTitle(); ?></span>
+                        <a class="image-cover2" href="<!--?php echo $issue->getPermalink(); ?>" style="background-image: url(<!--?php echo $issue->getImage(); ?>)">
+                            <span class="infoblock3 light-blue"><!--?php echo $issue->getTitle(); ?></span>
                         </a>     
                     </div>
-                    <?php endforeach; ?>
-                </div><!--issues end-->            
+                    <!--?php endforeach; ?>
+                </div>--><!--issues end-->            
                         
             <div class="events">
                 <div class="col-md-12">

@@ -697,6 +697,11 @@ button:disabled {
 button:disabled:hover {
   background-color: #CCCCCC;
 }
+.total-but {
+  background-color: #ffffff !important;
+  color: red !important;
+  font-weight: 700;
+}
 .checkedout ul {
   margin: 0;
   padding: 0;
