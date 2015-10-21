@@ -53,6 +53,24 @@ angular.module('angular-wp')
     		return 0;
     	};
     	
+    	getPaymentInfo = function(){
+    		var paymentInfo = {
+    			"Potential Name": $scope.member.company_name + " " + $scope.today,
+    			"Account Name": $scope.member.company_name,
+    			"Contact Name": $scope.member.first_name + " " + $scope.member.last_name,
+    			"Type": "New Registration",
+    			"Amount": $scope.member.membership_total_cost,
+    			"Closing Date": $scope.today,
+    			"Stage": "Paid",
+    			"Membership Level": getMembershipIndex($scope.member.membership_level),
+    			"Political Action Committee": $scope.member.PAC,
+    			"Weblink": true,
+    			"Number of Affiliates": $scope.member.affiliates.length
+    		};
+    		
+    		return paymentInfo;
+    	};
+    	
     	getContactsInfo = function(){
     		var contacts = {};
     		contacts[0] = {
@@ -262,6 +280,7 @@ angular.module('angular-wp')
             	$scope.billing.status = data.status;
             	$scope.loading = false;
             	if(data.status == true){
+            		ZohoService.insertPayment(getPaymentInfo(), function(data){});
             		$timeout(
             			function(){
             				window.location = "/";

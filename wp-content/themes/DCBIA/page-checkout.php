@@ -44,7 +44,7 @@
 
 <div class="container all-pad-gone checkedout">
     <div class="row">
-    <form ng-controller="MembershipController" id="pmpro_form" class="pmpro_form" ng-submit="charge()" ng-cloak>
+    <form ng-controller="MembershipController" id="pmpro_form" class="pmpro_form" ng-submit="charge()" ng-cloak ng-init="getCurrentUser()">
     <div class="col-md-12">
         <h2 style="margin-bottom:0;">Checkout</h2>
         <?php if($level)

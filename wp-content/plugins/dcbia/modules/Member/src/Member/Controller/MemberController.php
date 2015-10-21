@@ -150,11 +150,13 @@ class MemberController extends AbstractController{
      * @param array $userIds
      */
     private function updateToMembershipLevel($userIds){
-        foreach ($userIds as $userId){
-            pmpro_changeMembershipLevel($this->getStoredMembershipLevel($userId)->id, $userId);
-            if(!empty($userId)){
-                $this->updateExpirationDate($userId);
-            }
+        if($userIds !== null && $userIds !== ""){
+            foreach ($userIds as $userId){
+                pmpro_changeMembershipLevel($this->getStoredMembershipLevel($userId)->id, $userId);
+                if(!empty($userId)){
+                    $this->updateExpirationDate($userId);
+                }
+            }   
         }
     }
     
@@ -198,6 +200,11 @@ class MemberController extends AbstractController{
      */
     private function setAdditionalInfoToUser($userId, $member)
     {
+        $pac = false;
+        if($_SESSION["pac"] === true){
+            $pac = true;
+        }
+        
         update_user_meta($userId, "address1", $member["address1"]);
         update_user_meta($userId, "address2", $member["address2"]);
         update_user_meta($userId, "address3", $member["address3"]);
@@ -214,7 +221,7 @@ class MemberController extends AbstractController{
         update_user_meta($userId, "committee1"          , $member["committee1"]);
         update_user_meta($userId, "committee2"          , $member["committee2" ]);
         update_user_meta($userId, "membership_type"     , $member["membership_type"]);
-        update_user_meta($userId, "PAC"                 , $member["PAC"]);
+        update_user_meta($userId, "PAC"                 , $pac);
         update_user_meta($userId, "payment_weblink"     , $member["payment_weblink"]);
         update_user_meta($userId, "affilates_number"    , $member["affilates_number"]);
         update_user_meta($userId, "total_amount"        , $member["total_amount"]);
