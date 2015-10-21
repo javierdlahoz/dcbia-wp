@@ -106,7 +106,7 @@ angular.module('angular-wp')
     		return contacts;
     	}
     	
-    	getAccountInfo = function(){
+    	getAccountInfo = function(callback){
     		var account = {
     			"Account Name": $scope.member.company_name,
     			"Website": $scope.member.company_website,
@@ -122,7 +122,12 @@ angular.module('angular-wp')
     			"Billing Code": $scope.member.zip
     		};
     		
-    		return account;
+    		ZohoService.getAccount($scope.member.company_name, 
+    			function(data){
+    				console.log(data);
+    				return callback(account);
+    			}
+    		);
     	};
     	
     	$scope.addPac = function(){
@@ -171,12 +176,7 @@ angular.module('angular-wp')
                 headers: getContentTypes().form
             }).success(function (data) {
             	$scope.isSuccess = true;
-            	console.log(data);
-            	if(data.isNewUser === true){
-            		ZohoService.insertAccount(getAccountInfo(), function(data){});
-                	ZohoService.insertContacts(getContactsInfo(), function(data){});
-            	}
-            	window.location = "/checkout";
+            	//window.location = "/checkout";
             });
     	};
     	
@@ -271,6 +271,7 @@ angular.module('angular-wp')
     		$scope.billing.country = "US";
     		$scope.billing.isRenewal = localStorage.isRenewal;
     		var url = "/api/member/pay";
+    		
     		$http({
                 url: url,
                 method: "POST",
@@ -280,10 +281,12 @@ angular.module('angular-wp')
             	$scope.billing.status = data.status;
             	$scope.loading = false;
             	if(data.status == true){
+            		ZohoService.insertAccount(getAccountInfo(), function(data){});
+                	ZohoService.insertContacts(getContactsInfo(), function(data){});
             		ZohoService.insertPayment(getPaymentInfo(), function(data){});
             		$timeout(
             			function(){
-            				window.location = "/";
+            				//window.location = "/";
             			}, 
             			5000
             		);

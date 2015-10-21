@@ -64,5 +64,30 @@ angular.module('angular-wp')
 				
 			},
 			
+			getAccount: function(accountName, callback){				
+				var url = "https://crm.zoho.com/crm/private/json/" + "Accounts/searchRecords?authtoken=" + zohoEnv.authtoken 
+				+ "&scope=" + zohoEnv.scope + "&wfTrigger=true&version=" + zohoEnv.version
+				+ "&newFormat=1&criteria=(Account Name:"+accountName+")"; 
+				
+				console.log(url);
+				
+				$http.jsonp(url).success(function (data){
+					return callback(data);
+				});
+			},
+			
+			getContact: function(email, callback){				
+				var url = "https://crm.zoho.com/crm/private/json/" + "Contacts/searchRecords?authtoken=" + zohoEnv.authtoken 
+				+ "&scope=" + zohoEnv.scope + "&wfTrigger=true&version=" + zohoEnv.version
+				+ "&newFormat=1&criteria=(Email:"+email+")"; 
+				$http({
+					url: url,
+					method: "POST",
+					dataType:'jsonp'
+				}).success(function (data){
+					return callback(data);
+				});
+			},
+			
 		};
 	});
