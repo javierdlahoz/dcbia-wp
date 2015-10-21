@@ -85,9 +85,9 @@ $pageEntity = new PostEntity(get_the_ID());
                     </div>    
                 </div>
            
-                <div class="row key-results" ng-hide="isTypeSearch">
+                <div class="row key-results">
                     <div class="col-md-12 top-key-nav">
-                        <p>Category Results:</p>
+                        <button class="button3" type="submit">Sort by Year</button>
                     </div>    
                 </div>
                 
@@ -107,7 +107,8 @@ $pageEntity = new PostEntity(get_the_ID());
                             <p><i class="fa fa-bookmark-o"></i></p>
                         </div>
                         <div class="col-sm-9 col-sm-offset-1 key-info">
-                            <h5>{{resource.title}}</h5>  
+                            <h5>{{resource.title}}</h5>
+                            <p>Original Date of Post</p>
                             <p>{{resource.limitedContent}}</p>
                             
                             <a class="button1" ng-show="resource.file_url == ''" href="{{resource.url}}">More Information</a>
