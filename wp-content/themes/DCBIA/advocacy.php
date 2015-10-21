@@ -87,8 +87,8 @@ $pageEntity = new PostEntity(get_the_ID());
            
                 <div class="row key-results">
                     <div class="col-md-12 top-key-nav">
-                        <button class="button2" type="submit">Sort by Date</button>
-                        <button class="button2" type="submit">Sort by Title</button>
+                        <button class="button2" type="submit" id="sort-date" ng-click="setOrderBy('date')">Sort by Date</button>
+                        <button class="button2" type="submit" id="sort-title" ng-click="setOrderBy('title')">Sort by Title</button>
                     </div>    
                 </div>
                 

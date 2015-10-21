@@ -23,6 +23,19 @@ angular.module('angular-wp')
 			);
 		};
 		
+		$scope.setOrderBy = function(orderby){
+			$scope.formData.orderby = orderby;
+			angular.element(".button2").removeClass("advocacy-active");
+			
+			if(orderby == "date"){
+				angular.element("#sort-date").addClass("advocacy-active");
+			}
+			else{
+				angular.element("#sort-title").addClass("advocacy-active");
+			}
+			getResources();
+		};
+		
 		getKeyIssues = function(){
 			$scope.loading = true;
 			$scope.resources = {};
