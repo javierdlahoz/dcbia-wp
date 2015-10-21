@@ -48,6 +48,11 @@ get_header(); ?>
                             <div class="btn button2" ng-click="remove(user.id)">Remove Affiliate</div>
                         </div>
                         <div class="btn button2" ng-click="add()">Add Affiliate</div>
+                        <div class="button2" ng-click="addPac()">
+                            <span ng-hide="isPacAdded">ADD 25$ Political Action Committee</span>
+                            <span ng-show="isPacAdded">REMOVE 25$ Political Action Committee</span>
+                        </div>
+                        <div class="button3 total-but">your total: ${{totalCost}}</div>
                     </div>
                 </div>
                 <br>

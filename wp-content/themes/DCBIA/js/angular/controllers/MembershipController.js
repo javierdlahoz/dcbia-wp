@@ -11,6 +11,9 @@ angular.module('angular-wp')
     	$scope.loading = false;
     	$scope.isPacAdded = false;
     	$scope.membershipName = "";
+    	$scope.totalCost = 0;
+    	var pacCost = 25;
+    	$scope.membershipCost = 0;
     	
     	var today = new Date();
 		var dd = today.getDate();
@@ -130,12 +133,22 @@ angular.module('angular-wp')
     		);
     	};
     	
+    	getTotalCost = function(){
+    		if($scope.isPacAdded == true){
+        		$scope.totalCost = parseFloat($scope.membershipCost) + pacCost;
+        	}
+        	else{
+        		$scope.totalCost = parseFloat($scope.membershipCost);
+        	}
+    	};
+    	
     	$scope.addPac = function(){
     		$http({
                 url: "/api/member/addPac",
                 method: "GET"
             }).success(function (data) {
             	$scope.isPacAdded = data.pac;
+            	getTotalCost();
             });
     	};
     	
@@ -145,6 +158,7 @@ angular.module('angular-wp')
                 method: "GET"
             }).success(function (data) {
             	$scope.isPacAdded = data.pac;
+            	getTotalCost();
             });
     	};
     	
@@ -193,6 +207,7 @@ angular.module('angular-wp')
     	$scope.setMembershipCost = function(){
     		var index = getMembershipIndex($scope.member.membership_level);
     		$scope.membershipCost = $scope.membershipLevels[index].initial_payment;
+    		getTotalCost();
     	};
     	
     	$scope.getAdditionalUsers = function(){

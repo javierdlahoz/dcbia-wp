@@ -186,7 +186,7 @@ get_header(); ?>
                             <span ng-hide="isPacAdded">ADD 25$ Political Action Committee</span>
                             <span ng-show="isPacAdded">REMOVE 25$ Political Action Committee</span>
                         </div>
-                        <div class="button3 total-but">your total: $</div>
+                        <div class="button3 total-but">your total: ${{totalCost}}</div>
                     </div>
                 </div>
                 <div class="col-md-12">
