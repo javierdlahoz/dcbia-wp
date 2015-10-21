@@ -71,6 +71,11 @@ angular.module('angular-wp')
     			"Number of Affiliates": $scope.member.affiliates.length
     		};
     		
+    		if($scope.member.account_id != ""){
+    			paymentInfo["ACCOUNTID"] = $scope.member.account_id;
+    			paymentInfo["Type"] = "Renewal";
+    		}
+    		
     		return paymentInfo;
     	};
     	
@@ -83,6 +88,7 @@ angular.module('angular-wp')
     			"Role": "Primary",
     			"Email": $scope.member.email,
     			"Phone": $scope.member.telephone,
+    			"Business Categories": $scope.member.business_category,
     			"Membership Level": $scope.membershipName,
     			"Membership Expiration Date": $scope.nextYear,
     			"Membership Status": "Active",
@@ -92,24 +98,41 @@ angular.module('angular-wp')
     			"Billing Code": $scope.member.zip
     		};
     		
+    		if($scope.member.contact_id != ""){
+    			contacts[0]["CONTACTID"] = $scope.member.contact_id; 
+    		}
+    		if($scope.member.account_id != ""){
+    			contacts[0]["CONTACTID"] = $scope.member.account_id; 
+    		}
+    		
     		var j = 1;
     		for(index in $scope.users){
     			contacts[j] = {
 					"First Name": $scope.users[index].first_name,
 	    			"Last Name": $scope.users[index].last_name,
 	    			"Account Name": $scope.member.company_name,
+	    			"Business Categories": $scope.member.business_category,
 	    			"Role": "Affiliate",
 	    			"Email": $scope.users[index].email,
 	    			"Membership Level": $scope.membershipName,
 	    			"Membership Expiration Date": $scope.nextYear,
 	    			"Membership Status": "Active"
     			};
+    			
+    			if($scope.users[index].contact_id != ""){
+        			contacts[j]["CONTACTID"] = $scope.users[index].contact_id; 
+        		}
+        		if($scope.member.account_id != ""){
+        			contacts[j]["CONTACTID"] = $scope.member.account_id; 
+        		}
     		}
-    		
+    		console.log(contacts);
     		return contacts;
     	}
     	
-    	getAccountInfo = function(callback){
+    	getAccountInfo = function(){
+    		getMembershipIndex($scope.member.membership_level);
+    		
     		var account = {
     			"Account Name": $scope.member.company_name,
     			"Website": $scope.member.company_website,
@@ -122,15 +145,17 @@ angular.module('angular-wp')
     			"Billing Street": $scope.member.address1 + " " + $scope.member.address2,
     			"Billing City": $scope.member.city,
     			"Billing State": $scope.member.state,
-    			"Billing Code": $scope.member.zip
+    			"Billing Code": $scope.member.zip,
+    			"Phone": $scope.member.telephone,
+    			"Account Type": "Member"
     		};
     		
-    		ZohoService.getAccount($scope.member.company_name, 
-    			function(data){
-    				console.log(data);
-    				return callback(account);
-    			}
-    		);
+    		if($scope.member.account_id != ""){
+    			account["ACCOUNTID"] = $scope.member.account_id; 
+    		}
+    		
+    		console.log(account);
+    		return account;
     	};
     	
     	getTotalCost = function(){
@@ -190,7 +215,7 @@ angular.module('angular-wp')
                 headers: getContentTypes().form
             }).success(function (data) {
             	$scope.isSuccess = true;
-            	//window.location = "/checkout";
+            	window.location = "/checkout";
             });
     	};
     	
@@ -297,11 +322,17 @@ angular.module('angular-wp')
             	$scope.loading = false;
             	if(data.status == true){
             		ZohoService.insertAccount(getAccountInfo(), function(data){});
-                	ZohoService.insertContacts(getContactsInfo(), function(data){});
-            		ZohoService.insertPayment(getPaymentInfo(), function(data){});
+            		$timeout(
+                			function(){
+                				ZohoService.insertContacts(getContactsInfo(), function(data){});
+                        		ZohoService.insertPayment(getPaymentInfo(), function(data){});
+                			}, 
+                		2000
+                	);
+            		
             		$timeout(
             			function(){
-            				//window.location = "/";
+            				window.location = "/";
             			}, 
             			5000
             		);

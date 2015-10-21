@@ -238,7 +238,11 @@ class MemberController extends AbstractController{
         update_user_meta($userId, "membership_total_cost", $_SESSION["amount"]);
         update_user_meta($userId, "tmp_membership_level", $member["membership_level"]);
         
-        $this->getZohoAccountId($member["company_name"]);
+        $accountId = $this->getZohoAccountId($member["company_name"]);
+        update_user_meta($userId, "account_id", $accountId);
+        
+        $contactId = $this->getZohoContactId($member["email"]);
+        update_user_meta($userId, "contact_id", $contactId);
     }
     
     /**
@@ -481,8 +485,12 @@ class MemberController extends AbstractController{
         return MemberFacade::getSingleton()->formatCurrentUserForRegister();
     }
     
-    private function getZohoAccountId($accountName){
-        $accountName = "ZGF Architects LLP";
+    /**
+     * 
+     * @param string $accountName
+     * @return string
+     */
+    public function getZohoAccountId($accountName){
         $zohoUrl = self::ZOHO_URL."json/Accounts/searchRecords?authtoken=".self::ZOHO_TOKEN 
 				."&scope=crmapi&wfTrigger=true&version=".self::ZOHO_API_VERSION
 				."&newFormat=1&criteria=(Account Name:".$accountName.")";
@@ -497,11 +505,49 @@ class MemberController extends AbstractController{
         curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($ch, CURLOPT_TIMEOUT, self::ZOHO_TIMEOUT);
-        //curl_setopt($ch, CURLOPT_POST, 1);
-        $response = curl_exec($ch);
+        $response = json_decode(curl_exec($ch));
         curl_close($ch);
         
-        var_dump($response); die();
+        if(!isset($response->response->nodata)){
+            $accountId = $response->response->result->Accounts->row->FL[0]->content;
+        }
+        else{
+            $accountId = "";
+        }
+        return $accountId;
+    }
+    
+    /**
+     * 
+     * @param string $email
+     * @return string
+     */
+    public function getZohoContactId($email){
+        $zohoUrl = self::ZOHO_URL."json/Contacts/searchRecords?authtoken=".self::ZOHO_TOKEN
+        ."&scope=crmapi&wfTrigger=true&version=".self::ZOHO_API_VERSION
+        ."&newFormat=1&criteria=(Email:".$email.")";
+    
+        $ch = curl_init();
+    
+        curl_setopt($ch, CURLOPT_AUTOREFERER, TRUE);
+        curl_setopt($ch, CURLOPT_HEADER, 0);
+        curl_setopt($ch, CURLOPT_URL, $zohoUrl);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_TIMEOUT, self::ZOHO_TIMEOUT);
+        $response = json_decode(curl_exec($ch));
+        curl_close($ch);
+    
+        if(!isset($response->response->nodata)){
+            $contactId = $response->response->result->Contacts->row->FL[0]->content;
+        }
+        else{
+            $contactId = "";
+        }
+        
+        return $contactId;
     }
     
 }

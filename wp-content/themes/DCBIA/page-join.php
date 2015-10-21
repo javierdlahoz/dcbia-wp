@@ -94,7 +94,7 @@ get_header(); ?>
                     
                     <div class="form-group">
                       <label>Company Name</label>
-                      <input type="text" class="form-control" placeholder="Company Name" ng-model="member.company_name">
+                      <input type="text" class="form-control" placeholder="Company Name" ng-model="member.company_name" required>
                     </div>
                         
                     <div class="form-group">
@@ -136,7 +136,7 @@ get_header(); ?>
                     </div>
                     <div class="form-group">
                       <label>Phone</label>
-                      <input type="number" class="form-control" placeholder="Telephone" ng-model="member.telephone">
+                      <input type="text" class="form-control" placeholder="Telephone" ng-model="member.telephone">
                     </div>
                     <div class="form-group">
                       <label><h4>Description for member directory</h4></label>
