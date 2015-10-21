@@ -48,7 +48,8 @@ class ResourceHelper
         return array(
             "comments_and_regulations" => "Comments and Regulations",
             "budget_oversight" => "Budget Oversight Hearing",
-            "resolution" => "Resolution"
+            "resolution" => "Resolution",
+            "other" => "Other"
         );
     }
     
