@@ -12,8 +12,6 @@ angular.module('angular-wp')
 					+ "&newFormat=1" 
 					+ "&xmlData=" + xmlData;
 				
-				console.log(url);
-				
 				$http({
 					url: url,
 					method: "GET"
@@ -36,8 +34,27 @@ angular.module('angular-wp')
 				xmlData += "</Contacts>";
 				url += "&xmlData=" + xmlData;
 				
-				console.log(url);
+				$http({
+					url: url,
+					method: "GET"
+				}).success(function (data){
+					return callback(data);
+				});
 				
+			},
+			
+			insertPayment: function(payment, callback){				
+				var url = zohoEnv.url + "Potentials/insertRecords?authtoken=" + zohoEnv.authtoken 
+				+ "&scope=" + zohoEnv.scope + "&wfTrigger=true&version=" + zohoEnv.version
+				+ "&newFormat=1"; 
+
+				var xmlData = "<Potentials>";
+				xmlData += ZohoConverter.jsonToXML(payment, 1);
+				xmlData += "</Potentials>";
+				
+				url += "&xmlData=" + xmlData;
+				
+				console.log(url);
 				$http({
 					url: url,
 					method: "GET"

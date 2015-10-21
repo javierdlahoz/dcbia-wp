@@ -6,7 +6,7 @@ var ZohoConverter = {
 		var xml = '<row no="' + row + '">';
 		for(var index in jsonObject){
 			var value = "";
-			if(jsonObject[index] !== undefined && jsonObject[index] !== ""){
+			if(typeof jsonObject[index] === "string"){
 				value = jsonObject[index].replace("&", "and");
 				value = value.replace(/#/g, " ");
 			}
