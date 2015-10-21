@@ -87,7 +87,8 @@ $pageEntity = new PostEntity(get_the_ID());
            
                 <div class="row key-results">
                     <div class="col-md-12 top-key-nav">
-                        <button class="button3" type="submit">Sort by Year</button>
+                        <button class="button2" type="submit">Sort by Date</button>
+                        <button class="button2" type="submit">Sort by Title</button>
                     </div>    
                 </div>
                 
@@ -108,7 +109,7 @@ $pageEntity = new PostEntity(get_the_ID());
                         </div>
                         <div class="col-sm-9 col-sm-offset-1 key-info">
                             <h5>{{resource.title}}</h5>
-                            <p>Original Date of Post</p>
+                            <p><b>{{resource.date}}</b></p>
                             <p>{{resource.limitedContent}}</p>
                             
                             <a class="button1" ng-show="resource.file_url == ''" href="{{resource.url}}">More Information</a>
