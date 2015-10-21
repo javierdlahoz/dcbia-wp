@@ -697,6 +697,9 @@ button:disabled {
 button:disabled:hover {
   background-color: #CCCCCC;
 }
+.advocacy-active {
+  background-color: #27a9e1 !important;
+}
 .total-but {
   background-color: #ffffff !important;
   color: red !important;
