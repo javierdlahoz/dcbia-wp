@@ -3,7 +3,6 @@ angular.module('angular-wp')
 
 		return{
 			insertAccount: function(account, callback){
-				console.log(account);
 				if(account["ACCOUNTID"] !== undefined && account["ACCOUNTID"] != ""){
 					this.updateAccount(account["ACCOUNTID"], 
 							account, 
@@ -39,7 +38,6 @@ angular.module('angular-wp')
 				var xmlData = "<Contacts>";
 				var row = 1;
 				for(index in members){
-					console.log(members[index]);
 					if(members[index]["CONTACTID"] !== undefined && members[index]["CONTACTID"] != ""){
 						this.updateContact(members[index]["CONTACTID"], 
 								members[index], 
@@ -75,8 +73,6 @@ angular.module('angular-wp')
 				xmlData += "</Potentials>";
 				
 				url += "&xmlData=" + xmlData;
-				
-				console.log(url);
 				$http({
 					url: url,
 					method: "GET"
@@ -90,8 +86,6 @@ angular.module('angular-wp')
 				var url = "https://crm.zoho.com/crm/private/json/" + "Accounts/searchRecords?authtoken=" + zohoEnv.authtoken 
 				+ "&scope=" + zohoEnv.scope + "&wfTrigger=true&version=" + zohoEnv.version
 				+ "&newFormat=1&criteria=(Account Name:"+accountName+")"; 
-				
-				console.log(url);
 				
 				$http.jsonp(url).success(function (data){
 					return callback(data);

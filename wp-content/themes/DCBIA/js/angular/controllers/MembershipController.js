@@ -332,7 +332,7 @@ angular.module('angular-wp')
             		
             		$timeout(
             			function(){
-            				//window.location = "/";
+            				window.location = "/";
             			}, 
             			5000
             		);
