@@ -3,6 +3,17 @@ angular.module('angular-wp')
 
 		return{
 			insertAccount: function(account, callback){
+				console.log(account);
+				if(account["ACCOUNTID"] !== undefined && account["ACCOUNTID"] != ""){
+					this.updateAccount(account["ACCOUNTID"], 
+							account, 
+							function(data){
+								return callback(data);
+							}
+					);
+					return callback(false);
+				}
+				
 				var xmlData = "<Accounts>";
 				xmlData += ZohoConverter.jsonToXML(account, 1);
 				xmlData += "</Accounts>";
@@ -28,8 +39,19 @@ angular.module('angular-wp')
 				var xmlData = "<Contacts>";
 				var row = 1;
 				for(index in members){
-					xmlData += ZohoConverter.jsonToXML(members[index], row);
-					row++;
+					console.log(members[index]);
+					if(members[index]["CONTACTID"] !== undefined && members[index]["CONTACTID"] != ""){
+						this.updateContact(members[index]["CONTACTID"], 
+								members[index], 
+								function(data){
+							
+								}
+						);
+					}
+					else{
+						xmlData += ZohoConverter.jsonToXML(members[index], row);
+						row++;
+					}
 				}
 				xmlData += "</Contacts>";
 				url += "&xmlData=" + xmlData;
@@ -87,6 +109,42 @@ angular.module('angular-wp')
 				}).success(function (data){
 					return callback(data);
 				});
+			},
+			
+			updateAccount: function(accountId, account, callback){
+				var xmlData = "<Accounts>";
+				xmlData += ZohoConverter.jsonToXML(account, 1);
+				xmlData += "</Accounts>";
+				
+				var url = zohoEnv.url + "Accounts/updateRecords?authtoken=" + zohoEnv.authtoken 
+				+ "&scope=" + zohoEnv.scope + "&wfTrigger=true&version=" + zohoEnv.version
+				+ "&newFormat=1" + "&id=" + accountId
+				+ "&xmlData=" + xmlData;
+				
+				$http({
+					url: url,
+					method: "GET"
+				}).success(function (data){
+					return callback(data);
+				});
+			},
+			
+			updateContact: function(contactId, contact, callback){
+				var xmlData = "<Contacts>";
+				xmlData += ZohoConverter.jsonToXML(contact, 1);
+				xmlData += "</Contacts>";
+				
+				var url = zohoEnv.url + "Contacts/updateRecords?authtoken=" + zohoEnv.authtoken 
+				+ "&scope=" + zohoEnv.scope + "&wfTrigger=true&version=" + zohoEnv.version
+				+ "&newFormat=1" + "&id=" + contactId
+				+ "&xmlData=" + xmlData; 
+				
+				$http({
+					url: url,
+					method: "GET"
+				}).success(function (data){
+					return callback(data);
+				});	
 			},
 			
 		};
