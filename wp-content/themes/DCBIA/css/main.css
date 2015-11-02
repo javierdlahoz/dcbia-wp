@@ -266,10 +266,11 @@ a.back-to-top:hover {
   padding: 35px;
   background-color: #000000;
 }
-.quoter h2 {
+.quoter h3 {
   color: #ffffff !important;
   font-weight: 300!important;
   margin: 0;
+  line-height: 1.4;
 }
 .quoter p {
   color: #ffffff !important;
