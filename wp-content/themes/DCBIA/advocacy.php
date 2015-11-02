@@ -10,15 +10,11 @@ $keyIssues = ResourceHelper::getKeyIssues();
 $headings = IssueController::getSingleton()->getHeadings();
 $pageEntity = new PostEntity(get_the_ID());
 //var_dump($headings[0]->getName()); die();
-
 ?>
 <div class="container all-pad-gone">
     <?php echo do_shortcode('[slideshow group="advocacy"]'); ?>
     <?php echo getTopMenu(); ?>     
 </div> 
-
-<!--start main content here-->
-
 <div class="container all-pad-gone" ng-controller="ResourceController" ng-init="initial()">
     <div class="row">
         <div class="col-md-12 advocacy">   
@@ -26,7 +22,6 @@ $pageEntity = new PostEntity(get_the_ID());
             <p><?php echo $pageEntity->getContent(); ?></p>    
         </div>    
     </div>
-
     <div class="row">
         <div class="col-md-12 key-issues-container">
                 <div class="key-top-search">
@@ -35,8 +30,7 @@ $pageEntity = new PostEntity(get_the_ID());
                         <button class="btn advo-search-btn" type="button" ng-click="searchOnlyInText()">Submit</button>
                     </form>
                 </div>
-                <p>&nbsp;</p>
-                
+            <br>
                 <div ng-show="resultsInTop">
                     <div ng-show="resources.length == 0" ng-cloak>
                         <h2>No results were found</h2>

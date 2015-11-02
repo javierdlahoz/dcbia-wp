@@ -302,7 +302,7 @@ a.back-to-top:hover {
 }
 .news-block p {
   color: #ffffff;
-  font-weight: 600;
+  font-weight: 400;
 }
 .news-block p.news-date {
   color: #000000;
@@ -379,9 +379,8 @@ a.back-to-top:hover {
   display: inline-block;
   width: 100%;
   font-size: 21px;
-  height: 350px;
+  height: auto;
   position: relative;
-  margin-bottom: 15px;
 }
 .key-issue-boxes a:hover {
   background-color: #27a9e1;
@@ -389,13 +388,13 @@ a.back-to-top:hover {
   text-decoration: none;
 }
 .key-issue-boxes a span {
-  height: 75px;
+  height: auto;
   display: block;
 }
 .key-issue-boxes a i {
   font-size: 72px;
   display: block;
-  margin: 50px 0 20px 0;
+  margin: 20px 0 20px 0;
 }
 .key-issue-boxes a i.arrowed {
   position: relative;

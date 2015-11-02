@@ -1,5 +1,3 @@
-// Start css/less here
-
 body{
     font-size: @font-size-base;
     text-rendering: optimizeLegibility !important;
@@ -7,7 +5,7 @@ body{
     text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
     font-family: @font-family-google-font;
     color: @grey-darkest;
-        -webkit-font-smoothing: antialiased;
+    -webkit-font-smoothing: antialiased;
     text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
     padding: 0;
     background-color: @body-bg;
@@ -19,49 +17,39 @@ body{
 	min-height:100%;
 	position:relative;
 }
-
 h1, h2, h3, h4, h5, h6 {
     font-weight:700 !important;
     color: @grey-dcbia !important;
     text-transform: uppercase;
 }
-
 h2{
     color: @light-blue !important;
 }
-
 .text a:hover{
     text-decoration: none!important;
 }
-
 * {
   box-sizing: border-box;
 }
-
 ul li, ol li { font-size: 14px; }
-
 a { 
     cursor: pointer; 
 }
-
 p {
     font-size: 16px;
     line-height: 1.6em;
 }
-
 header{ 
     height: auto;
     background-color: @body-bg;
 }
 
 // define site colors
-
 .red { background-color:@red; }
 .orange { background-color: @orange; }
 .grey { background-color: @dcbia-grey; }
 .light-blue { background-color: @light-blue; }
 .offblack { background-color: @offblack; }
-
 a.back-to-top{
     display: none;
     text-transform: uppercase;
@@ -75,7 +63,6 @@ a.back-to-top{
     z-index: 100;
     &:hover{ text-decoration: none; color: #878a8c; }
 }
-
 // background image styles
 
 .image-cover{
@@ -104,7 +91,6 @@ a.back-to-top{
     height: 220px;
     margin-top: 10px;
 }
-
 // FEATURED
 
 .featured, .issues{
@@ -136,8 +122,7 @@ a.back-to-top{
         text-align: center;
     }
 }
-
-    .email-sign-up{
+.email-sign-up{
         padding:15px;
         & h3{
             color: #ffffff !important;
@@ -156,7 +141,6 @@ a.back-to-top{
             }
         }
     }
-
 .issues{
     & h2 { display: table; margin: 0!important; } 
     & img{ max-height: 220px; }
@@ -199,7 +183,6 @@ a.back-to-top{
        color: #ffffff;  
     }
 }
-
 // Events
 
 .events{
@@ -208,14 +191,12 @@ a.back-to-top{
         margin-top: 0 !important;
     }
 }
-
 #tribe-events{
     .about{
         & h1{ margin: 0 !important; }
         & h2{ margin: 5px 0 0 0 !important; font-size: 18px !important; }
     }
 }
-
 .right-pad-gone{
     padding-right: 0 !important;
 }
@@ -230,51 +211,41 @@ a.back-to-top{
     padding-left: 20px !important; 
     padding-right: 20px !important; 
 }
-
 // circle js styles
 
 .circliful {
     position: relative;
     display: inline-block;
 }
-
 .circle-text, .circle-info, .circle-text-half, .circle-info-half {
     width: 100%;
     position: absolute;
     text-align: center;
     display: inline-block;
 }
-
 .circle-info, .circle-info-half {
 	color: #999;
 }
-
 .circliful .fa {
 	margin: -10px 3px 0 3px;
 	position: relative;
 	bottom: 4px;
 }
-
 // industry
-
 .industry{
     display: block;
     & p {
         font-size: 16px;
     }
 }
-
 // quote
-
 .quoter{
     padding: 35px;
     background-color: #000000;
-    & h2{ color: #ffffff !important; font-weight: 300!important; margin: 0; }
+    & h3 { color: #ffffff !important; font-weight: 300!important; margin: 0; line-height: 1.4; }
     & p{ color: #ffffff !important; font-size: 16px!important; margin: 20px 0; }
 }
-
 // news
-
 .news{
     & h3{
         padding: 15px;
@@ -292,12 +263,10 @@ a.back-to-top{
             text-decoration: none;
             color: @offblack !important;
         } }
-        & p { color: #ffffff; font-weight: 600; }
+        & p { color: #ffffff; font-weight: 400; }
         & p.news-date { color: #000000; font-weight: 400; }
         & a { color: #ffffff!important; font-size: 15px; }
 }
-
-
 // sponsors
 
 .sponsor-box-sidebar{
@@ -308,7 +277,6 @@ a.back-to-top{
         margin: 0 auto;
     }
 }
-
 .sonsors-lower-box{
     margin-top: 10px;
     display: block;
@@ -323,7 +291,6 @@ a.back-to-top{
 }
 
 // advocacy
-
 .advocacy{
     & h2{
         color: @light-blue !important;
@@ -340,7 +307,6 @@ a.back-to-top{
     display: block;
     overflow: auto;
 }
-
 #advocacy-search{
     background-color: #f7f7f7;
     padding: 12px;
@@ -373,19 +339,18 @@ a.back-to-top{
         display: inline-block;
         width: 100%;
         font-size: 21px;
-        height: 350px;
+        height: auto;
         position: relative;
-        margin-bottom: 15px;
         &:hover{
             background-color: @light-blue;
             color: #ffffff;
             text-decoration: none;
         }
-        & span { height: 75px; display: block; }
+        & span { height: auto; display: block; }
         & i {
             font-size: 72px;
             display: block;
-            margin: 50px 0 20px 0;
+            margin: 20px 0 20px 0;
             &.arrowed{
                 position: relative;
                 bottom: 5%;
@@ -394,7 +359,6 @@ a.back-to-top{
         }
     }
 }
-
 .top-key-nav{
     & p {
         color: @offblack;
@@ -427,17 +391,14 @@ a.back-to-top{
         }
     }
 }
-
 .lower-key-results{
     display: block;
     margin: 30px 0;
     overflow: auto;
 }
-
 @media (min-width: 768px){
     .col-sm-offset-1{ margin-left: 3%!important; }
 }
-
 .bookmark-box{
     background-color: @orange;
     overflow: auto;
@@ -451,7 +412,6 @@ a.back-to-top{
         text-align: center;
     }
 }
-
 .key-info{
     & h5{
         color: @light-blue!important;
@@ -486,7 +446,6 @@ a.back-to-top{
     color: #ffffff;
     text-decoration: none;
 }
-
 // member-directory
 
 .member-top-searchbar{
@@ -506,7 +465,6 @@ a.back-to-top{
     font-size: 15px;
     color: #ffffff;
 }
-
 @media ( max-width: 992px){
     #member-search{
         width: 90%;
@@ -522,7 +480,6 @@ a.back-to-top{
         width: 86%;
     }
 }
-
 input#member-search::-webkit-input-placeholder {
    color: #ffffff;
 }
@@ -538,7 +495,6 @@ input#member-search::-moz-placeholder {  /* Firefox 19+ */
 input#member-search:-ms-input-placeholder {  
    color: #ffffff;  
 }
-
 .member-search-btn{
     color: #ffffff;
     font-size: 18px;
@@ -550,7 +506,6 @@ input#member-search:-ms-input-placeholder {
     vertical-align: top;
     margin-left: -4px !important;
 }
-
 .search-titles{
     color: #ffffff;
     font-size: 15px;
@@ -680,7 +635,6 @@ textarea.register-form-text-area{
     display: block;
     border: 0!important;
 }
-
 .button3 [disabled=disabled], button:disabled{
     width: 300px;
     margin: 25px auto 15px auto;
@@ -740,9 +694,8 @@ textarea.register-form-text-area{
     form.pmpro_form select {
     margin: 0;
     font-size: inherit;
+ }
 }
-}
-
 .new-select-checkout{
     height: 34px !important;
     width: 100%;
@@ -757,19 +710,16 @@ textarea.register-form-text-area{
 	background-color: @dcbia-grey;
 	color: white;
 }
-
 .business-categories.active{
 	font-weight: bold;
 	text-decoration: none;
 }
-
 // Footer styles here
 
 .foot-break{
     display: block;
     overflow: auto;
 }
-
 footer{
     padding:0 15px;
     padding-top: 25px;
@@ -799,7 +749,6 @@ footer{
             }
         }
     }
-    
     & .col-md-4 { padding: 0 30px 10px 40px; border-right: 1px solid #ecebe8; min-height: 240px; }
     & .no-border { border: 0 !important; }
     & .social-icons{
@@ -811,13 +760,11 @@ footer{
         }
     }
 }
-
 // video code
 
 .videowrapper iframe, .videowrapper{
     min-height: 420px;
 }
-
 .videowrapper {
     float: none;
     clear: both;
@@ -839,7 +786,6 @@ footer{
 }
 
 // login page, editme, password-recovery, and renewal
-
 #wppb-edit-user, #wppb-recover-password{
       & #edit_profile{
         background-color: @offblack;
@@ -878,7 +824,6 @@ footer{
         }
     }
 }
-
 .wppb-logout-url, #wppb-recover-password-button{
     display: block;
     margin-top: 25px;
@@ -897,7 +842,6 @@ footer{
         background-color: @dcbia-grey;
     }
 }
-
 .renewal{
     & .button2{
         border-radius: 0!important;
@@ -907,9 +851,7 @@ footer{
         } 
     }
 }
-
 // Blog or news styles
-
 .blog{
     & .col-sm-4 { padding-top: 25px!important; }
     & .inside-blog{
@@ -937,9 +879,7 @@ footer{
         }
     }
 }
-
 // Staff page
-
 .staff-results{
     background-color: #ffffff;
     display: block;
@@ -995,7 +935,6 @@ footer{
     }
 }
 // Committees
-
 .about{
     & h3 { 
         margin-top: 25px !important;
@@ -1005,9 +944,7 @@ footer{
         margin-top: 18px !important;
     }
 }
-
 // job bank
-
 .job-bank, .media, .sponsor-sections, .committees{
     background-color: #ffffff;
     border-bottom: 1px dashed @dcbia-grey;
@@ -1029,9 +966,7 @@ footer{
 .media{
     min-height: 380px;
 }
-
 // drag and drop CSS 
-
 #drop {
   min-height: 70px;
   width: 100%;
@@ -1041,17 +976,14 @@ footer{
   text-align: center;
   vertical-align: middle; 
 }
-
 #drop:hover{
 	border: 5px black dashed;
 }
-
 .progress_bar{
 	background-color: lightgray;
 	display: none;
 	text-align: center;
 }
-
 .drag_and_drop_input{
 	opacity: 0;
 	position: absolute;
@@ -1069,11 +1001,8 @@ footer{
 .form-upload-image-box-inside{
     color: #cccccc;
 }
-
 a.share:focus, a.share:visited { text-decoration:none; outline: 0; }
-
 // navbar styles
-
 .custom-nav{
     background-color: #2a2d2f;
     display: table;
@@ -1102,7 +1031,6 @@ a.share:focus, a.share:visited { text-decoration:none; outline: 0; }
     display: inline-block;
     width: 100%;
 }
-
 .custom-nav li:hover, .custom-nav li:active, .custom-nav .active {
     background-color: #27a9e1;
 }
@@ -1112,7 +1040,6 @@ a.share:focus, a.share:visited { text-decoration:none; outline: 0; }
     display: inherit;
   }
 }
-
 .navbar {
     position: relative;
     margin-bottom: 0px;
@@ -1129,21 +1056,16 @@ a.share:focus, a.share:visited { text-decoration:none; outline: 0; }
         padding:0;
     }
 }
-
 // dropdown styles for main nav
-
 .site-navigation li {
     position: relative; 
-}
-  
+}  
 .site-navigation li a {
   display: block;
 }
-
 .site-navigation li:hover {
 	cursor: pointer;
 }
-
 .site-navigation ul li ul {
 	background: #27a9e1;
 	visibility: hidden;
@@ -1154,16 +1076,13 @@ a.share:focus, a.share:visited { text-decoration:none; outline: 0; }
     padding: 0;
 	left: 0;
 	z-index: 999;
-    text-align: center;
-    
+    text-align: center;   
 }
-
 .site-navigation ul li:hover > ul,
 .site-navigation ul li ul:hover {
    visibility: visible;
     text-decoration: none;
 }
-
 .site-navigation ul li ul li {
 	padding: 18px 0;
     width: 100%;
@@ -1173,26 +1092,22 @@ a.share:focus, a.share:visited { text-decoration:none; outline: 0; }
     position: relative;
     left:0;
 }
-
 .site-navigation ul li ul li a{
     width: 100%;
     margin: 0 auto;
     display: block !important;
     text-align: center;   
 }
-
 .site-navigation ul li ul li:hover {
 	background: #2a2d2f;
     cursor: pointer;
 }
-
 .site-navigation ul li ul li a:hover {
     text-decoration: none;
     cursor: pointer;
 }
 
 // styles to change thw default input color
-
 input#top-searcher::-webkit-input-placeholder {
    color: #ffffff;
 }
@@ -1208,7 +1123,6 @@ input#top-searcher::-moz-placeholder {  /* Firefox 19+ */
 input#top-searcher:-ms-input-placeholder {  
    color: #ffffff;  
 }
-
 #top-searcher{
     padding: 12px 15px;
     border: 0;
@@ -1217,7 +1131,6 @@ input#top-searcher:-ms-input-placeholder {
     height:45px;
     & placeholder { color: #ffffff!important; }
 }
-
 button.search-btn{
     border: 0;
     height:45px;
@@ -1225,13 +1138,11 @@ button.search-btn{
     margin-left: 5px;
     vertical-align: top;
 }
-
  .searching{
     & button{
         & i{ color: #ffffff; font-size:18px; }
     }
  }
-
 #btn-top-nav{
     & li{
         display: inline-block;
@@ -1244,34 +1155,27 @@ button.search-btn{
         }
     }
 }
-
 select {
     -moz-appearance: none !important;
 }
 
 // wp-admin wizzy container styles
-
 .wp-editor-wrap {
   width: 100% !important;    
 }
-
 textarea.wp-editor-area {
   width: 100%!important;
 }
-
 .new-pull-right{
-        float: right;
-    }
+    float: right;
+}
 
 // start media queries here
-
 @media (min-width: 768px){
     .hide-desktop{
         display: none!important;
     }
 }
-
-
 @media (max-width: 767px) {
     .row{
         margin-right: 0 !important;
@@ -1282,7 +1186,6 @@ textarea.wp-editor-area {
         line-height: normal!important; 
     }
 }
-
 @media (max-width: 992px){
     footer{
        & .col-md-4 { border-right: 0 !important; padding: 15px !important; min-height:5px!important; }
@@ -1307,9 +1210,7 @@ textarea.wp-editor-area {
         .site-navigation ul li ul li a{
             font-size: 14px;
         }
-    
     }
-
 @media (max-width: @screen-sm-min) {
 
     .custom-nav{
@@ -1345,7 +1246,6 @@ textarea.wp-editor-area {
         font-weight: 700;
      }
 }
-
 @media (max-width: @screen-sm-min) {
           .hide-desktop{
             display:block;
@@ -1364,6 +1264,3 @@ textarea.wp-editor-area {
             margin-left: 0!important;
         }
 }
-
-
-
