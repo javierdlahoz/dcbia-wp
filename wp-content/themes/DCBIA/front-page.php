@@ -80,19 +80,15 @@ get_header();
                     <div id="myStat1" data-dimension="275" data-text="30%" data-info="New Clients" data-width="30" data-fontsize="35" data-percent="30" data-fgcolor="#61a9dc" data-bgcolor="#eee" data-fill="#ddd" data-total="750" data-part="350" data-icon="long-arrow-up" data-icon-size="28" data-icon-color="#fff"></div>
                  <br>   
                 </div> <!--industry end-->
-                
                     <p>&nbsp;</p>        
                     <p>&nbsp;</p>        
-                
                 <div class="col-sm-12">
                     <div class="quoter">
                         <h3>When I think of the possibilities for the future, I am excited by what DCBIA can continue to accomplish. We are creating a roadmap to shape DC’s future so we can continue to build a vibrant, innovative and world-class city. DCBIA’s invigorated strategic approach is welcoming to organizations of all sizes and we invite you to join us.</h3>
                         <p>— Sean C. Cahill, President of DCBIA and Senior Vice President of Property Group Partners.</p>
                     </div> 
-                </div> 
-                        
-                <p>&nbsp;</p>        
-                        
+                </div>     
+                <p>&nbsp;</p>                 
             </div> <!--main col8 end-->       
                            
             <div class="col-sm-4" ng-controller="EmailController"><!--main col4--> 

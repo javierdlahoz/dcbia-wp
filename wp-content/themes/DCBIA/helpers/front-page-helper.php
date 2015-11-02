@@ -21,10 +21,11 @@ function getTopMenu(){ ?>
         <ul class="nav custom-nav hide-on-phone">
         <li id="about">
             <a href="<?php echo get_site_url(); ?>/about">ABOUT</a>
-            <ul class="" id="" role="menu">       
-                <li id="staff"><a href="<?php echo get_site_url(); ?>/about/staff">STAFF</a></li>
+            <ul class="" id="" role="menu"> 
                 <li id="board"><a href="<?php echo get_site_url(); ?>/about/board">BOARD</a></li>
-                <li id="committees"><a href="<?php echo get_site_url(); ?>/about/committees">COMMITTEES</a></li>
+                <li id="staff"><a href="<?php echo get_site_url(); ?>/about/staff">STAFF</a></li>
+                <li id="committees"><a href="<?php echo get_site_url(); ?>/about/committees">COMMITTEES</a
+            </li>
             </ul>
             </li>
             <li id="join"><a href="<?php echo get_site_url(); ?>/join">JOIN</a></li>
