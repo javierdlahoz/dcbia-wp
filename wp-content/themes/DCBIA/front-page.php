@@ -86,8 +86,8 @@ get_header();
                 
                 <div class="col-sm-12">
                     <div class="quoter">
-                        <h2>IF WE EVER FORGET THAT WE ARE ONE NATION UNDER GOD, THEN WE WILL BE A NATION GONE UNDER.</h2>
-                        <p>— Ronald Reagan</p>
+                        <h3>When I think of the possibilities for the future, I am excited by what DCBIA can continue to accomplish. We are creating a roadmap to shape DC’s future so we can continue to build a vibrant, innovative and world-class city. DCBIA’s invigorated strategic approach is welcoming to organizations of all sizes and we invite you to join us.</h3>
+                        <p>— Sean C. Cahill, President of DCBIA and Senior Vice President of Property Group Partners.</p>
                     </div> 
                 </div> 
                         
