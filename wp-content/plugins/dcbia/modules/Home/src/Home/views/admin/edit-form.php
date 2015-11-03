@@ -12,6 +12,13 @@ $home = dcbia::getEntity("home");
    <label>Industry Data</label>
    <input type="number" class="form-control" id="industrydata" name="industrydata" value="<?php echo $home->getIndustrydata(); ?>">
 </div>
+
+<div class="form-group">
+   <label>Industry Data Label</label>
+   <input type="text" class="form-control" id="industrydatalabel" name="industrydatalabel" 
+    value="<?php echo $home->getIndustrydatalabel(); ?>">
+</div>
+
 <br>
 <br>
 <?php echo PostHelper::addStylesAndScripts();

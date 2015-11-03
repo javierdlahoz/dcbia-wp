@@ -77,7 +77,7 @@ get_header();
                         data-bgcolor="#eee" data-fill="#ddd" data-total="100" data-part="<?php echo $home->getNewcustomers(); ?>" 
                         data-icon="long-arrow-up" data-icon-size="28" data-icon-color="#fff"></div>
 
-                    <div id="myStat1" data-dimension="275" data-text="<?php echo $home->getIndustrydata(); ?>%" data-info="Industry Data" 
+                    <div id="myStat1" data-dimension="275" data-text="<?php echo $home->getIndustrydata(); ?>%" data-info="<?php echo $home->getIndustrydatalabel(); ?>" 
                     	data-width="30" data-fontsize="35" data-percent="<?php echo $home->getIndustrydata(); ?>" data-fgcolor="#61a9dc" 
                     	data-bgcolor="#eee" data-fill="#ddd" data-total="100" data-part="<?php echo $home->getIndustrydata(); ?>" 
                     	data-icon="long-arrow-up" data-icon-size="28" data-icon-color="#fff"></div>
