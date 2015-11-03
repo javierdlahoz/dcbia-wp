@@ -72,7 +72,7 @@ get_header();
 
                 <!--Jquery circle plugin-->
 
-                    <div id="myStat" data-dimension="275" data-text="<?php echo $home->getNewcustomers(); ?>%" data-info="New Clients" 
+                    <div id="myStat" data-dimension="275" data-text="<?php echo $home->getNewcustomers(); ?>%" data-info="<?php echo $home->getCustomdatalabel(); ?>" 
                         data-width="30" data-fontsize="35" data-percent="<?php echo $home->getNewcustomers(); ?>" data-fgcolor="#61a9dc" 
                         data-bgcolor="#eee" data-fill="#ddd" data-total="100" data-part="<?php echo $home->getNewcustomers(); ?>" 
                         data-icon="long-arrow-up" data-icon-size="28" data-icon-color="#fff"></div>

@@ -30,6 +30,7 @@ class HomeController extends PostController
             $homeEntity->setNewcustomers($this->getPost("newcustomers"));
             $homeEntity->setIndustrydata($this->getPost("industrydata"));
             $homeEntity->setIndustrydatalabel($this->getPost("industrydatalabel"));
+            $homeEntity->setCustomdatalabel($this->getPost("customdatalabel"));
         }
     }
    
