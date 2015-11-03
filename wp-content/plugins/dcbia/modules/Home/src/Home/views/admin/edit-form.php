@@ -13,7 +13,8 @@ $home = dcbia::getEntity("home");
 
 <div class="form-group">
    <label>Custom Data</label>
-   <input type="number" class="form-control" id="newcustomers" name="newcustomers" value="<?php echo $home->getNewcustomers(); ?>">
+   <input type="number" class="form-control" id="newcustomers" step="any" 
+   name="newcustomers" value="<?php echo $home->getNewcustomers(); ?>">
 </div>
 
 <div class="form-group">
@@ -24,7 +25,8 @@ $home = dcbia::getEntity("home");
 
 <div class="form-group">
    <label>Industry Data</label>
-   <input type="number" class="form-control" id="industrydata" name="industrydata" value="<?php echo $home->getIndustrydata(); ?>">
+   <input type="number" class="form-control" id="industrydata" name="industrydata" step="any" 
+   value="<?php echo $home->getIndustrydata(); ?>">
 </div>
 
 <br>
