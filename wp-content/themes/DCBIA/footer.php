@@ -39,8 +39,8 @@
             <p>Email: <a href="mailto:info@dcbia.org">info@dcbia.org</a></p>
 
 			<div class="social-icons">
-				<a href=""><i class="fa fa-facebook-square"></i></a>
-				<a href=""><i class="fa fa-twitter-square"></i></a>
+				<a href="https://www.linkedin.com/in/dcbia"><i class="fa fa-linkedin-square"></i></a>
+				<a href="https://twitter.com/dcbia"><i class="fa fa-twitter-square"></i></a>
 				<a href=""><i class="fa fa-rss-square"></i></a>
 				<p style="clear: both;">&nbsp;</p>
 			</div> 
