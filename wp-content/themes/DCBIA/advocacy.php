@@ -78,28 +78,24 @@ $pageEntity = new PostEntity(get_the_ID());
                         </a>
                     </div>    
                 </div>
-           
                 <div class="row key-results">
                     <div class="col-md-12 top-key-nav">
                         <button class="button2" type="submit" id="sort-date" ng-click="setOrderBy('date')">Sort by Date</button>
                         <button class="button2" type="submit" id="sort-title" ng-click="setOrderBy('title')">Sort by Title</button>
                     </div>    
                 </div>
-                
                 <div ng-hide="resultsInTop">
                     <div ng-show="resources.length == 0" ng-cloak>
                         <h2>No results were found</h2>
                     </div>
-                    
                     <div ng-show="loading">
-                        <center>
-                            <img src="<?php echo get_template_directory_uri(); ?>/img/loading.gif" height="64">
-                        </center>
+                      <center>
+                        <img src="<?php echo get_template_directory_uri(); ?>/img/loading.gif" height="64">
+                      </center>
                     </div>
-                    
                     <div class="lower-key-results" ng-repeat="resource in resources" ng-cloak>
                         <div class="col-sm-2 bookmark-box">
-                            <p><i class="fa fa-bookmark-o"></i></p>
+                            <p><img src="<?php echo get_template_directory_uri(); ?>/img/advocacy-bookmark-pic.jpg"></p>
                         </div>
                         <div class="col-sm-9 col-sm-offset-1 key-info">
                             <h5>{{resource.title}}</h5>
@@ -110,11 +106,10 @@ $pageEntity = new PostEntity(get_the_ID());
                             <a class="button1" ng-hide="resource.file_url == ''" href="{{resource.file_url}}">More Information</a>
                         </div>
                     </div>
-                </div>
-            
-         </div>    
+                </div> 
+             </div>    
+        </div>
     </div>
-</div>
 <?php get_footer(); ?>
 <script src="<?php echo get_template_directory_uri(); ?>/js/angular/controllers/ResourceController.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/angular/services/ResourceService.js"></script>

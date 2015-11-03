@@ -394,7 +394,7 @@ a.back-to-top:hover {
 .key-issue-boxes a i {
   font-size: 72px;
   display: block;
-  margin: 20px 0 20px 0;
+  margin: 12px 0 12px 0;
 }
 .key-issue-boxes a i.arrowed {
   position: relative;
@@ -452,12 +452,8 @@ a.back-to-top:hover {
   text-align: center;
   margin: 0 !important;
 }
-.bookmark-box i {
-  font-size: 72px;
-  color: #ffffff;
-  position: relative;
-  padding: 15%;
-  text-align: center;
+.bookmark-box img {
+  max-height: 150px;
 }
 .key-info h5 {
   color: #27a9e1 !important;
