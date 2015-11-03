@@ -28,6 +28,7 @@ class HomeController extends PostController
         $homeEntity = new HomeEntity($postId);
         if($homeEntity->getType() == HomeHelper::HOME_POST_TYPE){
             $homeEntity->setNewcustomers($this->getPost("newcustomers"));
+            $homeEntity->setIndustrydata($this->getPost("industrydata"));
         }
     }
    
