@@ -80,8 +80,16 @@ $pageEntity = new PostEntity(get_the_ID());
                 </div>
                 <div class="row key-results">
                     <div class="col-md-12 top-key-nav">
-                        <button class="button2" type="submit" id="sort-date" ng-click="setOrderBy('date')">Sort by Date</button>
-                        <button class="button2" type="submit" id="sort-title" ng-click="setOrderBy('title')">Sort by Title</button>
+                        <button class="button2" type="submit" id="sort-date" ng-click="setOrderBy('date')">
+                        	Sort by Date 
+                        	<i class="fa fa-chevron-down" ng-show="formData.order == 'DESC' && formData.orderby == 'date'"></i>
+                        	<i class="fa fa-chevron-up" ng-show="formData.order == 'ASC' && formData.orderby == 'date'"></i>
+                       	</button>
+                        <button class="button2" type="submit" id="sort-title" ng-click="setOrderBy('title')">
+                        	Sort by Title
+                        	<i class="fa fa-chevron-up" ng-show="formData.order == 'DESC' && formData.orderby == 'title'"></i>
+                        	<i class="fa fa-chevron-down" ng-show="formData.order == 'ASC' && formData.orderby == 'title'"></i>
+                        </button>
                     </div>    
                 </div>
                 <div ng-hide="resultsInTop">

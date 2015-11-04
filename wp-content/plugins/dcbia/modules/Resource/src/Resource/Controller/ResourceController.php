@@ -48,11 +48,11 @@ class ResourceController extends AbstractController
         //var_dump($this->getPost("orderby")); die();
         if($this->getPost("orderby") === "date"){
             $rs->setOrderby("date");
-            $rs->setOrder("DESC");
+            $rs->setOrder($this->getPost("order"));
         }
         else{
             $rs->setOrderby("title");
-            $rs->setOrder("ASC");
+            $rs->setOrder($this->getPost("order"));
         }
         
         $resources = $rs->getPosts();
