@@ -72,22 +72,26 @@ get_header();
 
                 <!--Jquery circle plugin-->
 
-                    <div id="myStat" data-dimension="275" data-text="<?php echo $home->getNewcustomers(); ?>" data-info="<?php echo $home->getCustomdatalabel(); ?>" 
-                        data-width="30" data-fontsize="35" data-percent="<?php echo $home->getNewcustomers(); ?>" data-fgcolor="#61a9dc" 
-                        data-bgcolor="#eee" data-fill="#ddd" data-total="100" data-part="<?php echo $home->getNewcustomers(); ?>" 
+<!--                    <div id="myStat" data-dimension="275" data-text="<!--?php echo $home->getNewcustomers(); ?>" data-info="<!--?php echo $home->getCustomdatalabel(); ?>" 
+                        data-width="30" data-fontsize="35" data-percent="<!--?php echo $home->getNewcustomers(); ?>" data-fgcolor="#61a9dc" 
+                        data-bgcolor="#eee" data-fill="#ddd" data-total="100" data-part="<!--?php echo $home->getNewcustomers(); ?>" 
                         data-icon="long-arrow-up" data-icon-size="28" data-icon-color="#fff"></div>
 
-                    <div id="myStat1" data-dimension="275" data-text="<?php echo $home->getIndustrydata(); ?>" data-info="<?php echo $home->getIndustrydatalabel(); ?>" 
-                    	data-width="30" data-fontsize="35" data-percent="<?php echo $home->getIndustrydata(); ?>" data-fgcolor="#61a9dc" 
-                    	data-bgcolor="#eee" data-fill="#ddd" data-total="100" data-part="<?php echo $home->getIndustrydata(); ?>" 
-                    	data-icon="long-arrow-up" data-icon-size="28" data-icon-color="#fff"></div>
+                    <div id="myStat1" data-dimension="275" data-text="<!--?php echo $home->getIndustrydata(); ?>" data-info="<!--?php echo $home->getIndustrydatalabel(); ?>" 
+                    	data-width="30" data-fontsize="35" data-percent="<!--?php echo $home->getIndustrydata(); ?>" data-fgcolor="#61a9dc" 
+                    	data-bgcolor="#eee" data-fill="#ddd" data-total="100" data-part="<!--?php echo $home->getIndustrydata(); ?>" 
+                    	data-icon="long-arrow-up" data-icon-size="28" data-icon-color="#fff"></div>-->
+                      <h5>place holder text here</h5> 
+                   <img src="<?php echo get_template_directory_uri(); ?>/img/200.png">
+                   <img src="<?php echo get_template_directory_uri(); ?>/img/200.png">
+                   <img src="<?php echo get_template_directory_uri(); ?>/img/200.png">   
                  <br>   
                 </div> <!--industry end-->
                     <p>&nbsp;</p>        
                     <p>&nbsp;</p>        
                 <div class="col-sm-12">
                     <div class="quoter">
-                        <h3>When I think of the possibilities for the future, I am excited by what DCBIA can continue to accomplish. We are creating a roadmap to shape DC’s future so we can continue to build a vibrant, innovative and world-class city. DCBIA’s invigorated strategic approach is welcoming to organizations of all sizes and we invite you to join us.</h3>
+                        <h3>I AM EXCITED ABOUT DCBIA'S INVIGORATED STRATEGIC FOCUS. IT SERVES AS A ROADMAP TO SHAPE THE FUTURE OF OUR VIBRANT, INNOVATIVE AND WORLD-CLASS CITY. OUR APPROACH WELCOMES ORGANIZATIONS OF ALL SIZES AND WE INVITE YOU TO JOIN US!</h3>
                         <p>— Sean C. Cahill, President of DCBIA and Senior Vice President of Property Group Partners.</p>
                     </div> 
                 </div>     
