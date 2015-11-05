@@ -11645,5 +11645,6 @@ h2.tribe-events-page-title,
 }
 .icy-eventslider .picture img {
   max-height: 600px!important;
+  width: auto !important;
 }
 /*@import "";*/
