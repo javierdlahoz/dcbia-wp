@@ -61,7 +61,8 @@ get_header();
         </div>
     </div>
     <div class="row">
-        <div class="col-md-12 sponsor-sections">
+      <div class="col-md-12 sponsor-sections">
+        <div class="col-md-6">
                 <h4>GOLF CLASSIC</h4>
                 <p>The DCBIA Golf Classic has been a sold out event since its inception in 1999. The tournament takes place at a prominent DC area golf course where players meet every year in September for good fun, challenges, and the best networking in DC real estate development.</p>
 
@@ -70,6 +71,11 @@ get_header();
                 <p>Contact Sherrita Lancaster at (202) 966-8665 or <a href="mailto:slancaster@dcbia.org">slancaster@dcbia.org</a> to get details!</p>
             <br>
         </div>
+        <div class="col-md-6">
+            <br>
+            <iframe width="100%" height="400" src="https://www.youtube.com/embed/gI1mRII6sc8" frameborder="0" allowfullscreen></iframe>
+        </div>    
+      </div>
     </div>
     
     <div class="row">

@@ -4,6 +4,7 @@ angular.module('angular-wp')
 		$scope.resources = {};
 		$scope.formData = {};
 		$scope.resultsInTop = false;
+		$scope.formData.order = "DESC"; 
 		
 		getResources = function(){
 			$scope.loading = true;
@@ -33,6 +34,14 @@ angular.module('angular-wp')
 			else{
 				angular.element("#sort-title").addClass("advocacy-active");
 			}
+			
+			if($scope.formData.order === "ASC"){
+				$scope.formData.order = "DESC";
+			}
+			else{
+				$scope.formData.order = "ASC";
+			}
+			
 			getResources();
 		};
 		
