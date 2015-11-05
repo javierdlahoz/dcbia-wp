@@ -30,7 +30,7 @@ get_header();
            <div class="col-sm-4">
                 <a class="image-cover" href="<?php echo $news->getPermalink(); ?>" style="background-image: url(<?php echo $news->getImage(); ?>)">
                         <span class="infoblock1 light-blue"><?php echo $news->getTitle(); ?></span>
-                        <span class="infoblock2 red"><?php echo mysql2date('j F Y', $news->getDate()); ?></span>
+                        <!--<span class="infoblock2 red"><!--?php echo mysql2date('j F Y', $news->getDate()); ?></span>-->
                 </a>  
            </div>   
             <?php endforeach; ?>          
