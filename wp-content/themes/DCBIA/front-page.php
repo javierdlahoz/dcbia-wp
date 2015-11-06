@@ -81,14 +81,16 @@ get_header();
                     	data-width="30" data-fontsize="35" data-percent="<!--?php echo $home->getIndustrydata(); ?>" data-fgcolor="#61a9dc" 
                     	data-bgcolor="#eee" data-fill="#ddd" data-total="100" data-part="<!--?php echo $home->getIndustrydata(); ?>" 
                     	data-icon="long-arrow-up" data-icon-size="28" data-icon-color="#fff"></div>-->
-                      <h5>place holder text here</h5> 
-                   <img src="<?php echo get_template_directory_uri(); ?>/img/200.png">
-                   <img src="<?php echo get_template_directory_uri(); ?>/img/200.png">
-                   <img src="<?php echo get_template_directory_uri(); ?>/img/200.png">   
-                 <br>   
+                   <img src="<?php echo get_template_directory_uri(); ?>/img/stat.png">
+                   <img src="<?php echo get_template_directory_uri(); ?>/img/stat2.png">
+                <p>&nbsp;</p>    
                 </div> <!--industry end-->
-                    <p>&nbsp;</p>        
-                    <p>&nbsp;</p>        
+                <div class="col-sm-12">
+                    <h2>DCBIA Build Day 2015</h2>
+                    <br>
+                    <iframe width="100%" height="400" src="https://www.youtube.com/embed/n6CEBTcQycU" frameborder="0" allowfullscreen></iframe>
+                </div>     
+                    <p>&nbsp;</p>               
                 <div class="col-sm-12">
                     <div class="quoter">
                         <h3>I AM EXCITED ABOUT DCBIA'S INVIGORATED STRATEGIC FOCUS. IT SERVES AS A ROADMAP TO SHAPE THE FUTURE OF OUR VIBRANT, INNOVATIVE AND WORLD-CLASS CITY. OUR APPROACH WELCOMES ORGANIZATIONS OF ALL SIZES AND WE INVITE YOU TO JOIN US!</h3>
