@@ -375,9 +375,6 @@ a.back-to-top:hover {
   color: #ffffff !important;
   background-color: #1d8ebe;
 }
-.key-issue-boxes .col-sm-3 {
-  padding: 15px;
-}
 .key-issue-boxes a {
   color: #6d6e70;
   text-transform: uppercase;
@@ -408,6 +405,15 @@ a.back-to-top:hover {
   position: relative;
   bottom: 5%;
   font-size: 42px;
+}
+@media (max-width: 768px) {
+  .key-issue-boxes .col-sm-4 {
+    padding: 10px;
+    margin-bottom: 5px;
+  }
+  .key-issue-boxes a i {
+    font-size: 34px!important;
+  }
 }
 .top-key-nav p {
   color: #2a2d2f;
@@ -440,6 +446,13 @@ a.back-to-top:hover {
 .top-key-nav ul li a:hover {
   color: #ff8d0c;
   text-decoration: none;
+}
+@media (max-width: 768px) {
+  .top-key-nav .button2 {
+    margin: 5px 0!important;
+    display: inline-block !important;
+    padding: 10px 12px;
+  }
 }
 .lower-key-results {
   display: block;
