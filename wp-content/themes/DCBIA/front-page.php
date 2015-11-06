@@ -63,9 +63,7 @@ get_header();
                     </div>
                 </div>
             </div><!--events end-->             
-                
-                    <p>&nbsp;</p>    
-                        
+                    <p>&nbsp;</p>      
                 <div class="industry col-sm-12">        
                     <h2>INDUSTRY IMPACT</h2>
                     <p>Over the years, DCBIA has achieved a prominent position in the local business community as an advocate for a vigorous, responsible real estate industry. It interprets that advocacy role broadly – to not only give voice to the specific concerns of its members, but also to speak out in support of public policies that promote the economic growth and vitality of the nation’s capital.</p><p>&nbsp;</p>
