@@ -66,19 +66,8 @@ get_header();
                     <p>&nbsp;</p>      
                 <div class="industry col-sm-12">        
                     <h2>INDUSTRY IMPACT</h2>
-                    <p>Over the years, DCBIA has achieved a prominent position in the local business community as an advocate for a vigorous, responsible real estate industry. It interprets that advocacy role broadly – to not only give voice to the specific concerns of its members, but also to speak out in support of public policies that promote the economic growth and vitality of the nation’s capital.</p><p>&nbsp;</p>
-
-                <!--Jquery circle plugin-->
-
-<!--                    <div id="myStat" data-dimension="275" data-text="<!--?php echo $home->getNewcustomers(); ?>" data-info="<!--?php echo $home->getCustomdatalabel(); ?>" 
-                        data-width="30" data-fontsize="35" data-percent="<!--?php echo $home->getNewcustomers(); ?>" data-fgcolor="#61a9dc" 
-                        data-bgcolor="#eee" data-fill="#ddd" data-total="100" data-part="<!--?php echo $home->getNewcustomers(); ?>" 
-                        data-icon="long-arrow-up" data-icon-size="28" data-icon-color="#fff"></div>
-
-                    <div id="myStat1" data-dimension="275" data-text="<!--?php echo $home->getIndustrydata(); ?>" data-info="<!--?php echo $home->getIndustrydatalabel(); ?>" 
-                    	data-width="30" data-fontsize="35" data-percent="<!--?php echo $home->getIndustrydata(); ?>" data-fgcolor="#61a9dc" 
-                    	data-bgcolor="#eee" data-fill="#ddd" data-total="100" data-part="<!--?php echo $home->getIndustrydata(); ?>" 
-                    	data-icon="long-arrow-up" data-icon-size="28" data-icon-color="#fff"></div>-->
+                    <p>Over the years, DCBIA has achieved a prominent position in the local business community as an advocate for a vigorous, responsible real estate industry. It interprets that advocacy role broadly – to not only give voice to the specific concerns of its members, but also to speak out in support of public policies that promote the economic growth and vitality of the nation’s capital.</p>
+                   <p>&nbsp;</p>
                    <img src="<?php echo get_template_directory_uri(); ?>/img/stat.png">
                    <img src="<?php echo get_template_directory_uri(); ?>/img/stat2.png">
                 <p>&nbsp;</p>    
@@ -96,8 +85,7 @@ get_header();
                     </div> 
                 </div>     
                 <p>&nbsp;</p>                 
-            </div> <!--main col8 end-->       
-                           
+            </div> <!--main col8 end-->                     
             <div class="col-sm-4" ng-controller="EmailController"><!--main col4--> 
                 <div class="email-sign-up offblack">
                 <h3>SIGN UP FOR DCBIA emails</h3>

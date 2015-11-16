@@ -3260,8 +3260,15 @@ h2.tribe-events-page-title,
     background-color: @light-blue!important;
 }
 .icy-eventslider{
-    max-height: ;
-    & .picture{ max-height: 600px;
-    & img{ max-height: 600px!important;}
+    & .picture{ max-height: 600px; width: auto;
+    & img{ max-height: 600px!important; width: 100%; height: auto; }
+    }
+}
+@media (max-width: 720px) {
+.icy-eventslider-content .text .event-title {
+    font-size: 15px!important;
+    }
+    .icy-eventslider-day .day-number {
+        font-size: 21px;
     }
 }
