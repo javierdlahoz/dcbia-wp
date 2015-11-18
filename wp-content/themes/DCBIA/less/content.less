@@ -187,6 +187,7 @@ a.back-to-top{
 
 .events{
     margin: 0;
+    overflow: auto;
     & h2, h1{
         margin-top: 0 !important;
     }
@@ -234,8 +235,17 @@ a.back-to-top{
 // industry
 .industry{
     display: block;
+    float: none;
     & p {
         font-size: 16px;
+    }
+}
+@media (max-width: 992px){
+.industry{
+    & img {
+        margin: 0 auto;
+        display: block;
+        }
     }
 }
 // quote
@@ -329,7 +339,6 @@ a.back-to-top{
     }
 }
 .key-issue-boxes{
-    & .col-sm-3 { padding: 15px; }
     & a{
         color: @dcbia-grey;
         text-transform: uppercase;
@@ -357,6 +366,10 @@ a.back-to-top{
                 font-size: 42px;
             }
         }
+    }
+    @media (max-width: 768px) {
+        .col-sm-4 { padding: 10px; margin-bottom: 5px; }
+        & a i { font-size: 34px!important; }
     }
 }
 .top-key-nav{
@@ -390,6 +403,13 @@ a.back-to-top{
             }
         }
     }
+    @media (max-width: 768px) {
+        .button2 {
+            margin: 5px 0!important;
+            display: inline-block!important;
+            padding: 10px 12px;
+        }
+    }
 }
 .lower-key-results{
     display: block;
@@ -400,7 +420,6 @@ a.back-to-top{
     .col-sm-offset-1{ margin-left: 3%!important; }
 }
 .bookmark-box{
-    background-color: @orange;
     overflow: auto;
     margin-bottom: 15px;
     & p { text-align: center; margin: 0 !important; }

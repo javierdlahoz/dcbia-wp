@@ -27,7 +27,7 @@ $pageEntity = new PostEntity(get_the_ID());
                 <div class="key-top-search">
                     <form ng-submit="searchOnlyInText()">
                         <input type="text" name="" id="advocacy-search" class="form-control" placeholder="Search" ng-model="formData.query">
-                        <button class="btn advo-search-btn" type="button" ng-click="searchOnlyInText()">Submit</button>
+                        <button class="btn advo-search-btn" type="button" ng-click="searchOnlyInText()">SUBMIT</button>
                     </form>
                 </div>
             <br>
