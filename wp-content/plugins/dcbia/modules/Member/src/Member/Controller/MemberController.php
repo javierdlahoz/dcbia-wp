@@ -635,9 +635,9 @@ class MemberController extends AbstractController{
                 );
                 $results = get_users($args);
                 $account = $results[0];
-                $account->membership_level = pmpro_getMembershipLevelForUser($account->ID);
             }
-
+            
+            $account->membership_level = pmpro_getMembershipLevelForUser($account->ID);
             $pac = get_user_meta($account->ID, "pac", false);
             $website = get_user_meta($account->ID, "company_website", false);
             $description = get_user_meta($account->ID, "company_description", false);
