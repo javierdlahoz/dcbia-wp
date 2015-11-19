@@ -17,6 +17,7 @@ function pmpro_membership_level_profile_fields($user)
 														JOIN {$wpdb->pmpro_memberships_users} AS mu ON (l.id = mu.membership_id)
 														WHERE mu.user_id = " . $user->ID . "
 														LIMIT 1");*/
+	//var_dump(get_user_meta($user->ID, "membership_type")); die();
 	$user->membership_level = pmpro_getMembershipLevelForUser($user->ID);
 
 	$levels = $wpdb->get_results( "SELECT * FROM {$wpdb->pmpro_membership_levels}", OBJECT );
@@ -48,9 +49,15 @@ function pmpro_membership_level_profile_fields($user)
 				</select>
                 <span id="current_level_cost">
                 <?php
-                $membership_values = pmpro_getMembershipLevelForUser($user->ID);              
+                $membership_values = pmpro_getMembershipLevelForUser($user->ID);
+                if(empty($membership_values)){
+                    $membership_values = new stdClass();
+                }
 				//we tweak the initial payment here so the text here effectively shows the recurring amount
-				$membership_values->original_initial_payment = $membership_values->initial_payment;
+				if(empty($membership_values->initial_payment)){
+				    $membership_values->initial_payment = 0;
+				}
+                $membership_values->original_initial_payment = $membership_values->initial_payment;
 				$membership_values->initial_payment = $membership_values->billing_amount;
 				if(empty($membership_values) || pmpro_isLevelFree($membership_values))
                 { 

@@ -37,7 +37,7 @@ class PostController extends AbstractController{
             $type = $_POST["type"];  
         }
         else{
-            $type = $this->getAllPostTypes();
+            $type = "post";
         }
 
         $postService = PostService::getSingleton();
