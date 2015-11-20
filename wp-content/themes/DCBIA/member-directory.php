@@ -56,11 +56,11 @@ get_header();  ?>
                 <div class="results-heading">
                     <h4>Results per page:</h4>
                     <span>&nbsp;</span> 
-                    <a href="" ng-click="setResultsPerPage(20)">20</a>
+                    <a href="" ng-click="setResultsPerPage(20)" ng-class="{'active': query.resultsPerPage == 20}">20</a>
                     <span>&nbsp;</span>
-                    <a href="" ng-click="setResultsPerPage(50)">50</a>
+                    <a href="" ng-click="setResultsPerPage(50)" ng-class="{'active': query.resultsPerPage == 50}">50</a>
                     <span>&nbsp;</span>
-                    <a href="" ng-click="setResultsPerPage(100)">100</a>
+                    <a href="" ng-click="setResultsPerPage(100)" ng-class="{'active': query.resultsPerPage == 100}">100</a>
                 </div>    
                 <div class="member-side-result-box">
                     <h4>Types</h4>
@@ -88,7 +88,7 @@ get_header();  ?>
                 </div>
                 
                 
-                <div class="member-details" ng-repeat="member in members">
+                <div class="member-details" ng-repeat="member in members" ng-hide="loading" ng-cloak>
                     <h4 ng-show="member.name != ' '">{{member.name}}</h4>
                     <h4 ng-hide="member.name != ' '">{{member.email}}</h4>
                     <p>{{member.organization}}</p>
