@@ -29,13 +29,15 @@ class MemberFacade extends AbstractSingleton
     
     private function formatUserAsArray(\WP_User $user){
         $description = get_user_meta($user->ID, "company_description", true);
+        $companyName = get_user_meta($user->ID, "company_name", true);
         
         return array(
             "name" => $user->first_name." ".$user->last_name,
             "cropBio" => TextHelper::cropText($description),
             "permalink" => $user->user_url,
             "picture" => get_avatar_url($user->ID),
-            "email" => $user->user_login
+            "email" => $user->user_login,
+            "organization" => $companyName
         );
     }
     

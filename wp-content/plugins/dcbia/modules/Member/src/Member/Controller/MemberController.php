@@ -610,11 +610,16 @@ class MemberController extends AbstractController{
         global $wpdb;
         $file = __DIR__."/import/contacts.csv";
         $contacts = array_map('str_getcsv', file($file));
+        //var_dump($contacts); die();
         unset($contacts[0]);
         foreach ($contacts as $contact){
             $accountId = str_replace("zcrm_", "", $contact[7]);
             $account = get_user_by("login", $accountId);
             $isReplacing = false;
+            
+            if($contact[4] == "" && $contact[5] == ""){
+                $contact[4] = $contact[6];
+            }
             
             if($account !== false){
                 $user = array(
@@ -622,7 +627,8 @@ class MemberController extends AbstractController{
                     "first_name" => $contact[4],
                     "last_name" => $contact[5],
                     "user_email" => $contact[10],
-                    "user_login" => $contact[10]
+                    "user_login" => $contact[10],
+                    "user_pass" => $contact[10]
                 );
                 wp_update_user($user);
                 $wpdb->update($wpdb->users, array('user_login' => $contact[10]), array('ID' => $account->ID));
@@ -638,20 +644,25 @@ class MemberController extends AbstractController{
             }
             
             $account->membership_level = pmpro_getMembershipLevelForUser($account->ID);
-            $pac = get_user_meta($account->ID, "pac", false);
-            $website = get_user_meta($account->ID, "company_website", false);
-            $description = get_user_meta($account->ID, "company_description", false);
-            $mType = get_user_meta($account->ID, "membership_type", false);
-            $bCats = get_user_meta($account->ID, "business_category", false);
+            $pac = get_user_meta($account->ID, "pac", true);
+            $website = get_user_meta($account->ID, "company_website", true);
+            $description = get_user_meta($account->ID, "company_description", true);
+            $mType = get_user_meta($account->ID, "membership_type", true);
+            $bCats = get_user_meta($account->ID, "business_category", true);
             
             if($isReplacing === false){
                 $user = array(
+                    "user_email" => $contact[10],
+                    "user_login" => $contact[10],
+                    "user_pass" => $contact[10]
+                );
+                $userId = wp_create_user($user["user_login"], $user["user_pass"], $user["user_email"]);
+                
+                $user = array(
+                    "ID" => $userId,
                     "first_name" => $contact[4],
                     "last_name" => $contact[5],
-                    "user_email" => $contact[10],
-                    "user_login" => $contact[10]
                 );
-                $userId = wp_create_user($user["user_login"], $user["password"], $user["user_email"]);
                 wp_update_user($user);
                 $accountAdditionalUsers = get_user_meta($account->ID, self::ADDITIONAL_USERS_ARRAY, true);
                 if($accountAdditionalUsers === ''){
@@ -670,7 +681,7 @@ class MemberController extends AbstractController{
                 update_user_meta($userId, "state", $contact[25]);
                 update_user_meta($userId, "zip", $contact[27]);
                 update_user_meta($userId, "telephone", $contact[11]);
-                update_user_meta($userId, "company_name", $contact[10]);
+                update_user_meta($userId, "company_name", $contact[6]);
                 update_user_meta($userId, "company_website", $website);
                 update_user_meta($userId, "company_description", $description);
                 update_user_meta($userId, "membership_type"     , $mType);
