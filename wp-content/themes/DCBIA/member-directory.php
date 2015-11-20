@@ -89,10 +89,12 @@ get_header();  ?>
                 
                 
                 <div class="member-details" ng-repeat="member in members">
-                    <h4>{{member.name}}</h4>
-                    <p ng-hide="member.cropBio == ''">{{member.cropBio}}</p>
-                    <p ng-show="member.cropBio == ''">{{member.email}}</p>
-                    <a class="button1" href="{{member.permalink}}">View Company Site</a>
+                    <h4 ng-show="member.name != ' '">{{member.name}}</h4>
+                    <h4 ng-hide="member.name != ' '">{{member.email}}</h4>
+                    <p>{{member.organization}}</p>
+                    <p>{{member.cropBio}}</p>
+                    
+                    <!-- a class="button1" href="{{member.permalink}}">View Company Site</a  -->
                 </div>
              </div>     
         </div>

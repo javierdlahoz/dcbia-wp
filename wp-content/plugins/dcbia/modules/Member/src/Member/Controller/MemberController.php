@@ -23,6 +23,7 @@ class MemberController extends AbstractController{
     const ZOHO_URL = "http://crm.zoho.com/crm/private/";
     const ZOHO_API_VERSION = 2;
     const ZOHO_TIMEOUT = 15;
+    const PMPRO_MEMBERSHIP_LEVELS = "pmpro_membership_levels";
     
     /**
      * 
@@ -138,15 +139,28 @@ class MemberController extends AbstractController{
      * 
      * @param int $userId
      */
-    private function updateExpirationDate($userId){
+    private function updateExpirationDate($userId, $endDate = null){
         global $wpdb;
         $wpdb->pmpro_memberships_users = $wpdb->prefix . self::PMPPRO_MEMBERSHIP_USERS;
-        $endDate = new \DateTime();
-        $endDate->add(new \DateInterval('P1Y'));
-        $endDate = date("Y-m-d H:i:s", $endDate->getTimestamp());
+        if($endDate === null){
+            $endDate = new \DateTime();
+            $endDate->add(new \DateInterval('P1Y'));
+            $endDate = date("Y-m-d H:i:s", $endDate->getTimestamp());
+        }
         
         $sql = "UPDATE $wpdb->pmpro_memberships_users SET `enddate`='" . $endDate . "' WHERE `user_id`=".$userId;
         $wpdb->query($sql);
+    }
+    
+    private function getMembershipIdByName($membershipLevelName){
+        global $wpdb;
+        $wpdb->pmpro_membership_level = $wpdb->prefix . self::PMPRO_MEMBERSHIP_LEVELS;
+        $sql = "SELECT id FROM $wpdb->pmpro_membership_level WHERE `name`= '".$membershipLevelName."'";
+        $response =  $wpdb->get_var($sql);
+        if($response == 0){
+            return 1;
+        }
+        return $response;
     }
     
     /**
@@ -550,4 +564,135 @@ class MemberController extends AbstractController{
         return $contactId;
     }
     
+    public function importaccountsAction(){
+        $file = __DIR__."/import/accounts.csv";
+        $accounts = array_map('str_getcsv', file($file));
+        unset($accounts[0]);
+        foreach ($accounts as $account){
+            $pac = false;
+            if($account[34] == "true"){
+                $pac = true;
+            }
+            $account[6] = str_replace("/", "", $account[6]);
+            $accountId = str_replace("zcrm_", "", $account[0]);
+            $userId = wp_create_user($accountId, $accountId);
+            
+            if(!is_int($userId)){
+                var_dump($userId);
+                var_dump($account); die();
+            }
+            
+            $user = array(
+                "ID" => $userId,
+                "first_name" => $account[3]
+            );
+            wp_update_user($user);
+            update_user_meta($userId, "address1", $account[17]);
+            update_user_meta($userId, "city", $account[19]);
+            update_user_meta($userId, "state", $account[21]);
+            update_user_meta($userId, "zip", $account[23]);
+            update_user_meta($userId, "telephone", $account[4]);
+            update_user_meta($userId, "company_name", $account[3]);
+            update_user_meta($userId, "company_website", $account[6]);
+            update_user_meta($userId, "company_description", $account[27]);
+            update_user_meta($userId, "membership_type"     , $account[30]);
+            update_user_meta($userId, "business_category", $account[31]);
+            update_user_meta($userId, "account_id", $accountId);
+            update_user_meta($userId, "PAC", $pac);
+            $membershipLevelId = $this->getMembershipIdByName($account[30]);
+            pmpro_changeMembershipLevel($membershipLevelId, $userId);
+            $this->updateExpirationDate($userId, $account[29]);
+        }
+        return array("message" => "done");
+    }
+    
+    public function importcontactsAction(){
+        global $wpdb;
+        $file = __DIR__."/import/contacts.csv";
+        $contacts = array_map('str_getcsv', file($file));
+        //var_dump($contacts); die();
+        unset($contacts[0]);
+        foreach ($contacts as $contact){
+            $accountId = str_replace("zcrm_", "", $contact[7]);
+            $account = get_user_by("login", $accountId);
+            $isReplacing = false;
+            
+            if($contact[4] == "" && $contact[5] == ""){
+                $contact[4] = $contact[6];
+            }
+            
+            if($account !== false){
+                $user = array(
+                    "ID" => $account->ID,
+                    "first_name" => $contact[4],
+                    "last_name" => $contact[5],
+                    "user_email" => $contact[10],
+                    "user_login" => $contact[10],
+                    "user_pass" => $contact[10]
+                );
+                wp_update_user($user);
+                $wpdb->update($wpdb->users, array('user_login' => $contact[10]), array('ID' => $account->ID));
+                $isReplacing = true;
+            }
+            else{
+                $args = array(
+                    'meta_key' => 'account_id',
+                    'meta_value' => $accountId
+                );
+                $results = get_users($args);
+                $account = $results[0];
+            }
+            
+            $account->membership_level = pmpro_getMembershipLevelForUser($account->ID);
+            $pac = get_user_meta($account->ID, "pac", true);
+            $website = get_user_meta($account->ID, "company_website", true);
+            $description = get_user_meta($account->ID, "company_description", true);
+            $mType = get_user_meta($account->ID, "membership_type", true);
+            $bCats = get_user_meta($account->ID, "business_category", true);
+            
+            if($isReplacing === false){
+                $user = array(
+                    "user_email" => $contact[10],
+                    "user_login" => $contact[10],
+                    "user_pass" => $contact[10]
+                );
+                $userId = wp_create_user($user["user_login"], $user["user_pass"], $user["user_email"]);
+                
+                $user = array(
+                    "ID" => $userId,
+                    "first_name" => $contact[4],
+                    "last_name" => $contact[5],
+                );
+                wp_update_user($user);
+                $accountAdditionalUsers = get_user_meta($account->ID, self::ADDITIONAL_USERS_ARRAY, true);
+                if($accountAdditionalUsers === ''){
+                    $accountAdditionalUsers = array();
+                }
+                $accountAdditionalUsers[] = $userId;
+                update_user_meta($account->ID, self::ADDITIONAL_USERS_ARRAY, $accountAdditionalUsers);
+            }
+            else{
+                $userId = $account->ID;
+            }
+    
+            if(is_int($userId)){
+                update_user_meta($userId, "address1", $contact[21]);
+                update_user_meta($userId, "city", $contact[23]);
+                update_user_meta($userId, "state", $contact[25]);
+                update_user_meta($userId, "zip", $contact[27]);
+                update_user_meta($userId, "telephone", $contact[11]);
+                update_user_meta($userId, "company_name", $contact[6]);
+                update_user_meta($userId, "company_website", $website);
+                update_user_meta($userId, "company_description", $description);
+                update_user_meta($userId, "membership_type"     , $mType);
+                update_user_meta($userId, "business_category", $bCats);
+                update_user_meta($userId, "account_id", $accountId);
+                update_user_meta($userId, "PAC", $pac);
+                pmpro_changeMembershipLevel($account->membership_level->ID, $userId);
+                $this->updateExpirationDate($userId, gmdate("Y-m-d", $account->membership_level->enddate));
+            }
+            //var_dump($user); die();
+        }
+        return array("message" => "done");
+    }
 }
