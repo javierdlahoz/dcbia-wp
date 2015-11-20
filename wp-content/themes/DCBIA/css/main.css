@@ -666,6 +666,13 @@ a.member-sort:hover {
   font-size: 18px;
   color: #27a9e1;
 }
+.results-heading a:hover {
+  text-decoration: none;
+  color: #2a2d2f;
+}
+.results-heading a .active {
+  color: #2a2d2f !important;
+}
 .pagination-box a.button1 {
   color: #ffffff;
   background-color: #2a2d2f;
