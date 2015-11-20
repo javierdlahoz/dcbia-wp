@@ -670,7 +670,7 @@ a.member-sort:hover {
   text-decoration: none;
   color: #2a2d2f;
 }
-.results-heading a .active {
+.results-heading .active {
   color: #2a2d2f !important;
 }
 .pagination-box a.button1 {
