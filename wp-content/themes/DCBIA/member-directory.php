@@ -38,11 +38,15 @@ get_header();  ?>
     <!--start main content here-->
     
     <p>&nbsp;</p>
-    <div class="row col-md-12">
-        <div class="pull-right">
-            <a class="button1" ng-click="decreasePage()" ng-hide="query.page <= 1"><< Last</a>
-            <span>&nbsp;&nbsp;</span>
-            <a class="button1" ng-click="increasePage()" ng-hide="query.page >= pages">Next >></a>
+    <div class="container all-pad-gone pagination-box">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="pull-right">
+                    <a class="button1" ng-click="decreasePage()" ng-hide="query.page <= 1">< Last</a>
+                    <span>&nbsp;&nbsp;</span>
+                    <a class="button1" ng-click="increasePage()" ng-hide="query.page >= pages">Next ></a>
+                </div>
+            </div>
         </div>
     </div>
     
