@@ -53,8 +53,8 @@ get_header();
             <br>
         </div>    
         <div class="col-md-6">
-            <br>
-            <iframe width="100%" height="400px" src="https://www.youtube.com/embed/w61BOg_ngKQ" frameborder="0" allowfullscreen></iframe>
+             <br>
+            <iframe width="100%" height="400" src="https://www.youtube.com/embed/Ona-SSV6e_U" frameborder="0" allowfullscreen></iframe>
         </div>
     </div>
 </div>
@@ -77,14 +77,19 @@ get_header();
     </div>
     
     <div class="row">
-        <div class="col-md-12 sponsor-sections">
+       <div class="col-md-12 sponsor-sections">
+        <div class="col-md-6">
             <h4>DCBIA ANNUAL NETWORKING EVENTS</h4>
             <p>You want to find the experts in DC real estate development? Want to make a business connection that is worth your time? Maximize your business relationships by attending and sponsoring DCBIA’s highly-anticipated, sold-out networking events. In Spring, our <b>Spring Fling</b> is talk of the Cherry Blossom season. We welcome back the real estate development industry after summer break at our <b>Back to Business</b> event in the fall (a partnership with AIA| DC) and of course, we celebrate the holidays with some <b>Holiday Cheer</b> in winter!</p>
             <p>We customize sponsorship packages to provide maximum visibility for your company in the DC real estate development industry.</p>
             <p>Contact Sherrita Lancaster at (202) 966-8665 or <a href="mailto:slancaster@dcbia.org">slancaster@dcbia.org</a> to get details!</p>
         <br>
         </div>
-    </div>
+        <br>    
+        <div class="col-md-6">    
+        <iframe width="100%" height="400" src="https://www.youtube.com/embed/5cIFYQXlF8w" frameborder="0" allowfullscreen></iframe>
+      </div>
+   </div>
     
 </div>
 <?php get_footer(); 
