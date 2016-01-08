@@ -80,8 +80,8 @@ get_header();
                     <p>&nbsp;</p>               
                 <div class="col-sm-12">
                     <div class="quoter">
-                        <h3>I AM EXCITED ABOUT DCBIA'S INVIGORATED STRATEGIC FOCUS. IT SERVES AS A ROADMAP TO SHAPE THE FUTURE OF OUR VIBRANT, INNOVATIVE AND WORLD-CLASS CITY. OUR APPROACH WELCOMES ORGANIZATIONS OF ALL SIZES AND WE INVITE YOU TO JOIN US!</h3>
-                        <p>— Sean C. Cahill, President of DCBIA and Senior Vice President of Property Group Partners.</p>
+                        <h3>“I believe DCBIA is an organization that is very beneficial to the city and its real estate development industry,” “I am sincerely honored to be selected by the DCBIA Board to serve as their leader.”</h3>
+                        <p>— said Lynn Hackney, DCBIA President and Partner, Allyson Capital. .</p>
                     </div> 
                 </div>     
                 <p>&nbsp;</p>                 
