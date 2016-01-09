@@ -25,7 +25,6 @@ get_header();  ?>
             <div class="member-bottom-resultbar" ng-cloak>
                 <div class="col-sm-6 col-xs-6">
                     <h4>member directory</h4>
-                    <h5 ng-show="total > 0">DISPLAYING {{fNumber}}-{{lNumber}} OF {{total | number}} RESULTS</h5>
                     <h5 ng-show="members.length == 0" ng-cloak>No members were found</h5>
                 
                 </div>       
@@ -79,7 +78,6 @@ get_header();  ?>
                 </div>
              </div>
              <div class="col-sm-8 members-main">
-                <h2 ng-cloak>members found: <span>{{total | number}}</span></h2>
                 
                 <div ng-show="loading">
                     <center>
@@ -88,10 +86,10 @@ get_header();  ?>
                 </div>
                 
                 
-                <div class="member-details" ng-repeat="member in members" ng-hide="loading" ng-cloak>
-                    <h4 ng-show="member.name != ' '">{{member.name}}</h4>
-                    <h4 ng-hide="member.name != ' '">{{member.email}}</h4>
-                    <p>{{member.organization}}</p>
+                <div class="member-details" ng-repeat="member in members" ng-hide="loading" ng-cloak ng-hide="member.organization == ''">
+                    <!--  h4 ng-show="member.name != ' '">{{member.name}}</h4>
+                    <h4 ng-hide="member.name != ' '">{{member.email}}</h4 -->
+                    <h4>{{member.organization}}</h4>
                     <p>{{member.cropBio}}</p>
                     
                     <!-- a class="button1" href="{{member.permalink}}">View Company Site</a  -->

@@ -12,7 +12,7 @@ angular.module('angular-wp')
     	$scope.members = {};
     	$scope.query = {};
     	$scope.query.page = 1;
-    	$scope.query.orderby = "first_name";
+    	$scope.query.orderby = "company_name";
 		$scope.query.order = "ASC";
 		$scope.query.resultsPerPage = 20;
 		$scope.query.business_category = "";
