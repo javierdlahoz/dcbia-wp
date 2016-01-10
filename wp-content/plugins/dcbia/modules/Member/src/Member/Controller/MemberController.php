@@ -476,9 +476,9 @@ class MemberController extends AbstractController{
         }
         
         if(!is_null($this->getPost("orderby"))){
-            if($this->getPost("orderby") == "first_name"){
+            if($this->getPost("orderby") == "company_name"){
                 $mS->setOrderby("meta_value");
-                $mS->setMetaKey("first_name");
+                $mS->setMetaKey("company_name");
             }
             else{
                 $mS->setOrderby($this->getPost("orderby"));
