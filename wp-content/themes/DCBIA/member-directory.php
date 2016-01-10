@@ -12,10 +12,10 @@ get_header();  ?>
                     <input type="text" ng-model="query.query" name="" id="member-search" class="form-control" placeholder="SEARCH">
                     <button type="submit" ng-click="search()" class="member-search-btn" title="submit member seach results"><i class="fa fa-search"></i></button>
                 </div>    
-                <div class="col-sm-1 col-xs-3">
+                <div class="col-sm-1 col-xs-2">
                     <span class="search-titles">SORT BY:</span>
                 </div>
-                <div class="col-sm-3 col-xs-4">    
+                <div class="col-sm-3 col-xs-3">    
                     <a href="" class="member-sort" id="sort-title" ng-click="setOrderBy('title')">TITLE A-Z</a>
                 </div>
    <!--             <div class="col-sm-1 col-xs-3">
