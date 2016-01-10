@@ -429,6 +429,12 @@ class MemberController extends AbstractController{
         
         //query search and business categories
         $query = $this->getPost("query");
+        /*$distinct = array(
+            'key' => 'affilates_number',
+            'value' => '0',
+            'compare' => '!='
+        );*/
+        
         $metaQueryOrRelation = array(
             'relation' => 'OR',
             array(
@@ -460,11 +466,16 @@ class MemberController extends AbstractController{
                 array(
                     'key' => 'business_category',
                     'value' => $this->getPost("business_category")
-                )
+                ),
+                //$distinct
             );
         }
         else{
-            $metaQuery = $metaQueryOrRelation;
+            $metaQuery = array(
+                "relation" => "AND",
+                $metaQueryOrRelation,
+                //$distinct
+            );
         }
         
         $mS->setMetaQuery($metaQuery);

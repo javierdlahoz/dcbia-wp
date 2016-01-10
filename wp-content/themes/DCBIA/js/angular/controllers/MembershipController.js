@@ -14,6 +14,7 @@ angular.module('angular-wp')
     	$scope.totalCost = 0;
     	var pacCost = 25;
     	$scope.membershipCost = 0;
+    	$scope.membershipDescription = "";
     	
     	var today = new Date();
 		var dd = today.getDate();
@@ -232,8 +233,10 @@ angular.module('angular-wp')
     	$scope.setMembershipCost = function(){
     		var index = getMembershipIndex($scope.member.membership_level);
     		$scope.membershipCost = $scope.membershipLevels[index].initial_payment;
+    		$scope.membershipDescription = $scope.membershipLevels[index].description;
     		getTotalCost();
     	};
+    	
     	
     	$scope.getAdditionalUsers = function(){
     		var url = "/api/member/affiliates";

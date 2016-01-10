@@ -117,6 +117,7 @@ function asingClassMenu() {
 
 jQuery(document).ready(function() {
 
+	jQuery("#wpadminbar").hide();
 	asingClassMenu();
 	// setBlockColors();
 

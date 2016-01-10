@@ -44,7 +44,8 @@ $pageEntity = new PostEntity(get_the_ID());
                     
                     <div class="lower-key-results" ng-repeat="resource in resources" ng-cloak >
                         <div class="col-sm-2 bookmark-box">
-                            <p><i class="fa fa-bookmark-o"></i></p>
+                            <p ng-show="resource.image == false"><img src="<?php echo get_template_directory_uri(); ?>/img/advocacy-bookmark-pic.jpg"></p>
+                            <p ng-hide="resource.image == false"><img src="{{resource.image}}"></p>
                         </div>
                         <div class="col-sm-9 col-sm-offset-1 key-info">
                             <h5>{{resource.title}}</h5>  
