@@ -8,9 +8,11 @@ get_header();  ?>
     <div class="container all-pad-gone">      
           <?php echo getTopMenu(); ?>
             <div class="member-top-searchbar">
-                <div class="col-md-8">
-                    <input type="text" ng-model="query.query" name="" id="member-search" class="form-control" placeholder="SEARCH">
-                    <button type="submit" ng-click="search()" class="member-search-btn" title="submit member seach results"><i class="fa fa-search"></i></button>
+                <div class="col-md-5">
+                	<form ng-submit="search()">
+                        <input type="text" ng-model="query.query" name="" id="member-search" class="form-control" placeholder="SEARCH">
+                        <button type="submit" class="member-search-btn" title="submit member seach results"><i class="fa fa-search"></i></button>
+                    </form>
                 </div>    
                 <div class="col-sm-1 col-xs-2">
                     <span class="search-titles">SORT BY:</span>

@@ -37,7 +37,10 @@ class MemberFacade extends AbstractSingleton
             "permalink" => $user->user_url,
             "picture" => get_avatar_url($user->ID),
             "email" => $user->user_login,
-            "organization" => $companyName
+            "organization" => $companyName,
+            "affilates_number" => get_user_meta($user->ID, "affilates_number", true),
+            "account_id" => get_user_meta($user->ID, "account_id", true),
+            "contact_id" => get_user_meta($user->ID, "contact_id", true)
         );
     }
     

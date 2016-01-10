@@ -34,7 +34,8 @@ get_header(); ?>
                             <option ng-repeat="level in membershipLevels" value="{{level.id}}"
                                 ng-if="level.name != 'unpaid' && level.name != 'DLD'">{{level.name}}</option>
                         </select>
-                        <p ng-show="membershipCost != null">This will cost you: ${{membershipCost}} US</p>
+                        <p ng-show="membershipCost != null">Amount: ${{membershipCost}} US</p>
+                        <p>{{membershipDescription}}</p>
                     </div>
                 </div>
                 <div class="col-md-6">
