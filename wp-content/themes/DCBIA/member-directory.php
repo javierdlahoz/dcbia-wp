@@ -92,6 +92,7 @@ get_header();  ?>
                     <!--  h4 ng-show="member.name != ' '">{{member.name}}</h4>
                     <h4 ng-hide="member.name != ' '">{{member.email}}</h4 -->
                     <h4>{{member.organization}}</h4>
+                    <p>{{member.city}}, {{member.state}}</p>
                     <p>{{member.cropBio}}</p>
                     
                     <!-- a class="button1" href="{{member.permalink}}">View Company Site</a  -->

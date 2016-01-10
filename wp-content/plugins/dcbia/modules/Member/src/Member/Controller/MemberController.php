@@ -150,6 +150,7 @@ class MemberController extends AbstractController{
         
         $sql = "UPDATE $wpdb->pmpro_memberships_users SET `enddate`='" . $endDate . "' WHERE `user_id`=".$userId;
         $wpdb->query($sql);
+        update_user_meta($userId, "expiration_date", $endDate);
     }
     
     private function getMembershipIdByName($membershipLevelName){
@@ -206,7 +207,12 @@ class MemberController extends AbstractController{
             $creds['user_login'] = $member["email"];
             $creds['user_password'] = $member["password"];
             $creds['remember'] = true;
+            
+            update_user_meta($userId, "isAccount", "true");
             wp_signon($creds, false);
+        }
+        else{
+            update_user_meta($userId, "isAccount", "false");
         }
         return $userId;
     }
@@ -429,11 +435,15 @@ class MemberController extends AbstractController{
         
         //query search and business categories
         $query = $this->getPost("query");
-        /*$distinct = array(
-            'key' => 'affilates_number',
-            'value' => '0',
+        $distinct = array(
+            'key' => 'isAccount',
+            'value' => 'true'
+        );
+        $city = array(
+            'key' => 'city',
+            'value' => '',
             'compare' => '!='
-        );*/
+        ); 
         
         $metaQueryOrRelation = array(
             'relation' => 'OR',
@@ -456,6 +466,11 @@ class MemberController extends AbstractController{
                 'key' => 'company_description',
                 'value' => $query,
                 'compare' => 'LIKE'
+            ),
+            array(
+                'key' => 'organization',
+                'value' => $query,
+                'compare' => 'LIKE'
             )
         );
         
@@ -467,14 +482,16 @@ class MemberController extends AbstractController{
                     'key' => 'business_category',
                     'value' => $this->getPost("business_category")
                 ),
-                //$distinct
+                $distinct,
+                $city
             );
         }
         else{
             $metaQuery = array(
                 "relation" => "AND",
                 $metaQueryOrRelation,
-                //$distinct
+                $distinct,
+                $city
             );
         }
         
@@ -589,8 +606,8 @@ class MemberController extends AbstractController{
             $userId = wp_create_user($accountId, $accountId);
             
             if(!is_int($userId)){
-                var_dump($userId);
-                var_dump($account); die();
+                //var_dump($userId);
+                //var_dump($account); die();
             }
             
             $user = array(
@@ -610,6 +627,7 @@ class MemberController extends AbstractController{
             update_user_meta($userId, "business_category", $account[31]);
             update_user_meta($userId, "account_id", $accountId);
             update_user_meta($userId, "PAC", $pac);
+            update_user_meta($userId, "isAccount", "true");
             $membershipLevelId = $this->getMembershipIdByName($account[30]);
             pmpro_changeMembershipLevel($membershipLevelId, $userId);
             $this->updateExpirationDate($userId, $account[29]);
@@ -621,7 +639,6 @@ class MemberController extends AbstractController{
         global $wpdb;
         $file = __DIR__."/import/contacts.csv";
         $contacts = array_map('str_getcsv', file($file));
-        //var_dump($contacts); die();
         unset($contacts[0]);
         foreach ($contacts as $contact){
             $accountId = str_replace("zcrm_", "", $contact[7]);
@@ -643,6 +660,7 @@ class MemberController extends AbstractController{
                 );
                 wp_update_user($user);
                 $wpdb->update($wpdb->users, array('user_login' => $contact[10]), array('ID' => $account->ID));
+                update_user_meta($account->ID, "isAccount", "true");
                 $isReplacing = true;
             }
             else{
@@ -668,7 +686,7 @@ class MemberController extends AbstractController{
                     "user_pass" => $contact[10]
                 );
                 $userId = wp_create_user($user["user_login"], $user["user_pass"], $user["user_email"]);
-                
+                update_user_meta($userId, "isAccount", "true");
                 $user = array(
                     "ID" => $userId,
                     "first_name" => $contact[4],

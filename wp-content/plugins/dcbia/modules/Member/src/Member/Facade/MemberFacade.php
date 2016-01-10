@@ -40,7 +40,9 @@ class MemberFacade extends AbstractSingleton
             "organization" => $companyName,
             "affilates_number" => get_user_meta($user->ID, "affilates_number", true),
             "account_id" => get_user_meta($user->ID, "account_id", true),
-            "contact_id" => get_user_meta($user->ID, "contact_id", true)
+            "contact_id" => get_user_meta($user->ID, "contact_id", true),
+            "city" => get_user_meta($user->ID, "city", true),
+            "state" => get_user_meta($user->ID, "state", true)
         );
     }
     
