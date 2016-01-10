@@ -14,15 +14,15 @@ get_header();  ?>
                         <button type="submit" class="member-search-btn" title="submit member seach results"><i class="fa fa-search"></i></button>
                     </form>
                 </div>    
-                <div class="col-md-1 col-xs-2">
+                <div class="col-sm-1 col-xs-2">
                     <span class="search-titles">SORT BY:</span>
                 </div>
-                <div class="col-sm-2 col-xs-4">    
+                <div class="col-sm-3 col-xs-3">    
                     <a href="" class="member-sort" id="sort-title" ng-click="setOrderBy('title')">TITLE A-Z</a>
                 </div>
-                <div class="col-sm-2 col-xs-4">
+   <!--             <div class="col-sm-1 col-xs-3">
                     <a href="" class="member-sort" id="sort-date" ng-click="setOrderBy('date')">DATE CREATED</a>
-                </div>
+                </div>-->
             </div>
             <div class="member-bottom-resultbar" ng-cloak>
                 <div class="col-sm-6 col-xs-6">
@@ -31,7 +31,7 @@ get_header();  ?>
                 
                 </div>       
                 <div class="col-sm-6 col-xs-6">
-                    <a class="member-share pull-right" href="">share<i class="fa fa-share-square"></i></a>
+                    <!--<a class="member-share pull-right" href="">share<i class="fa fa-share-square"></i></a>-->
                 </div>       
             </div>    
         </div> 
