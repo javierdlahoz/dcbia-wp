@@ -433,6 +433,9 @@ class MemberController extends AbstractController{
             $mS->setOffset(0);
         }
         
+        $today = new \DateTime();
+        $today = date("Y-m-d", $today->getTimestamp());
+        
         //query search and business categories
         $query = $this->getPost("query");
         $distinct = array(
@@ -443,7 +446,13 @@ class MemberController extends AbstractController{
             'key' => 'city',
             'value' => '',
             'compare' => '!='
-        ); 
+        );
+        $date = array(
+            'key' => 'expiration_date',
+            'value' => $today,
+            'compare' => '>=',
+            'type' => 'DATE'
+        );
         
         $metaQueryOrRelation = array(
             'relation' => 'OR',
@@ -483,7 +492,8 @@ class MemberController extends AbstractController{
                     'value' => $this->getPost("business_category")
                 ),
                 $distinct,
-                $city
+                $city,
+                $date
             );
         }
         else{
@@ -491,7 +501,8 @@ class MemberController extends AbstractController{
                 "relation" => "AND",
                 $metaQueryOrRelation,
                 $distinct,
-                $city
+                $city,
+                $date
             );
         }
         
@@ -598,7 +609,7 @@ class MemberController extends AbstractController{
         unset($accounts[0]);
         foreach ($accounts as $account){
             $pac = false;
-            if($account[34] == "true"){
+            if($account[33] == "true"){
                 $pac = true;
             }
             $account[6] = str_replace("/", "", $account[6]);
@@ -616,22 +627,22 @@ class MemberController extends AbstractController{
             );
             
             wp_update_user($user);
-            update_user_meta($userId, "address1", $account[17]);
-            update_user_meta($userId, "city", $account[19]);
-            update_user_meta($userId, "state", $account[21]);
-            update_user_meta($userId, "zip", $account[23]);
+            update_user_meta($userId, "address1", $account[16]);
+            update_user_meta($userId, "city", $account[18]);
+            update_user_meta($userId, "state", $account[20]);
+            update_user_meta($userId, "zip", $account[22]);
             update_user_meta($userId, "telephone", $account[4]);
             update_user_meta($userId, "company_name", $account[3]);
             update_user_meta($userId, "company_website", $account[6]);
-            update_user_meta($userId, "company_description", $account[27]);
-            update_user_meta($userId, "membership_type"     , $account[30]);
-            update_user_meta($userId, "business_category", $account[31]);
+            update_user_meta($userId, "company_description", $account[26]);
+            update_user_meta($userId, "membership_type"     , $account[29]);
+            update_user_meta($userId, "business_category", $account[30]);
             update_user_meta($userId, "account_id", $accountId);
             update_user_meta($userId, "PAC", $pac);
             update_user_meta($userId, "isAccount", "true");
-            $membershipLevelId = $this->getMembershipIdByName($account[30]);
+            $membershipLevelId = $this->getMembershipIdByName($account[29]);
             pmpro_changeMembershipLevel($membershipLevelId, $userId);
-            $this->updateExpirationDate($userId, $account[29]);
+            $this->updateExpirationDate($userId, $account[28]);
         }
         return array("message" => "done");
     }
