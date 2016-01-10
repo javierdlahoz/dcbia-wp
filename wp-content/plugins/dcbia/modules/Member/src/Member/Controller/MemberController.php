@@ -614,6 +614,7 @@ class MemberController extends AbstractController{
                 "ID" => $userId,
                 "first_name" => $account[3]
             );
+            
             wp_update_user($user);
             update_user_meta($userId, "address1", $account[17]);
             update_user_meta($userId, "city", $account[19]);
@@ -641,6 +642,7 @@ class MemberController extends AbstractController{
         $contacts = array_map('str_getcsv', file($file));
         unset($contacts[0]);
         foreach ($contacts as $contact){
+            
             $accountId = str_replace("zcrm_", "", $contact[7]);
             $account = get_user_by("login", $accountId);
             $isReplacing = false;
@@ -654,12 +656,12 @@ class MemberController extends AbstractController{
                     "ID" => $account->ID,
                     "first_name" => $contact[4],
                     "last_name" => $contact[5],
-                    "user_email" => $contact[10],
-                    "user_login" => $contact[10],
-                    "user_pass" => $contact[10]
+                    "user_email" => $contact[8],
+                    "user_login" => $contact[8],
+                    "user_pass" => $contact[8]
                 );
                 wp_update_user($user);
-                $wpdb->update($wpdb->users, array('user_login' => $contact[10]), array('ID' => $account->ID));
+                $wpdb->update($wpdb->users, array('user_login' => $contact[8]), array('ID' => $account->ID));
                 update_user_meta($account->ID, "isAccount", "true");
                 $isReplacing = true;
             }
@@ -681,9 +683,9 @@ class MemberController extends AbstractController{
             
             if($isReplacing === false){
                 $user = array(
-                    "user_email" => $contact[10],
-                    "user_login" => $contact[10],
-                    "user_pass" => $contact[10]
+                    "user_email" => $contact[8],
+                    "user_login" => $contact[8],
+                    "user_pass" => $contact[8]
                 );
                 $userId = wp_create_user($user["user_login"], $user["user_pass"], $user["user_email"]);
                 update_user_meta($userId, "isAccount", "true");
@@ -705,11 +707,11 @@ class MemberController extends AbstractController{
             }
     
             if(is_int($userId)){
-                update_user_meta($userId, "address1", $contact[21]);
-                update_user_meta($userId, "city", $contact[23]);
-                update_user_meta($userId, "state", $contact[25]);
-                update_user_meta($userId, "zip", $contact[27]);
-                update_user_meta($userId, "telephone", $contact[11]);
+                update_user_meta($userId, "address1", $contact[19]);
+                update_user_meta($userId, "city", $contact[21]);
+                update_user_meta($userId, "state", $contact[23]);
+                update_user_meta($userId, "zip", $contact[25]);
+                update_user_meta($userId, "telephone", $contact[9]);
                 update_user_meta($userId, "company_name", $contact[6]);
                 update_user_meta($userId, "company_website", $website);
                 update_user_meta($userId, "company_description", $description);
