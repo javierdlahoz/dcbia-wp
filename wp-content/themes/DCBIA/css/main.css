@@ -87,10 +87,9 @@ a.back-to-top:hover {
 .image-cover {
   display: inline-block;
   background: transparent url(../img/featured-sailboat.jpg) no-repeat center center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  -webkit-background-size: cover!important;
+  -moz-background-size: cover!important;
+  background-size: cover!important;
   min-height: 100%;
   min-width: 100%;
   width: 100%;
@@ -100,10 +99,9 @@ a.back-to-top:hover {
 .image-cover2 {
   display: inline-block;
   background: transparent url(../img/featured-sailboat.jpg) no-repeat center center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  -webkit-background-size: cover!important;
+  -moz-background-size: cover!important;
+  background-size: cover!important;
   min-height: 100%;
   min-width: 100%;
   width: 100%;
