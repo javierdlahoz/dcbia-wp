@@ -8,19 +8,19 @@ get_header();  ?>
     <div class="container all-pad-gone">      
           <?php echo getTopMenu(); ?>
             <div class="member-top-searchbar">
-                <div class="col-md-5">
+                <div class="col-md-8">
                     <input type="text" ng-model="query.query" name="" id="member-search" class="form-control" placeholder="SEARCH">
                     <button type="submit" ng-click="search()" class="member-search-btn" title="submit member seach results"><i class="fa fa-search"></i></button>
                 </div>    
-                <div class="col-md-1 col-xs-2">
+                <div class="col-sm-1 col-xs-3">
                     <span class="search-titles">SORT BY:</span>
                 </div>
-                <div class="col-sm-2 col-xs-4">    
+                <div class="col-sm-3 col-xs-4">    
                     <a href="" class="member-sort" id="sort-title" ng-click="setOrderBy('title')">TITLE A-Z</a>
                 </div>
-                <div class="col-sm-2 col-xs-4">
+   <!--             <div class="col-sm-1 col-xs-3">
                     <a href="" class="member-sort" id="sort-date" ng-click="setOrderBy('date')">DATE CREATED</a>
-                </div>
+                </div>-->
             </div>
             <div class="member-bottom-resultbar" ng-cloak>
                 <div class="col-sm-6 col-xs-6">
@@ -30,7 +30,7 @@ get_header();  ?>
                 
                 </div>       
                 <div class="col-sm-6 col-xs-6">
-                    <a class="member-share pull-right" href="">share<i class="fa fa-share-square"></i></a>
+                    <!--<a class="member-share pull-right" href="">share<i class="fa fa-share-square"></i></a>-->
                 </div>       
             </div>    
         </div> 
