@@ -3,6 +3,8 @@ use INUtils\Entity\PostEntity;
 use Committee\Controller\CommitteeController;
 use Member\Controller\MemberController;
 $pageEntity = new PostEntity(get_the_ID());
+$user = wp_get_current_user();
+$amount = get_user_meta($user->ID, "membership_total_cost", true);
 get_header(); ?>
 <div class="container all-pad-gone">      
     <?php echo getTopMenu(); ?> 
@@ -52,7 +54,7 @@ get_header(); ?>
                             <span ng-hide="isPacAdded">ADD 25$ Political Action Committee</span>
                             <span ng-show="isPacAdded">REMOVE 25$ Political Action Committee</span>
                         </div>
-                        <div class="button3 total-but">your total: ${{totalCost}}</div>
+                        <div class="button3 total-but">your total: $<?php echo $amount; ?></div>
                     </div>
                 </div>
                 <br>
