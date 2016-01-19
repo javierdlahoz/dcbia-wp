@@ -154,6 +154,15 @@ class MemberHelper
         );
     }
     
+    /**
+     * 
+     * @param string $date
+     * @return string
+     */
+    public static function formatDateForZoho($date){
+        $dateA = explode("-", $date);
+        return $dateA[1]."/".$dateA[2]."/".$dateA[0]; 
+    }
     
     /**
      * @return boolean

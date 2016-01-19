@@ -82,6 +82,11 @@ angular.module('angular-wp')
     	
     	getContactsInfo = function(){
     		var contacts = {};
+    		var billingAddress = $scope.member.address1 + " " + $scope.member.address2;
+    		if($scope.member.address2 === null || $scope.member.address2 === undefined){
+    			billingAddress = $scope.member.address1;
+    		}
+    		
     		contacts[0] = {
     			"First Name": $scope.member.first_name,
     			"Last Name": $scope.member.last_name,
@@ -93,7 +98,7 @@ angular.module('angular-wp')
     			"Membership Level": $scope.membershipName,
     			"Membership Expiration Date": $scope.nextYear,
     			"Membership Status": "Active",
-    			"Billing Street": $scope.member.address1 + " " + $scope.member.address2,
+    			"Billing Street": billingAddress,
     			"Billing City": $scope.member.city,
     			"Billing State": $scope.member.state,
     			"Billing Code": $scope.member.zip
@@ -127,7 +132,6 @@ angular.module('angular-wp')
         			contacts[j]["CONTACTID"] = $scope.member.account_id; 
         		}
     		}
-    		console.log(contacts);
     		return contacts;
     	}
     	
@@ -155,7 +159,6 @@ angular.module('angular-wp')
     			account["ACCOUNTID"] = $scope.member.account_id; 
     		}
     		
-    		console.log(account);
     		return account;
     	};
     	
@@ -204,6 +207,19 @@ angular.module('angular-wp')
     			$scope.member.city = $scope.member.city.address_components[0].long_name;
     		}
     	};
+    	
+    	$scope.updateUser = function(){
+    		var url = "/api/member/update";
+    		console.log($scope.member);
+    		$http({
+                url: url,
+                method: "POST",
+                data: angular.element.param($scope.member),
+                headers: getContentTypes().form
+            }).success(function (data) {
+            	angular.element("#wppb-edit-user").submit();
+            });
+    	}
     	
     	$scope.register = function(){
     		var url = "/api/member/register";
@@ -344,11 +360,13 @@ angular.module('angular-wp')
     	};
     	
     	$scope.getCurrentUser = function(){
+    		$scope.loadingUser = true;
     		var url = "/api/member/current";
     		$http({
                 url: url,
                 method: "GET",
             }).success(function (data) {
+            	$scope.loadingUser = false;
             	if(data.first_name !== false){
             		$scope.member = data;
             		$scope.users = data.affiliates;
