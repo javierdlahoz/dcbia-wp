@@ -81,7 +81,7 @@ get_header();
                 <div class="col-sm-12">
                     <div class="quoter">
                         <h3>“I believe DCBIA is an organization that is very beneficial to the city and its real estate development industry,” “I am sincerely honored to be selected by the DCBIA Board to serve as their leader.”</h3>
-                        <p>— said Lynn Hackney, DCBIA President and Partner, Allyson Capital. .</p>
+                        <p>— said Lynn Hackney, DCBIA President and Partner, Allyson Capital.</p>
                     </div> 
                 </div>     
                 <p>&nbsp;</p>                 
