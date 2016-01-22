@@ -133,7 +133,8 @@ get_header(); ?>
                 <div class="col-md-12">
                     <div class="form-group">
                       <label>Company Website</label>
-                      <input type="url" class="form-control" placeholder="Company Website" ng-model="member.company_website">
+                      <input type="url" class="form-control" placeholder="Company Website" ng-value="'http://'" ng-model="member.company_website">
+                      <p><small>it starts with http://</small></p>
                     </div>
                     <div class="form-group">
                       <label>Phone</label>

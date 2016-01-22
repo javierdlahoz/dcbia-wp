@@ -44,6 +44,9 @@ function wpse_128636_redirect_post() {
   }
 }
 
+if ( !function_exists('wp_new_user_notification') ) {
+    function wp_new_user_notification( $user_id, $notify = '' ) { }
+}
 
 if( !function_exists('wp_remove_wp_columns') ):
     function wp_remove_wp_columns( $columns ) {

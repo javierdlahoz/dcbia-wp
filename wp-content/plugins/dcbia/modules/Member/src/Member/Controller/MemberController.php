@@ -8,7 +8,7 @@ use INUtils\Helper\EmailHelper;
 use Member\Helper\MemberHelper;
 use Member\Facade\MemberFacade;
 use Member\Service\MemberService;
-require_once("wp-content/plugins/paid-memberships-pro/paid-memberships-pro.php");
+require_once(__DIR__."/../../../../../../paid-memberships-pro/paid-memberships-pro.php");
 
 class MemberController extends AbstractController{
     
@@ -19,11 +19,15 @@ class MemberController extends AbstractController{
     const PMPPRO_MEMBERSHIP_USERS = "pmpro_memberships_users";
     const UNPAID_LEVEL = 5;
     const PAC_COST = 25;
-    const ZOHO_TOKEN = "22ddae076da1ccb0bcc5b3e9d81ac2fa";
-    const ZOHO_URL = "http://crm.zoho.com/crm/private/";
+    
+    
+    const PMPRO_MEMBERSHIP_LEVELS = "pmpro_membership_levels";
+    
     const ZOHO_API_VERSION = 2;
     const ZOHO_TIMEOUT = 15;
-    const PMPRO_MEMBERSHIP_LEVELS = "pmpro_membership_levels";
+    const ZOHO_TOKEN = "22ddae076da1ccb0bcc5b3e9d81ac2fa";
+    const ZOHO_CRM = "crmapi";
+    const ZOHO_URL = "https://crm.zoho.com/crm/private/xml/";
     
     /**
      * 
@@ -433,6 +437,9 @@ class MemberController extends AbstractController{
             $mS->setOffset(0);
         }
         
+        $today = new \DateTime();
+        $today = date("Y-m-d", $today->getTimestamp());
+        
         //query search and business categories
         $query = $this->getPost("query");
         $distinct = array(
@@ -443,7 +450,13 @@ class MemberController extends AbstractController{
             'key' => 'city',
             'value' => '',
             'compare' => '!='
-        ); 
+        );
+        $date = array(
+            'key' => 'expiration_date',
+            'value' => $today,
+            'compare' => '>=',
+            'type' => 'DATE'
+        );
         
         $metaQueryOrRelation = array(
             'relation' => 'OR',
@@ -483,7 +496,8 @@ class MemberController extends AbstractController{
                     'value' => $this->getPost("business_category")
                 ),
                 $distinct,
-                $city
+                $city,
+                $date
             );
         }
         else{
@@ -491,7 +505,8 @@ class MemberController extends AbstractController{
                 "relation" => "AND",
                 $metaQueryOrRelation,
                 $distinct,
-                $city
+                $city,
+                $date
             );
         }
         
@@ -593,12 +608,14 @@ class MemberController extends AbstractController{
     }
     
     public function importaccountsAction(){
+        ini_set('disable_functions','mail');
+        
         $file = __DIR__."/import/accounts.csv";
         $accounts = array_map('str_getcsv', file($file));
         unset($accounts[0]);
         foreach ($accounts as $account){
             $pac = false;
-            if($account[34] == "true"){
+            if($account[33] == "true"){
                 $pac = true;
             }
             $account[6] = str_replace("/", "", $account[6]);
@@ -614,33 +631,38 @@ class MemberController extends AbstractController{
                 "ID" => $userId,
                 "first_name" => $account[3]
             );
+            
             wp_update_user($user);
-            update_user_meta($userId, "address1", $account[17]);
-            update_user_meta($userId, "city", $account[19]);
-            update_user_meta($userId, "state", $account[21]);
-            update_user_meta($userId, "zip", $account[23]);
+            update_user_meta($userId, "address1", $account[16]);
+            update_user_meta($userId, "city", $account[18]);
+            update_user_meta($userId, "state", $account[20]);
+            update_user_meta($userId, "zip", $account[22]);
             update_user_meta($userId, "telephone", $account[4]);
             update_user_meta($userId, "company_name", $account[3]);
             update_user_meta($userId, "company_website", $account[6]);
-            update_user_meta($userId, "company_description", $account[27]);
-            update_user_meta($userId, "membership_type"     , $account[30]);
-            update_user_meta($userId, "business_category", $account[31]);
+            update_user_meta($userId, "company_description", $account[26]);
+            update_user_meta($userId, "membership_type"     , $account[29]);
+            update_user_meta($userId, "business_category", $account[30]);
             update_user_meta($userId, "account_id", $accountId);
             update_user_meta($userId, "PAC", $pac);
             update_user_meta($userId, "isAccount", "true");
-            $membershipLevelId = $this->getMembershipIdByName($account[30]);
+            $membershipLevelId = $this->getMembershipIdByName($account[29]);
             pmpro_changeMembershipLevel($membershipLevelId, $userId);
-            $this->updateExpirationDate($userId, $account[29]);
+            $this->updateExpirationDate($userId, $account[28]);
         }
         return array("message" => "done");
     }
     
     public function importcontactsAction(){
+        ini_set('disable_functions','mail');
         global $wpdb;
+        
         $file = __DIR__."/import/contacts.csv";
         $contacts = array_map('str_getcsv', file($file));
         unset($contacts[0]);
         foreach ($contacts as $contact){
+
+            $contactId = str_replace("zcrm_", "", $contact[0]);
             $accountId = str_replace("zcrm_", "", $contact[7]);
             $account = get_user_by("login", $accountId);
             $isReplacing = false;
@@ -654,12 +676,12 @@ class MemberController extends AbstractController{
                     "ID" => $account->ID,
                     "first_name" => $contact[4],
                     "last_name" => $contact[5],
-                    "user_email" => $contact[10],
-                    "user_login" => $contact[10],
-                    "user_pass" => $contact[10]
+                    "user_email" => $contact[8],
+                    "user_login" => $contact[8],
+                    "user_pass" => $contact[8]
                 );
                 wp_update_user($user);
-                $wpdb->update($wpdb->users, array('user_login' => $contact[10]), array('ID' => $account->ID));
+                $wpdb->update($wpdb->users, array('user_login' => $contact[8]), array('ID' => $account->ID));
                 update_user_meta($account->ID, "isAccount", "true");
                 $isReplacing = true;
             }
@@ -681,9 +703,9 @@ class MemberController extends AbstractController{
             
             if($isReplacing === false){
                 $user = array(
-                    "user_email" => $contact[10],
-                    "user_login" => $contact[10],
-                    "user_pass" => $contact[10]
+                    "user_email" => $contact[8],
+                    "user_login" => $contact[8],
+                    "user_pass" => $contact[8]
                 );
                 $userId = wp_create_user($user["user_login"], $user["user_pass"], $user["user_email"]);
                 update_user_meta($userId, "isAccount", "true");
@@ -705,11 +727,13 @@ class MemberController extends AbstractController{
             }
     
             if(is_int($userId)){
-                update_user_meta($userId, "address1", $contact[21]);
-                update_user_meta($userId, "city", $contact[23]);
-                update_user_meta($userId, "state", $contact[25]);
-                update_user_meta($userId, "zip", $contact[27]);
-                update_user_meta($userId, "telephone", $contact[11]);
+                update_user_meta($userId, "contact_id", $contactId);
+                update_user_meta($userId, "address1", $contact[19]);
+                update_user_meta($userId, "city", $contact[21]);
+                update_user_meta($userId, "state", $contact[23]);
+                update_user_meta($userId, "zip", $contact[25]);
+                update_user_meta($userId, "telephone", $contact[9]);
+                update_user_meta($userId, "phone", $contact[9]);
                 update_user_meta($userId, "company_name", $contact[6]);
                 update_user_meta($userId, "company_website", $website);
                 update_user_meta($userId, "company_description", $description);
@@ -720,8 +744,82 @@ class MemberController extends AbstractController{
                 pmpro_changeMembershipLevel($account->membership_level->ID, $userId);
                 $this->updateExpirationDate($userId, gmdate("Y-m-d", $account->membership_level->enddate));
             }
-            //var_dump($user); die();
         }
         return array("message" => "done");
+    }
+    
+    public function updateAction(){
+        $address1 = $_POST["address1"];
+        $address2 = $_POST["address2"];
+        $address3 = $_POST["address3"];
+        $city = $_POST["city"];
+        $state = $_POST["state"];
+        $telephone = $_POST["telephone"];
+        
+        $userId = wp_get_current_user()->ID;
+        update_user_meta($userId, "address1", $address1);
+        update_user_meta($userId, "address2", $address2);
+        update_user_meta($userId, "address3", $address3);
+        update_user_meta($userId, "city", $city);
+        update_user_meta($userId, "state", $state);
+        update_user_meta($userId, "telephone", $telephone);
+        update_user_meta($userId, "phone", $telephone);
+        
+        return array("message" => "user updated");
+    }
+    
+    public function exportUserToZoho($userId, $oldData){
+        $user = get_user_by("ID", $userId);
+        $user->membership_level = pmpro_getMembershipLevelsForUser($userId);
+        $endDate = gmdate("m/d/Y", $user->membership_level[0]->enddate);
+        
+        $address1 = get_user_meta($userId, "address1", true);
+        $address2 = get_user_meta($userId, "address2", true);
+        if($address2 !== null){
+            $address = $address1." ".$address2; 
+        }
+        else{
+            $address = $address1;
+        }
+        
+        $contactId = get_user_meta($userId, "contact_id", true);
+        $params = "authtoken=".self::ZOHO_TOKEN."&scope=".self::ZOHO_CRM."&newFormat=1&wfTrigger=true";
+        $params .= "&id=".$contactId."&xmlData=";
+        
+        $params .= "<Contacts><row no='1'>";
+        $params .= '<FL val="First Name">'.$user->first_name.'</FL>';
+        $params .= '<FL val="Last Name">'.$user->last_name.'</FL>';
+        $params .= '<FL val="Email">'.$user->user_email.'</FL>';
+        $params .= '<FL val="Phone">'.get_user_meta($userId, "phone", true).'</FL>';
+        $params .= '<FL val="Membership Expiration Date">'.$endDate.'</FL>';
+        $params .= '<FL val="Mailing Street">'.$address.'</FL>';
+        $params .= '<FL val="Mailing City">'.get_user_meta($userId, "city", true).'</FL>';
+        $params .= '<FL val="Mailing State">'.get_user_meta($userId, "state", true).'</FL>';
+        $params .= '<FL val="Mailing Code">'.get_user_meta($userId, "zip", true).'</FL>';
+        $params .= '<FL val="Billing Street">'.$address.'</FL>';
+        $params .= '<FL val="Billing City">'.get_user_meta($userId, "city", true).'</FL>';
+        $params .= '<FL val="Billing State">'.get_user_meta($userId, "state", true).'</FL>';
+        $params .= '<FL val="Billing Code">'.get_user_meta($userId, "zip", true).'</FL>';
+        $params .= '</row></Contacts>';
+        
+        //header("Content-type: application/xml");
+        $url = self::ZOHO_URL."Contacts/updateRecords?";
+        
+        
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, FALSE);
+        curl_setopt($ch, CURLOPT_HEADER, 0);
+        curl_setopt($ch, CURLOPT_TIMEOUT, 30);
+        curl_setopt($ch, CURLOPT_VERBOSE, 1);//standard i/o streams
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);//Set to return data to string ($response)
+        curl_setopt($ch, CURLOPT_POST, 1);//Regular post
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $params);
+        $result = curl_exec($ch);
+        curl_close($ch);
+        
+        //echo htmlspecialchars($url.$params); die();
+        //var_dump($result); die();
     }
 }

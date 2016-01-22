@@ -23,6 +23,7 @@ use Issue\Helper\IssueHelper;
 use Sponsor\Helper\SponsorHelper;
 use Event\Helper\EventHelper;
 use Board\Helper\BoardHelper;
+use Member\Controller\MemberController;
 
 if (!class_exists("dcbia")) {
 
@@ -77,9 +78,12 @@ if (!class_exists("dcbia")) {
 
         function __construct() {
             $this->interceptors = new InterceptorHelper();
+            $this->memberController = MemberController::getSingleton();
+            
             add_action('init', array(&$this, 'init' ));
             add_action('post_edit_form_tag' , array(&$this, 'EditFormTag'));
             add_action('admin_init', array(&$this, 'adminFeatures'));
+            add_action('profile_update', array($this->memberController ,'exportUserToZoho'), 10, 2 );
         }
 
         public function init(){

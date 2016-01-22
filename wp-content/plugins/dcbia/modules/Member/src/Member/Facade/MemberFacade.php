@@ -101,11 +101,11 @@ class MemberFacade extends AbstractSingleton
     private function formatUserForRegister(\WP_User $user){
         $userId = $user->ID;
         
-        $accountId = MemberController::getSingleton()->getZohoAccountId(get_user_meta($userId, "company_name", true));
+        /*$accountId = MemberController::getSingleton()->getZohoAccountId(get_user_meta($userId, "company_name", true));
         update_user_meta($userId, "account_id", $accountId);
         
         $contactId = MemberController::getSingleton()->getZohoContactId($user->user_email);
-        update_user_meta($userId, "contact_id", $contactId);
+        update_user_meta($userId, "contact_id", $contactId);*/
         
         return array(
             "ID" => $userId,
@@ -118,8 +118,8 @@ class MemberFacade extends AbstractSingleton
             "address3" => get_user_meta($userId, "address3", true),
             "city" => get_user_meta($userId, "city", true),
             "state" => get_user_meta($userId, "state", true),
-            "zip" => (int) get_user_meta($userId, "zip", true),
-            "telephone" => (int) get_user_meta($userId, "telephone", true),
+            "zip" => get_user_meta($userId, "zip", true),
+            "telephone" => get_user_meta($userId, "phone", true),
             "refered_by" => get_user_meta($userId, "refered_by", true),
             "company_name" => get_user_meta($userId, "company_name", true),
             "company_website" => get_user_meta($userId, "company_website", true),

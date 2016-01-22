@@ -248,6 +248,7 @@ jQuery(".dropit-submenu").children()
 
 jQuery(document).ready(function() {
 	jQuery("#angular-app").show();
+	jQuery("#wpadminbar").hide();
 	setActiveStateOnMenu();
 });
 
