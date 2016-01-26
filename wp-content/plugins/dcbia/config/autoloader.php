@@ -2,7 +2,7 @@
 
 spl_autoload_register('autoloaderModules');
 
-require __DIR__."/solrconfig.php";
+//require __DIR__."/solrconfig.php";
 require __DIR__."/../vendor/autoload.php";
 
 function autoloaderModules($class){
