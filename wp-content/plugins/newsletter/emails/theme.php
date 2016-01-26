@@ -45,21 +45,19 @@ function newsletter_emails_get_theme_options($theme) {
 $themes = $module->themes->get_all_with_data();
 ?>
 
-<div class="wrap">
+<div class="wrap" id="tnp-wrap">
 
-    <?php $help_url = 'http://www.thenewsletterplugin.com/plugins/newsletter/newsletters-module'; ?>
-    <?php include NEWSLETTER_DIR . '/header-new.php'; ?>
+	<?php include NEWSLETTER_DIR . '/tnp-header.php'; ?>
 
-    <div id="newsletter-title">
-        <h2><?php _e('Select a theme', 'newsletter-emails') ?>
-            <a class="add-new-h2" href="http://www.thenewsletterplugin.com/plugins/newsletter/newsletter-themes" target="_blank">Custom themes</a>
-        </h2>
-    </div>
+	<div id="tnp-heading">
 
-    <div class="newsletter-separator"></div>
+    <h2><?php _e('Select a theme', 'newsletter') ?>
+        <a class="tnp-btn-h1" href="http://www.thenewsletterplugin.com/plugins/newsletter/newsletter-themes" target="_blank">Custom themes</a>
+    </h2>
 
-    <?php $controls->show(); ?>
-
+</div>
+    <div id="tnp-body" class="tnp-darkbg">
+            
     <form method="post" id="newsletter-form" action="<?php echo $module->get_admin_page_url('new'); ?>">
         <?php $controls->init(); ?>
         <?php $controls->hidden('theme'); ?>
@@ -76,4 +74,8 @@ $themes = $module->themes->get_all_with_data();
             </div>
         <?php } ?>
     </form>
+</div>
+
+    <?php include NEWSLETTER_DIR . '/tnp-footer.php'; ?>
+    
 </div>
