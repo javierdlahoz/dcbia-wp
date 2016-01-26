@@ -2,15 +2,19 @@
 
 include '../../../../wp-load.php';
 
+header('Content-Type: application/json');
+
 if (!isset($newsletter)) $newsletter = new Newsletter();
 
 $key = stripslashes($_REQUEST['nk']);
 if (empty($newsletter->options['api_key']) || $key != $newsletter->options['api_key']) {
-    die('Wrong API key');
+    echo json_encode(array("message" => 'Wrong API key'));
+    exit;
 }
 
 if (!is_email($_REQUEST['ne'])) {
-    die('Wrong email');
+    echo json_encode(array("message" => 'Wrong email'));
+    exit;
 }
 
 $subscriber = array();
@@ -43,4 +47,6 @@ $subscriber['status'] = 'C';
 
 // TODO: add control for already subscribed emails
 NewsletterUsers::instance()->save_user($subscriber);
-die('ok');
+
+echo json_encode(array("message" => "Email subscribed successfully"));
+exit;

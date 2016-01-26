@@ -21,7 +21,7 @@ angular.module('angular-wp')
     	};
     	
     	$scope.addToNewsletter = function(){
-    		$scope.newsletter.nk = "5db2d2f6d9";
+    		$scope.newsletter.nk = "cc3e27f0a0";
     		$scope.errorOnNewsletter = false;
     		EmailService.addToNewsletter($scope.newsletter, function(data){
     			console.log(data);
