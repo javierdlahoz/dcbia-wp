@@ -80,7 +80,7 @@ get_header();  ?>
                 </div>
              </div>
              <div class="col-sm-8 members-main">
-                
+                <p><small>Note: if you do not see your company listed, please check back in a few days as we finalize recent renewals. You can also email us at <a href="mailto:info@dcbia.org">info@dcbia.org</a> to let us know. We appreciate your membership and enjoy the new website!</small></p>
                 <div ng-show="loading">
                     <center>
                         <img src="<?php echo get_template_directory_uri(); ?>/img/loading.gif" height="64">
