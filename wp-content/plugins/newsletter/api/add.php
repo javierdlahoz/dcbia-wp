@@ -8,13 +8,13 @@ if (!isset($newsletter)) $newsletter = new Newsletter();
 
 $key = stripslashes($_REQUEST['nk']);
 if (empty($newsletter->options['api_key']) || $key != $newsletter->options['api_key']) {
-    header($_SERVER['SERVER_PROTOCOL'] . ' 500 Internal Server Error', true, 500);
-    die(json_encode(array("message" => "Wrong API key"), JSON_UNESCAPED_UNICODE));
+    echo json_encode(array("message" => 'Wrong API key'));
+    exit;
 }
 
 if (!is_email($_REQUEST['ne'])) {
-    header($_SERVER['SERVER_PROTOCOL'] . ' 500 Internal Server Error', true, 500);
-    die(json_encode(array("message" => "Wrong email"), JSON_UNESCAPED_UNICODE));
+    echo json_encode(array("message" => 'Wrong email'));
+    exit;
 }
 
 $subscriber = array();
@@ -47,4 +47,6 @@ $subscriber['status'] = 'C';
 
 // TODO: add control for already subscribed emails
 NewsletterUsers::instance()->save_user($subscriber);
-die(json_encode(array("message" => true), JSON_UNESCAPED_UNICODE));
+
+echo json_encode(array("message" => "Email subscribed successfully"));
+exit;
