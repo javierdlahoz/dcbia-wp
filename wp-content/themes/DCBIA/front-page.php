@@ -93,11 +93,9 @@ get_header();
                         <p ng-hide="successToNewsletter">
                             Feel free to subscribe to the DCBIA mailing list. You'll get promotional and crucial information regarding DCBIA
                         </p>
-                        
                         <p ng-show="successToNewsletter">
-                            Thanks for subsribing with us
-                        </p>
-                        
+                            Thanks for subscribing with us
+                        </p> 
                      </div>    
                     <form id="signup-form" action="" method="" ng-submit="addToNewsletter()" ng-hide="successToNewsletter">
                         <label class="hidden" for="email"></label>
@@ -111,7 +109,6 @@ get_header();
                         </p>
                      </div>    					
                 </div>
-                
                 <!--news starts-->  
                 <br>   
                 <h2>News</h2>
