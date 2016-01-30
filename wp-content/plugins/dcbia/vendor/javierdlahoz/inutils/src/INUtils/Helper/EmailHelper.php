@@ -4,9 +4,9 @@ namespace INUtils\Helper;
 
 class EmailHelper
 {
-	const EMAIL_FROM = "info@marshalmoya.com";
+	const EMAIL_FROM = "info@dcbia.com";
 	const SUBJECT = "I want to contact you";
-	const TO = "trevor@innuevodigital.com";
+	const TO = "trevor@mkitdigital.com";
 	
 	public static function sendEmail($to, $subject, $url, $message = null, $from)
 	{	

@@ -377,7 +377,7 @@ class MemberController extends AbstractController{
             $content .="Payment Type: ".$order->payment_type."\n\n";
             $content .="Total: $ ".$order->InitialPayment." US\n";
             
-            EmailHelper::sendEmail($user->user_email, "Registration with DCBIA", null, $content, null);
+            //EmailHelper::sendEmail($user->user_email, "Registration with DCBIA", null, $content, null);
         }
         else{
             $content = "Thank you for renewing you DCBIA membership! DCBIA will reach out to you shortly to get your opinion on membership benefits. 
@@ -389,7 +389,7 @@ class MemberController extends AbstractController{
             $content .="Payment Type: ".$order->payment_type."\n\n";
             $content .="Total: $ ".$order->InitialPayment." US\n";
             
-            EmailHelper::sendEmail($user->user_email, "Renewal with DCBIA", null, $content, null);
+            //EmailHelper::sendEmail($user->user_email, "Renewal with DCBIA", null, $content, null);
         }
     }
     
