@@ -118,7 +118,9 @@
 			else
 			{
 				return false;
-			}*/		
+			}*/
+
+			return true;		
 		}
 		
 		function sendCancelEmail($user = NULL)
