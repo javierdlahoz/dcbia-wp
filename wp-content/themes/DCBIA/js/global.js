@@ -1,5 +1,8 @@
 // start global js here
 
+/*var tribe_ev = {};
+var tribe_js_config = {};
+var tribe_debug = false;*/
 var offset = 220;
 var duration = 500;
 

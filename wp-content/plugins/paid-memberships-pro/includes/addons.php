@@ -32,6 +32,9 @@ function pmpro_getAddons()
 	{
 		//get em
 		$remote_addons = wp_remote_get(PMPRO_LICENSE_SERVER . "/addons/");
+		if(get_class($remote_addons) === "WP_Error"){
+			return array();
+		}
 		
 		//test response
 		if(empty($remote_addons['response']) || $remote_addons['response']['code'] != '200')
