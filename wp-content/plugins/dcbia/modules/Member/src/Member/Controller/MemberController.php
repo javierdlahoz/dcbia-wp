@@ -342,7 +342,7 @@ class MemberController extends AbstractController{
         
         
         $status = $authorize->charge($order);
-        if($status === true){
+        if($status === true && !isset($status["status"])){
             $order->user_id = $user->ID;
             $order->status = self::SUCCESS_STATUS;
             $order->payment_type = "Credit Card";

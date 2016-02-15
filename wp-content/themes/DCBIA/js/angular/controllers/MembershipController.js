@@ -339,7 +339,7 @@ angular.module('angular-wp')
             }).success(function (data) {
             	$scope.billing.status = data.status;
             	$scope.loading = false;
-            	if(data.status == true){
+            	if(data.status === true && angular.isUndefined(data.status.status)){
             		ZohoService.insertAccount(getAccountInfo(), function(data){});
             		$timeout(
                 			function(){
