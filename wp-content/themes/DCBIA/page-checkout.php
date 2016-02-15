@@ -81,7 +81,7 @@
             <p><?php  _e('Your payment subscription is managed by PayPal. Please <a href="http://www.paypal.com">login to PayPal here</a> to update your billing information.', 'pmpro');?></p>
 
         <?php } else { ?>
-                <div class="alert alert-danger" ng-show="billing.status == false">Please check your credit card information</div>
+                <div class="alert alert-danger" ng-show="billing.status.status == false">Please check your credit card information</div>
                 <div class="alert alert-success" ng-show="billing.status == true">Payment successful, redirecting to home in 5s</div>
 
     <input type="hidden" ng-model="billing.level" name="level" value="<?php echo esc_attr($level->id);?>" />
@@ -423,7 +423,7 @@
                         <img src="<?php echo get_template_directory_uri(); ?>/img/loading.gif" height="64">
                     </center>
                 </div>
-                <div class="alert alert-danger" ng-show="billing.status == false">Please check your credit card information</div>
+                <div class="alert alert-danger" ng-show="billing.status.status == false">Please check your credit card information</div>
                 <div class="alert alert-success" ng-show="billing.status == true">Payment successful, redirecting to home in 5s</div>
 			</div>
 	<?php } ?>
