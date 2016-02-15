@@ -539,7 +539,7 @@
 				$order->errorcode = $response_array[2];
 				$order->error = $response_array[3];
 				$order->shorterror = $response_array[3];
-				return false;
+				return array("status" => false, "errorcode" => $order->errorcode, "error" => $order->error, "shorterror" => $order->shorterror);
 			}
 		}
 
