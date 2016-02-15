@@ -413,7 +413,7 @@
 				</script>
 			<?php } ?>
             <div class="col-md-12">
-                <div ng-hide="billing.status">
+                <div ng-hide="billing.status === true">
                     <input type="hidden" name="update-billing" value="1" />
                     <input type="submit" class="button2" value="<?php _e('Pay', 'pmpro');?>" />
                     <input type="button" name="cancel" class="button2" value="<?php _e('Cancel', 'pmpro');?>" onclick="location.href='<?php echo pmpro_url("account")?>';" />
