@@ -822,4 +822,21 @@ class MemberController extends AbstractController{
         //echo htmlspecialchars($url.$params); die();
         //var_dump($result); die();
     }
+    
+    /**
+     * 
+     * @param string $accountId
+     * @return multitype:\WP_User
+     */
+    public function getUsersByAccountId($accountId){
+        $args = array(
+            'meta_key'     => 'account_id',
+            'meta_value'   => $accountId,
+            'orderby'      => 'login',
+            'order'        => 'ASC',
+            'fields'       => 'all'
+        );
+        
+        return get_users($args);
+    }
 }

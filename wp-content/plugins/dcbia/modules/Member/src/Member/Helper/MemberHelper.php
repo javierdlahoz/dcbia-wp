@@ -201,5 +201,19 @@ class MemberHelper
         if ( !current_user_can('edit_user', $userId))
             return false;
         update_usermeta($userId, 'business_category', $_POST['business_category'] );
+        $fields = array(
+            "company_name",
+            "company_website",
+            "company_description",
+            "address1",
+            "city",
+            "state",
+            "zip",
+            "telephone"
+        );
+        
+        foreach ($fields as $field){
+            update_usermeta($userId, $field, $_POST[$field] );
+        }
     }
 }
