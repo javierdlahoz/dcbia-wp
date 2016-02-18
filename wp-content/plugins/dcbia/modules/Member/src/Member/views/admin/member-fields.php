@@ -101,10 +101,12 @@ $affiliates = MemberController::getSingleton()->getUsersByAccountId($accountId);
 	<th>Name</th>
 </tr>
 <?php foreach($affiliates as $affiliate): ?>
+<?php if($affiliate->ID !== $user->ID): ?>
 <tr>
 	<th><a href="/wp-admin/user-edit.php?user_id=<?php echo $affiliate->ID; ?>"><?php echo $affiliate->user_login; ?></a></th>
 	<th><a href="/wp-admin/user-edit.php?user_id=<?php echo $affiliate->ID; ?>"><?php echo $affiliate->first_name." ".$affiliate->last_name; ?></a></th>
 </tr>
+<?php endif; ?>
 <?php endforeach; ?>
 </table>
 <?php endif; ?>
