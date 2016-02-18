@@ -3,7 +3,7 @@ angular.module('angular-wp')
 
 		return{
 			insertAccount: function(account, callback){
-				if(account["ACCOUNTID"] !== undefined && account["ACCOUNTID"] != ""){
+				if(account["ACCOUNTID"] !== undefined && account["ACCOUNTID"] != "" && account["ACCOUNTID"] !== null){
 					this.updateAccount(account["ACCOUNTID"], 
 							account, 
 							function(data){
@@ -38,7 +38,7 @@ angular.module('angular-wp')
 				var xmlData = "<Contacts>";
 				var row = 1;
 				for(index in members){
-					if(members[index]["CONTACTID"] !== undefined && members[index]["CONTACTID"] != ""){
+					if(members[index]["CONTACTID"] !== undefined && members[index]["CONTACTID"] != "" && members[index]["CONTACTID"] !== null){
 						this.updateContact(members[index]["CONTACTID"], 
 								members[index], 
 								function(data){

@@ -89,6 +89,13 @@ $affiliates = MemberController::getSingleton()->getUsersByAccountId($accountId);
 </td>
 </tr>
 
+<tr>
+<th><label for="telephone">Zoho Contact ID</label></th>
+<td>
+<?php echo get_user_meta($user->ID, "contact_id", true); ?>
+</td>
+</tr>
+
 </table>
 
 <?php if(count($affiliates) > 0): ?>

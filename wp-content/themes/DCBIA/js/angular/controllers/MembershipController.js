@@ -101,7 +101,13 @@ angular.module('angular-wp')
     			"Billing Street": billingAddress,
     			"Billing City": $scope.member.city,
     			"Billing State": $scope.member.state,
-    			"Billing Code": $scope.member.zip
+    			"Billing Code": $scope.member.zip,
+    			"Billing Country": "United States",
+    			"Mailing Street": billingAddress,
+    			"Mailing City": $scope.member.city,
+    			"Mailing State": $scope.member.state,
+    			"Mailing Code": $scope.member.zip,
+    			"Mailing Country": "United States"
     		};
     		
     		if($scope.member.contact_id != ""){
@@ -151,6 +157,12 @@ angular.module('angular-wp')
     			"Billing City": $scope.member.city,
     			"Billing State": $scope.member.state,
     			"Billing Code": $scope.member.zip,
+    			"Billing Country": "United States",
+    			"Shipping Street": $scope.member.address1 + " " + $scope.member.address2,
+    			"Shipping City": $scope.member.city,
+    			"Shipping State": $scope.member.state,
+    			"Shipping Code": $scope.member.zip,
+    			"Shipping Country": "United States",
     			"Phone": $scope.member.telephone,
     			"Account Type": "Member"
     		};
@@ -353,7 +365,7 @@ angular.module('angular-wp')
             			function(){
             				window.location = "/";
             			}, 
-            			5000
+            			7000
             		);
             	}
             });
