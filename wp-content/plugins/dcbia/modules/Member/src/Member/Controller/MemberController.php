@@ -481,7 +481,7 @@ class MemberController extends AbstractController{
                 'compare' => 'LIKE'
             ),
             array(
-                'key' => 'organization',
+                'key' => 'company_name',
                 'value' => $query,
                 'compare' => 'LIKE'
             )
@@ -547,13 +547,13 @@ class MemberController extends AbstractController{
      * @param string $accountName
      * @return string
      */
-    public function getZohoAccountId($accountName){
-        $zohoUrl = self::ZOHO_URL."json/Accounts/searchRecords?authtoken=".self::ZOHO_TOKEN 
-				."&scope=crmapi&wfTrigger=true&version=".self::ZOHO_API_VERSION
-				."&newFormat=1&criteria=(Account Name:".$accountName.")";
-        
+    public function getZohoAccountId($email){
+        $zohoUrl = str_replace("xml/", "", self::ZOHO_URL)."json/Contacts/searchRecords?authtoken=".self::ZOHO_TOKEN
+        ."&scope=crmapi&wfTrigger=true&version=".self::ZOHO_API_VERSION
+        ."&newFormat=1&criteria=(Email:".$email.")";
+    
         $ch = curl_init();
-
+    
         curl_setopt($ch, CURLOPT_AUTOREFERER, TRUE);
         curl_setopt($ch, CURLOPT_HEADER, 0);
         curl_setopt($ch, CURLOPT_URL, $zohoUrl);
@@ -564,13 +564,14 @@ class MemberController extends AbstractController{
         curl_setopt($ch, CURLOPT_TIMEOUT, self::ZOHO_TIMEOUT);
         $response = json_decode(curl_exec($ch));
         curl_close($ch);
-        
+    
         if(!isset($response->response->nodata)){
-            $accountId = $response->response->result->Accounts->row->FL[0]->content;
+            $accountId = $response->response->result->Contacts->row->FL[5]->content;
         }
         else{
             $accountId = "";
         }
+        
         return $accountId;
     }
     
@@ -580,7 +581,7 @@ class MemberController extends AbstractController{
      * @return string
      */
     public function getZohoContactId($email){
-        $zohoUrl = self::ZOHO_URL."json/Contacts/searchRecords?authtoken=".self::ZOHO_TOKEN
+        $zohoUrl = str_replace("xml/", "", self::ZOHO_URL)."json/Contacts/searchRecords?authtoken=".self::ZOHO_TOKEN
         ."&scope=crmapi&wfTrigger=true&version=".self::ZOHO_API_VERSION
         ."&newFormat=1&criteria=(Email:".$email.")";
     
@@ -621,11 +622,6 @@ class MemberController extends AbstractController{
             $account[6] = str_replace("/", "", $account[6]);
             $accountId = str_replace("zcrm_", "", $account[0]);
             $userId = wp_create_user($accountId, $accountId);
-            
-            if(!is_int($userId)){
-                //var_dump($userId);
-                //var_dump($account); die();
-            }
             
             $user = array(
                 "ID" => $userId,

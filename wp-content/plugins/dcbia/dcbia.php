@@ -83,7 +83,7 @@ if (!class_exists("dcbia")) {
             add_action('init', array(&$this, 'init' ));
             add_action('post_edit_form_tag' , array(&$this, 'EditFormTag'));
             add_action('admin_init', array(&$this, 'adminFeatures'));
-            add_action('profile_update', array($this->memberController ,'exportUserToZoho'), 10, 2 );
+            //add_action('profile_update', array($this->memberController ,'exportUserToZoho'), 10, 2 );
         }
 
         public function init(){

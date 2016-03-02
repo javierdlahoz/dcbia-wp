@@ -198,7 +198,7 @@ class MemberHelper
     }
 
     public function saveMemberCustomFields($userId ) {
-        if ( !current_user_can('edit_user', $userId))
+        if (!current_user_can('edit_user', $userId))
             return false;
         update_usermeta($userId, 'business_category', $_POST['business_category'] );
         $fields = array(

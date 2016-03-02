@@ -3,7 +3,35 @@ use Member\Helper\MemberHelper;
 use Member\Controller\MemberController;
 
 $accountId = get_user_meta($user->ID, "account_id", true);
-$affiliates = MemberController::getSingleton()->getUsersByAccountId($accountId);
+$affiliates = array();
+if($accountId !== "" && $accountId !== null){
+    $affiliates = MemberController::getSingleton()->getUsersByAccountId($accountId);
+}
+else{
+    $otherMembers = get_user_meta($user->ID, "addUsers", true);
+    if($otherMembers !== "" && $otherMembers !== null){
+        $affiliates = array();
+        foreach($otherMembers as $member){
+            $affiliates[] = get_user_by("id", $member);
+        }
+    }
+}
+
+$contactId = get_user_meta($user->ID, "contact_id", true);
+if($contactId === "" || $contactId === null){
+    $contactId = MemberController::getSingleton()->getZohoContactId($user->user_email);
+    if($contactId !== null){
+        update_user_meta($user->ID, "contact_id", $contactId);
+    }
+}
+
+if($accountId === "" || $accountId === null){
+    $accountId = MemberController::getSingleton()->getZohoAccountId($user->user_email);
+    if($accountId !== null){
+        update_user_meta($user->ID, "account_id", $accountId);
+    }
+}
+
 ?>
 <h3>Business Category</h3>
 
@@ -92,7 +120,7 @@ $affiliates = MemberController::getSingleton()->getUsersByAccountId($accountId);
 <tr>
 <th><label for="telephone">Zoho Contact ID</label></th>
 <td>
-<?php echo get_user_meta($user->ID, "contact_id", true); ?>
+<?php echo $contactId; ?>
 </td>
 </tr>
 
