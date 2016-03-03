@@ -766,13 +766,23 @@ class MemberController extends AbstractController{
     
     public function exportUserToZoho($userId, $oldData){
         $user = get_user_by("ID", $userId);
+        $this->updateZohoContact($user);
+    }
+    
+    /**
+     * 
+     * @param \WP_User $user
+     */
+    public function updateZohoContact($user){
+        $userId = $user->ID;
+        
         $user->membership_level = pmpro_getMembershipLevelsForUser($userId);
         $endDate = gmdate("m/d/Y", $user->membership_level[0]->enddate);
         
         $address1 = get_user_meta($userId, "address1", true);
         $address2 = get_user_meta($userId, "address2", true);
         if($address2 !== null){
-            $address = $address1." ".$address2; 
+            $address = $address1." ".$address2;
         }
         else{
             $address = $address1;
@@ -786,12 +796,12 @@ class MemberController extends AbstractController{
         $params .= '<FL val="First Name">'.$user->first_name.'</FL>';
         $params .= '<FL val="Last Name">'.$user->last_name.'</FL>';
         $params .= '<FL val="Email">'.$user->user_email.'</FL>';
-        $params .= '<FL val="Phone">'.get_user_meta($userId, "phone", true).'</FL>';
+        $params .= '<FL val="Phone">'.get_user_meta($userId, "telephone", true).'</FL>';
         $params .= '<FL val="Membership Expiration Date">'.$endDate.'</FL>';
         $params .= '<FL val="Mailing Street">'.$address.'</FL>';
         $params .= '<FL val="Mailing City">'.get_user_meta($userId, "city", true).'</FL>';
         $params .= '<FL val="Mailing State">'.get_user_meta($userId, "state", true).'</FL>';
-        $params .= '<FL val="Mailing Code">'.get_user_meta($userId, "zip", true).'</FL>';
+        $params .= '<FL val="Mailing Zip">'.get_user_meta($userId, "zip", true).'</FL>';
         $params .= '<FL val="Billing Street">'.$address.'</FL>';
         $params .= '<FL val="Billing City">'.get_user_meta($userId, "city", true).'</FL>';
         $params .= '<FL val="Billing State">'.get_user_meta($userId, "state", true).'</FL>';
@@ -799,8 +809,7 @@ class MemberController extends AbstractController{
         $params .= '</row></Contacts>';
         
         //header("Content-type: application/xml");
-        $url = self::ZOHO_URL."Contacts/updateRecords?";
-        
+        $url =  self::ZOHO_URL."Contacts/updateRecords?";
         
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $url);
@@ -814,9 +823,6 @@ class MemberController extends AbstractController{
         curl_setopt($ch, CURLOPT_POSTFIELDS, $params);
         $result = curl_exec($ch);
         curl_close($ch);
-        
-        //echo htmlspecialchars($url.$params); die();
-        //var_dump($result); die();
     }
     
     /**

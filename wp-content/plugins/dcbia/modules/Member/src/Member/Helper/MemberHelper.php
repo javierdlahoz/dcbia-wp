@@ -1,6 +1,7 @@
 <?php
 namespace Member\Helper;
 
+use Member\Controller\MemberController;
 class MemberHelper
 {
     const POST_TYPE = "member";
@@ -215,5 +216,8 @@ class MemberHelper
         foreach ($fields as $field){
             update_usermeta($userId, $field, $_POST[$field] );
         }
+        
+        $user = get_user_by("id", $userId);
+        MemberController::getSingleton()->updateZohoContact($user);
     }
 }

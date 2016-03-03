@@ -101,12 +101,12 @@ angular.module('angular-wp')
     			"Billing Street": billingAddress,
     			"Billing City": $scope.member.city,
     			"Billing State": $scope.member.state,
-    			"Billing Code": $scope.member.zip,
+    			"Billing Zip": $scope.member.zip,
     			"Billing Country": "United States",
     			"Mailing Street": billingAddress,
     			"Mailing City": $scope.member.city,
     			"Mailing State": $scope.member.state,
-    			"Mailing Code": $scope.member.zip,
+    			"Mailing Zip": $scope.member.zip,
     			"Mailing Country": "United States"
     		};
     		
@@ -156,12 +156,12 @@ angular.module('angular-wp')
     			"Billing Street": $scope.member.address1 + " " + $scope.member.address2,
     			"Billing City": $scope.member.city,
     			"Billing State": $scope.member.state,
-    			"Billing Code": $scope.member.zip,
+    			"Billing Zip": $scope.member.zip,
     			"Billing Country": "United States",
     			"Shipping Street": $scope.member.address1 + " " + $scope.member.address2,
     			"Shipping City": $scope.member.city,
     			"Shipping State": $scope.member.state,
-    			"Shipping Code": $scope.member.zip,
+    			"Shipping Zip": $scope.member.zip,
     			"Shipping Country": "United States",
     			"Phone": $scope.member.telephone,
     			"Account Type": "Member"
